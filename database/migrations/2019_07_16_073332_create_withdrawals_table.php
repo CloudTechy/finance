@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateWithdrawalsTable extends Migration
 {
@@ -15,7 +15,13 @@ class CreateWithdrawalsTable extends Migration
     {
         Schema::create('withdrawals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->boolean('processed')->default(false);
+            $table->boolean('confirmed')->default(false);
+            $table->bigInteger('amount');
+            $table->string('currency_code')->index()->default('USD');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

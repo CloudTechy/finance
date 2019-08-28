@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateBankDetailsTable extends Migration
 {
@@ -15,7 +15,14 @@ class CreateBankDetailsTable extends Migration
     {
         Schema::create('bank_details', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('bank_id')->unsigned()->index();
+            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('acc_number');
+            $table->string('acc_name');
+            $table->string('swift_code')->nullable();
             $table->timestamps();
+            $table->foreign('bank_id')->references('id')->on('banks');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

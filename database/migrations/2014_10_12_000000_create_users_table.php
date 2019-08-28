@@ -15,14 +15,24 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('username')->unique();
+            $table->string('wallet')->nullable();
+            $table->string('pm')->nullable();
+            $table->string('referral')->nullable();
+            $table->integer('referral_count')->default(0);
+            $table->string('number')->nullable();
             $table->string('email')->unique();
             $table->string('api_token', 60)->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->bigInteger('user_level_id')->unsigned()->index();
+            $table->decimal('account', 60, 4)->default(0);
             $table->rememberToken();
             $table->timestamps();
         });
+
     }
 
     /**

@@ -14,36 +14,49 @@ use Illuminate\Http\Request;
  */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+	return $request->user();
 });
 
 Route::prefix('v1')->group(function () {
-    Route::prefix('auth')->group(function () {
 
-        // Below mention routes are public, user can access those without any restriction.
-        // Create New User
-        Route::post('register', 'AuthController@register');
+	Route::prefix('auth')->group(function () {
 
-        // Login User
-        Route::post('login', 'AuthController@login');
+		// Below mention routes are public, user can access those without any restriction.
+		// Create New User
+		Route::post('register', 'AuthController@register');
 
-        // Refresh the JWT Token
-        Route::get('refresh', 'AuthController@refresh');
+		// Login User
+		Route::post('login', 'AuthController@login');
 
-        // Send reset password mail
-        Route::post('reset-password', 'AuthController@sendPasswordResetLink');
+		// Refresh the JWT Token
+		Route::get('refresh', 'AuthController@refresh');
 
-        // handle reset password form process
-        Route::post('reset/password', 'AuthController@callResetPassword');
+		// Send reset password mail
+		Route::post('reset-password', 'AuthController@sendPasswordResetLink');
 
-        // Below mention routes are available only for the authenticated users.
-        Route::middleware('auth:api')->group(function () {
-            // Get user info
-            Route::get('user', 'AuthController@user');
+		// handle reset password form process
+		Route::post('reset/password', 'AuthController@callResetPassword');
 
-            // Logout user from application
-            Route::post('logout', 'AuthController@logout');
+		// Below mention routes are available only for the authenticated users.
+		Route::resource('users', 'UserController');
+		Route::resource('banks', 'BankController');
+		Route::resource('packages', 'PackageController');
+		Route::resource('bankdetails', 'BankDetailController');
+		Route::resource('packageusers', 'PackageUserController');
+		Route::resource('portfolios', 'PortfolioController');
+		Route::resource('transactions', 'TransactionController');
+		Route::resource('withdrawals', 'WithdrawalController');
+		Route::get('subscribe/{transaction}', 'PackageUserController@confirmSubscription');
+		Route::get('confirm-withdrawal/{withdrawal}', 'WithdrawalController@confirmWithdrawal');
+		Route::middleware('auth:api')->group(function () {
+			// Get user info
+			Route::get('user', 'AuthController@user');
 
-        });
-    });
+			// Logout user from application
+			Route::post('logout', 'AuthController@logout');
+
+			//Route::resource('users', 'UserController');
+
+		});
+	});
 });
