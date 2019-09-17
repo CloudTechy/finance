@@ -13,11 +13,14 @@ use \DB;
 
 class User extends Authenticatable implements JWTSubject {
 	use Notifiable;
-	protected $fillable = ['first_name', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
+	protected $fillable = ['first_name', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 	protected $hidden = ['password', 'remember_token'];
 	protected $casts = ['email_verified_at' => 'datetime'];
-	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'activePackages', 'maturePackages', 'processMaturePackages');
+	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages');
 
+	public function getActiveTransactionsAttribute() {
+		return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', true)->sum('amount');
+	}
 	public function getActivePackagesAttribute() {
 		$activePackages = [];
 		foreach ($this->packages as $key => $package) {
@@ -48,10 +51,13 @@ class User extends Authenticatable implements JWTSubject {
 				$transaction->payment = $maturePackage->interest_rate;
 				$transaction->sent = true;
 				$transaction->confirmed = true;
+				$transaction->active = false;
 				$transaction->reference = 'BFIN';
 				if ($transaction->save()) {
 					$maturePackage->subscription->active = false;
 					$status = $maturePackage->subscription->save();
+					$transaction = Transaction::where('id', $maturePackage->subscription->transaction_id)->first();
+					$transaction->update(['active' => false]);
 				}
 
 				$transaction->user->notify(new TransactionMade($transaction));
@@ -65,7 +71,7 @@ class User extends Authenticatable implements JWTSubject {
 		}
 	}
 	public function getConfirmedTransactionsAttribute() {
-		return $this->transactions->where('sent', true)->where('confirmed', true);
+		return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', false);
 	}
 	public function getSentTransactionsAttribute() {
 		return $this->transactions->where('sent', true)->where('confirmed', false);
@@ -85,7 +91,7 @@ class User extends Authenticatable implements JWTSubject {
 	}
 
 	public function getBalanceAttribute() {
-		return $this->confirmedTransactions->sum('amount') - $this->confirmedWithdrawals->sum('amount');
+		return $this->confirmedTransactions->sum('amount') - $this->confirmedWithdrawals->sum('amount') - $this->processedWithdrawals->sum('amount');
 	}
 	public function getNamesAttribute() {
 		return $this->last_name . ' ' . $this->first_name;
@@ -101,7 +107,7 @@ class User extends Authenticatable implements JWTSubject {
 		$this->notify(new \App\Notifications\MailResetPasswordNotification($token));
 	}
 	public function packages() {
-		return $this->belongsToMany(Package::class)->withPivot('id', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
+		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
 
 	}
 	public function userLevel() {
@@ -124,7 +130,7 @@ class User extends Authenticatable implements JWTSubject {
 	public function scopeFilter($query, $filter) {
 
 		try {
-			$fields = ['first_name', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
+			$fields = ['first_name', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

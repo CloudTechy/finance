@@ -4,61 +4,62 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PackageUser extends Model
-{
-    protected $table = 'package_user';
-    protected $fillable = ['package_id', 'user_id', 'account', 'expiration', 'active'];
-    public function user()
-    {
+class PackageUser extends Model {
+	protected $table = 'package_user';
+	protected $fillable = ['package_id', 'user_id', 'account', 'transaction_id', 'expiration', 'active'];
+	public function user() {
 
-        return $this->belongsTo(User::class);
+		return $this->belongsTo(User::class);
 
-    }
+	}
 
-    public function package()
-    {
+	public function package() {
 
-        return $this->belongsTo(Package::class);
+		return $this->belongsTo(Package::class);
 
-    }
+	}
+	public function transaction() {
 
-    public function scopeFilter($query, $filter)
-    {
+		return $this->belongsTo(Transaction::class);
 
-        try {
+	}
 
-            $fields = ['package_id', 'user_id', 'account', 'expiration', 'active'];
+	public function scopeFilter($query, $filter) {
 
-            return $query->where(
-                function ($query) use ($filter, $fields) {
+		try {
 
-                    foreach ($filter as $key => $val) {
+			$fields = ['package_id', 'user_id', 'transaction_id', 'account', 'expiration', 'active'];
 
-                        if (in_array($key, $fields)) {
+			return $query->where(
+				function ($query) use ($filter, $fields) {
 
-                            if ($key == 'dateBefore') {
-                                $val = Carbon::parse($val);
-                                $query->where("created_at", "<=", $val);
-                                continue;
-                            } elseif ($key == 'dateAfter') {
-                                $val = Carbon::parse($val);
-                                $query->where("created_at", ">=", $val);
-                                continue;
-                            }
+					foreach ($filter as $key => $val) {
 
-                            $query->where($key, $val);
+						if (in_array($key, $fields)) {
 
-                        }
-                    }
-                    return $query;
+							if ($key == 'dateBefore') {
+								$val = Carbon::parse($val);
+								$query->where("created_at", "<=", $val);
+								continue;
+							} elseif ($key == 'dateAfter') {
+								$val = Carbon::parse($val);
+								$query->where("created_at", ">=", $val);
+								continue;
+							}
 
-                });
+							$query->where($key, $val);
 
-        } catch (Exception $bug) {
+						}
+					}
+					return $query;
 
-            return $this->exception($bug);
-        }
+				});
 
-    }
+		} catch (Exception $bug) {
+
+			return $this->exception($bug);
+		}
+
+	}
 
 }

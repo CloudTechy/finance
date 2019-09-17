@@ -20,11 +20,13 @@ class PackageUserResource extends JsonResource {
 		return [
 			'package' => '$' . $package->name . ' Plan',
 			'username' => $user->username,
+			'portfolio' => $package->portfolio->name,
 			'owner' => $user->last_name . ' ' . $user->first_name,
 			'account' => $this->account,
 			'expiration' => $this->expiration,
 			'duration' => $package->duration,
 			'active' => $this->active,
+			'transaction' => $this->transaction,
 			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
 			'created_at' => $this->created_at->format('Y-m-d H:i:s'),
 			'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),

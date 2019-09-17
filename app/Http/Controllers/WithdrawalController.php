@@ -52,10 +52,15 @@ class WithdrawalController extends Controller {
 		DB::beginTransaction();
 		try
 		{
-			$data = Withdrawal::create($validated);
-			DB::commit();
-			$data = new WithdrawalResource($data);
-			return Helper::validRequest($data, 'data was sent successfully', 200);
+			if (auth()->user()->balance >= $validated['amount']) {
+				$validated['processed'] = true;
+				$data = Withdrawal::create($validated);
+				DB::commit();
+				$data = new WithdrawalResource($data);
+				return Helper::validRequest($data, 'Withdrawal request has been sent for processing', 200);
+			} else {
+				return Helper::invalidRequest('Insufficient funds', 'Your account is low for this transaction', 400);
+			}
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
@@ -135,9 +140,13 @@ class WithdrawalController extends Controller {
 	public function confirmWithdrawal(Withdrawal $withdrawal) {
 		DB::beginTransaction();
 		try {
-			$data = $withdrawal->update(['confirmed' => true, 'processed' => true]);
-			DB::commit();
-			return Helper::validRequest(["success" => $data], 'withdrawal confirmed successfully', 200);
+			if (auth()->user()->balance >= $withdrawal->amount) {
+				$data = $withdrawal->update(['confirmed' => true, 'processed' => true]);
+				DB::commit();
+				return Helper::validRequest(["success" => $data], 'withdrawal confirmed successfully', 200);
+			} else {
+				return Helper::invalidRequest('Insufficient funds', 'Your account is low for this transaction', 400);
+			}
 
 		} catch (Exception $bug) {
 			DB::rollback();

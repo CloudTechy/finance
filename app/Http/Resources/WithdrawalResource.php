@@ -16,11 +16,13 @@ class WithdrawalResource extends JsonResource {
 	public function toArray($request) {
 		$user = User::find($this->user_id);
 		return [
+			'id' => $this->id,
 			'username' => $user->username,
 			'owner' => $user->last_name . ' ' . $user->first_name,
 			'amount' => $this->amount,
 			'processed' => $this->processed,
 			'confirmed' => $this->confirmed,
+			'reference' => $this->reference,
 			'currency_code' => $this->currency_code,
 			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),
 			'created_at' => $this->created_at->format('Y-m-d H:i:s'),

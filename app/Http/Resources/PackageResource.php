@@ -13,6 +13,7 @@ class PackageResource extends JsonResource {
 	 */
 	public function toArray($request) {
 		return [
+			'id' => $this->id,
 			'portfolio' => $this->portfolio->name,
 			'name' => '$' . $this->name . ' Plan',
 			'deposit' => $this->deposit,

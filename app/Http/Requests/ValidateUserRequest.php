@@ -26,9 +26,15 @@ class ValidateUserRequest extends FormRequest {
 			'username' => 'required|min:2|string|max:255|unique:users,username',
 			'wallet' => 'nullable|string',
 			'pm' => 'nullable|string',
+			'secret_question' => 'nullable|string',
+			'secret_answer' => 'nullable|string',
+			'admin_wallet' => 'nullable|string',
+			'admin_pm' => 'nullable|string',
+			'ip' => 'nullable|string',
+			'referral' => 'nullable|string',
 			"number" => "required|nullable|string|min:5|max:255|unique:users,number",
 			"email" => "email|required|unique:users,email",
-			'password' => 'required|string|min:5',
+			'password' => 'required|string|confirmed|min:5',
 			'user_level_id' => 'required|numeric|exists:user_levels,id',
 		];
 	}

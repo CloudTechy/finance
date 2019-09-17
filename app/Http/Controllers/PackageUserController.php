@@ -59,12 +59,37 @@ class PackageUserController extends Controller {
 		{
 			$user = User::find($validated['user_id']);
 			$package = Package::find($validated['package_id']);
-			$data = PackageUser::create(['user_id' => $user->id, 'package_id' => $package->id, 'account' => $package->deposit, 'active' => false]);
 
-			Transaction::create(['reference' => $data->id, 'amount' => $package->deposit, 'payment' => 0, 'user_id' => $data->user_id]);
-			DB::commit();
-			$data = new PackageUserResource($data);
-			return Helper::validRequest($data, 'subscription successful', 200);
+			if ($user->balance >= $package->deposit) {
+
+				$payment = $user->balance - $package->deposit;
+
+				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $package->deposit, 'payment' => $payment, 'sent' => true, 'confirmed' => true]);
+
+				$user->withdrawals()->create(['amount' => $payment, 'reference' => 'BFIN', 'processed' => true, 'confirmed' => true]);
+
+				$subscription = PackageUser::create(['user_id' => $user->id, 'transaction_id' => $transaction->id, 'package_id' => $package->id, 'account' => $package->deposit, 'active' => true, 'expiration' => Carbon::now()->addDays($duration)]);
+
+				DB::commit();
+				$subscription = new PackageUserResource($subscription);
+				return Helper::validRequest($subscription, 'subscription successful', 200);
+			} else {
+
+				$payment = $package->deposit - $user->balance;
+
+				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $package->deposit, 'payment' => $user->balance]);
+
+				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'account' => $package->deposit, 'active' => false]);
+
+				if ($user->balance > 0) {
+					$user->withdrawals()->create(['amount' => $user->balance, 'reference' => 'BFIN', 'processed' => true, 'confirmed' => true]);
+				}
+
+				DB::commit();
+				$subscription = new PackageUserResource($subscription);
+				return Helper::validRequest($subscription, 'subscription is being processed', 200);
+			}
+
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
@@ -115,7 +140,7 @@ class PackageUserController extends Controller {
 		DB::beginTransaction();
 		try {
 
-			$packageUser = PackageUser::findOrFail($transaction->reference);
+			$packageUser = PackageUser::where('transaction_id', $transaction->id)->first();
 			if (!$packageUser->active && empty($packageUser->expiration)) {
 				$duration = $packageUser->package->duration;
 				$packageUser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true]);

@@ -4,64 +4,58 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Transaction extends Model
-{
-    protected $fillable = ['user_id', 'amount', 'payment', 'sent', 'confirmed', 'reference', 'currency_code'];
-    protected $appends = array('confirmedTransaction', 'nullTransaction', 'sentTransaction');
+class Transaction extends Model {
+	protected $fillable = ['user_id', 'amount', 'reference', 'active', 'payment', 'sent', 'confirmed', 'reference', 'currency_code'];
+	protected $appends = array('confirmedTransaction', 'nullTransaction', 'sentTransaction');
 
-    public function getConfirmedTransactionAttribute()
-    {
-        return $this->where('sent', true)->where('confirmed', true);
-    }
-    public function getSentTransactionAttribute()
-    {
-        return $this->where('sent', true)->where('confirmed', false);
-    }
-    public function getNullTransactionAttribute()
-    {
-        return $this->where('sent', false)->where('confirmed', false);
-    }
+	public function getConfirmedTransactionAttribute() {
+		return $this->where('sent', true)->where('confirmed', true)->where('active', false);
+	}
+	public function getSentTransactionAttribute() {
+		return $this->where('sent', true)->where('confirmed', false);
+	}
+	public function getNullTransactionAttribute() {
+		return $this->where('sent', false)->where('confirmed', false);
+	}
 
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-    public function scopeFilter($query, $filter)
-    {
+	public function user() {
+		return $this->belongsTo(User::class);
+	}
+	public function scopeFilter($query, $filter) {
 
-        try {
+		try {
 
-            $fields = ['user_id', 'amount', 'payment', 'sent', 'confirmed', 'reference', 'currency_code'];
+			$fields = ['user_id', 'amount', 'reference', 'active', 'payment', 'sent', 'confirmed', 'reference', 'currency_code'];
 
-            return $query->where(
-                function ($query) use ($filter, $fields) {
+			return $query->where(
+				function ($query) use ($filter, $fields) {
 
-                    foreach ($filter as $key => $val) {
+					foreach ($filter as $key => $val) {
 
-                        if (in_array($key, $fields)) {
+						if (in_array($key, $fields)) {
 
-                            if ($key == 'dateBefore') {
-                                $val = Carbon::parse($val);
-                                $query->where("created_at", "<=", $val);
-                                continue;
-                            } elseif ($key == 'dateAfter') {
-                                $val = Carbon::parse($val);
-                                $query->where("created_at", ">=", $val);
-                                continue;
-                            }
+							if ($key == 'dateBefore') {
+								$val = Carbon::parse($val);
+								$query->where("created_at", "<=", $val);
+								continue;
+							} elseif ($key == 'dateAfter') {
+								$val = Carbon::parse($val);
+								$query->where("created_at", ">=", $val);
+								continue;
+							}
 
-                            $query->where($key, $val);
+							$query->where($key, $val);
 
-                        }
-                    }
-                    return $query;
+						}
+					}
+					return $query;
 
-                });
+				});
 
-        } catch (Exception $bug) {
+		} catch (Exception $bug) {
 
-            return $this->exception($bug);
-        }
+			return $this->exception($bug);
+		}
 
-    }
+	}
 }

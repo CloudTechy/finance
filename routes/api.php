@@ -38,16 +38,7 @@ Route::prefix('v1')->group(function () {
 		Route::post('reset/password', 'AuthController@callResetPassword');
 
 		// Below mention routes are available only for the authenticated users.
-		Route::resource('users', 'UserController');
-		Route::resource('banks', 'BankController');
-		Route::resource('packages', 'PackageController');
-		Route::resource('bankdetails', 'BankDetailController');
-		Route::resource('packageusers', 'PackageUserController');
-		Route::resource('portfolios', 'PortfolioController');
-		Route::resource('transactions', 'TransactionController');
-		Route::resource('withdrawals', 'WithdrawalController');
-		Route::get('subscribe/{transaction}', 'PackageUserController@confirmSubscription');
-		Route::get('confirm-withdrawal/{withdrawal}', 'WithdrawalController@confirmWithdrawal');
+
 		Route::middleware('auth:api')->group(function () {
 			// Get user info
 			Route::get('user', 'AuthController@user');
@@ -56,6 +47,16 @@ Route::prefix('v1')->group(function () {
 			Route::post('logout', 'AuthController@logout');
 
 			//Route::resource('users', 'UserController');
+			Route::resource('users', 'UserController');
+			Route::resource('banks', 'BankController');
+			Route::resource('packages', 'PackageController');
+			Route::resource('bankdetails', 'BankDetailController');
+			Route::resource('packageusers', 'PackageUserController');
+			Route::resource('portfolios', 'PortfolioController');
+			Route::resource('transactions', 'TransactionController');
+			Route::resource('withdrawals', 'WithdrawalController');
+			Route::get('subscribe/{transaction}', 'PackageUserController@confirmSubscription');
+			Route::get('confirm_withdrawal/{withdrawal}', 'WithdrawalController@confirmWithdrawal');
 
 		});
 	});

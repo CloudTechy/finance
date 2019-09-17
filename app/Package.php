@@ -12,7 +12,7 @@ class Package extends Model {
 		return $this->belongsTo(portfolio::class);
 	}
 	public function users() {
-		return $this->belongsToMany(User::class)->withPivot('id', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
+		return $this->belongsToMany(User::class)->withPivot('id', 'transaction_id', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
 
 	}
 

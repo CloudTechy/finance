@@ -31,7 +31,7 @@ class AuthController extends Controller {
 			$validated['password'] = bcrypt($validated['password']);
 			$data = User::create($validated);
 			DB::commit();
-			return Helper::validRequest(new UserResource($data), 'data was sent successfully', 200);
+			return response()->json(['status' => 'success'], 200);
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
@@ -47,9 +47,9 @@ class AuthController extends Controller {
 		{
 			$credentials = $request->only('email', 'password');
 			if ($token = $this->guard()->attempt($credentials)) {
-				return Helper::validRequest($token, 'Login successful', 200);
+				return response()->json(['status' => 'success'], 200)->header('Authorization', $token);
 			} else {
-				return Helper::invalidRequest(['error' => 'login_error'], 'Authentication error', 401);
+				return Helper::invalidRequest(['error' => 'login error'], 'Authentication error', 401);
 			}
 
 		} catch (Exception $bug) {
@@ -65,7 +65,10 @@ class AuthController extends Controller {
 		try
 		{
 			$logout = $this->guard()->logout();
-			return Helper::validRequest(["success" => $logout], 'Logged out Successfully', 200);
+			return response()->json([
+				'status' => 'success',
+				'msg' => 'Logged out Successfully.',
+			], 200);
 
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
@@ -79,7 +82,10 @@ class AuthController extends Controller {
 		try
 		{
 			$user = User::find(Auth::user()->id);
-			return Helper::validRequest(new UserResource($user), 'user fetched Successfully', 200);
+			return response()->json([
+				'status' => 'success',
+				'data' => new UserResource($user),
+			]);
 
 		} catch (Exception $bug) {
 			return $this->exception($bug, 'unknown error', 500);
@@ -94,7 +100,9 @@ class AuthController extends Controller {
 		try
 		{
 			if ($token = $this->guard()->refresh()) {
-				return Helper::validRequest($token, 'Login successful', 200);
+				return response()
+					->json(['status' => 'successs'], 200)
+					->header('Authorization', $token);
 			} else {
 				return Helper::inValidRequest(['error' => 'refresh_token_error'], 'Authentication error', 401);
 			}
