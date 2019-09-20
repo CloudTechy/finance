@@ -1,15 +1,87 @@
 <template>
-    <div class="container">
-        <div class="card card-default">
-            <div class="card-header">About</div>
-            <div class="card-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt amet tempora sint dolor nam quam quos inventore odio hic, enim beatae nulla in tenetur odit natus facere voluptas excepturi deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sit eligendi rem et minus dolor hic, placeat eum sequi ipsa, debitis ex magni. Hic laudantium consectetur aliquid eos fuga cumque.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt amet tempora sint dolor nam quam quos inventore odio hic, enim beatae nulla in tenetur odit natus facere voluptas excepturi deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sit eligendi rem et minus dolor hic, placeat eum sequi ipsa, debitis ex magni. Hic laudantium consectetur aliquid eos fuga cumque.
-                </p>
+    <div>
+        <div class="row page-title m-3 p-2">
+            <div class="col-12 col-lg-8 container">
+                <h1>About Us</h1>
+                <p>Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
             </div>
         </div>
+        <!--start main container-->
+        <section class="main-container">
+            <div class="main">
+                <div class="container">
+                    <div class="wrapper" :style="'background:url('+ $root.basepath +'img/about-us-wrap.png) no-repeat 0 0;'">
+                        <div class="row company">
+                            <div class="col-md-7 col-11 m-2 p-2 company-profile">
+                                <h2 class="company-title">Our Company</h2>
+                                <p class="sub-title ">Read on to know more about Bfin Financial Services Limited.</p>
+                                <p class="text-justify">BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors. Experts of Bfin Financial Services Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent.
+                                </p>
+                                <p style="margin-bottom:0;">We are fully regulated by the Financial Industry Regulatory Authority (FINRA) and registred with the US Securities and Exchange Commision (SEC. https://brokercheck.finra.org/firm/summary/282643). </p>
+                            </div>
+                            <div class="services">
+                                <ul class="row">
+                                    <li class="col col-md-6 text-center">
+                                        <div class="inner-s">
+                                            <img class="centered-img" :src="$root.basepath + '/img/key-1.png'">
+                                            <h4>High growth &amp; substantial returns</h4>
+                                            <p>Bfin Financial Services Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
+                                        </div>
+                                    </li>
+                                    <li class="col col-md-6 text-center">
+                                        <div class="inner-s">
+                                            <img class="centered-img" :src="$root.basepath + '/img/key-2.png'">
+                                            <h4>Outstanding 14% affiliate commission</h4>
+                                            <p>Earn splendid five level affiliate commission by referring others. Make us popular &amp; we will make you rich!</p>
+                                        </div>
+                                    </li>
+                                    <li class="col col-md-6 text-center">
+                                        <div class="inner-s">
+                                            <img class="centered-img" :src="$root.basepath + '/img/key-3.png'">
+                                            <h4>Strong Anti-Ddos protection</h4>
+                                            <p>Our company has robust security measures with a tough layer of defense to stop attacks of all types and sizes.</p>
+                                        </div>
+                                    </li>
+                                    <li class="col col-md-6 text-center">
+                                        <div class="inner-s">
+                                            <img class="centered-img" :src="$root.basepath + '/img/key-4.png'">
+                                            <h4>Registered Company</h4>
+                                            <p>Bfin Financial Services is fully registered in United States.</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="big-video" style="position:relative;">
+                                <img class="img-responsive" style="width:100%;" :src="$root.basepath + '/img/screen-big.png'">
+                                <div class="video-youtube" style="top:40px; left:40px;">
+                                    <iframe width="798" height="498" frameborder="0" allowfullscreen=""></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                    </a>
+                </div>
+                </a>
+            </div>
+        </section>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            email: null,
+            password: null,
+            success: false,
+            has_error: false,
+            error: ''
+        }
+    },
+    mounted() {
+        //
+    },
+    methods: {}
+}
+
+</script>

@@ -1,24 +1,23 @@
 <template>
-    <div id="main">
-        <header id="header">
-            <Menu></Menu>
-        </header>
-        <div id="content">
-            <router-view></router-view>
-        </div>
+    <div class="" style="min-width: 100vw">
+        <Header></Header>
+        <router-view style="min-height: 250px; position: relative;"></router-view>
+        <Footer></Footer>
     </div>
 </template>
 <script>
-  import Menu from './components/Menu.vue'
-
-  export default {
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+export default {
     data() {
-      return {
-        //
-      }
+        return {
+            //
+        }
     },
     components: {
-      Menu,
+        Header,
+        Footer,
     }
-  }
+}
+
 </script>
