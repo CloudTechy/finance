@@ -54758,630 +54758,592 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
-              _c("div", { staticClass: "row company" }, [
-                _c("div", { staticClass: "m-1 p-3  partners-container" }, [
-                  _c("h2", { staticClass: "company-title" }, [
-                    _vm._v("Our Company")
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "m-0" }, [
-                    _vm._v(
-                      "Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume- Bitcoins."
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "p",
-                    { staticClass: "m-0" },
-                    [
-                      _vm._v(
-                        "BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors."
-                      ),
-                      _c(
-                        "router-link",
-                        {
-                          staticClass: "btn btn-link",
-                          staticStyle: {
-                            display: "inline",
-                            "line-height": "20px",
-                            "font-size": "13px",
-                            color: "#b7b7b7",
-                            "font-family": "'Montserrat'",
-                            "text-transform": "uppercase"
-                          },
-                          attrs: { to: "/about" }
-                        },
-                        [_vm._v("Read More")]
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "services mt-3" }, [
-                    _c("ul", { staticClass: "row" }, [
-                      _c("li", { staticClass: "col text-center" }, [
-                        _c("div", { staticClass: "inner-s" }, [
-                          _c("img", {
-                            staticClass: "centered-img",
-                            attrs: {
-                              src: _vm.$root.basepath + "/img/key-1.png"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", [
-                            _vm._v("High growth & substantial returns")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Bfin Financial Services Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "col text-center" }, [
-                        _c("div", { staticClass: "inner-s" }, [
-                          _c("img", {
-                            staticClass: "centered-img",
-                            attrs: {
-                              src: _vm.$root.basepath + "/img/key-2.png"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", [
-                            _vm._v("Outstanding 14% affiliate commission")
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Earn splendid five level affiliate commission by referring others. Make us popular & we will make you rich!"
-                            )
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "col text-center" }, [
-                        _c("div", { staticClass: "inner-s" }, [
-                          _c("img", {
-                            staticClass: "centered-img",
-                            attrs: {
-                              src: _vm.$root.basepath + "/img/key-4.png"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("h4", [_vm._v("Registered Company")]),
-                          _vm._v(" "),
-                          _c("p", [
-                            _vm._v(
-                              "Bfin Financial Services is fully registered in United States."
-                            )
-                          ])
-                        ])
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: " mt-4 pt-4  partners-container" }, [
-                    _c("h2", { staticClass: "company-title" }, [
-                      _vm._v("Our Investment Plans")
-                    ]),
-                    _vm._v(" "),
-                    _c(
-                      "p",
-                      {},
-                      [
-                        _vm._v(
-                          "Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios."
-                        ),
-                        _c("br"),
-                        _vm._v(
-                          "\n                                    Bronze account features:\n                                    Deposit: $20 - $150\n                                    Up to 5% R.O.I in 72 Hours minimum\n                                    Eligibility: A New User Can Only Use This Plan Twice\n                                    No Referral Commission\n                                    "
-                        ),
-                        _c("br"),
-                        _vm._v(
-                          " Silver account features:\n                                    Deposit: $200 - $2,000\n                                    Up to 20%\n                                    30 Days minimum turnover\n                                    5% One time Referral Commission\n                                    "
-                        ),
-                        _c("br"),
-                        _vm._v(
-                          " Gold account features:\n                                    Deposit: $5,000 - $30,000\n                                    Up to 40%\n                                    30 Days turnover\n                                    10% Referral Commission to the 5th chain\n                                    "
-                        ),
-                        _c("br"),
-                        _vm._v(
-                          " Platinum account features:\n                                    Deposit: $60,000 - $200,000\n                                    Upto 60%\n                                    14 days turnover\n                                    10% Referral Commission to the 10th chain."
-                        ),
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "btn btn-link",
-                            staticStyle: {
-                              display: "inline",
-                              "line-height": "20px",
-                              "font-size": "13px",
-                              color: "#b7b7b7",
-                              "font-family": "'Montserrat'",
-                              "text-transform": "uppercase"
-                            },
-                            attrs: { to: "/investmentPlans" }
-                          },
-                          [_vm._v("Read More")]
-                        )
-                      ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row mb-3 inv-plans" }, [
-                    _c("div", { staticClass: "col m-3 alpha omega" }, [
-                      _c("div", { staticClass: "plan-wrap first" }, [
-                        _vm._m(0),
-                        _vm._v(" "),
-                        _vm._m(1),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "inv-button" },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "btn btn-inverse",
-                                attrs: { to: "/user/dashboard/deposit" }
-                              },
-                              [_vm._v("Make Investment")]
-                            )
-                          ],
-                          1
-                        )
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col  mt-4 alpha omega" }, [
-                      _c("div", { staticClass: "plan-wrap first" }, [
-                        _vm._m(2),
-                        _vm._v(" "),
-                        _vm._m(3),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          { staticClass: "inv-button" },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "btn btn-inverse",
-                                attrs: { to: "/user/dashboard/deposit" }
-                              },
-                              [_vm._v("Make Investment")]
-                            )
-                          ],
-                          1
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "ml-0 mt-5 pt-5 get-started" }, [
-                    _c("h1", { staticClass: "company-title" }, [
-                      _vm._v("How To Get Started")
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticClass: "p-2" }, [
-                      _vm._v(
-                        "To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("ul", [
-                      _vm._m(4),
-                      _vm._v(" "),
-                      _vm._m(5),
-                      _vm._v(" "),
-                      _c("li", [
-                        _vm._m(6),
-                        _vm._v(" "),
-                        _c(
-                          "p",
-                          [
-                            _vm._v(
-                              "Normally Bitcoin deposit is active after 3 confirmations. 3 confirmations from the Bitcoin network take approximately 30 minutes - 1 hour or maybe it can long which depends on bitcoin network. Once the Bitcoin deposit is confirmed it will show in your active deposit according to your subscription plan."
-                            ),
-                            _c(
-                              "router-link",
-                              {
-                                staticClass: "btn btn-link",
-                                staticStyle: {
-                                  display: "inline",
-                                  "line-height": "20px",
-                                  "font-size": "13px",
-                                  color: "#b7b7b7",
-                                  "font-family": "'Montserrat'",
-                                  "text-transform": "uppercase"
-                                },
-                                attrs: { to: "/getstarted" }
-                              },
-                              [_vm._v("Read More")]
-                            )
-                          ],
-                          1
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "m-1 mt-4 pt-5 partners-container" },
-                    [
-                      _c("h1", { staticClass: "company-title" }, [
-                        _vm._v("Our Affiliate Program")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "p",
-                        [
-                          _vm._v(
-                            "If you want passive earning of substantial sums refer quickly to all about Bfin Financial Services Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
-                          ),
-                          _c(
-                            "router-link",
-                            {
-                              staticClass: "btn btn-link",
-                              staticStyle: {
-                                display: "inline",
-                                "line-height": "20px",
-                                "font-size": "13px",
-                                color: "#b7b7b7",
-                                "font-family": "'Montserrat'",
-                                "text-transform": "uppercase"
-                              },
-                              attrs: { to: "/partners" }
-                            },
-                            [_vm._v("Read More")]
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c("h5", { staticClass: "slogan text-center" }, [
-                        _vm._v(
-                          "Enjoy exceptional upto 14% five levels deep affiliate system structure in Bfin Financial Services Limited."
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "partners-img clearfix" }, [
-                        _c("img", {
-                          attrs: {
-                            src: _vm.$root.basepath + "/img/percentages.png"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("img", {
-                          attrs: {
-                            src: _vm.$root.basepath + "/img/partners.png"
-                          }
-                        })
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(7),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "data-map" }, [
-                    _c("img", {
-                      staticClass: "img-responsive",
-                      attrs: { src: _vm.$root.basepath + "/img/map.png" }
-                    }),
-                    _vm._v(" "),
-                    _vm._m(8),
-                    _vm._v(" "),
-                    _vm._m(9),
-                    _vm._v(" "),
-                    _vm._m(10),
-                    _vm._v(" "),
-                    _vm._m(11)
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "data-center-services" }, [
-                    _c("h2", { staticClass: "text-center" }, [
-                      _vm._v(
-                        "Highest standards on all data center facility aspects"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "row" }, [
-                      _c("div", { staticClass: "column col dcs" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/dcs-1.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("Highly available network")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Bfin Financial Services Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on."
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "column col dcs" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/dcs-2.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("Redundant electrical systems")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "In our datacenters redundancy or duplication of critical electrical system components increases reliability of the system, usually in the form of a backup or fail-safe, or to improve actual system performance which supports mining constancy."
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "column col dcs" }, [
-                        _c("img", {
-                          staticClass: "centered-img",
-                          attrs: { src: _vm.$root.basepath + "/img/dcs-3.png" }
-                        }),
-                        _vm._v(" "),
-                        _c("h4", [_vm._v("High-end physical security")]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "We make sure the datacenters are safe with installation of surveillance cameras , biometric identification of staff & use of access cards. All these are necessary to secure our datacenters from intrusions & threats."
-                          )
-                        ])
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]
-          )
-        ])
-      ])
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "plan-sticker" }, [
-      _c("div", { staticClass: "plan-inner" }, [
-        _c("div", { staticClass: "plan-in" }, [
-          _c("h3", [_vm._v("5%")]),
-          _vm._v(" "),
-          _c("p", [_vm._v("72"), _c("span", [_vm._v(" hours turnover")])])
+    return _c("div", [
+      _c("section", { staticClass: "main-container" }, [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass: "wrapper",
+                staticStyle: {
+                  background:
+                    'url("http://localhost:8000/img/home.png") 0px 0px no-repeat'
+                }
+              },
+              [
+                _c("div", { staticClass: "row company" }, [
+                  _c("div", { staticClass: " col p-3 partners-container" }, [
+                    _c("h2", { staticClass: "company-title" }, [
+                      _vm._v("Our Company")
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "m-0" }, [
+                      _vm._v(
+                        "Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume- Bitcoins."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "m-0" }, [
+                      _vm._v(
+                        "BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors."
+                      ),
+                      _c(
+                        "a",
+                        {
+                          staticClass: "btn btn-link",
+                          staticStyle: {
+                            display: "inline",
+                            "line-height": "20px",
+                            "font-size": "13px",
+                            color: "rgb(183, 183, 183)",
+                            "font-family": "Montserrat",
+                            "text-transform": "uppercase"
+                          },
+                          attrs: { href: "/about" }
+                        },
+                        [_vm._v("Read More")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "services mt-3" }, [
+                      _c("ul", { staticClass: "row" }, [
+                        _c("li", { staticClass: "col text-center" }, [
+                          _c("div", { staticClass: "inner-s" }, [
+                            _c("img", {
+                              staticClass: "centered-img",
+                              attrs: {
+                                src: "http://localhost:8000/img/key-1.png"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("h4", [
+                              _vm._v("High growth & substantial returns")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Bfin Financial Services Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "col text-center" }, [
+                          _c("div", { staticClass: "inner-s" }, [
+                            _c("img", {
+                              staticClass: "centered-img",
+                              attrs: {
+                                src: "http://localhost:8000/img/key-2.png"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("h4", [
+                              _vm._v("Outstanding 14% affiliate commission")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Earn splendid five level affiliate commission by referring others. Make us popular & we will make you rich!"
+                              )
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "col text-center" }, [
+                          _c("div", { staticClass: "inner-s" }, [
+                            _c("img", {
+                              staticClass: "centered-img",
+                              attrs: {
+                                src: "http://localhost:8000/img/key-4.png"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("h4", [_vm._v("Registered Company")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Bfin Financial Services is fully registered in United States."
+                              )
+                            ])
+                          ])
+                        ])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: " m-0 p-0 mt-4 pt-4  partners-container" },
+                      [
+                        _c("h2", { staticClass: "company-title" }, [
+                          _vm._v("Our Investment Plans")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios."
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            "\n                                    Bronze account features:\n                                    Deposit: $20 - $150\n                                    Up to 5% R.O.I in 72 Hours minimum\n                                    Eligibility: A New User Can Only Use This Plan Twice\n                                    No Referral Commission\n                                    "
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            " Silver account features:\n                                    Deposit: $200 - $2,000\n                                    Up to 20%\n                                    30 Days minimum turnover\n                                    5% One time Referral Commission\n                                    "
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            " Gold account features:\n                                    Deposit: $5,000 - $30,000\n                                    Up to 40%\n                                    30 Days turnover\n                                    10% Referral Commission to the 5th chain\n                                    "
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            " Platinum account features:\n                                    Deposit: $60,000 - $200,000\n                                    Upto 60%\n                                    14 days turnover\n                                    10% Referral Commission to the 10th chain."
+                          ),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-link",
+                              staticStyle: {
+                                display: "inline",
+                                "line-height": "20px",
+                                "font-size": "13px",
+                                color: "rgb(183, 183, 183)",
+                                "font-family": "Montserrat",
+                                "text-transform": "uppercase"
+                              },
+                              attrs: { href: "/investmentPlans" }
+                            },
+                            [_vm._v("Read More")]
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "m-0 p-0 text-center justify-content-center row mb-3 inv-plans"
+                      },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "col m-md-3 m-1 alpha omega" },
+                          [
+                            _c("div", { staticClass: "col plan-wrap first" }, [
+                              _c("div", { staticClass: "plan-sticker" }, [
+                                _c("div", { staticClass: "plan-inner" }, [
+                                  _c("div", { staticClass: "plan-in" }, [
+                                    _c("h3", [_vm._v("5%")]),
+                                    _vm._v(" "),
+                                    _c("p", [
+                                      _vm._v("72"),
+                                      _c("span", [_vm._v(" hours turnover")])
+                                    ])
+                                  ])
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("ul", { staticClass: "plan-det" }, [
+                                _c("li", [
+                                  _c("i", {
+                                    staticClass: "fa fa-check",
+                                    attrs: { "aria-hidden": "true" }
+                                  }),
+                                  _vm._v(" 5% 72 hours turnover")
+                                ]),
+                                _vm._v(" "),
+                                _c("li", [
+                                  _c("i", {
+                                    staticClass: "fa fa-check",
+                                    attrs: { "aria-hidden": "true" }
+                                  }),
+                                  _vm._v(" Min: 20 USD - Max: 150 USD")
+                                ]),
+                                _vm._v(" "),
+                                _c("li", [
+                                  _c("i", {
+                                    staticClass: "fa fa-check",
+                                    attrs: { "aria-hidden": "true" }
+                                  }),
+                                  _vm._v(" instant withdraw")
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "inv-button" }, [
+                                _c(
+                                  "a",
+                                  {
+                                    staticClass: "btn btn-inverse",
+                                    attrs: { href: "/user/dashboard/deposit" }
+                                  },
+                                  [_vm._v("Make Investment")]
+                                )
+                              ])
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "col  mt-4 alpha omega" }, [
+                          _c("div", { staticClass: "col plan-wrap first" }, [
+                            _c("div", { staticClass: "plan-sticker" }, [
+                              _c("div", { staticClass: "plan-inner" }, [
+                                _c("div", { staticClass: "plan-in" }, [
+                                  _c("h3", [_vm._v("60%")]),
+                                  _vm._v(" "),
+                                  _c("p", [
+                                    _vm._v("30"),
+                                    _c("span", [_vm._v(" days turnover")])
+                                  ])
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("ul", { staticClass: "plan-det" }, [
+                              _c("li", [
+                                _c("i", {
+                                  staticClass: "fa fa-check",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" 60% 14 days turnover")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("i", {
+                                  staticClass: "fa fa-check",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" Min: 60,000 USD - Max: 200,000")
+                              ]),
+                              _vm._v(" "),
+                              _c("li", [
+                                _c("i", {
+                                  staticClass: "fa fa-check",
+                                  attrs: { "aria-hidden": "true" }
+                                }),
+                                _vm._v(" instant withdraw")
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "inv-button" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "btn btn-inverse",
+                                  attrs: { href: "/user/dashboard/deposit" }
+                                },
+                                [_vm._v("Make Investment")]
+                              )
+                            ])
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "ml-0 m-0 p-0 mt-5 pt-5 get-started" },
+                      [
+                        _c("h1", { staticClass: "company-title" }, [
+                          _vm._v("How To Get Started")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", { staticClass: "p-2" }, [
+                          _vm._v(
+                            "To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("ul", [
+                          _c("li", [
+                            _c("h3", [
+                              _c("span", [_vm._v("Step 1: ")]),
+                              _vm._v("Account Registration")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Start by filling in required fields of the application form on the ‘Register’ page. Submit your registration. After that you will be able to log into your account and make your first investment."
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("h3", [
+                              _c("span", [_vm._v("Step 2: ")]),
+                              _vm._v("Creating Deposit")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bfin Financial Services Limited just click on ‘Make a deposit‘ link. "
+                              )
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c("h3", [
+                              _c("span", [_vm._v("Step 3: ")]),
+                              _vm._v("Wait for the deposit transfer")
+                            ]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v(
+                                "Normally Bitcoin deposit is active after 3 confirmations. 3 confirmations from the Bitcoin network take approximately 30 minutes - 1 hour or maybe it can long which depends on bitcoin network. Once the Bitcoin deposit is confirmed it will show in your active deposit according to your subscription plan."
+                              ),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "btn btn-link",
+                                  staticStyle: {
+                                    display: "inline",
+                                    "line-height": "20px",
+                                    "font-size": "13px",
+                                    color: "rgb(183, 183, 183)",
+                                    "font-family": "Montserrat",
+                                    "text-transform": "uppercase"
+                                  },
+                                  attrs: { href: "/getstarted" }
+                                },
+                                [_vm._v("Read More")]
+                              )
+                            ])
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "m-1 mt-4 pt-5 m-0 p-0 partners-container"
+                      },
+                      [
+                        _c("h1", { staticClass: "company-title" }, [
+                          _vm._v("Our Affiliate Program")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "If you want passive earning of substantial sums refer quickly to all about Bfin Financial Services Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
+                          ),
+                          _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-link",
+                              staticStyle: {
+                                display: "inline",
+                                "line-height": "20px",
+                                "font-size": "13px",
+                                color: "rgb(183, 183, 183)",
+                                "font-family": "Montserrat",
+                                "text-transform": "uppercase"
+                              },
+                              attrs: { href: "/partners" }
+                            },
+                            [_vm._v("Read More")]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("h5", { staticClass: "slogan text-center" }, [
+                          _vm._v(
+                            "Enjoy exceptional upto 14% five levels deep affiliate system structure in Bfin Financial Services Limited."
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "partners-img clearfix" }, [
+                          _c("img", {
+                            attrs: {
+                              src: "http://localhost:8000/img/percentages.png"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("img", {
+                            attrs: {
+                              src: "http://localhost:8000/img/partners.png"
+                            }
+                          })
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "page-heading m-0 p-0 mt-4 pt-4  partners-container "
+                      },
+                      [
+                        _c("h2", { staticClass: "company-title" }, [
+                          _vm._v("Our Data Center Locations")
+                        ]),
+                        _vm._v(" "),
+                        _c("p", [
+                          _vm._v(
+                            "Our powerful datacenters are the backbone of our profitable mining system of Bitcoins. Our business typically relies heavily upon these data centers, making it a focal point and critical asset for everyday mining operations."
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "data-map" }, [
+                      _c("img", {
+                        staticClass: "img-responsive",
+                        attrs: { src: "http://localhost:8000/img/map.png" }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "info one",
+                          staticStyle: { top: "50px", left: "400px" }
+                        },
+                        [
+                          _c("span", { staticClass: "map-marker" }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "center-detail" }, [
+                            _c("h5", { staticClass: "city" }, [
+                              _vm._v("Amsterdam")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "rates" })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "info one",
+                          staticStyle: { top: "60px", left: "357px" }
+                        },
+                        [
+                          _c("span", { staticClass: "map-marker" }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "center-detail" }, [
+                            _c("h5", { staticClass: "city" }, [
+                              _vm._v("Iceland")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "rates" })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "info one",
+                          staticStyle: { top: "60px", left: "134px" }
+                        },
+                        [
+                          _c("span", { staticClass: "map-marker" }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "center-detail" }, [
+                            _c("h5", { staticClass: "city" }, [
+                              _vm._v("Estonia")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "rates" })
+                          ])
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "info one",
+                          staticStyle: { top: "210px", right: "169px" }
+                        },
+                        [
+                          _c("span", { staticClass: "map-marker" }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "center-detail" }, [
+                            _c("h5", { staticClass: "city" }, [
+                              _vm._v("Singapore")
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "rates" })
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "data-center-services" }, [
+                      _c("h2", { staticClass: "text-center" }, [
+                        _vm._v(
+                          "Highest standards on all data center facility aspects"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "column col dcs" }, [
+                          _c("img", {
+                            staticClass: "centered-img",
+                            attrs: {
+                              src: "http://localhost:8000/img/dcs-1.png"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("h4", [_vm._v("Highly available network")]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "Bfin Financial Services Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "column col dcs" }, [
+                          _c("img", {
+                            staticClass: "centered-img",
+                            attrs: {
+                              src: "http://localhost:8000/img/dcs-2.png"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("h4", [_vm._v("Redundant electrical systems")]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "In our datacenters redundancy or duplication of critical electrical system components increases reliability of the system, usually in the form of a backup or fail-safe, or to improve actual system performance which supports mining constancy."
+                            )
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "column col dcs" }, [
+                          _c("img", {
+                            staticClass: "centered-img",
+                            attrs: {
+                              src: "http://localhost:8000/img/dcs-3.png"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("h4", [_vm._v("High-end physical security")]),
+                          _vm._v(" "),
+                          _c("p", [
+                            _vm._v(
+                              "We make sure the datacenters are safe with installation of surveillance cameras , biometric identification of staff & use of access cards. All these are necessary to secure our datacenters from intrusions & threats."
+                            )
+                          ])
+                        ])
+                      ])
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
         ])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "plan-det" }, [
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" 5% 72 hours turnover")
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" Min: 20 USD - Max: 150 USD")
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" instant withdraw")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "plan-sticker" }, [
-      _c("div", { staticClass: "plan-inner" }, [
-        _c("div", { staticClass: "plan-in" }, [
-          _c("h3", [_vm._v("60%")]),
-          _vm._v(" "),
-          _c("p", [_vm._v("30"), _c("span", [_vm._v(" days turnover")])])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "plan-det" }, [
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" 60% 14 days turnover")
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" Min: 60,000 USD - Max: 200,000")
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" instant withdraw")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("h3", [
-        _c("span", [_vm._v("Step 1: ")]),
-        _vm._v("Account Registration")
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "Start by filling in required fields of the application form on the ‘Register’ page. Submit your registration. After that you will be able to log into your account and make your first investment."
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", [
-      _c("h3", [_c("span", [_vm._v("Step 2: ")]), _vm._v("Creating Deposit")]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bfin Financial Services Limited just click on ‘Make a deposit‘ link. "
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h3", [
-      _c("span", [_vm._v("Step 3: ")]),
-      _vm._v("Wait for the deposit transfer")
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "page-heading  mt-4 pt-4  partners-container " },
-      [
-        _c("h2", { staticClass: "company-title" }, [
-          _vm._v("Our Data Center Locations")
-        ]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Our powerful datacenters are the backbone of our profitable mining system of Bitcoins. Our business typically relies heavily upon these data centers, making it a focal point and critical asset for everyday mining operations."
-          )
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "info one", staticStyle: { top: "50px", left: "400px" } },
-      [
-        _c("span", { staticClass: "map-marker" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "center-detail" }, [
-          _c("h5", { staticClass: "city" }, [_vm._v("Amsterdam")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "rates" })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "info one", staticStyle: { top: "60px", left: "357px" } },
-      [
-        _c("span", { staticClass: "map-marker" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "center-detail" }, [
-          _c("h5", { staticClass: "city" }, [_vm._v("Iceland")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "rates" })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "info one", staticStyle: { top: "60px", left: "134px" } },
-      [
-        _c("span", { staticClass: "map-marker" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "center-detail" }, [
-          _c("h5", { staticClass: "city" }, [_vm._v("Estonia")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "rates" })
-        ])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "info one",
-        staticStyle: { top: "210px", right: "169px" }
-      },
-      [
-        _c("span", { staticClass: "map-marker" }),
-        _vm._v(" "),
-        _c("div", { staticClass: "center-detail" }, [
-          _c("h5", { staticClass: "city" }, [_vm._v("Singapore")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "rates" })
-        ])
-      ]
-    )
   }
 ]
 render._withStripped = true
