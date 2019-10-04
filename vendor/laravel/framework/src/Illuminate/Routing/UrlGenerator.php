@@ -360,7 +360,6 @@ class UrlGenerator implements UrlGeneratorContract
         $original = rtrim($url.'?'.Arr::query(
             Arr::except($request->query(), 'signature')
         ), '?');
-
         $expires = $request->query('expires');
 
         $signature = hash_hmac('sha256', $original, call_user_func($this->keyResolver));

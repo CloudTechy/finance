@@ -9,10 +9,10 @@ class Package extends Model {
 	protected $fillable = ['portfolio_id', 'name', 'interest_rate', 'deposit', 'duration', 'referral_commission'];
 
 	public function portfolio() {
-		return $this->belongsTo(portfolio::class);
+		return $this->belongsTo(Portfolio::class);
 	}
 	public function users() {
-		return $this->belongsToMany(User::class)->withPivot('id', 'transaction_id', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
+		return $this->belongsToMany(User::class)->withPivot('id', 'transaction_id', 'referral', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
 
 	}
 

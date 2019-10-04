@@ -30,6 +30,7 @@ class AuthController extends Controller {
 		{
 			$validated['password'] = bcrypt($validated['password']);
 			$data = User::create($validated);
+			$data->sendEmailVerificationNotification();
 			DB::commit();
 			return response()->json(['status' => 'success'], 200);
 		} catch (Exception $bug) {
@@ -104,11 +105,11 @@ class AuthController extends Controller {
 					->json(['status' => 'successs'], 200)
 					->header('Authorization', $token);
 			} else {
-				return Helper::inValidRequest(['error' => 'refresh_token_error'], 'Authentication error', 401);
+				return Helper::invalidRequest(['error' => 'refresh_token_error'], 'Authentication error', 401);
 			}
 
 		} catch (Exception $bug) {
-			return $this->exception($bug, 'unknown error', 500);
+			return $this->exception($bug, 'unknown error', 401);
 		}
 	}
 
@@ -120,7 +121,18 @@ class AuthController extends Controller {
 	}
 
 	function sendPasswordResetLink(Request $request) {
-		return $this->sendResetLinkEmail($request);
+		$validated = $request->validate([
+			'email' => 'required|email|exists:users,email',
+		]);
+		try
+		{
+			$req = new Request($validated);
+			return $this->sendResetLinkEmail($req);
+
+		} catch (Exception $bug) {
+			return $this->exception($bug, 'Unknown error', 500);
+		}
+
 	}
 	function sendResetLinkResponse(Request $request, $response) {
 		try
@@ -133,7 +145,7 @@ class AuthController extends Controller {
 
 	}
 	function sendResetLinkFailedResponse(Request $request, $response) {
-		return Helper::inValidRequest(['error' => 'Email failed to send'], 'Email could not be sent to this email address.', 401);
+		return Helper::invalidRequest(['error' => 'Email failed to send'], 'Email could not be sent to this email address.', 401);
 	}
 	function callResetPassword(Request $request) {
 		return $this->reset($request);
@@ -148,6 +160,6 @@ class AuthController extends Controller {
 		return Helper::validRequest(['success' => 'password reset success'], 'Password reset successfully.', 200);
 	}
 	function sendResetFailedResponse(Request $request, $response) {
-		return Helper::inValidRequest(['error' => 'Token is Invalid'], 'Failed, Invalid Token.', 401);
+		return Helper::invalidRequest(['error' => 'Token is Invalid'], 'Failed, Invalid Token.', 401);
 	}
 }

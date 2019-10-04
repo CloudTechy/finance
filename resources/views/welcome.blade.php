@@ -8,9 +8,9 @@
 
     <title>Bfin Financial Services</title>
 
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Bfinetwork shares is a community of dedicated investors that wants to make a steady extra income. we deal extensively on Bitcoin">
+    <meta name="keywords" content="Bfinetwork, Shares, Finance, Bitcoin, Investment">
+    <meta name="author" content="Bfinetwork ICT Team">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Fonts -->
@@ -18,19 +18,19 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-  <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
+  <!-- <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
   <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}"> -->
   <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
   <!-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> -->
-  <link rel="stylesheet" href="{{ asset('css/fancybox.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/skeleton.css') }}">
+ <!--  <link rel="stylesheet" href="{{ asset('css/fancybox.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/skeleton.css') }}"> -->
 
 
 </head>
 <body>
-  <div id="app">
+  <div id="app" style="width: 100vw; padding: 0px; margin: auto; overflow: hidden; box-sizing: border-box;">
     <index></index>
   </div>
   <!-- Scripts -->

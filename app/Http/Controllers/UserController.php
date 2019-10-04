@@ -56,6 +56,7 @@ class UserController extends Controller {
 		{
 			$validated['password'] = bcrypt($validated['password']);
 			$data = User::create($validated);
+			$data->sendEmailVerificationNotification();
 			DB::commit();
 			return Helper::validRequest(new UserResource($data), 'data was sent successfully', 200);
 		} catch (Exception $bug) {
@@ -103,11 +104,17 @@ class UserController extends Controller {
 			'last_name' => 'min:2|string|max:255',
 			'wallet' => 'nullable|string',
 			'pm' => 'nullable|string',
-			"number" => "nullable|string|min:5|max:255|unique:users,number",
-			"email" => "email|unique:users,email",
-			'password' => 'string|min:5',
+			'admin_wallet' => 'nullable|string',
+			'admin_pm' => 'nullable|string',
+			"number" => "string|min:5|max:255",
+			"email" => "email",
+			'password' => 'string|min:5|confirmed',
+			'user_level_id' => 'integer',
 		]);
 		try {
+			if (isset($validated['password'])) {
+				$validated['password'] = bcrypt($validated['password']);
+			}
 			$data = $user->update($validated);
 			DB::commit();
 			return Helper::validRequest(["success" => $data], 'Updated successfully', 200);

@@ -1,5 +1,5 @@
 <template>
-    <nav class="nav navbar navbar-expand-md bg-dark navbar-dark ">
+    <nav class="nav navbar navbar-expand-md bg-dark navbar-dark" :style="'background:url('+ $root.basepath +'/img/flower.jpg) no-repeat 0 0;'">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon "></span>
         </button>
@@ -15,7 +15,7 @@
                     <router-link to="/getstarted">getstarted</router-link>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
-                    <router-link to="https://t.me/bfinofficial">Channel link</router-link>
+                    <a href="https://t.me/bfinofficial">Channel link</a>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
                     <router-link to="/investmentPlans">Investment plans</router-link>
@@ -30,10 +30,10 @@
                     <a href="https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/BFIN_FINANCIAL_SERVICES">Company Certificate</a>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
-                    <router-link to="/News">News</router-link>
+                    <router-link to="/news">News</router-link>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
-                    <router-link to="/Support">Support</router-link>
+                    <router-link to="/support">Support</router-link>
                 </li>
             </ul>
         </div>

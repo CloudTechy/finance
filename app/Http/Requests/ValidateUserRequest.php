@@ -24,6 +24,8 @@ class ValidateUserRequest extends FormRequest {
 			'first_name' => 'required|min:2|string|max:255',
 			'last_name' => 'required|min:2|string|max:255',
 			'username' => 'required|min:2|string|max:255|unique:users,username',
+			"email" => "email|required|confirmed|unique:users,email",
+			'password' => 'required|string|confirmed|min:5',
 			'wallet' => 'nullable|string',
 			'pm' => 'nullable|string',
 			'secret_question' => 'nullable|string',
@@ -32,9 +34,7 @@ class ValidateUserRequest extends FormRequest {
 			'admin_pm' => 'nullable|string',
 			'ip' => 'nullable|string',
 			'referral' => 'nullable|string',
-			"number" => "required|nullable|string|min:5|max:255|unique:users,number",
-			"email" => "email|required|unique:users,email",
-			'password' => 'required|string|confirmed|min:5',
+			"number" => "nullable|string|min:5|max:255|unique:users,number",
 			'user_level_id' => 'required|numeric|exists:user_levels,id',
 		];
 	}

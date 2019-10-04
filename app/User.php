@@ -4,22 +4,33 @@ namespace App;
 
 use App\Helper;
 use App\Notifications\TransactionMade;
+use App\Notifications\WelcomeEmailSent;
 use App\Transaction;
 use Carbon\Carbon;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use \DB;
 
-class User extends Authenticatable implements JWTSubject {
+class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	use Notifiable;
 	protected $fillable = ['first_name', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 	protected $hidden = ['password', 'remember_token'];
 	protected $casts = ['email_verified_at' => 'datetime'];
-	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages');
+	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'totalEarned', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages');
 
 	public function getActiveTransactionsAttribute() {
 		return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', true)->sum('amount');
+	}
+	public function getTotalEarnedAttribute() {
+		return $this->confirmedTransactions->where('reference', 'BFIN')->sum('amount') + $this->confirmedTransactions->where('reference', 'BFIN commission')->sum('amount');
+		// + $this->confirmedTransactions->where('reference', 'BFIN commission')->sum('amount')
+		// return $this->confirmedTransactions->where(function ($query) {
+		// 	$query->where('reference', '=', 'BFIN' ->orWhere('reference', 'BFIN commission'));
+		// })->sum('amount');
+		return 500;
+
 	}
 	public function getActivePackagesAttribute() {
 		$activePackages = [];
@@ -54,10 +65,13 @@ class User extends Authenticatable implements JWTSubject {
 				$transaction->active = false;
 				$transaction->reference = 'BFIN';
 				if ($transaction->save()) {
-					$maturePackage->subscription->active = false;
-					$status = $maturePackage->subscription->save();
+					$maturePackage->subscription->update(['active' => false]);
+					$transaction->user->notify(new TransactionMade($transaction));
 					$transaction = Transaction::where('id', $maturePackage->subscription->transaction_id)->first();
-					$transaction->update(['active' => false]);
+					if (!empty($transaction)) {
+						$transaction->update(['active' => false]);
+					}
+
 				}
 
 				$transaction->user->notify(new TransactionMade($transaction));
@@ -107,7 +121,7 @@ class User extends Authenticatable implements JWTSubject {
 		$this->notify(new \App\Notifications\MailResetPasswordNotification($token));
 	}
 	public function packages() {
-		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
+		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'referral', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
 
 	}
 	public function userLevel() {
@@ -126,7 +140,9 @@ class User extends Authenticatable implements JWTSubject {
 
 		return $this->hasMany(BankDetail::class);
 	}
-
+	public function sendEmailVerificationNotification() {
+		$this->notify(new WelcomeEmailSent); // my notification
+	}
 	public function scopeFilter($query, $filter) {
 
 		try {

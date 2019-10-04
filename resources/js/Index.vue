@@ -1,7 +1,9 @@
 <template>
-    <div class="" style="min-width: 100vw">
-        <Header></Header>
-        <router-view style="min-height: 250px; position: relative;"></router-view>
+    <div class="" style="">
+        <Header class="p-0 m-0"></Header>
+        <div style="min-height: 370px;  hidden; position: relative;">
+            <router-view></router-view>
+        </div>
         <Footer></Footer>
     </div>
 </template>
@@ -17,7 +19,8 @@ export default {
     components: {
         Header,
         Footer,
-    }
+    },
+    
 }
 
 </script>

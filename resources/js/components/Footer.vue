@@ -1,9 +1,8 @@
 <template>
-    <footer>
+    <footer class="" style="width: inherit; overflow: hidden; box-sizing: border-box; ">
         <div class="footer-top">
-            <div class="container row"><a href="#" class="our-certi">
+            <div class="text-center justify-content-center container m-auto p-sm-4 p-3 row">
                     <span class="bitcoin-logo"><img :src="$root.basepath + '/img/bitcoin.png'"></span>
-                </a>
                 <ul class="footer-menu">
                     <li>
                         <router-link to="/">Home</router-link>

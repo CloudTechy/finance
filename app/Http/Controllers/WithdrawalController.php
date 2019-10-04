@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Helper;
 use App\Http\Requests\ValidateWithdrawalRequest;
 use App\Http\Resources\WithdrawalResource;
+use App\Notifications\WithdrawalMade;
 use App\Withdrawal;
 use Illuminate\Http\Request;
 use \DB;
@@ -57,7 +58,7 @@ class WithdrawalController extends Controller {
 				$data = Withdrawal::create($validated);
 				DB::commit();
 				$data = new WithdrawalResource($data);
-				return Helper::validRequest($data, 'Withdrawal request has been sent for processing', 200);
+				return Helper::validRequest($data, 'Withdrawal request has been sent for processing, You will be contacted shortly', 200);
 			} else {
 				return Helper::invalidRequest('Insufficient funds', 'Your account is low for this transaction', 400);
 			}
@@ -143,6 +144,7 @@ class WithdrawalController extends Controller {
 			if (auth()->user()->balance >= $withdrawal->amount) {
 				$data = $withdrawal->update(['confirmed' => true, 'processed' => true]);
 				DB::commit();
+				$withdrawal->user->notify(new WithdrawalMade($withdrawal));
 				return Helper::validRequest(["success" => $data], 'withdrawal confirmed successfully', 200);
 			} else {
 				return Helper::invalidRequest('Insufficient funds', 'Your account is low for this transaction', 400);

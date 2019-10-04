@@ -11,6 +11,11 @@ import jQuery from 'jquery'
 import bootstrap from 'bootstrap'
 import popper from 'popper.js'
 import moment from 'moment'
+import fontawesome from '@fortawesome/fontawesome-free'
+import Clipboard from 'v-clipboard'
+
+Vue.use(Clipboard)
+Vue.use(fontawesome)
 
 
 
@@ -23,9 +28,12 @@ Vue.router = router
 Vue.use(VueRouter)
 
 
+
+
+
 // Set Vue authentication
 Vue.use(VueAxios, axios)
-axios.defaults.baseURL = `./api/v1`
+axios.defaults.baseURL = basepath + '/api/v1'
 
 Vue.use(VueAuth, auth)
 window.numeral = require('numeral')
@@ -71,7 +79,9 @@ Vue.component('index', Index)
 const app = new Vue({
     data: {
         time: '',
-        rate:''
+        rate: '',
+        user: '',
+        ip: '',
     },
     el: '#app',
     router,
@@ -82,10 +92,18 @@ const app = new Vue({
     },
     created() {
         setInterval(this.timer, 1000)
-         if(localStorage.rate){
-                this.rate = JSON.parse(localStorage.rate) 
-            }
+        setInterval(this.refreshUser, 30000)
+        if (localStorage.rate) {
+            this.rate = JSON.parse(localStorage.rate)
+        }
+        if (localStorage.ip) {
+            this.ip = JSON.parse(localStorage.ip)
+        }
         this.btcRate()
+        this.getIp()
+
+
+
     },
     methods: {
         alert(type, title, message) {
@@ -100,6 +118,12 @@ const app = new Vue({
             })
         },
         numeral(value) {
+            if (typeof value == 'string') {
+                return value
+            }
+            return '$' + numeral(value).format('0,0.00')
+        },
+        normalNumeral(value) {
             return numeral(value).format('0,0.00')
         },
         myFilter(list, search) {
@@ -123,24 +147,54 @@ const app = new Vue({
             }
             return data;
         },
-        timer(){
+        filter(list, search) {
+            var data = [];
+            if (search) {
+                data = list.filter((item) => {
+                    return item.username.toLowerCase().includes(search.toLowerCase());
+                })
+            } else {
+                data = [];
+            }
+            return data;
+        },
+        scrollToTop(x = 0, y = 300) {
+            window.scrollTo(x, y);
+        },
+        timer() {
             this.time = moment().format("h:mm:ss a")
         },
-        btcRate(){
+        btcRate() {
             var form = new Form
             form.get("https://api.coindesk.com/v1/bpi/currentprice.json")
-            .then(response => {
-                console.log(response.data.bpi.USD.rate)
+                .then(response => {
+                    // console.log(response.data.bpi.USD.rate)
                     localStorage.rate = JSON.stringify(response.data.bpi.USD.rate)
-                    //https://api.blockcypher.com/v1/btc/main/addrs/1DEP8i3QJCsomS4BSMY2RpU1upv62aGvhD/balance
                 })
-                .catch( error => {
-                    // var error = error.response
+                .catch(error => {
                     console.log(error)
                 })
-        }
+        },
+        getIp() {
+            var form = new Form
+            form.get("https://api.ipify.org?format=json")
+                .then(response => {
+                    localStorage.ip = JSON.stringify(response.data.ip)
+                })
+                .catch(error => {
+                    console.log(error.response)
+                })
+        },
+        refreshUser() {
+            this.$auth.fetch({
+                params: {},
+                success: (response) => { this.user = this.$auth.user() },
+                error: (error) => {},
+            })
+        },
     },
     beforeDestroy() {
         clearInterval(this.timer)
-    }
+    },
+
 });

@@ -1,101 +1,207 @@
 <template>
-    <div class="container">
-        <div class="card card-default">
-            <div class="card-header">Home</div>
-            <div class="card-body">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt amet tempora sint dolor nam quam quos inventore odio hic, enim beatae nulla in tenetur odit natus facere voluptas excepturi deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sit eligendi rem et minus dolor hic, placeat eum sequi ipsa, debitis ex magni. Hic laudantium consectetur aliquid eos fuga cumque.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt amet tempora sint dolor nam quam quos inventore odio hic, enim beatae nulla in tenetur odit natus facere voluptas excepturi deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur sit eligendi rem et minus dolor hic, placeat eum sequi ipsa, debitis ex magni. Hic laudantium consectetur aliquid eos fuga cumque.
-                </p>
-                <h2>Todos count is  {{ todosCount }}</h2>
-                <h3>{{ $store.state.count }}</h3> <br> <button @click = "increment">click me</button>
-                <button @click = "incrementAsync">click me asyc</button>
-                <button @click = "decrementAsync">click me for decrement asyc</button>
-                <h2>Todos Done</h2>
-                <p v-for = "todo in todosDone">{{ todo.task }}</p>
-                <h2>Todos not Done</h2>
-                <p v-for = "todo in todosNotDone">{{ todo.task }}</p>
-                <h2>Todos</h2>
-                <p v-for = "todo in $store.state.todos">{{ todo.task }}</p>
+    <div>
+        <!-- <div class="row page-title m-3 p-2">
+            <div class="col-12 col-lg-8 container">
+                <h1></h1>
+                <p>Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
             </div>
-        </div>
+        </div> -->
+        <section class="main-container">
+            <div class="main">
+                <div class="container">
+                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) repeat 0 0;'">
+                        <div class="row company">
+                            <div class="m-1 p-3  partners-container">
+                                <h2 class="company-title">Our Company</h2>
+                                <p class="m-0">Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
+                                <p class="m-0">BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors.<router-link to="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px;color: #b7b7b7;font-family: 'Montserrat';text-transform: uppercase;">Read More</router-link>
+                                </p>
+                                <div class="services">
+                                    <ul class="row">
+                                        <li class="col text-center">
+                                            <div class="inner-s">
+                                                <img class="centered-img" :src="$root.basepath + '/img/key-1.png'">
+                                                <h4>High growth &amp; substantial returns</h4>
+                                                <p>Bfin Financial Services Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
+                                            </div>
+                                        </li>
+                                        <li class="col text-center">
+                                            <div class="inner-s">
+                                                <img class="centered-img" :src="$root.basepath + '/img/key-2.png'">
+                                                <h4>Outstanding 14% affiliate commission</h4>
+                                                <p>Earn splendid five level affiliate commission by referring others. Make us popular &amp; we will make you rich!</p>
+                                            </div>
+                                        </li>
+                                        <li class="col text-center">
+                                            <div class="inner-s">
+                                                <img class="centered-img" :src="$root.basepath + '/img/key-4.png'">
+                                                <h4>Registered Company</h4>
+                                                <p>Bfin Financial Services is fully registered in United States.</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class=" mt-4 pt-4  partners-container">
+                                    <h2 class="company-title">Our Investment Plans</h2>
+                                    <p class="">Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios.<br>
+                                        Bronze account features:
+                                        Deposit: $20 - $150
+                                        Up to 5% R.O.I in 72 Hours minimum
+                                        Eligibility: A New User Can Only Use This Plan Twice
+                                        No Referral Commission
+                                        <br> Silver account features:
+                                        Deposit: $200 - $2,000
+                                        Up to 20%
+                                        30 Days minimum turnover
+                                        5% One time Referral Commission
+                                        <br> Gold account features:
+                                        Deposit: $5,000 - $30,000
+                                        Up to 40%
+                                        30 Days turnover
+                                        10% Referral Commission to the 5th chain
+                                        <br> Platinum account features:
+                                        Deposit: $60,000 - $200,000
+                                        Upto 60%
+                                        14 days turnover
+                                        10% Referral Commission to the 10th chain.<router-link to="/investmentPlans" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px;color: #b7b7b7;font-family: 'Montserrat';text-transform: uppercase;">Read More</router-link>
+                                    </p>
+                                </div>
+                                <!--inv plans-->
+                                <div class="row mb-3 inv-plans">
+                                    <div class="col m-3 alpha omega">
+                                        <div class="plan-wrap first">
+                                            <div class="plan-sticker">
+                                                <div class="plan-inner">
+                                                    <div class="plan-in">
+                                                        <h3>5%</h3>
+                                                        <p>72<span> hours turnover</span></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="plan-det">
+                                                <li><i class="fa fa-check" aria-hidden="true"></i> 5% 72 hours turnover</li>
+                                                <li><i class="fa fa-check" aria-hidden="true"></i> Min: 20 USD - Max: 150 USD</li>
+                                                <li><i class="fa fa-check" aria-hidden="true"></i> instant withdraw</li>
+                                            </ul>
+                                            <div class="inv-button">
+                                                <router-link class="btn btn-inverse" to="/user/dashboard/deposit">Make Investment</router-link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col  mt-4 alpha omega">
+                                        <div class="plan-wrap first">
+                                            <div class="plan-sticker">
+                                                <div class="plan-inner">
+                                                    <div class="plan-in">
+                                                        <h3>60%</h3>
+                                                        <p>30<span> days turnover</span></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="plan-det">
+                                                <li><i class="fa fa-check" aria-hidden="true"></i> 60% 14 days turnover</li>
+                                                <li><i class="fa fa-check" aria-hidden="true"></i> Min: 60,000 USD - Max: 200,000</li>
+                                                <li><i class="fa fa-check" aria-hidden="true"></i> instant withdraw</li>
+                                            </ul>
+                                            <div class="inv-button">
+                                                <router-link class="btn btn-inverse" to="/user/dashboard/deposit">Make Investment</router-link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ml-0 mt-5 pt-5 get-started">
+                                    <h1 class="company-title">How To Get Started</h1>
+                                    <p class="p-2">To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal.</p>
+                                    <ul>
+                                        <li>
+                                            <h3><span>Step 1: </span>Account Registration</h3>
+                                            <p>Start by filling in required fields of the application form on the ‘Register’ page. Submit your registration. After that you will be able to log into your account and make your first investment.</p>
+                                        </li>
+                                        <li>
+                                            <h3><span>Step 2: </span>Creating Deposit</h3>
+                                            <p>In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bfin Financial Services Limited just click on ‘Make a deposit‘ link. </p>
+                                        </li>
+                                        <li>
+                                            <h3><span>Step 3: </span>Wait for the deposit transfer</h3>
+                                            <p>Normally Bitcoin deposit is active after 3 confirmations. 3 confirmations from the Bitcoin network take approximately 30 minutes - 1 hour or maybe it can long which depends on bitcoin network. Once the Bitcoin deposit is confirmed it will show in your active deposit according to your subscription plan.<router-link to="/getstarted" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px;color: #b7b7b7;font-family: 'Montserrat';text-transform: uppercase;">Read More</router-link>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="m-1 mt-4 pt-5 partners-container">
+                                    <h1 class="company-title">Our Affiliate Program</h1>
+                                    <p>If you want passive earning of substantial sums refer quickly to all about Bfin Financial Services Limited &amp; gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you.<router-link to="/partners" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px;color: #b7b7b7;font-family: 'Montserrat';text-transform: uppercase;">Read More</router-link>
+                                    </p>
+                                    <h5 class="slogan text-center">Enjoy exceptional upto 14% five levels deep affiliate system structure in Bfin Financial Services Limited.</h5>
+                                    <div class="partners-img clearfix">
+                                        <img :src="$root.basepath + '/img/percentages.png'">
+                                        <img :src="$root.basepath + '/img/partners.png'">
+                                    </div>
+                                </div>
+                                <div class="page-heading  mt-4 pt-4  partners-container ">
+                                    <h2 class="company-title">Our Data Center Locations</h2>
+                                    <p>Our powerful datacenters are the backbone of our profitable mining system of Bitcoins. Our business typically relies heavily upon these data centers, making it a focal point and critical asset for everyday mining operations.</p>
+                                </div>
+                                <div class="data-map">
+                                    <img class="img-responsive" :src="$root.basepath + '/img/map.png'">
+                                    <div style="top:50px; left:400px;" class="info one">
+                                        <span class="map-marker"></span>
+                                        <div class="center-detail">
+                                            <h5 class="city">Amsterdam</h5>
+                                            <div class="rates">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="top:60px; left:357px;" class="info one">
+                                        <span class="map-marker"></span>
+                                        <div class="center-detail">
+                                            <h5 class="city">Iceland</h5>
+                                            <div class="rates">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="top:60px; left:134px;" class="info one">
+                                        <span class="map-marker"></span>
+                                        <div class="center-detail">
+                                            <h5 class="city">Estonia</h5>
+                                            <div class="rates">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="top:210px; right:169px;" class="info one">
+                                        <span class="map-marker"></span>
+                                        <div class="center-detail">
+                                            <h5 class="city">Singapore</h5>
+                                            <div class="rates">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="data-center-services">
+                                    <h2 class="text-center">Highest standards on all data center facility aspects</h2>
+                                    <div class="row">
+                                        <div class="column col dcs">
+                                            <img class="centered-img" :src="$root.basepath + '/img/dcs-1.png'">
+                                            <h4>Highly available network</h4>
+                                            <p>Bfin Financial Services Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on.</p>
+                                        </div>
+                                        <div class="column col dcs">
+                                            <img class="centered-img" :src="$root.basepath + '/img/dcs-2.png'">
+                                            <h4>Redundant electrical systems</h4>
+                                            <p>In our datacenters redundancy or duplication of critical electrical system components increases reliability of the system, usually in the form of a backup or fail-safe, or to improve actual system performance which supports mining constancy.</p>
+                                        </div>
+                                        <div class="column col dcs">
+                                            <img class="centered-img" :src="$root.basepath + '/img/dcs-3.png'">
+                                            <h4>High-end physical security</h4>
+                                            <p>We make sure the datacenters are safe with installation of surveillance cameras , biometric identification of staff &amp; use of access cards. All these are necessary to secure our datacenters from intrusions &amp; threats.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- wrapper -->
+                </div>
+            </div>
+        </section>
     </div>
 </template>
-
-<script>
-    import Vue from 'vue'
-    import vuex from 'vuex';
-    Vue.use(vuex);
-    const store = new vuex.Store({
-        state : {
-            count: 3333,
-            todos : [
-                {'id' : 1, 'task':"i wanna ...", 'done':false},
-                {'id' : 2, 'task':"i wanna ...", 'done':true},
-                {'id' : 3, 'task':"i wanna ...", 'done':true}
-            ]
-        },
-        getters : {
-            todosCount (state){
-                return state.todos.length
-            },
-            todosDone (state){
-                return state.todos.filter(todo => todo.done)
-            }
-            ,
-            todosNotDone (state){
-                return state.todos.filter(todo => todo.done == false)
-            }
-        },
-        actions: {
-            actionA({commit}){
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        commit('increment')
-                        resolve('hero')
-                    }, 2000);
-                })
-            },
-            async actionB({dispatch, commit}){
-
-                commit('decrement', await getData())
-                console.log('decrement done');
-            }
-        },
-        mutations : {
-            increment : state => {
-                return state.count++
-            },
-            decrement : state => {
-                return state.count--
-            }
-        }
-    });
-    import { mapState , mapMutations, mapGetters } from 'vuex'
-    export default {
-        store,
-        data() {
-            return {
-                localCount : 1
-            }
-        },
-        computed : mapGetters([
-            'todosCount', 'todosDone', 'todosNotDone'
-        ]),
-        methods : {
-            ...mapMutations([
-            'increment', 'decrement'
-            ]),
-            incrementAsync (){
-                this.$store.dispatch('actionA').then((response)=>{
-                    console.log('async function running ' + response)
-                }).catch((error)=>console.log('error'))
-            },
-            decrementAsync (){
-                this.$store.dispatch('actionB')
-            }
-        }
-    }
-</script>

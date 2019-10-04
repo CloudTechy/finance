@@ -1,0 +1,328 @@
+<template>
+    <div class="m-0 p-0">
+        <AdminDashboardHeader></AdminDashboardHeader>
+        <section class="main-container m-lg-3 m-0 acc">
+            <div class="main">
+                <!--start wrapper-->
+                <div class="container">
+                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;min-height:400px;'">
+                        <div class="account-wrapper m-xl-2 row m-0 ">
+                            <nav class="nav  navbar-dark ml-4 ml-lg-0 mb-3 mb-lg-b p-0 mt-3 navbar navbar-expand-lg ">
+                                <button @click="" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar4">
+                                    <span class="navbar-toggler-icon "></span>
+                                </button>
+                            </nav>
+                            <AdminDashboardSidebar></AdminDashboardSidebar>
+                            <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
+                                <!-- content goes here -->
+                                <div class="acc-block overview">
+                                    <div class="acc-heading clearfix">
+                                        <h2>Account Overview</h2>
+                                        <ul class="breadcrumbs">
+                                            <li>Main</li>
+                                            <li><img :src="$root.basepath + '/img/right-b.png'"></li>
+                                            <li class="active">Users</li>
+                                        </ul>
+                                    </div>
+                                    <div class="acc-body">
+                                        <div class="stat-box row ">
+                                            <div class="s-box col-sm-4 col-12 p-2">
+                                                <img :src="$root.basepath + '/img/box-1.png'">
+                                                <h4>Total Users</h4>
+                                                <span>{{users.length}}</span>
+                                            </div>
+                                            <div class="s-box col-sm-4 col-12 p-2">
+                                                <img :src="$root.basepath + '/img/box-3.png'">
+                                                <h4>Administrators</h4>
+                                                <span>{{admins}}</span>
+                                            </div>
+                                            <div class="s-box col-sm-4 col-12 p-2">
+                                                <img :src="$root.basepath + '/img/box-2.png'">
+                                                <h4>Active Users</h4>
+                                                <span>{{activeUsers}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="acc-body ">
+                                        <div class="stat-box row ">
+                                            <div class="s-box  col-12 p-2">
+                                                <img :src="$root.basepath + '/img/box-4.png'">
+                                                <h4>Search User</h4>
+                                                <div class="input-group input-group-sm p-1">
+                                                    <input v-model="search" list="users" type="text" class="p-lg-3 p-sm-2 p-3 form-control" placeholder="Search user by username here...">
+                                                </div>
+                                                <datalist id="users">
+                                                    <option class="p-2" v-for="user in users" :value="user.username"></option>
+                                                </datalist>
+                                            </div>
+                                        </div>
+                                        <div v-if="search && selectedUser" v-for="user in selectedUser" class="stat-box row">
+                                            <div class="s-box col-12 p-2">
+                                                <h3 class="text-capitalize card-title">{{user.username + " Account Details"}}</h3>
+                                            </div>
+                                            <div class="s-box col-sm-4 col-12 p-2">
+                                                <img :src="$root.basepath + '/img/box-1.png'">
+                                                <h4>Account Balance</h4>
+                                                <span>{{$root.numeral(user.balance)}}</span>
+                                            </div>
+                                            <div class="s-box col-sm-4 col-12 p-2">
+                                                <img :src="$root.basepath + '/img/box-2.png'">
+                                                <h4>Active Deposit</h4>
+                                                <span>{{$root.numeral(user.totalActiveTransaction)}}</span>
+                                            </div>
+                                            <div class="s-box col-sm-4 col-12 p-2">
+                                                <img :src="$root.basepath + '/img/box-3.png'">
+                                                <h4>Total Earned</h4>
+                                                <span>{{$root.numeral(user.totalEarned)}}</span>
+                                            </div>
+                                            <div class="stat-box row mt-2">
+                                                <div class="s-box col-12 p-2">
+                                                    <h3 class="acc-sub-heading'">Account Statistics</h3>
+                                                </div>
+                                                <div class="simple-stats">
+                                                    <ul class="clearfix">
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/stat-deposit.png'">
+                                                            <p>Total Deposits: <span>{{$root.numeral(user.totalDeposit)}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/stat-withdraw.png'">
+                                                            <p>Total Withdrawals: <span>{{$root.numeral(user.totalWithdraw)}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/stat-last-deposit.png'">
+                                                            <p>Last Deposit: <span>{{$root.numeral(user.lastDeposit)}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/stat-last-withdrawal.png'">
+                                                            <p>Last Withdrawal: <span>{{$root.numeral(user.lastWithdraw)}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/stat-last-withdrawal.png'">
+                                                            <p>Sent Withdrawals: <span>{{$root.numeral(user.totalPendingWithdrawal)}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/key-2.png'">
+                                                            <p>Ref Users: <span>{{user.referrals}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/key-2.png'">
+                                                            <p>Ref Active Users: <span>{{user.activeReferrals}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/box-6.png'">
+                                                            <p>Ref Commissions: <span>{{$root.numeral(user.totalCommission)}}</span></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="stat-box row mt-2 mb-0">
+                                                <div class="s-box col-12 p-2">
+                                                    <h3 class="acc-sub-heading'">Personal Details</h3>
+                                                </div>
+                                                <div class="simple-stats">
+                                                    <ul class="clearfix">
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/box-4.png'">
+                                                            <p>First Name: <span>{{user.first_name}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/box-4.png'">
+                                                            <p>Last Name: <span>{{user.last_name}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/support-mail.png'">
+                                                            <p>Email <span>{{user.email}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/ac-10.png'">
+                                                            <p>Phone: <span>{{user.number}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/ac-2.png'">
+                                                            <p>Joined: <span>{{user.date}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/ac-10.png'">
+                                                            <p>User Level: <span>{{user.user_level}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/box-3.png'">
+                                                            <p>Wallet: <span>{{user.wallet}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/box-2.png'">
+                                                            <p>PM: <span>{{user.pm}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/box-2.png'">
+                                                            <p>Admin Wallet: <span>{{user.admin_wallet}}</span></p>
+                                                        </li>
+                                                        <li>
+                                                            <img :src="$root.basepath + '/img/box-3.png'">
+                                                            <p>Admin PM: <span>{{user.admin_pm}}</span></p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="s-box col-12 p-2">
+                                                <div class="row">
+                                                    <div class="s-box col p-2">
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <p>Admin Wallet: <span> <input @change="updateData" v-model="form.admin_wallet" type="text" class=" form-control" placeholder="Enter wallet address for this user"></span></p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="s-box col p-2">
+                                                        <ul class="clearfix">
+                                                            <li>
+                                                                <p>Admin PM: <span> <input @change="updateData" v-model="form.admin_pm" type="text" class=" form-control" placeholder="Enter pm account for this user"></span></p>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="text-center col-12 justify-content-center mb-3 mb-l-0">
+                                                <button ref="process" @click.prevent="userLevel(user)" class="btn btn-default">{{userLevelTitle}}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--  content ends here -->
+                            </div>
+                        </div>
+                        <!--end account wrapper-->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>
+<script>
+export default {
+    data() {
+        return {
+            form: new Form({
+                admin_wallet: null,
+                admin_pm: null,
+                id: null,
+                user_level_id: null
+            }),
+            error: null,
+            message: null,
+            users: [],
+            activeUsers: 0,
+            admins: 0,
+            selectedUser: '',
+            search: '',
+            userLevelTitle: this.selectedUser && this.selectedUser.isAdmin == true ? 'Make User' : 'Make Admin'
+        }
+    },
+    mounted() {
+
+    },
+    watch: {
+        users() {
+            this.users.forEach((user, index) => {
+                if (user.totalActiveTransaction > 0) {
+                    this.activeUsers++
+                }
+            });
+            this.users.forEach((user, index) => {
+                if (user.isAdmin) {
+                    this.admins++
+                }
+            });
+        },
+        selectedUser(){
+            if(this.selectedUser.isAdmin == true) {
+                this.userLevelTitle =  'Make User'
+            }
+            else {
+                                this.userLevelTitle =  'Make Admin'
+            }
+        },
+        search() {
+            this.getSelectedUser()
+        },
+    },
+
+    computed: {
+        user() {
+            return this.$auth.user()
+        },
+    },
+    created() {
+        if (localStorage.users) {
+            this.users = JSON.parse(localStorage.users)
+        }
+        this.getUsers()
+    },
+    methods: {
+        getUsers() {
+            this.form.get("/auth/users")
+                .then(response => {
+                    this.users = response.data.data.item
+                    localStorage.users = JSON.stringify(this.users)
+                    this.getSelectedUser()
+                })
+                .catch(error => {
+                    console.log(error)
+                })
+        },
+        getSelectedUser() {
+            if (this.search && this.users) {
+                this.selectedUser = this.users.filter((item) => {
+                    if (item.username.toLowerCase() == this.search.toLowerCase()) {
+                        this.form.fill(item)
+                        return true
+                    }
+                })
+            }
+        },
+        updateData() {
+            this.form.put("/auth/users/" + this.form.id)
+                .then(response => {
+                    this.$root.alert('success', ' ', 'update successful')
+                    this.getUsers()
+                })
+                .catch(error => {
+                    this.$root.alert('error', ' ', 'update not successful')
+                    console.log(error.response)
+                })
+        },
+        userLevel(user) {
+            // / var form = new Form({ user_level_id: '' })
+            if (user.isAdmin) {
+                this.form.user_level_id = 2
+                this.form.put("/auth/users/" + this.form.id)
+                    .then(response => {
+                        this.$root.alert('success', ' ', 'update user-level to user successful')
+                        this.userLevelTitle = "Make Admin"
+                        this.getUsers()
+                    })
+                    .catch(error => {
+                        this.$root.alert('error', ' ', 'update user-level to user not successful')
+                        console.log(error.response)
+                    })
+            } else {
+                this.form.user_level_id = 1
+                this.form.put("/auth/users/" + this.form.id)
+                    .then(response => {
+                        this.$root.alert('success', ' ', 'update user-level to admin successful')
+                        this.userLevelTitle = "Make User"
+                        this.getUsers()
+                    })
+                    .catch(error => {
+                        this.$root.alert('error', ' ', 'update user-level to admin not successful')
+                        console.log(error.response)
+                    })
+            }
+        }
+    },
+
+
+}
+
+</script>

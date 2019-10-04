@@ -12,6 +12,12 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
+Route::middleware('auth:api')->group(function () {
+	// Email Verification Routes...
+	Route::post('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
+	Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+	Route::post('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
+});
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
 	return $request->user();
@@ -20,6 +26,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::prefix('v1')->group(function () {
 
 	Route::prefix('auth')->group(function () {
+		Route::post('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
+		Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+		Route::post('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 
 		// Below mention routes are public, user can access those without any restriction.
 		// Create New User
@@ -37,9 +46,13 @@ Route::prefix('v1')->group(function () {
 		// handle reset password form process
 		Route::post('reset/password', 'AuthController@callResetPassword');
 
+
 		// Below mention routes are available only for the authenticated users.
 
 		Route::middleware('auth:api')->group(function () {
+			// Email Verification Routes...
+			
+
 			// Get user info
 			Route::get('user', 'AuthController@user');
 

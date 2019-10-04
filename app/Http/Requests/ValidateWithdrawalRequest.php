@@ -23,6 +23,7 @@ class ValidateWithdrawalRequest extends FormRequest {
 		return [
 			'user_id' => 'required|numeric|exists:users,id',
 			'amount' => 'required|numeric',
+			'reference' => 'required|string',
 		];
 	}
 }

@@ -7,57 +7,55 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class UserRegistered extends Notification implements ShouldQueue
-{
-    use Queueable;
+class UserRegistered extends Notification implements ShouldQueue {
+	use Queueable;
 
-    /**
-     * Create a new notification instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-    }
+	/**
+	 * Create a new notification instance.
+	 *
+	 * @return void
+	 */
+	public function __construct() {
+	}
 
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function via($notifiable)
-    {
-        return ['mail'];
-    }
+	/**
+	 * Get the notification's delivery channels.
+	 *
+	 * @param  mixed  $notifiable
+	 * @return array
+	 */
+	public function via($notifiable) {
+		return ['mail'];
+	}
 
-    /**
-     * Get the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
-     */
-    public function toMail($notifiable)
-    {
-        return (new MailMessage)
-            ->greeting('Dear ' . $notifiable->username . ',')
-            ->subject('Account Created')
-            ->line('Congratulations on your successful registration')
-            ->line('Make sure to invest immediately, we await to see your earn your first wages with us.')
-            ->action('Goto Dashboard', url('/'))
-            ->line('Thank you for registering with us');
-    }
+	/**
+	 * Get the mail representation of the notification.
+	 *
+	 * @param  mixed  $notifiable
+	 * @return \Illuminate\Notifications\Messages\MailMessage
+	 */
+	public function toMail($notifiable) {
+		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/user/dashboard/';
+		return (new MailMessage)
+			->greeting('Dear ' . $notifiable->username . ',')
+			->subject('Account Created')
+			->line('Congratulations on your successful registration')
+			->line('You are welcome to one of the leading financial network.')
+			->line('Make sure to invest immediately, we await to see your earn your first wages with us soon.')
+			->action('Goto Dashboard', url($dashboardPath))
+			->line('Thanks for Joining our financial network')
+			->bcc('conyekelu@yahoo.com','Chukwuebuka');
+	}
 
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return array
-     */
-    public function toArray($notifiable)
-    {
-        return [
-            //
-        ];
-    }
+	/**
+	 * Get the array representation of the notification.
+	 *
+	 * @param  mixed  $notifiable
+	 * @return array
+	 */
+	public function toArray($notifiable) {
+		return [
+			//
+		];
+	}
 }
