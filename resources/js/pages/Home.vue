@@ -11,7 +11,7 @@
                 <div class="container">
                     <div class="wrapper" style="background: url(&quot;http://localhost:8000/img/home.png&quot;) 0px 0px no-repeat;">
                         <div class="row company">
-                            <div class=" col p-3 partners-container">
+                            <div class=" col p-4 partners-container">
                                 <h2 class="company-title">Our Company</h2>
                                 <p class="m-0">Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
                                 <p class="m-0">BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors.<a href="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</a></p>

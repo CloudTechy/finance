@@ -54780,7 +54780,7 @@ var staticRenderFns = [
               },
               [
                 _c("div", { staticClass: "row company" }, [
-                  _c("div", { staticClass: " col p-3 partners-container" }, [
+                  _c("div", { staticClass: " col p-4 partners-container" }, [
                     _c("h2", { staticClass: "company-title" }, [
                       _vm._v("Our Company")
                     ]),
