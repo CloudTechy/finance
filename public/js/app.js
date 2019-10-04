@@ -54790,10 +54790,31 @@ var staticRenderFns = [
                         "Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume- Bitcoins."
                       )
                     ]),
+                    _c("br"),
                     _vm._v(" "),
                     _c("p", { staticClass: "m-0" }, [
                       _vm._v(
-                        "BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors."
+                        "BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading."
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. "
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "Over the past few years, we have been making huge financial gains. "
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors."
                       ),
                       _c(
                         "a",
@@ -54801,7 +54822,6 @@ var staticRenderFns = [
                           staticClass: "btn btn-link",
                           staticStyle: {
                             display: "inline",
-                            "line-height": "20px",
                             "font-size": "13px",
                             color: "rgb(183, 183, 183)",
                             "font-family": "Montserrat",
@@ -54891,17 +54911,21 @@ var staticRenderFns = [
                             "Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios."
                           ),
                           _c("br"),
+                          _c("br"),
                           _vm._v(
                             "\n                                    Bronze account features:\n                                    Deposit: $20 - $150\n                                    Up to 5% R.O.I in 72 Hours minimum\n                                    Eligibility: A New User Can Only Use This Plan Twice\n                                    No Referral Commission\n                                    "
                           ),
+                          _c("br"),
                           _c("br"),
                           _vm._v(
                             " Silver account features:\n                                    Deposit: $200 - $2,000\n                                    Up to 20%\n                                    30 Days minimum turnover\n                                    5% One time Referral Commission\n                                    "
                           ),
                           _c("br"),
+                          _c("br"),
                           _vm._v(
                             " Gold account features:\n                                    Deposit: $5,000 - $30,000\n                                    Up to 40%\n                                    30 Days turnover\n                                    10% Referral Commission to the 5th chain\n                                    "
                           ),
+                          _c("br"),
                           _c("br"),
                           _vm._v(
                             " Platinum account features:\n                                    Deposit: $60,000 - $200,000\n                                    Upto 60%\n                                    14 days turnover\n                                    10% Referral Commission to the 10th chain."
@@ -54937,7 +54961,7 @@ var staticRenderFns = [
                           "div",
                           { staticClass: "col m-md-3 m-1 alpha omega" },
                           [
-                            _c("div", { staticClass: "col plan-wrap first" }, [
+                            _c("div", { staticClass: " plan-wrap first" }, [
                               _c("div", { staticClass: "plan-sticker" }, [
                                 _c("div", { staticClass: "plan-inner" }, [
                                   _c("div", { staticClass: "plan-in" }, [
@@ -54992,7 +55016,7 @@ var staticRenderFns = [
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "col  mt-4 alpha omega" }, [
-                          _c("div", { staticClass: "col plan-wrap first" }, [
+                          _c("div", { staticClass: " plan-wrap first" }, [
                             _c("div", { staticClass: "plan-sticker" }, [
                               _c("div", { staticClass: "plan-inner" }, [
                                 _c("div", { staticClass: "plan-in" }, [

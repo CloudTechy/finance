@@ -13,8 +13,8 @@
                         <div class="row company">
                             <div class=" col p-4 partners-container">
                                 <h2 class="company-title">Our Company</h2>
-                                <p class="m-0">Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
-                                <p class="m-0">BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors.<a href="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</a></p>
+                                <p class="m-0">Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p><br>
+                                <p class="m-0">BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. <br><br>Over the past few years, we have been making huge financial gains. <br><br>For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors.<a href="/about" class="btn btn-link" style="display: inline; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</a></p>
                                 <div class="services mt-3">
                                     <ul class="row">
                                         <li class="col text-center">
@@ -39,23 +39,23 @@
                                 </div>
                                 <div class=" m-0 p-0 mt-4 pt-4  partners-container">
                                     <h2 class="company-title">Our Investment Plans</h2>
-                                    <p>Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios.<br>
+                                    <p>Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios.<br><br>
                                         Bronze account features:
                                         Deposit: $20 - $150
                                         Up to 5% R.O.I in 72 Hours minimum
                                         Eligibility: A New User Can Only Use This Plan Twice
                                         No Referral Commission
-                                        <br> Silver account features:
+                                        <br><br> Silver account features:
                                         Deposit: $200 - $2,000
                                         Up to 20%
                                         30 Days minimum turnover
                                         5% One time Referral Commission
-                                        <br> Gold account features:
+                                        <br><br> Gold account features:
                                         Deposit: $5,000 - $30,000
                                         Up to 40%
                                         30 Days turnover
                                         10% Referral Commission to the 5th chain
-                                        <br> Platinum account features:
+                                        <br><br> Platinum account features:
                                         Deposit: $60,000 - $200,000
                                         Upto 60%
                                         14 days turnover
@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="m-0 p-0 text-center justify-content-center row mb-3 inv-plans">
                                     <div class="col m-md-3 m-1 alpha omega">
-                                        <div class="col plan-wrap first">
+                                        <div class=" plan-wrap first">
                                             <div class="plan-sticker">
                                                 <div class="plan-inner">
                                                     <div class="plan-in">
@@ -81,7 +81,7 @@
                                         </div>
                                     </div>
                                     <div class="col  mt-4 alpha omega">
-                                        <div class="col plan-wrap first">
+                                        <div class=" plan-wrap first">
                                             <div class="plan-sticker">
                                                 <div class="plan-inner">
                                                     <div class="plan-in">
