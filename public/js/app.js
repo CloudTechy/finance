@@ -54961,7 +54961,7 @@ var staticRenderFns = [
                           "div",
                           { staticClass: "col m-md-3 m-1 alpha omega" },
                           [
-                            _c("div", { staticClass: " plan-wrap first" }, [
+                            _c("div", { staticClass: "col plan-wrap first" }, [
                               _c("div", { staticClass: "plan-sticker" }, [
                                 _c("div", { staticClass: "plan-inner" }, [
                                   _c("div", { staticClass: "plan-in" }, [
@@ -55016,7 +55016,7 @@ var staticRenderFns = [
                         ),
                         _vm._v(" "),
                         _c("div", { staticClass: "col  mt-4 alpha omega" }, [
-                          _c("div", { staticClass: " plan-wrap first" }, [
+                          _c("div", { staticClass: "col plan-wrap first" }, [
                             _c("div", { staticClass: "plan-sticker" }, [
                               _c("div", { staticClass: "plan-inner" }, [
                                 _c("div", { staticClass: "plan-in" }, [

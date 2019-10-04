@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="m-0 p-0 text-center justify-content-center row mb-3 inv-plans">
                                     <div class="col m-md-3 m-1 alpha omega">
-                                        <div class=" plan-wrap first">
+                                        <div class="col plan-wrap first">
                                             <div class="plan-sticker">
                                                 <div class="plan-inner">
                                                     <div class="plan-in">
@@ -81,7 +81,7 @@
                                         </div>
                                     </div>
                                     <div class="col  mt-4 alpha omega">
-                                        <div class=" plan-wrap first">
+                                        <div class="col plan-wrap first">
                                             <div class="plan-sticker">
                                                 <div class="plan-inner">
                                                     <div class="plan-in">
