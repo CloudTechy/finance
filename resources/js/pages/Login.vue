@@ -97,9 +97,9 @@ export default {
                 success: function(response) {
                     this.processing(false)
                     var redirectTo = 'dashboard'
-                    // app.success = true
-                    //  console.log(redirect)
-                    //  console.log(redirect  && !this.$auth.user().isEmailVerified)
+                    app.success = true
+                     // console.log(redirect)
+                     // console.log(redirect  && !this.$auth.user().isEmailVerified)
                     if(redirect  && !this.$auth.user().isEmailVerified){
                        if(redirect.from.path == "/confirm-registration") {
                          this.$router.push(redirect.from.fullPath)
@@ -118,6 +118,7 @@ export default {
                     this.processing(false)
                     app.has_error = true
                     app.error = res.response.data.error
+                    console.log(res.response)
                 },
                 rememberMe: true,
                 fetchUser: true
@@ -144,12 +145,7 @@ export default {
                 })
         }
     },
-    beforeDestroy() {
-        if (!this.$auth.user().isEmailVerified) {
-            //this.$auth.logout()
-            this.$root.alert('info', ' ', 'You are logged out')
-        }
-    }
+    
 }
 
 </script>

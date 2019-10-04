@@ -6291,9 +6291,9 @@ __webpack_require__.r(__webpack_exports__);
         },
         success: function success(response) {
           this.processing(false);
-          var redirectTo = 'dashboard'; // app.success = true
-          //  console.log(redirect)
-          //  console.log(redirect  && !this.$auth.user().isEmailVerified)
+          var redirectTo = 'dashboard';
+          app.success = true; // console.log(redirect)
+          // console.log(redirect  && !this.$auth.user().isEmailVerified)
 
           if (redirect && !this.$auth.user().isEmailVerified) {
             if (redirect.from.path == "/confirm-registration") {
@@ -6317,6 +6317,7 @@ __webpack_require__.r(__webpack_exports__);
           this.processing(false);
           app.has_error = true;
           app.error = res.response.data.error;
+          console.log(res.response);
         },
         rememberMe: true,
         fetchUser: true
@@ -6345,12 +6346,6 @@ __webpack_require__.r(__webpack_exports__);
 
         console.log(error.response);
       });
-    }
-  },
-  beforeDestroy: function beforeDestroy() {
-    if (!this.$auth.user().isEmailVerified) {
-      //this.$auth.logout()
-      this.$root.alert('info', ' ', 'You are logged out');
     }
   }
 });
@@ -80697,8 +80692,8 @@ var config = {
   auth: _websanova_vue_auth_drivers_auth_bearer__WEBPACK_IMPORTED_MODULE_0___default.a,
   http: _websanova_vue_auth_drivers_http_axios_1_x__WEBPACK_IMPORTED_MODULE_1___default.a,
   router: _websanova_vue_auth_drivers_router_vue_router_2_x__WEBPACK_IMPORTED_MODULE_2___default.a,
-  tokenDefaultName: 'bfin-auth',
-  tokenStore: ['BFIN'],
+  tokenDefaultName: 'laravel-jwt-auth',
+  tokenStore: ['localStorage'],
   // API endpoints used in Vue Auth.
   registerData: {
     url: 'auth/register',
