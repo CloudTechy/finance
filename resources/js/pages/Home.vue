@@ -9,14 +9,14 @@
         <section class="main-container">
             <div class="main">
                 <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) repeat 0 0;'">
+                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
                         <div class="row company">
                             <div class="m-1 p-3  partners-container">
                                 <h2 class="company-title">Our Company</h2>
                                 <p class="m-0">Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
                                 <p class="m-0">BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors.<router-link to="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px;color: #b7b7b7;font-family: 'Montserrat';text-transform: uppercase;">Read More</router-link>
                                 </p>
-                                <div class="services">
+                                <div class="services mt-3">
                                     <ul class="row">
                                         <li class="col text-center">
                                             <div class="inner-s">

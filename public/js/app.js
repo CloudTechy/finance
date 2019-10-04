@@ -54769,7 +54769,7 @@ var render = function() {
               style:
                 "background:url(" +
                 _vm.$root.basepath +
-                "/img/home.png) repeat 0 0;"
+                "/img/home.png) no-repeat 0 0;"
             },
             [
               _c("div", { staticClass: "row company" }, [
@@ -54811,7 +54811,7 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "services" }, [
+                  _c("div", { staticClass: "services mt-3" }, [
                     _c("ul", { staticClass: "row" }, [
                       _c("li", { staticClass: "col text-center" }, [
                         _c("div", { staticClass: "inner-s" }, [
