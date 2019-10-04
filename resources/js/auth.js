@@ -9,8 +9,8 @@ const config = {
   auth: bearer,
   http: axios,
   router: router,
-  tokenDefaultName: 'laravel-jwt-auth',
-  tokenStore: ['localStorage'],
+  tokenDefaultName: 'bfin-auth',
+  tokenStore: ['BFIN'],
   
   // API endpoints used in Vue Auth.
   registerData: {

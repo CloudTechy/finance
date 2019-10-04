@@ -1,8 +1,18 @@
 <template>
     <footer class="" style="width: inherit; overflow: hidden; box-sizing: border-box; ">
-        <div class="footer-top">
+        <div style="position: relative" class="footer-top">
+            <div style="max-width: 80%; position: fixed; bottom : 40px; left:40px;right:40px; " class="alert m-auto alert-primary alert-dismissible fade show" role="alert">
+                    <p class="_text_1nv7e_24">
+                        We use cookies to provide our services and for analytics and marketing, 
+                        By continuing to browse our website, you agree to our use of&nbsp;cookies.
+                    </p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">OK</span>
+                    </button>
+                </div>
             <div class="text-center justify-content-center container m-auto p-sm-4 p-3 row">
-                    <span class="bitcoin-logo"><img :src="$root.basepath + '/img/bitcoin.png'"></span>
+
+                <span class="bitcoin-logo"><img :src="$root.basepath + '/img/bitcoin.png'"></span>
                 <ul class="footer-menu">
                     <li>
                         <router-link to="/">Home</router-link>
@@ -57,3 +67,13 @@ export default {
 }
 
 </script>
+<style scoped="">
+._text_1nv7e_24 {
+    font-family: Sailec-Regular, system-ui, -apple-system, Segoe UI, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    margin: 0
+}
+
+</style>
