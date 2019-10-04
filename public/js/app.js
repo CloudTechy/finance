@@ -54020,28 +54020,6 @@ var render = function() {
           )
         ])
       ])
-    ]),
-    _vm._v(" "),
-    _c("div", [
-      _vm._m(3),
-      _vm._v(" "),
-      _c("section", { staticClass: "main-container" }, [
-        _c("div", { staticClass: "main" }, [
-          _c("div", { staticClass: "container" }, [
-            _c(
-              "div",
-              {
-                staticClass: "wrapper",
-                style:
-                  "background:url(" +
-                  _vm.$root.basepath +
-                  "/img/home.png) no-repeat 0 0;"
-              },
-              [_vm._m(4)]
-            )
-          ])
-        ])
-      ])
     ])
   ])
 }
@@ -54102,104 +54080,17 @@ var staticRenderFns = [
       },
       [
         _c("iframe", {
+          staticStyle: { width: "100%" },
           attrs: {
-            width: "798",
-            height: "498",
+            src: "https://www.youtube.com/embed/5xsDZolAW2o",
             frameborder: "0",
+            allow:
+              "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
             allowfullscreen: ""
           }
         })
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-title m-3 p-2" }, [
-      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
-        _c("h1", [_vm._v("Get Started")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "get-started" }, [
-      _c("ul", [
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 1: ")]),
-            _vm._v("Account Registration")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Start by filling in required fields of the application form on the ‘Register’ page. Submit your registration. After that you will be able to log into your account and make your first investment."
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 2: ")]),
-            _vm._v("Creating Deposit")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bfin Financial Services Limited just click on ‘Make a deposit‘ link. "
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 3: ")]),
-            _vm._v("Wait for the deposit transfer")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Normally Bitcoin deposit is active after 3 confirmations. 3 confirmations from the Bitcoin network take approximately 30 minutes - 1 hour or maybe it can long which depends on bitcoin network. Once the Bitcoin deposit is confirmed it will show in your active deposit according to your subscription plan."
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 4: ")]),
-            _vm._v("Follow Accruals")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "You can choose any of the 16 investment plans carefully grouped into 4 portfolios of Bfin Financial Services Limited to make your investment. The gold plan is 2% daily for life time. The platinum plan is 5% daily for life time. "
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 5: ")]),
-            _vm._v("Profit Withdrawal")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "All the investment plans in Bfin Financial Services Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw & enjoy your ROI! "
-            )
-          ])
-        ])
-      ])
-    ])
   }
 ]
 render._withStripped = true
