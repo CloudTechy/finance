@@ -165,12 +165,12 @@ const app = new Vue({
             var form = new Form
             form.get("https://api.coindesk.com/v1/bpi/currentprice.json")
                 .then(response => {
-                     //console.log( response.data.bpi.USD.rate)
+                     console.log( response.data.bpi.USD.rate)
                      this.rate = response.data.bpi.USD.rate
                     localStorage.rate = JSON.stringify(response.data.bpi.USD.rate)
                 })
                 .catch(error => {
-                    console.log(error)
+                    console.log(error.response)
                 })
         },
         getIp() {
