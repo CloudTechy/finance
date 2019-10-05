@@ -5,18 +5,7 @@
                 <div class="column col-xl-6 p-0 p-lg-1 p-2 col-lg-6 col-12 alpha">
                     <h3 class="user-hello text-left pl-3 p-md-0" style="color: #fff;">Hello, <span>{{$auth.user().username}}</span></h3>
                     <div style="padding-left: 30px;" class="header-box user  row">
-                        <!--  <table>
-                            <tbody>
-                                <tr>
-                                    <td style="color: #fff;">Registration Date :</td>
-                                    <td>{{time}}</td>
-                                </tr>
-                                <tr>
-                                    <td style="color: #fff;">Your IP Address :</td>
-                                    <td>{{getIp}}</td>
-                                </tr>
-                            </tbody>
-                        </table> -->
+                       
                         <div class="col">
                             <div class="row">
                                 <div class="col">
