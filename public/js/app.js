@@ -5557,6 +5557,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -5587,6 +5607,15 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6193,15 +6222,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -7356,6 +7376,23 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -52676,24 +52713,41 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "header-box user ml-1 ml-sm-3 ml-md-0 " },
+              {
+                staticClass: "header-box user  row",
+                staticStyle: { "padding-left": "30px" }
+              },
               [
-                _c("table", [
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", { staticStyle: { color: "#fff" } }, [
-                        _vm._v("Registration Date :")
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.time))])
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col" }, [
+                      _c(
+                        "td",
+                        {
+                          staticClass: "p-1",
+                          staticStyle: {
+                            "text-align": "right",
+                            color: "#f8b882"
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.time))]
+                      )
                     ]),
                     _vm._v(" "),
-                    _c("tr", [
-                      _c("td", { staticStyle: { color: "#fff" } }, [
-                        _vm._v("Your IP Address :")
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.getIp))])
+                    _c("div", { staticClass: "col" }, [
+                      _c(
+                        "td",
+                        {
+                          staticClass: "p-1",
+                          staticStyle: {
+                            "text-align": "right",
+                            color: "#f8b882"
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.getIp))]
+                      )
                     ])
                   ])
                 ])
@@ -52745,7 +52799,28 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("td", { staticClass: "p-1", staticStyle: { color: "#fff" } }, [
+            _vm._v("Registration Date :")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col justify-content-end" }, [
+          _c("td", { staticClass: "p-1", staticStyle: { color: "#fff" } }, [
+            _vm._v("Your IP Address :")
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -52947,24 +53022,41 @@ var render = function() {
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "header-box user ml-1 ml-sm-3 ml-md-0 " },
+              {
+                staticClass: "header-box user  row",
+                staticStyle: { "padding-left": "30px" }
+              },
               [
-                _c("table", [
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", { staticStyle: { color: "#fff" } }, [
-                        _vm._v("Registration Date :")
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.time))])
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "col" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col" }, [
+                      _c(
+                        "td",
+                        {
+                          staticClass: "p-1",
+                          staticStyle: {
+                            "text-align": "right",
+                            color: "#f8b882"
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.time))]
+                      )
                     ]),
                     _vm._v(" "),
-                    _c("tr", [
-                      _c("td", { staticStyle: { color: "#fff" } }, [
-                        _vm._v("Your IP Address :")
-                      ]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(_vm.getIp))])
+                    _c("div", { staticClass: "col" }, [
+                      _c(
+                        "td",
+                        {
+                          staticClass: "p-1",
+                          staticStyle: {
+                            "text-align": "right",
+                            color: "#f8b882"
+                          }
+                        },
+                        [_vm._v(_vm._s(_vm.getIp))]
+                      )
                     ])
                   ])
                 ])
@@ -53016,7 +53108,28 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col" }, [
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col" }, [
+          _c("td", { staticClass: "p-1", staticStyle: { color: "#fff" } }, [
+            _vm._v("Registration Date :")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col justify-content-end" }, [
+          _c("td", { staticClass: "p-1", staticStyle: { color: "#fff" } }, [
+            _vm._v("Your IP Address :")
+          ])
+        ])
+      ])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -54883,7 +54996,7 @@ var staticRenderFns = [
               },
               [
                 _c("div", { staticClass: "row company" }, [
-                  _c("div", { staticClass: " col p-4 partners-container" }, [
+                  _c("div", { staticClass: " col p-3 partners-container" }, [
                     _c("h2", { staticClass: "company-title" }, [
                       _vm._v("Our Company")
                     ]),
@@ -54893,26 +55006,17 @@ var staticRenderFns = [
                         "Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume- Bitcoins."
                       )
                     ]),
-                    _c("br"),
                     _vm._v(" "),
+                    _c("br"),
+                    _c("br"),
                     _c("p", { staticClass: "m-0" }, [
                       _vm._v(
-                        "BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading."
+                        "BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains."
                       ),
                       _c("br"),
                       _c("br"),
                       _vm._v(
-                        " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. "
-                      ),
-                      _c("br"),
-                      _c("br"),
-                      _vm._v(
-                        "Over the past few years, we have been making huge financial gains. "
-                      ),
-                      _c("br"),
-                      _c("br"),
-                      _vm._v(
-                        "For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+                        " For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
                       ),
                       _c("br"),
                       _c("br"),
@@ -54925,6 +55029,7 @@ var staticRenderFns = [
                           staticClass: "btn btn-link",
                           staticStyle: {
                             display: "inline",
+                            "line-height": "20px",
                             "font-size": "13px",
                             color: "rgb(183, 183, 183)",
                             "font-family": "Montserrat",
@@ -55016,22 +55121,22 @@ var staticRenderFns = [
                           _c("br"),
                           _c("br"),
                           _vm._v(
-                            "\n                                    Bronze account features:\n                                    Deposit: $20 - $150\n                                    Up to 5% R.O.I in 72 Hours minimum\n                                    Eligibility: A New User Can Only Use This Plan Twice\n                                    No Referral Commission\n                                    "
+                            "\n                                Bronze account features:\n                                Deposit: $20 - $150\n                                Up to 5% R.O.I in 72 Hours minimum\n                                Eligibility: A New User Can Only Use This Plan Twice\n                                No Referral Commission\n                                "
                           ),
                           _c("br"),
                           _c("br"),
                           _vm._v(
-                            " Silver account features:\n                                    Deposit: $200 - $2,000\n                                    Up to 20%\n                                    30 Days minimum turnover\n                                    5% One time Referral Commission\n                                    "
+                            " Silver account features:\n                                Deposit: $200 - $2,000\n                                Up to 20%\n                                30 Days minimum turnover\n                                5% One time Referral Commission\n                                "
                           ),
                           _c("br"),
                           _c("br"),
                           _vm._v(
-                            " Gold account features:\n                                    Deposit: $5,000 - $30,000\n                                    Up to 40%\n                                    30 Days turnover\n                                    10% Referral Commission to the 5th chain\n                                    "
+                            " Gold account features:\n                                Deposit: $5,000 - $30,000\n                                Up to 40%\n                                30 Days turnover\n                                10% Referral Commission to the 5th chain\n                                "
                           ),
                           _c("br"),
                           _c("br"),
                           _vm._v(
-                            " Platinum account features:\n                                    Deposit: $60,000 - $200,000\n                                    Upto 60%\n                                    14 days turnover\n                                    10% Referral Commission to the 10th chain."
+                            " Platinum account features:\n                                Deposit: $60,000 - $200,000\n                                Upto 60%\n                                14 days turnover\n                                10% Referral Commission to the 10th chain."
                           ),
                           _c(
                             "a",
@@ -55536,10 +55641,12 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "card-body" }, [
                   _vm.has_error && !_vm.success
-                    ? _c("div", { staticClass: "error-msg P-3 m-1" }, [
+                    ? _c("div", { staticClass: "error-msg p-2 m-1" }, [
                         _vm.error == "login_error"
-                          ? _c("p", [_vm._v("Validation Errors.")])
-                          : _c("p", [
+                          ? _c("p", { staticClass: "m-1" }, [
+                              _vm._v("Validation Errors.")
+                            ])
+                          : _c("p", { staticClass: "m-1" }, [
                               _vm._v(
                                 "Error, unable to connect with these credentials."
                               )
@@ -55548,46 +55655,8 @@ var render = function() {
                     : _vm._e(),
                   _vm._v(" "),
                   _vm.success && !this.$auth.user().isEmailVerified
-                    ? _c("div", { staticClass: "error-msg m-3" }, [
-                        _c("div", { staticClass: "text-center" }, [
-                          _c(
-                            "div",
-                            { staticClass: "danger-group p-0 p-md-2  m-3" },
-                            [
-                              _c("h4", [_vm._v("Please Verify your Email")]),
-                              _vm._v(" "),
-                              _c("p", { staticClass: "w-note" }, [
-                                _vm._v(
-                                  "Thank you for your interest in joining our program, you are now close to becoming an official member of Bfin Network Shares"
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v(
-                                  "Please login into " +
-                                    _vm._s(_vm.$auth.user().email) +
-                                    " to finish up your registration"
-                                )
-                              ])
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "text-center" }, [
-                            _c(
-                              "button",
-                              {
-                                staticClass: "btn btn-default",
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.resendEmail($event)
-                                  }
-                                }
-                              },
-                              [_vm._v("Resend Email")]
-                            )
-                          ])
-                        ])
+                    ? _c("div", { staticClass: "error-msg p-2 m-1" }, [
+                        _vm._m(1)
                       ])
                     : _vm._e(),
                   _vm._v(" "),
@@ -55612,7 +55681,7 @@ var render = function() {
                               _c("label", [_vm._v("Username")]),
                               _vm._v(" "),
                               _c("div", { staticClass: "iconed" }, [
-                                _vm._m(1),
+                                _vm._m(2),
                                 _vm._v(" "),
                                 _c("input", {
                                   directives: [
@@ -55649,7 +55718,7 @@ var render = function() {
                               _c("label", [_vm._v("Password")]),
                               _vm._v(" "),
                               _c("div", { staticClass: "iconed" }, [
-                                _vm._m(2),
+                                _vm._m(3),
                                 _vm._v(" "),
                                 _c("input", {
                                   directives: [
@@ -55725,6 +55794,32 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "login-heading mb-0 text-center" }, [
       _c("h2", [_vm._v("Enter Login Credentials")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-center ml-2" }, [
+      _c("div", { staticClass: "danger-group p-0 p-md-2  m-1" }, [
+        _c("h4", [_vm._v("Please Verify your Email")]),
+        _vm._v(" "),
+        _c("p", { staticClass: "w-note m-1" }, [
+          _vm._v(
+            "Thank you for your interest in joining our program, you are now close to becoming an official member of Bfin Network Shares"
+          )
+        ]),
+        _vm._v(" "),
+        _c("span", [
+          _vm._v("Please login into  to finish up your registration")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "text-center" }, [
+        _c("button", { staticClass: "btn btn-default" }, [
+          _vm._v("Resend Email")
+        ])
+      ])
     ])
   },
   function() {
@@ -59171,7 +59266,10 @@ var render = function() {
                                           _vm._v(" "),
                                           _c(
                                             "div",
-                                            { staticClass: "simple-stats" },
+                                            {
+                                              staticClass:
+                                                "simple-stats p-0 m-auto"
+                                            },
                                             [
                                               _c(
                                                 "ul",
@@ -61032,7 +61130,49 @@ var render = function() {
                 _vm.$root.basepath +
                 "/img/home.png) no-repeat 0 0;"
             },
-            [_vm._m(1)]
+            [
+              _c("div", { staticClass: "p-1 get-started" }, [
+                _c("ul", [
+                  _c("li", [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c(
+                      "p",
+                      [
+                        _vm._v(
+                          "Start by filling in required fields of the application form on the"
+                        ),
+                        _c(
+                          "router-link",
+                          {
+                            staticClass: "btn btn-link",
+                            staticStyle: {
+                              display: "inline",
+                              color: "rgb(183, 183, 183)",
+                              "font-family": "Montserrat"
+                            },
+                            attrs: { to: "/register" }
+                          },
+                          [_vm._v("Register")]
+                        ),
+                        _vm._v(
+                          "page. Submit your registration. After that you will be able to log into your account and make your first investment. "
+                        )
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _vm._m(4),
+                  _vm._v(" "),
+                  _vm._m(5)
+                ])
+              ])
+            ]
           )
         ])
       ])
@@ -61060,72 +61200,67 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "get-started" }, [
-      _c("ul", [
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 1: ")]),
-            _vm._v("Account Registration")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Start by filling in required fields of the application form on the ‘Register’ page. Submit your registration. After that you will be able to log into your account and make your first investment."
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 2: ")]),
-            _vm._v("Creating Deposit")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bfin Financial Services Limited just click on ‘Make a deposit‘ link. "
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 3: ")]),
-            _vm._v("Wait for the deposit transfer")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "Normally Bitcoin deposit is active after 3 confirmations. 3 confirmations from the Bitcoin network take approximately 30 minutes - 1 hour or maybe it can long which depends on bitcoin network. Once the Bitcoin deposit is confirmed it will show in your active deposit according to your subscription plan."
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 4: ")]),
-            _vm._v("Follow Accruals")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "You can choose any of the 16 investment plans carefully grouped into 4 portfolios of Bfin Financial Services Limited to make your investment. The gold plan is 2% daily for life time. The platinum plan is 5% daily for life time. "
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c("h3", [
-            _c("span", [_vm._v("Step 5: ")]),
-            _vm._v("Profit Withdrawal")
-          ]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "All the investment plans in Bfin Financial Services Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw & enjoy your ROI! "
-            )
-          ])
-        ])
+    return _c("h3", [
+      _c("span", [_vm._v("Step 1: ")]),
+      _vm._v("Account Registration")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("h3", [_c("span", [_vm._v("Step 2: ")]), _vm._v("Creating Deposit")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bfin Financial Services Limited just click on ‘Make a deposit‘ link. "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("h3", [
+        _c("span", [_vm._v("Step 3: ")]),
+        _vm._v("Wait for the deposit transfer")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "Normally Bitcoin deposit is active after 3 confirmations. 3 confirmations from the Bitcoin network take approximately 30 minutes - 1 hour or maybe it can long which depends on bitcoin network. Once the Bitcoin deposit is confirmed it will show in your active deposit according to your subscription plan."
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("h3", [_c("span", [_vm._v("Step 4: ")]), _vm._v("Follow Accruals")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "You can choose any of the 16 investment plans carefully grouped into 4 portfolios of Bfin Financial Services Limited to make your investment. The gold plan is 2% daily for life time. The platinum plan is 5% daily for life time. "
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", [
+      _c("h3", [_c("span", [_vm._v("Step 5: ")]), _vm._v("Profit Withdrawal")]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v(
+          "All the investment plans in Bfin Financial Services Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw & enjoy your ROI! "
+        )
       ])
     ])
   }
@@ -61151,218 +61286,190 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _c("div", { staticClass: "row inv-plans" }, [
-                _c("div", { staticClass: "column col alpha omega" }, [
-                  _c("div", { staticClass: "plan-wrap first" }, [
-                    _vm._m(3),
-                    _vm._v(" "),
-                    _vm._m(4),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "inv-button" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "btn btn-inverse",
-                            attrs: { to: "/user/dashboard/deposit" }
-                          },
-                          [_vm._v("Make Investment")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "column col alpha omega" }, [
-                  _c("div", { staticClass: "plan-wrap first" }, [
-                    _vm._m(5),
-                    _vm._v(" "),
-                    _vm._m(6),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "inv-button" },
-                      [
-                        _c(
-                          "router-link",
-                          {
-                            staticClass: "btn btn-inverse",
-                            attrs: { to: "/user/dashboard/deposit" }
-                          },
-                          [_vm._v("Make Investment")]
-                        )
-                      ],
-                      1
-                    )
-                  ])
-                ])
-              ])
-            ]
-          )
-        ])
-      ])
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-title m-3 p-2" }, [
-      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
-        _c("h1", [_vm._v("Investment Solutions")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "Bfin Financial Services Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time & effort to present the best possible investment plans for you."
-          )
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "page-heading text-center" }, [
-      _c("h2", [_vm._v("Our Investment Plans")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "inv-intro text-left" }, [
-      _vm._v(
-        "Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios."
-      ),
-      _c("br"),
-      _vm._v(
-        " \n                        Bronze account features:\n                        Deposit: $20 - $150\n                        Up to 5% R.O.I in 72 Hours minimum\n                        Eligibility: A New User Can Only Use This Plan Twice\n                        No Referral Commission\n                        "
-      ),
-      _c("br"),
-      _vm._v(
-        " Silver account features:\n                        Deposit: $200 - $2,000\n                        Up to 20%\n                        30 Days minimum turnover\n                        5% One time Referral Commission\n                        "
-      ),
-      _c("br"),
-      _vm._v(
-        " Gold account features:\n                        Deposit: $5,000 - $30,000\n                        Up to 40%\n                        30 Days turnover\n                        10% Referral Commission to the 5th chain\n                        "
-      ),
-      _c("br"),
-      _vm._v(
-        " Platinum account features:\n                        Deposit: $60,000 - $200,000\n                        Upto 60%\n                        14 days turnover\n                        10% Referral Commission to the 10th chain."
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "plan-sticker" }, [
-      _c("div", { staticClass: "plan-inner" }, [
-        _c("div", { staticClass: "plan-in" }, [
-          _c("h3", [_vm._v("5%")]),
+    return _c("div", [
+      _c("div", { staticClass: "row page-title m-3 p-2" }, [
+        _c("div", { staticClass: "col-12 col-lg-8 container" }, [
+          _c("h1", [_vm._v("Investment Solutions")]),
           _vm._v(" "),
-          _c("p", [_vm._v("72"), _c("span", [_vm._v(" hours turnover")])])
+          _c("p", [
+            _vm._v(
+              "Bfin Financial Services Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time & effort to present the best possible investment plans for you."
+            )
+          ])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "plan-det" }, [
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" 5% 72 hours turnover")
       ]),
       _vm._v(" "),
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" Min: 20 USD - Max: 150 USD")
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" instant withdraw")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "plan-sticker" }, [
-      _c("div", { staticClass: "plan-inner" }, [
-        _c("div", { staticClass: "plan-in" }, [
-          _c("h3", [_vm._v("60%")]),
-          _vm._v(" "),
-          _c("p", [_vm._v("30"), _c("span", [_vm._v(" days turnover")])])
+      _c("section", { staticClass: "main-container" }, [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass: "wrapper p-1",
+                staticStyle: {
+                  background:
+                    'url("http://localhost:8000/img/home.png") 0px 0px no-repeat'
+                }
+              },
+              [
+                _c("div", { staticClass: "page-heading text-center" }, [
+                  _c("h2", [_vm._v("Our Investment Plans")])
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "col inv-intro text-justify" }, [
+                  _vm._v(
+                    "Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios."
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("b", [_vm._v("Bronze account features:")]),
+                  _vm._v(
+                    "\n                    Deposit: $20 - $150\n                    Up to 5% R.O.I in 72 Hours minimum\n                    Eligibility: A New User Can Only Use This Plan Twice\n                    No Referral Commission\n                    "
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("b", [_vm._v("Silver account features:")]),
+                  _vm._v(
+                    "\n                    Deposit: $200 - $2,000\n                    Up to 20%\n                    30 Days minimum turnover\n                    5% One time Referral Commission\n                    "
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("b", [_vm._v("Gold account features:")]),
+                  _vm._v(
+                    "\n                    Deposit: $5,000 - $30,000\n                    Up to 40%\n                    30 Days turnover\n                    10% Referral Commission to the 5th chain\n                    "
+                  ),
+                  _c("br"),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("b", [_vm._v("Platinum account features:")]),
+                  _vm._v(
+                    "\n                    Deposit: $60,000 - $200,000\n                    Upto 60%\n                    14 days turnover\n                    10% Referral Commission to the 10th chain."
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row inv-plans" }, [
+                  _c("div", { staticClass: " col alpha omega" }, [
+                    _c("div", { staticClass: "col plan-wrap first" }, [
+                      _c("div", { staticClass: "plan-sticker" }, [
+                        _c("div", { staticClass: "plan-inner" }, [
+                          _c("div", { staticClass: "plan-in" }, [
+                            _c("h3", [_vm._v("5%")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v("72"),
+                              _c("span", [_vm._v(" hours turnover")])
+                            ])
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("ul", { staticClass: "plan-det" }, [
+                        _c("li", [
+                          _c("i", {
+                            staticClass: "fa fa-check",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v(" 5% 72 hours turnover")
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("i", {
+                            staticClass: "fa fa-check",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v(" Min: 20 USD - Max: 150 USD")
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("i", {
+                            staticClass: "fa fa-check",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v(" instant withdraw")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "inv-button" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-inverse",
+                            attrs: { href: "/user/dashboard/deposit" }
+                          },
+                          [_vm._v("Make Investment")]
+                        )
+                      ])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col alpha omega" }, [
+                    _c("div", { staticClass: "col plan-wrap first" }, [
+                      _c("div", { staticClass: "plan-sticker" }, [
+                        _c("div", { staticClass: "plan-inner" }, [
+                          _c("div", { staticClass: "plan-in" }, [
+                            _c("h3", [_vm._v("60%")]),
+                            _vm._v(" "),
+                            _c("p", [
+                              _vm._v("30"),
+                              _c("span", [_vm._v(" days turnover")])
+                            ])
+                          ])
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("ul", { staticClass: "plan-det" }, [
+                        _c("li", [
+                          _c("i", {
+                            staticClass: "fa fa-check",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v(" 60% 14 days turnover")
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("i", {
+                            staticClass: "fa fa-check",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v(" Min: 60,000 USD - Max: 200,000")
+                        ]),
+                        _vm._v(" "),
+                        _c("li", [
+                          _c("i", {
+                            staticClass: "fa fa-check",
+                            attrs: { "aria-hidden": "true" }
+                          }),
+                          _vm._v(" instant withdraw")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "inv-button mt-5 p-0 pt-5" }, [
+                        _c(
+                          "a",
+                          {
+                            staticClass: "btn btn-inverse",
+                            attrs: { href: "/user/dashboard/deposit" }
+                          },
+                          [_vm._v("Make Investment")]
+                        )
+                      ])
+                    ])
+                  ])
+                ])
+              ]
+            )
+          ])
         ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("ul", { staticClass: "plan-det" }, [
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" 60% 14 days turnover")
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" Min: 60,000 USD - Max: 200,000")
-      ]),
-      _vm._v(" "),
-      _c("li", [
-        _c("i", {
-          staticClass: "fa fa-check",
-          attrs: { "aria-hidden": "true" }
-        }),
-        _vm._v(" instant withdraw")
       ])
     ])
   }
@@ -61474,75 +61581,100 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
-              _c("div", { staticClass: "row company" }, [
-                _c("div", { staticClass: "partners-container" }, [
-                  _c("h2", { staticClass: "text-center" }, [
-                    _vm._v("Partner Incentive System Structure")
-                  ]),
-                  _vm._v(" "),
-                  _c("h5", { staticClass: "slogan text-center" }, [
-                    _vm._v(
-                      "Enjoy exceptional upto 14% five levels deep affiliate system structure in Bfin Financial Services Limited."
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-center" }, [
-                    _vm._v(
-                      "If you want to earn more money or do not have enough to invest in Bfin Financial Services Limited, use your referral link for the invitation and the registration of new members. It is located in your account as a direct link. You can attract any number of new investors, the more you active referrals, the more earnings you have! When you refer your family, friends and other community members to Bfin Financial Services Limited, you are entitled to up to 14% on every deposit made by your downline. You do not need to have an active deposit before you can earn from our investment program. For first level, you will receive 9% affiliate commission, for second level you will receive 3% affiliate commission, for third level you will get 1% affiliate commission and for fourth & fifth level you will get 0.5% affiliate commission each. This multi-tier affiliate program will ensure multiple sources of passive income for you without even depositing in our investment program. "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "partners-img clearfix" }, [
-                    _c("img", {
-                      attrs: {
-                        src: _vm.$root.basepath + "/img/percentages.png"
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("img", {
-                      attrs: { src: _vm.$root.basepath + "/img/partners.png" }
-                    })
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "std" })
-                ])
-              ])
-            ]
-          )
-        ])
-      ])
-    ])
-  ])
+  return _vm._m(0)
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row page-title m-3 p-2" }, [
-      _c("div", { staticClass: "col-12 col-lg-8 container" }, [
-        _c("h1", [_vm._v("Affiliate Program")]),
-        _vm._v(" "),
-        _c("p", [
-          _vm._v(
-            "If you want passive earning of substantial sums refer quickly to all about Bfin Financial Services Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
-          )
+    return _c("div", [
+      _c("div", { staticClass: "row page-title m-3 p-2" }, [
+        _c("div", { staticClass: "col-12 col-lg-8 container" }, [
+          _c("h1", [_vm._v("Affiliate Program")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "If you want passive earning of substantial sums refer quickly to all about Bfin Financial Services Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "main-container" }, [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c(
+              "div",
+              {
+                staticClass: "wrapper",
+                staticStyle: {
+                  background:
+                    'url("http://localhost:8000/img/home.png") 0px 0px no-repeat'
+                }
+              },
+              [
+                _c("div", { staticClass: "row company" }, [
+                  _c("div", { staticClass: "p-2 partners-container" }, [
+                    _c("h2", { staticClass: "text-center" }, [
+                      _vm._v("Partner Incentive System Structure")
+                    ]),
+                    _vm._v(" "),
+                    _c("h5", { staticClass: "slogan text-center" }, [
+                      _vm._v(
+                        "Enjoy exceptional upto 14% five levels deep affiliate system structure in Bfin Financial Services Limited."
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "p-2 text-justify" }, [
+                      _vm._v(
+                        "If you want to earn more money or do not have enough to invest in Bfin Financial Services Limited, use your referral link for the invitation and the registration of new members."
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "  It is located in your account as a direct link."
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "   You can attract any number of new investors, the more you active referrals, the more earnings you have! When you refer your family, friends and other community members to Bfin Financial Services Limited, you are entitled to up to 14% on every deposit made by your downline. "
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "  You do not need to have an active deposit before you can earn from our investment program. "
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "  For first level, you will receive 9% affiliate commission, for second level you will receive 3% affiliate commission, for third level you will get 1% affiliate commission and for fourth & fifth level you will get 0.5% affiliate commission each."
+                      ),
+                      _c("br"),
+                      _c("br"),
+                      _vm._v(
+                        "   This multi-tier affiliate program will ensure multiple sources of passive income for you without even depositing in our investment program. "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "partners-img clearfix" }, [
+                      _c("img", {
+                        attrs: {
+                          src: "http://localhost:8000/img/percentages.png"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("img", {
+                        attrs: { src: "http://localhost:8000/img/partners.png" }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "std" })
+                  ])
+                ])
+              ]
+            )
+          ])
         ])
       ])
     ])
@@ -80631,9 +80763,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       this.time = moment__WEBPACK_IMPORTED_MODULE_12___default()().format("h:mm:ss a");
     },
     btcRate: function btcRate() {
+      var _this = this;
+
       var form = new vform__WEBPACK_IMPORTED_MODULE_17__["Form"]();
       form.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
-        // console.log(response.data.bpi.USD.rate)
+        //console.log( response.data.bpi.USD.rate)
+        _this.rate = response.data.bpi.USD.rate;
         localStorage.rate = JSON.stringify(response.data.bpi.USD.rate);
       })["catch"](function (error) {
         console.log(error);
@@ -80648,12 +80783,12 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       });
     },
     refreshUser: function refreshUser() {
-      var _this = this;
+      var _this2 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this.user = _this.$auth.user();
+          _this2.user = _this2.$auth.user();
         },
         error: function error(_error) {}
       });

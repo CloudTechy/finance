@@ -12,12 +12,7 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
  */
-Route::middleware('auth:api')->group(function () {
-	// Email Verification Routes...
-	Route::post('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
-	Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
-	Route::post('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
-});
+
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
 	return $request->user();

@@ -11,11 +11,11 @@
             <div class="main">
                 <div class="container">
                     <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
-                        <div class="get-started">
+                        <div class="p-1 get-started">
                             <ul>
                                 <li>
                                     <h3><span>Step 1: </span>Account Registration</h3>
-                                    <p>Start by filling in required fields of the application form on the ‘Register’ page. Submit your registration. After that you will be able to log into your account and make your first investment.</p>
+                                    <p>Start by filling in required fields of the application form on the<router-link to="/register" class="btn btn-link" style="display: inline; color: rgb(183, 183, 183); font-family: Montserrat; ">Register</router-link>page. Submit your registration. After that you will be able to log into your account and make your first investment. </p>
                                 </li>
                                 <li>
                                     <h3><span>Step 2: </span>Creating Deposit</h3>

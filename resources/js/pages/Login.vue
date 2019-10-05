@@ -16,22 +16,13 @@
                                 <h2>Enter Login Credentials</h2>
                             </div>
                             <div class="card-body">
-                                <div class="error-msg P-3 m-1" v-if="has_error && !success">
-                                    <p v-if="error == 'login_error'">Validation Errors.</p>
-                                    <p v-else>Error, unable to connect with these credentials.</p>
+                                <div class="error-msg p-2 m-1" v-if="has_error && !success">
+                                    <p class="m-1" v-if="error == 'login_error'">Validation Errors.</p>
+                                    <p class="m-1" v-else>Error, unable to connect with these credentials.</p>
                                 </div>
-                                <div class="error-msg m-3" v-if="success && !this.$auth.user().isEmailVerified">
-                                    <div class="text-center">
-                                        <div class="danger-group p-0 p-md-2  m-3">
-                                            <h4>Please Verify your Email</h4>
-                                            <p class="w-note">Thank you for your interest in joining our program, you are now close to becoming an official member of Bfin Network Shares</p>
-                                            <span>Please login into {{$auth.user().email}} to finish up your registration</span>
-                                        </div>
-                                        <div class="text-center">
-                                            <button @click.prevent="resendEmail" class="btn btn-default">Resend Email</button>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="error-msg p-2 m-1" v-if="success && !this.$auth.user().isEmailVerified"><div class="text-center ml-2"><div class="danger-group p-0 p-md-2  m-1"><h4>Please Verify your Email</h4> <p class="w-note m-1">Thank you for your interest in joining our program, you are now close to becoming an official member of Bfin Network Shares</p> <span>Please login into  to finish up your registration</span></div> <div class="text-center"><button class="btn btn-default">Resend Email</button></div></div></div>
+
+                               
                                 <form autocomplete="off" @submit.prevent="login" method="post">
                                     <ul class="form-list">
                                         <li class="row clearfix text-center">

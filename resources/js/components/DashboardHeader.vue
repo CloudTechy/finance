@@ -4,19 +4,28 @@
             <div class="row">
                 <div class="column col-xl-7 p-0 p-lg-1 col-lg-6 col-12 alpha">
                     <h3 class="user-hello text-left pl-3 p-md-0" style="color: #fff;">Hello, <span>{{$auth.user().username}}</span></h3>
-                    <div class="header-box user ml-1 ml-sm-3 ml-md-0 ">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td style="color: #fff;">Registration Date :</td>
-                                    <td>{{time}}</td>
-                                </tr>
-                                <tr>
-                                    <td style="color: #fff;">Your IP Address :</td>
-                                    <td>{{getIp}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                    <div style="padding-left: 30px;" class="header-box user  row">
+                       
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                    <td  class="p-1" style="color: #fff;">Registration Date :</td>
+                                </div>
+                                <div class="col justify-content-end">
+                                    <td class="p-1"  style="color: #fff;">Your IP Address :</td>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="row">
+                                <div class="col">
+                                   <td class="p-1" style="text-align: right;color: #f8b882;">{{time}}</td>
+                                </div>
+                                <div class="col">
+                                      <td class="p-1" style="text-align: right;color: #f8b882;">{{getIp}}</td>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="column col-xl-5 col-lg-6 col-sm-9 col-12 omega">
