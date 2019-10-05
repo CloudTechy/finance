@@ -23,7 +23,7 @@
                                             <li class="active">Withdrawals</li>
                                         </ul>
                                     </div>
-                                    <div class="acc-body Withdrawals">
+                                    <div class="acc-body m-0 p-2 Withdrawals">
                                         <form @submit.prevent="getWithdrawals" class="date-from" method="post" name="opts">
                                             <div class="row text-center justify-content-center form-list">
                                                     <div class="form-group col-6">
@@ -54,7 +54,7 @@
                                         <h4 class="text-center">List of all Withdrawals</h4>
                                             <p class="small p-2">Total of {{myFilter($root.myFilter(withdrawals,search),from,to).length
                                                 }} entries</p>
-                                        <div style="max-height: 500px ; overflow: auto" class="stat-table table-responsive">
+                                        <div style="max-height: 500px ; overflow: auto" class="stat-table m-0 p-0 table-responsive">
                                             
                                             <table class="stat">
                                                 <thead>

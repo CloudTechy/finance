@@ -1,6 +1,6 @@
 <template>
     <div style="width: inherit;">
-        <div class="page-title row page-title m-3 p-2 with-btn">
+        <div class="page-title row page-title m-3 p-0 with-btn">
             <div class=" col-12 col-lg-8  container">
                 <h1>account Registration</h1>
                 <p>Already have an account? Click here to login</p>
@@ -12,7 +12,7 @@
                 <div class="container">
                     <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
                         <div class="register-wrapper">
-                            <div v-if="!success" class="register-form">
+                            <div v-if="!success" class="register-form p-0 m-0">
                                 <form autocomplete="off" @submit.prevent="register" v-if="!success" method="post">
                                     <div class="login-heading">
                                         <h2>Account Information</h2>
@@ -21,7 +21,7 @@
                                         <p class="p-2 m-3" v-if="error == 'registration_validation_error'">Validation Errors.</p>
                                         <p class="p-2 m-3"  v-else>Error, can not register at the moment. If the problem persists, please contact an administrator.</p>
                                     </div>
-                                    <ul class="form-list">
+                                    <ul class="form-list p-1">
                                         <li class="row clearfix">
                                             <div class="col-12 p-2  col-md-6">
                                                 <label>First Name</label>
@@ -99,7 +99,7 @@
                                         <h2>Payment Address</h2>
                                         <p>Enter your Payment wallet address in below field, make sure you enter the correct Payment address where you will received the payments.</p>
                                     </div>
-                                    <ul class="form-list">
+                                    <ul class="form-list p-1">
                                         <li>
                                             <div class="col-12 p-2 ">
                                                 <label>Your Bitcoin wallet address</label>
@@ -111,7 +111,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <ul class="form-list">
+                                    <ul class="form-list p-1">
                                         <li>
                                             <div class="col-12 p-2">
                                                 <label>Your Perfectmoney USD ACCOUNT NUMBER</label>
@@ -123,7 +123,7 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <ul class="form-list">
+                                    <ul class="form-list p-1">
                                         <li class="row clearfix">
                                             <div class="col-12 p-2  col-md-6">
                                                 <label>Secret question</label>

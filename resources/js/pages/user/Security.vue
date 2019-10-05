@@ -14,7 +14,7 @@
                             </nav>
                             <DashboardSidebar></DashboardSidebar>
                             <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <div class="acc-body security">
+                                <div class="acc-body m-0 p-0 security">
                                     <div class="setting-block">
                                         <h3>Detect IP Address Change Sensitivity</h3>
                                         <ul class="form-list">

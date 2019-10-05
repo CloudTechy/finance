@@ -69,9 +69,9 @@
                                     <div class="acc-heading clearfix">
                                         <h2>Admin Affiliate Link</h2>
                                     </div>
-                                    <div class="acc-body clearfix">
+                                    <div class="acc-body p-0 clearfix">
                                         <div class="aff-link-1 clearfix">
-                                            <a class="aff-link" id="foo" :href="Referral_link">{{Referral_link}}</a>
+                                            <a class="aff-link p-0" id="foo" :href="Referral_link">{{Referral_link}}</a>
                                             <button v-clipboard="Referral_link" class="btn btn-default small" style="float:right;" data-clipboard-target="#foo">Copy</button>
                                         </div>
                                     </div>

@@ -14,11 +14,11 @@
                             </nav>
                             <DashboardSidebar></DashboardSidebar>
                             <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <div class="acc-body deposit-confirm withdraw-confirm">
-                                    <div class="bal">
+                                <div class="acc-body p-0 deposit-confirm withdraw-confirm">
+                                    <div class="bal p-0 text-center">
                                         <span>Account Balance:</span> {{$root.numeral(user.balance)}}
                                     </div>
-                                    <div class="bal">
+                                    <div class="bal p-0 text-center">
                                         <span>Pending Withdrawals:</span> {{$root.numeral(user.totalPendingWithdrawal)}}</div>
                                     <div class="error-msg p-4 m-3" v-if="error">
                                         <p>{{error}}</p>
@@ -58,7 +58,7 @@
                                         <br><br>
                                         <ul class="form-list text-left deposit-form-wrapper">
                                             <li class="clearfix floated">
-                                                <div class="input-box">
+                                                <div class="input-box m-1">
                                                     <label>Withdraw Amount</label>
                                                     <div class="iconed">
                                                         <span class="icon"><i class="fas fa-dollar-sign" aria-hidden="true"></i></span>
@@ -69,7 +69,7 @@
                                             </li>
                                         </ul>
                                         <h3 v-if="user.balance <= 0" class="notice-message m-2 text-center">You have no funds to withdraw.</h3>
-                                        <div v-else class="text-center  mb-3 mb-lg-0">
+                                        <div v-else class="text-center m-2 mb-3 mb-lg-0">
                                             <button type="submit" ref="process" class="btn btn-default">Withdraw</button>
                                         </div>
                                     </form>

@@ -14,7 +14,7 @@
                             </nav>
                             <DashboardSidebar></DashboardSidebar>
                             <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <div class="acc-block">
+                                <div class="acc-block m-0 p-0">
                                     <div class="acc-heading clearfix">
                                         <h2>Referrals</h2>
                                         <ul class="breadcrumbs">
@@ -23,20 +23,20 @@
                                             <li class="active">Referrals</li>
                                         </ul>
                                     </div>
-                                    <div class="acc-body referrals">
+                                    <div class="acc-body m-0 p-0 referrals">
                                         <!--stats-->
-                                        <div class="stat-box clearfix">
-                                            <div class="s-box">
+                                        <div class="stat-box row p-0 m-0 clearfix">
+                                            <div class="s-box col m-0 p-2">
                                                 <img :src="$root.basepath + '/img/box-4.png'">
                                                 <h4>Total Referrals</h4>
                                                 <span>{{user.referrals}}</span>
                                             </div>
-                                            <div class="s-box">
+                                            <div class="s-box col m-0 p-2">
                                                 <img :src="$root.basepath + '/img/box-5.png'">
                                                 <h4>Active referrals</h4>
                                                 <span>{{user.activeReferrals}}</span>
                                             </div>
-                                            <div class="s-box">
+                                            <div class="s-box col m-0 p-2">
                                                 <img :src="$root.basepath + '/img/box-6.png'">
                                                 <h4>Total commissions</h4>
                                                 <span>{{$root.numeral(user.totalCommission)}}</span>
@@ -47,9 +47,9 @@
                                             <div class="acc-heading clearfix">
                                                 <h2>Affiliate Link</h2>
                                             </div>
-                                            <div class="acc-body clearfix">
+                                            <div class="acc-body p-0 m-1 clearfix">
                                                 <div class="aff-link-1 clearfix">
-                                                    <a class="aff-link" id="foo" :href="Referral_link">{{Referral_link}}</a>
+                                                    <a class="aff-link p-0" id="foo" :href="Referral_link">{{Referral_link}}</a>
                                                     <button v-clipboard="Referral_link" class="btn btn-default small" style="float:right;" data-clipboard-target="#foo">Copy</button>
                                                 </div>
                                             </div>

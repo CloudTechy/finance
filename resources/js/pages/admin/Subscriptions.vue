@@ -14,7 +14,7 @@
                             </nav>
                             <AdminDashboardSidebar></AdminDashboardSidebar>
                             <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <div class="acc-body deposit-history ">
+                                <div class="acc-body m-0 p-0 deposit-history ">
                                     <div class="acc-heading clearfix">
                                         <h2>Subscriptions Overview</h2>
                                         <ul class="breadcrumbs">

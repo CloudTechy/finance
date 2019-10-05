@@ -14,8 +14,8 @@
                             </nav>
                             <DashboardSidebar></DashboardSidebar>
                             <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
-                                <div class="acc-body deposit-history ">
-                                    <div v-if="portfolios" v-for="portfolio in portfolios" class="m-2 mb-3">
+                                <div class="acc-body p-0 deposit-history ">
+                                    <div v-if="portfolios" v-for="portfolio in portfolios" class="m-0 p-0 mb-3">
                                         <div v-if = "portfolio.name == 'bronze'" class="plan-wrap m-0 mb-2 clearfix">
                                             <div class="plan-inner">
                                                 <div class="plan-in">
@@ -58,7 +58,7 @@
                                                     <th>Deposit</th>
                                                     <th>Interest</th>
                                                     <th>Active</th>
-                                                    <th>ROI Countdown</th>
+                                                    <th>Timeout</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="body">

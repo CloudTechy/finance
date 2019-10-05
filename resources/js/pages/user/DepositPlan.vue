@@ -16,15 +16,15 @@
         </div>
         <form method="post" name="spendform">
             <input type="hidden" name="a" value="deposit">
-            <div class="acc-body deposit">
-                <div class="bal">
+            <div class="acc-body p-0 deposit">
+                <div class="bal p-0 text-center">
                     <span>Account Balance:</span> {{$root.numeral(user.balance)}}
                 </div>
                 <div class="acc-inv-plans text-center">
                     <h2>Our Investment Portfolios</h2>
                     <p>Select the plan that best suites you to continue</p>
                     <div class="accordion mb-4" id="accordionExample">
-                        <div @click="selectPortfolio(portfolio.name)" v-if="portfolios" v-for="portfolio in portfolios" class="m-2">
+                        <div @click="selectPortfolio(portfolio.name)" v-if="portfolios" v-for="portfolio in portfolios" class="m-1">
                             <div :class="{'card-header' : true,silver : true, 'mb-3' : true, gold : selectedPortfolio == portfolio.name}" :id="'h-'+portfolio.name">
                                 <h2 class="mb-0">
                                     <button class="btn btn-block text-capitalize font-weight-bold" type="button" data-toggle="collapse" :data-target="'#' + portfolio.name" aria-expanded="true" :aria-controls="portfolio.name">
@@ -53,7 +53,7 @@
                     </div>
                     <ul class="form-list text-left deposit-form-wrapper">
                         <li class="clearfix floated">
-                            <div class="input-box">
+                            <div class="input-box m-1">
                                 <label>Deposit Amount</label>
                                 <div class="iconed">
                                     <span class="icon"><i class="fas fa-usd" aria-hidden="true"></i></span>

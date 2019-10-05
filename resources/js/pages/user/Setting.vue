@@ -27,7 +27,7 @@
                                         <p>{{message}}</p>
                                     </div>
                                     <form autocomplete="off" @submit.prevent="editProfile" method="post">
-                                        <div class="acc-body settings">
+                                        <div class="acc-body m-0 p-0 settings">
                                             <div class="setting-bar clearfix">
                                                 <p>Username : <span>{{user.username}}</span></p>
                                                 <p>Registration Date : <span>{{reg_date}}</span></p>
@@ -83,7 +83,7 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="text-center">
+                                        <div class="text-center p-2">
                                             <button type="submit" class="btn btn-default">Save Data</button>
                                         </div>
                                     </form>

@@ -60,3 +60,11 @@ export default {
 }
 
 </script>
+<style>
+    table.stat tbody td {
+    font-size: 15px;
+    line-height: 24px;
+    padding: 12px 8px;
+    /* border-top: 1px solid rgba(255,255,255,0.10); */
+}
+</style>

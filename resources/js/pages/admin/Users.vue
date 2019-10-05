@@ -107,11 +107,11 @@
                                                         </li>
                                                         <li>
                                                             <img :src="$root.basepath + '/img/key-2.png'">
-                                                            <p>Ref Active Users: <span>{{user.activeReferrals}}</span></p>
+                                                            <p> Active Ref: <span>{{user.activeReferrals}}</span></p>
                                                         </li>
                                                         <li>
                                                             <img :src="$root.basepath + '/img/box-6.png'">
-                                                            <p>Ref Commissions: <span>{{$root.numeral(user.totalCommission)}}</span></p>
+                                                            <p>Ref paid: <span>{{$root.numeral(user.totalCommission)}}</span></p>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -139,45 +139,37 @@
                                                         </div> -->
                                                     
                                                     <ul class="clearfix">
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/box-4.png'">
+                                                        <li  class="m-0 p-2">
                                                             <p>First Name: <span>{{user.first_name}}</span></p>
                                                         </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/box-4.png'">
+                                                        <li  class="m-0 p-2">
                                                             <p>Last Name: <span>{{user.last_name}}</span></p>
                                                         </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/support-mail.png'">
-                                                            <p>Email <span>{{user.email}}</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/ac-10.png'">
-                                                            <p>Phone: <span>{{user.number}}</span></p>
-                                                        </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/ac-2.png'">
+                                                        <li  class="m-0 p-2">
                                                             <p>Joined: <span>{{user.date}}</span></p>
                                                         </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/ac-10.png'">
-                                                            <p>User Level: <span>{{user.user_level}}</span></p>
+                                                        <li  v-if="user.number" class="m-0 p-2">
+                                                            <p>Phone: <span><input type="text" readonly="" class="form-control" :value="user.number"></span></p>
                                                         </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/box-3.png'">
-                                                            <p>Wallet: <span>{{user.wallet}}</span></p>
+                                                        <li v-if="user.email" class="m-0 p-2">
+                                                            <p>Email <span ><input type="text" readonly="" class="form-control" :value="user.email"></span></p>
                                                         </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/box-2.png'">
-                                                            <p>PM: <span>{{user.pm}}</span></p>
+                                                        <li v-if="user.user_level" class="m-0 p-2">
+                                                            
+                                                            <p>User Level: <span ><input type="text" readonly="" class="form-control" :value="user.user_level"></span></p>
                                                         </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/box-2.png'">
-                                                            <p>Admin Wallet: <span>{{user.admin_wallet}}</span></p>
+                                                        <li  v-if="user.wallet" class="m-0 p-2">
+                                                           
+                                                            <p>Wallet: <span><input type="text" readonly="" class="form-control" :value="user.wallet"></span></p>
                                                         </li>
-                                                        <li>
-                                                            <img :src="$root.basepath + '/img/box-3.png'">
-                                                            <p>Admin PM: <span>{{user.admin_pm}}</span></p>
+                                                        <li v-if="user.pm" class="m-0 p-2">
+                                                            <p>PM: <span ><input type="text" class="form-control" :value="user.pm"></span></p>
+                                                        </li>
+                                                        <li v-if="user.admin_wallet" class="m-0 p-2">
+                                                            <p>Admin Wallet: <span ><input type="text" readonly="" class="form-control" :value="user.admin_wallet"></span></p>
+                                                        </li>
+                                                        <li v-if="user.admin_pm" class="m-0 p-2">
+                                                            <p>Admin PM: <span ><input type="text" class="form-control" :value="user.admin_pm"></span></p>
                                                         </li>
                                                     </ul>
                                                 </div>

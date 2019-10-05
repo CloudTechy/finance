@@ -44,7 +44,7 @@
                                                 </li>
                                             </ul>
                                         </form>
-                                        <div class="stat-table table-responsive">
+                                        <div class="stat-table p-0 m-0 table-responsive">
                                             <h4 class="text-center">List of your Transactions</h4>
                                              
                                                 <p class="small p-2">Maximum of 20 entries</p>
