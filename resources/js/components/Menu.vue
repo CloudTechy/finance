@@ -15,7 +15,7 @@
                     <router-link to="/getstarted">getstarted</router-link>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
-                    <a href=https://t.me/Bfininvestmentservices">Channel link</a>
+                    <a href="https://t.me/Bfininvestmentservices">Channel link</a>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
                     <router-link to="/investmentPlans">Investment plans</router-link>

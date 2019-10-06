@@ -163,10 +163,8 @@ const app = new Vue({
             this.time = moment().format("h:mm:ss a")
         },
         btcRate() {
-            var form = new Form
-            form.get("https://api.coindesk.com/v1/bpi/currentprice.json")
+            this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json")
                 .then(response => {
-                     console.log( response.data.bpi.USD.rate)
                      this.rate = response.data.bpi.USD.rate
                     localStorage.rate = JSON.stringify(response.data.bpi.USD.rate)
                 })
@@ -175,8 +173,7 @@ const app = new Vue({
                 })
         },
         getIp() {
-            var form = new Form
-            form.get("https://api.ipify.org?format=json")
+            this.$http.get("https://api.ipify.org?format=json")
                 .then(response => {
                     localStorage.ip = JSON.stringify(response.data.ip)
                 })

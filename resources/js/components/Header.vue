@@ -71,12 +71,14 @@ export default {
                 admin: [
                     { name: 'Dashboard', path: 'admin.dashboard' }
                 ]
-            }
+            },
+            rate : ''
         }
     },
     computed: {},
     // components: { Menu },
     methods: {
+       
         
     }
 }

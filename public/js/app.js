@@ -5853,7 +5853,8 @@ __webpack_require__.r(__webpack_exports__);
           name: 'Dashboard',
           path: 'admin.dashboard'
         }]
-      }
+      },
+      rate: ''
     };
   },
   computed: {},
@@ -54306,9 +54307,7 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _c("li", { staticClass: "m-0  m-lg-2 p-lg-2  m-md-1 p-md-0" }, [
-              _vm._v('">Channel link')
-            ]),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "li",
@@ -54339,7 +54338,7 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _vm._m(1),
+            _vm._m(2),
             _vm._v(" "),
             _c(
               "li",
@@ -54381,6 +54380,16 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon " })]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "m-0  m-lg-2 p-lg-2  m-md-1 p-md-0" }, [
+      _c("a", { attrs: { href: "https://t.me/Bfininvestmentservices" } }, [
+        _vm._v("Channel link")
+      ])
+    ])
   },
   function() {
     var _vm = this
@@ -81576,9 +81585,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
     btcRate: function btcRate() {
       var _this = this;
 
-      var form = new vform__WEBPACK_IMPORTED_MODULE_17__["Form"]();
-      form.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
-        console.log(response.data.bpi.USD.rate);
+      this.$http.get("https://api.coindesk.com/v1/bpi/currentprice.json").then(function (response) {
         _this.rate = response.data.bpi.USD.rate;
         localStorage.rate = JSON.stringify(response.data.bpi.USD.rate);
       })["catch"](function (error) {
@@ -81586,8 +81593,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       });
     },
     getIp: function getIp() {
-      var form = new vform__WEBPACK_IMPORTED_MODULE_17__["Form"]();
-      form.get("https://api.ipify.org?format=json").then(function (response) {
+      this.$http.get("https://api.ipify.org?format=json").then(function (response) {
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
