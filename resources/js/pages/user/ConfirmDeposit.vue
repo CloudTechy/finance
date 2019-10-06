@@ -9,8 +9,8 @@
             </ul>
         </div>
         <div class="acc-body deposit-confirm">
-            <div class="error-msg P-3 m-2" v-if="!user.admin_wallet && !user.admin_pm">
-                <p>Unable to process a wallet address at this time, Please contact your administrator or try again later.</p>
+            <div class="error-msg  m-2" v-if="!user.admin_wallet && !user.admin_pm">
+                <p  class="p-2 m-2">Unable to process a wallet address at this time, Please contact your administrator or try again later.</p>
             </div>
             Please send your payments to this account: <b>{{user.admin_wallet}}</b></br>
             <p class="p-2 m-2" v-if = "user.admin_pm"> Use Perfect Money: <b>{{user.admin_pm}}</b></p><br><br>
@@ -54,10 +54,10 @@
             </table>
             <br><br>
             <form @submit.prevent="verifyWallet" method="post">
-                <div class="error-msg " v-for = "error in errors" v-if="errors">
+                <!-- <div class="error-msg " v-for = "error in errors" v-if="errors">
                     <p class="p-2 m-2">{{error}}</p>
 
-                </div>
+                </div> -->
                 <div class="error-msg p-3 m-2"v-if="error">
                     <p class="p-2 m-2">{{error}}</p>
 

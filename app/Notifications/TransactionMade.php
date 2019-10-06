@@ -46,8 +46,7 @@ class TransactionMade extends Notification implements ShouldQueue {
 			->line('A credit transaction has occured in your account')
 			->line('This is to notify you that a sum of $' . $transaction->amount . ' has been credited into your account')
 			->action('Goto Dashboard', url($dashboardPath))
-			->line('Thank you for investing with us')
-			->bcc('conyekelu@yahoo.com','Chukwuebuka');
+			->line('Thank you for investing with us');
 	}
 
 	/**

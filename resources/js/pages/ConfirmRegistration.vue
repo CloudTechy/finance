@@ -72,7 +72,6 @@ export default {
                     this.error = ''
                     this.success = true
                     this.message = response.data.message
-                    console.log(response)
                 })
                 .catch(error => {
                     this.message = ''

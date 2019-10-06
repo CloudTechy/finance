@@ -33,7 +33,7 @@ class ValidateUserRequest extends FormRequest {
 			'admin_wallet' => 'nullable|string',
 			'admin_pm' => 'nullable|string',
 			'ip' => 'nullable|string',
-			'referral' => 'nullable|string',
+			'referral' => 'required|string|exists:users,username',
 			"number" => "nullable|string|min:5|max:255|unique:users,number",
 			'user_level_id' => 'required|numeric|exists:user_levels,id',
 		];

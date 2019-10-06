@@ -22,7 +22,7 @@
                                     <li v-if = "errors.error.email" v-for="error in errors.error.email" >{{ error }}</li>
                                 </ul>
                                 <form autocomplete="off" @submit.prevent="resetPassword" method="post">
-                                    <ul class="form-list mt-1">
+                                    <ul class="form-list m-2">
                                         <li class="row clearfix text-center">
                                             <div class="input-box col-12 ">
                                                 <label>Email</label>
@@ -33,16 +33,16 @@
                                             </div>
                                         </li>
                                     </ul>
-                                    <ul class="form-list mt-md-2">
+                                    <ul class="form-list m-2">
                                         <li class="row clearfix text-center">
-                                            <div class="input-box col-12 col-md-6 ">
+                                            <div class="input-box col-12 col-md-6">
                                                 <label for="email">Password</label>
                                                 <div class="iconed">
                                                     <span class="icon"><i class="fas fa-lock" aria-hidden="true"></i></span>
                                                     <input type="password" id="password" class="form-control" placeholder="" v-model="password" required>
                                                 </div>
                                             </div>
-                                            <div class="input-box col-12 col-md-6 ">
+                                            <div class="input-box col-12 col-md-6">
                                                 <label for="email">Confirm Password</label>
                                                 <div class="iconed">
                                                     <span class="icon"><i class="fas fa-lock" aria-hidden="true"></i></span>

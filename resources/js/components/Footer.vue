@@ -1,8 +1,8 @@
 <template>
     <footer class="" style="width: inherit; overflow: hidden; box-sizing: border-box; ">
         <div style="position: relative" class="footer-top">
-            <div style="max-width: 80%; position: fixed; bottom : 40px; left:40px;right:40px; " class="alert m-auto alert-primary alert-dismissible fade show" role="alert">
-                    <p class="_text_1nv7e_24">
+            <div style="max-width: 100%; position: fixed; bottom : 2px; left:2px;right:2px; " class="alert m-auto alert-primary alert-dismissible fade show" role="alert">
+                    <p class="_text_1nv7e_24 text-center">
                         We use cookies to provide our services and for analytics and marketing, 
                         By continuing to browse our website, you agree to our use of&nbsp;cookies.
                     </p>

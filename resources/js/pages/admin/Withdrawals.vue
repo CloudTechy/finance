@@ -114,6 +114,9 @@ export default {
         if (localStorage.withdrawals) {
             this.withdrawals = JSON.parse(localStorage.withdrawals)
         }
+        if(this.$route.query.username){
+            this.search = this.$route.query.username
+        }
         setInterval(this.getWithdrawals, 55000)
         this.getWithdrawals()
     },
@@ -121,6 +124,9 @@ export default {
         user() {
             return this.$auth.user()
         },
+    },
+    beforeCreate: function () {
+    if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
     },
     methods: {
         getWithdrawals() {

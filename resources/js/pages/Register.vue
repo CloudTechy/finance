@@ -124,6 +124,18 @@
                                         </li>
                                     </ul>
                                     <ul class="form-list p-1">
+                                        <li>
+                                            <div class="col-12 p-2">
+                                                <label>Refferer</label>
+                                                <div class="iconed">
+                                                    <span class="icon"><i class="fas fa-user"></i></span>
+                                                    <input type="text" required="" placeholder="Enter referral username" v-model="referral" :class="{'form-control' : true, 'error-input': errors.referral != undefined}">
+                                                    <p v-if="errors.referral" v-for="error in errors.referral" class="text-danger m-0 p-2">{{error}}</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <ul class="form-list p-1">
                                         <li class="row clearfix">
                                             <div class="col-12 p-2  col-md-6">
                                                 <label>Secret question</label>
@@ -174,6 +186,7 @@ export default {
             secret_answer: '',
             secret_question: '',
             pm: '',
+            referral: this.$route.query.ref ? this.$route.query.ref : null,
             wallet: '',
             has_error: false,
             error: '',
@@ -199,7 +212,7 @@ export default {
                     pm: app.pm,
                     wallet: app.wallet,
                     user_level_id: 2,
-                    referral: this.$route.query.ref,
+                    referral: app.referral,
                     ip: this.$root.ip,
                     password: app.password,
                     password_confirmation: app.password_confirmation

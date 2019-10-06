@@ -9,10 +9,10 @@
             </ul>:
         </div>
         <div class="success-msg text-capitalize  m-3" v-if="msg">
-            <p>{{msg}} </p>
+            <p  class="p-2 m-2">{{msg}} </p>
         </div>
         <div class="error-msg  m-3" v-if="error">
-            <p>{{error}}</p>
+            <p  class="p-2 m-2">{{error}}</p>
         </div>
         <form method="post" name="spendform">
             <input type="hidden" name="a" value="deposit">
@@ -56,7 +56,7 @@
                             <div class="input-box m-1">
                                 <label>Deposit Amount</label>
                                 <div class="iconed">
-                                    <span class="icon"><i class="fas fa-usd" aria-hidden="true"></i></span>
+                                    <span class="icon"><i class="fas fa-dollar-sign" aria-hidden="true"></i></span>
                                     <input type="number" placeholder="Choose your plan" disabled v-model="form.amount" value="" class="form-control">
                                 </div>
                             </div>

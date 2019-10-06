@@ -6,6 +6,7 @@ use App\Helper;
 use App\Http\Requests\ValidatePackageUserRequest;
 use App\Http\Resources\PackageUserResource;
 use App\Notifications\PackageSubscribed;
+use App\Notifications\NewDepositRequest;
 use App\Notifications\TransactionMade; 
 use App\Notifications\WithdrawalMade;
 use App\Package;
@@ -100,6 +101,7 @@ class PackageUserController extends Controller {
 					$user->notify(new WithdrawalMade($withdrawal));
 				}
 				DB::commit();
+				$this->notificationRequest($subscription);
 				$subscription = new PackageUserResource($subscription);
 				return Helper::validRequest($subscription, 'subscription is being processed', 200);
 			}
@@ -153,6 +155,9 @@ class PackageUserController extends Controller {
 	public function confirmSubscription(Transaction $transaction) {
 		DB::beginTransaction();
 		try {
+			if(!auth()->user()->isAdmin){
+				return Helper::inValidRequest('User not Unauthorized to peform this operation.', 'Unauthorized Access!', 400);
+			}
 
 			$packageUser = PackageUser::where('transaction_id', $transaction->id)->first();
 			if (!$packageUser->active && empty($packageUser->expiration)) {
@@ -194,6 +199,19 @@ class PackageUserController extends Controller {
 			DB::rollback();
 			return false;
 		}
+
+	}
+	public function notificationRequest(PackageUser $subscription) {
+		
+		try {
+			$admins = User::where('user_level_id',1)->get();
+				foreach ($admins as $key => $user) {
+					$user->notify(new NewDepositRequest($subscription));
+				}
+		} catch (Exception $bug) {
+			return false;
+		}
+		
 
 	}
 }

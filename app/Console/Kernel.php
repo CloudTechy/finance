@@ -24,7 +24,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
+         $schedule->command('queue:work --tries=10')->cron('* * * * * *');
         //          ->hourly();
     }
 

@@ -106,11 +106,15 @@ export default {
             return this.$root.basepath + '/register?ref=' + this.user.username
         }
     },
+    beforeCreate: function () {
+    if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
+    },
     created() {
         if (localStorage.users) {
             this.users = JSON.parse(localStorage.users)
         }
         this.getUsers()
+
     },
     methods: {
         getUsers() {

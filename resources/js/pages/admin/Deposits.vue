@@ -114,6 +114,9 @@ export default {
         setInterval(this.getTransactions, 61000)
         this.getTransactions()
     },
+    beforeCreate: function () {
+    if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
+    },
     computed: {
         user() {
             return this.$auth.user()

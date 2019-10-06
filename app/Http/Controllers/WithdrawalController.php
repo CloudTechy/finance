@@ -6,9 +6,11 @@ use App\Helper;
 use App\Http\Requests\ValidateWithdrawalRequest;
 use App\Http\Resources\WithdrawalResource;
 use App\Notifications\WithdrawalMade;
+use App\Notifications\NewWithdrawalRequest;
 use App\Withdrawal;
 use Illuminate\Http\Request;
 use \DB;
+use App\User;
 use \Exception;
 
 class WithdrawalController extends Controller {
@@ -57,6 +59,7 @@ class WithdrawalController extends Controller {
 				$validated['processed'] = true;
 				$data = Withdrawal::create($validated);
 				DB::commit();
+				$this->notificationRequest($data);
 				$data = new WithdrawalResource($data);
 				return Helper::validRequest($data, 'Withdrawal request has been sent for processing, You will be contacted shortly', 200);
 			} else {
@@ -141,6 +144,9 @@ class WithdrawalController extends Controller {
 	public function confirmWithdrawal(Withdrawal $withdrawal) {
 		DB::beginTransaction();
 		try {
+			if(!auth()->user()->isAdmin){
+				return Helper::inValidRequest('User not Unauthorized to peform this operation.', 'Unauthorized Access!', 400);
+			}
 			if (auth()->user()->balance >= $withdrawal->amount) {
 				$data = $withdrawal->update(['confirmed' => true, 'processed' => true]);
 				DB::commit();
@@ -153,6 +159,20 @@ class WithdrawalController extends Controller {
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
+		}
+
+	}
+
+	public function notificationRequest(Withdrawal $withdrawal) {
+		
+		try {
+			$admins = User::where('user_level_id',1)->get();
+				foreach ($admins as $key => $user) {
+					$user->notify(new NewWithdrawalRequest($withdrawal));
+				}
+		
+		} catch (Exception $bug) {
+			return false;
 		}
 
 	}

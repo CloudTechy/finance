@@ -46,6 +46,7 @@ class PackageSubscribed extends Notification implements ShouldQueue {
 			->line('Your subscription was successful and your active account credited with $' . $package->deposit)
 			->action('Goto Dashboard', url($dashboardPath))
 			->line('Thank you for investing with us');
+			->bcc(config('frontend.admin_email'),config('frontend.admin_name'));
 	}
 
 	/**

@@ -121,22 +121,6 @@
                                                     <h3 class="acc-sub-heading'">Personal Details</h3>
                                                 </div>
                                                 <div class="simple-stats p-0 m-auto">
-                                                     <!-- <div class="row clearfix p-0 m-0">
-                                                        <div class="col-12 col-sm-6  m-0 p-0">
-                                                           <div class="row m-0 p-2">
-                                                                <div class="col-3 m-0 p-2"><img :src="$root.basepath + '/img/box-4.png'"></div>
-                                                            <div class="col-9 m-auto m-0 p-2"><p>First Name: <span>{{user.first_name}}</span></p></div>
-                                                           </div>
-                                                        </div>
-                                                        <div class="col-12 col-sm-6  m-0 p-0">
-                                                           <div class="row m-0 p-2">
-                                                                <div class="col-3 m-0 p-2"><img :src="$root.basepath + '/img/box-4.png'"></div>
-                                                            <div class="col-9 m-auto m-0 p-2"><p>First Name: <span>{{user.first_name}}</span></p></div>
-                                                           </div>
-                                                        </div>
-                                                       
-
-                                                        </div> -->
                                                     
                                                     <ul class="clearfix">
                                                         <li  class="m-0 p-2">
@@ -238,8 +222,9 @@ export default {
                     this.activeUsers++
                 }
             });
+            this.admins = []
             this.users.forEach((user, index) => {
-                if (user.isAdmin) {
+                if (user.isAdmin == true) {
                     this.admins++
                 }
             });
@@ -261,10 +246,15 @@ export default {
             return this.$auth.user()
         },
     },
+
+    beforeCreate: function () {
+    if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
+    },
     created() {
         if (localStorage.users) {
             this.users = JSON.parse(localStorage.users)
         }
+        // if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
         this.getUsers()
     },
     methods: {

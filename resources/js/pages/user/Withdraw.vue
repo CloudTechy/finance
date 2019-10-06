@@ -21,10 +21,10 @@
                                     <div class="bal p-0 text-center">
                                         <span>Pending Withdrawals:</span> {{$root.numeral(user.totalPendingWithdrawal)}}</div>
                                     <div class="error-msg p-4 m-3" v-if="error">
-                                        <p>{{error}}</p>
+                                        <p  class="p-2 m-2">{{error}}</p>
                                     </div>
                                     <div class="success-msg p-4 m-4" v-if="message">
-                                        <p>{{message}}</p>
+                                        <p   class="p-2 m-2">{{message}}</p>
                                     </div>
                                     <form @submit.prevent="withdraw" method="post">
                                         <table class="stat">
@@ -69,7 +69,7 @@
                                             </li>
                                         </ul>
                                         <h3 v-if="user.balance <= 0" class="notice-message m-2 text-center">You have no funds to withdraw.</h3>
-                                        <div v-else class="text-center m-2 mb-3 mb-lg-0">
+                                        <div v-else class="text-center m-2 mb-3 p-3 mb-lg-0">
                                             <button type="submit" ref="process" class="btn btn-default">Withdraw</button>
                                         </div>
                                     </form>
@@ -141,6 +141,7 @@ export default {
                     this.message = ''
                     this.error = error.response.data.message
                     this.processing(false)
+                    window.scrollTo(0, 200)
                     console.log(error.response)
                 })
         },

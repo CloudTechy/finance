@@ -101,6 +101,7 @@ const app = new Vue({
         }
         this.btcRate()
         this.getIp()
+
     },
     methods: {
         alert(type, title, message) {
@@ -187,7 +188,7 @@ const app = new Vue({
             this.$auth.fetch({
                 params: {},
                 success: (response) => { this.user = this.$auth.user() },
-                error: (error) => {},
+                error: (error) => {console.log(error.response)},
             })
         },
     },

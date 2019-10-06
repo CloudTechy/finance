@@ -5509,7 +5509,8 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     Footer: _components_Footer_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }
+  },
+  created: function created() {}
 });
 
 /***/ }),
@@ -6078,7 +6079,6 @@ __webpack_require__.r(__webpack_exports__);
         _this.error = '';
         _this.success = true;
         _this.message = response.data.message;
-        console.log(response);
       })["catch"](function (error) {
         _this.message = '';
         _this.has_error = true;
@@ -6778,6 +6778,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6792,6 +6804,7 @@ __webpack_require__.r(__webpack_exports__);
       secret_answer: '',
       secret_question: '',
       pm: '',
+      referral: this.$route.query.ref ? this.$route.query.ref : null,
       wallet: '',
       has_error: false,
       error: '',
@@ -6817,7 +6830,7 @@ __webpack_require__.r(__webpack_exports__);
           pm: app.pm,
           wallet: app.wallet,
           user_level_id: 2,
-          referral: this.$route.query.ref,
+          referral: app.referral,
           ip: this.$root.ip,
           password: app.password,
           password_confirmation: app.password_confirmation
@@ -7197,6 +7210,11 @@ __webpack_require__.r(__webpack_exports__);
       return this.$root.basepath + '/register?ref=' + this.user.username;
     }
   },
+  beforeCreate: function beforeCreate() {
+    if (this.$auth.user().isAdmin == false) {
+      this.$auth.logout();
+    }
+  },
   created: function created() {
     if (localStorage.users) {
       this.users = JSON.parse(localStorage.users);
@@ -7347,6 +7365,11 @@ __webpack_require__.r(__webpack_exports__);
 
     setInterval(this.getTransactions, 61000);
     this.getTransactions();
+  },
+  beforeCreate: function beforeCreate() {
+    if (this.$auth.user().isAdmin == false) {
+      this.$auth.logout();
+    }
   },
   computed: {
     user: function user() {
@@ -7544,6 +7567,10 @@ __webpack_require__.r(__webpack_exports__);
       this.usersPackages = JSON.parse(localStorage.usersPackages);
     }
 
+    if (this.$route.query.username) {
+      this.search = this.$route.query.username;
+    }
+
     setInterval(this.getPackages, 61000);
     this.getPortfolios();
     this.getPackages();
@@ -7551,6 +7578,11 @@ __webpack_require__.r(__webpack_exports__);
   computed: {
     user: function user() {
       return this.$auth.user();
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    if (this.$auth.user().isAdmin == false) {
+      this.$auth.logout();
     }
   },
   methods: {
@@ -7806,22 +7838,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -7851,8 +7867,9 @@ __webpack_require__.r(__webpack_exports__);
           _this.activeUsers++;
         }
       });
+      this.admins = [];
       this.users.forEach(function (user, index) {
-        if (user.isAdmin) {
+        if (user.isAdmin == true) {
           _this.admins++;
         }
       });
@@ -7873,10 +7890,16 @@ __webpack_require__.r(__webpack_exports__);
       return this.$auth.user();
     }
   },
+  beforeCreate: function beforeCreate() {
+    if (this.$auth.user().isAdmin == false) {
+      this.$auth.logout();
+    }
+  },
   created: function created() {
     if (localStorage.users) {
       this.users = JSON.parse(localStorage.users);
-    }
+    } // if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
+
 
     this.getUsers();
   },
@@ -8083,12 +8106,21 @@ __webpack_require__.r(__webpack_exports__);
       this.withdrawals = JSON.parse(localStorage.withdrawals);
     }
 
+    if (this.$route.query.username) {
+      this.search = this.$route.query.username;
+    }
+
     setInterval(this.getWithdrawals, 55000);
     this.getWithdrawals();
   },
   computed: {
     user: function user() {
       return this.$auth.user();
+    }
+  },
+  beforeCreate: function beforeCreate() {
+    if (this.$auth.user().isAdmin == false) {
+      this.$auth.logout();
     }
   },
   methods: {
@@ -9387,6 +9419,7 @@ __webpack_require__.r(__webpack_exports__);
 
         _this3.processing(false);
 
+        window.scrollTo(0, 200);
         console.log(error.response);
       });
     },
@@ -53879,16 +53912,16 @@ var staticRenderFns = [
       {
         staticClass: "alert m-auto alert-primary alert-dismissible fade show",
         staticStyle: {
-          "max-width": "80%",
+          "max-width": "100%",
           position: "fixed",
-          bottom: "40px",
-          left: "40px",
-          right: "40px"
+          bottom: "2px",
+          left: "2px",
+          right: "2px"
         },
         attrs: { role: "alert" }
       },
       [
-        _c("p", { staticClass: "_text_1nv7e_24" }, [
+        _c("p", { staticClass: "_text_1nv7e_24 text-center" }, [
           _vm._v(
             "\n                       We use cookies to provide our services and for analytics and marketing, \n                       By continuing to browse our website, you agree to our use of cookies.\n                   "
           )
@@ -57088,6 +57121,69 @@ var render = function() {
                               ]),
                               _vm._v(" "),
                               _c("ul", { staticClass: "form-list p-1" }, [
+                                _c("li", [
+                                  _c("div", { staticClass: "col-12 p-2" }, [
+                                    _c("label", [_vm._v("Refferer")]),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      { staticClass: "iconed" },
+                                      [
+                                        _vm._m(12),
+                                        _vm._v(" "),
+                                        _c("input", {
+                                          directives: [
+                                            {
+                                              name: "model",
+                                              rawName: "v-model",
+                                              value: _vm.referral,
+                                              expression: "referral"
+                                            }
+                                          ],
+                                          class: {
+                                            "form-control": true,
+                                            "error-input":
+                                              _vm.errors.referral != undefined
+                                          },
+                                          attrs: {
+                                            type: "text",
+                                            required: "",
+                                            placeholder:
+                                              "Enter referral username"
+                                          },
+                                          domProps: { value: _vm.referral },
+                                          on: {
+                                            input: function($event) {
+                                              if ($event.target.composing) {
+                                                return
+                                              }
+                                              _vm.referral = $event.target.value
+                                            }
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _vm._l(_vm.errors.referral, function(
+                                          error
+                                        ) {
+                                          return _vm.errors.referral
+                                            ? _c(
+                                                "p",
+                                                {
+                                                  staticClass:
+                                                    "text-danger m-0 p-2"
+                                                },
+                                                [_vm._v(_vm._s(error))]
+                                              )
+                                            : _vm._e()
+                                        })
+                                      ],
+                                      2
+                                    )
+                                  ])
+                                ])
+                              ]),
+                              _vm._v(" "),
+                              _c("ul", { staticClass: "form-list p-1" }, [
                                 _c("li", { staticClass: "row clearfix" }, [
                                   _c(
                                     "div",
@@ -57099,7 +57195,7 @@ var render = function() {
                                         "div",
                                         { staticClass: "iconed" },
                                         [
-                                          _vm._m(12),
+                                          _vm._m(13),
                                           _vm._v(" "),
                                           _c("input", {
                                             directives: [
@@ -57166,7 +57262,7 @@ var render = function() {
                                         "div",
                                         { staticClass: "iconed" },
                                         [
-                                          _vm._m(13),
+                                          _vm._m(14),
                                           _vm._v(" "),
                                           _c("input", {
                                             directives: [
@@ -57225,7 +57321,7 @@ var render = function() {
                                 ])
                               ]),
                               _vm._v(" "),
-                              _vm._m(14),
+                              _vm._m(15),
                               _vm._v(" "),
                               _c(
                                 "div",
@@ -57369,6 +57465,14 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "icon" }, [
+      _c("i", { staticClass: "fas fa-user" })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", { staticClass: "icon" }, [
       _c("i", {
         staticClass: "fas fa-question",
         attrs: { "aria-hidden": "true" }
@@ -57497,7 +57601,7 @@ var render = function() {
                       }
                     },
                     [
-                      _c("ul", { staticClass: "form-list mt-1" }, [
+                      _c("ul", { staticClass: "form-list m-2" }, [
                         _c("li", { staticClass: "row clearfix text-center" }, [
                           _c("div", { staticClass: "input-box col-12 " }, [
                             _c("label", [_vm._v("Email")]),
@@ -57536,11 +57640,11 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _c("ul", { staticClass: "form-list mt-md-2" }, [
+                      _c("ul", { staticClass: "form-list m-2" }, [
                         _c("li", { staticClass: "row clearfix text-center" }, [
                           _c(
                             "div",
-                            { staticClass: "input-box col-12 col-md-6 " },
+                            { staticClass: "input-box col-12 col-md-6" },
                             [
                               _c("label", { attrs: { for: "email" } }, [
                                 _vm._v("Password")
@@ -57581,7 +57685,7 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "input-box col-12 col-md-6 " },
+                            { staticClass: "input-box col-12 col-md-6" },
                             [
                               _c("label", { attrs: { for: "email" } }, [
                                 _vm._v("Confirm Password")
@@ -62384,8 +62488,8 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "acc-body deposit-confirm" }, [
       !_vm.user.admin_wallet && !_vm.user.admin_pm
-        ? _c("div", { staticClass: "error-msg P-3 m-2" }, [
-            _c("p", [
+        ? _c("div", { staticClass: "error-msg  m-2" }, [
+            _c("p", { staticClass: "p-2 m-2" }, [
               _vm._v(
                 "Unable to process a wallet address at this time, Please contact your administrator or try again later."
               )
@@ -62471,14 +62575,6 @@ var render = function() {
           }
         },
         [
-          _vm._l(_vm.errors, function(error) {
-            return _vm.errors
-              ? _c("div", { staticClass: "error-msg " }, [
-                  _c("p", { staticClass: "p-2 m-2" }, [_vm._v(_vm._s(error))])
-                ])
-              : _vm._e()
-          }),
-          _vm._v(" "),
           _vm.error
             ? _c("div", { staticClass: "error-msg p-3 m-2" }, [
                 _c("p", { staticClass: "p-2 m-2" }, [_vm._v(_vm._s(_vm.error))])
@@ -62552,8 +62648,7 @@ var render = function() {
             },
             [_vm._v("Cancel")]
           )
-        ],
-        2
+        ]
       )
     ])
   ])
@@ -63114,13 +63209,13 @@ var render = function() {
     _vm._v(" "),
     _vm.msg
       ? _c("div", { staticClass: "success-msg text-capitalize  m-3" }, [
-          _c("p", [_vm._v(_vm._s(_vm.msg) + " ")])
+          _c("p", { staticClass: "p-2 m-2" }, [_vm._v(_vm._s(_vm.msg) + " ")])
         ])
       : _vm._e(),
     _vm._v(" "),
     _vm.error
       ? _c("div", { staticClass: "error-msg  m-3" }, [
-          _c("p", [_vm._v(_vm._s(_vm.error))])
+          _c("p", { staticClass: "p-2 m-2" }, [_vm._v(_vm._s(_vm.error))])
         ])
       : _vm._e(),
     _vm._v(" "),
@@ -63424,7 +63519,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("span", { staticClass: "icon" }, [
-      _c("i", { staticClass: "fas fa-usd", attrs: { "aria-hidden": "true" } })
+      _c("i", {
+        staticClass: "fas fa-dollar-sign",
+        attrs: { "aria-hidden": "true" }
+      })
     ])
   }
 ]
@@ -64368,7 +64466,11 @@ var render = function() {
                               ? _c(
                                   "div",
                                   { staticClass: "error-msg p-4 m-3" },
-                                  [_c("p", [_vm._v(_vm._s(_vm.error))])]
+                                  [
+                                    _c("p", { staticClass: "p-2 m-2" }, [
+                                      _vm._v(_vm._s(_vm.error))
+                                    ])
+                                  ]
                                 )
                               : _vm._e(),
                             _vm._v(" "),
@@ -64376,7 +64478,11 @@ var render = function() {
                               ? _c(
                                   "div",
                                   { staticClass: "success-msg p-4 m-4" },
-                                  [_c("p", [_vm._v(_vm._s(_vm.message))])]
+                                  [
+                                    _c("p", { staticClass: "p-2 m-2" }, [
+                                      _vm._v(_vm._s(_vm.message))
+                                    ])
+                                  ]
                                 )
                               : _vm._e(),
                             _vm._v(" "),
@@ -64580,7 +64686,7 @@ var render = function() {
                                       "div",
                                       {
                                         staticClass:
-                                          "text-center m-2 mb-3 mb-lg-0"
+                                          "text-center m-2 mb-3 p-3 mb-lg-0"
                                       },
                                       [
                                         _c(
@@ -81527,7 +81633,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
         success: function success(response) {
           _this2.user = _this2.$auth.user();
         },
-        error: function error(_error) {}
+        error: function error(_error) {
+          console.log(_error.response);
+        }
       });
     }
   },
@@ -84578,35 +84686,41 @@ var routes = [{
   name: 'adminDashboard',
   component: _pages_admin_Dashboard__WEBPACK_IMPORTED_MODULE_23__["default"],
   meta: {
-    auth: true
+    auth: true,
+    AdminAuth: true,
+    requiresAuth: true
   }
 }, {
   path: '/admin/dashboard/users',
   name: 'users',
   component: _pages_admin_Users__WEBPACK_IMPORTED_MODULE_19__["default"],
   meta: {
-    auth: true
+    auth: true,
+    AdminAuth: true
   }
 }, {
   path: '/admin/dashboard/deposits',
   name: 'deposits',
   component: _pages_admin_Deposits__WEBPACK_IMPORTED_MODULE_20__["default"],
   meta: {
-    auth: true
+    auth: true,
+    AdminAuth: true
   }
 }, {
   path: '/admin/dashboard/subscriptions',
   name: 'subscriptions',
   component: _pages_admin_Subscriptions__WEBPACK_IMPORTED_MODULE_22__["default"],
   meta: {
-    auth: true
+    auth: true,
+    AdminAuth: true
   }
 }, {
   path: '/admin/dashboard/withdrawals',
   name: 'withdrawals',
   component: _pages_admin_Withdrawals__WEBPACK_IMPORTED_MODULE_21__["default"],
   meta: {
-    auth: true
+    auth: true,
+    AdminAuth: true
   }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
@@ -84618,6 +84732,21 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
         x: 0,
         y: 100
       };
+    }
+  },
+  beforeEach: function beforeEach(to, from, next) {
+    if (to.meta.AdminAuth) {
+      var authUser = JSON.parse(window.localStorage.getItem('lbuser'));
+
+      if (authUser.isAdmin == true) {
+        next();
+      } else {
+        next({
+          name: 'dashboard'
+        });
+      }
+    } else {
+      next();
     }
   },
   history: true,

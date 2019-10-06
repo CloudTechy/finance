@@ -128,6 +128,9 @@ export default {
         if (localStorage.usersPackages) {
             this.usersPackages = JSON.parse(localStorage.usersPackages)
         }
+        if(this.$route.query.username){
+            this.search = this.$route.query.username
+        }
         setInterval(this.getPackages, 61000)
         this.getPortfolios()
         this.getPackages()
@@ -136,7 +139,9 @@ export default {
         user() {
             return this.$auth.user()
         },
-
+    },
+    beforeCreate: function () {
+    if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
     },
     methods: {
         getPortfolios() {

@@ -20,7 +20,10 @@ export default {
         Header,
         Footer,
     },
-    
+    created() {
+        
+    }
+
 }
 
 </script>

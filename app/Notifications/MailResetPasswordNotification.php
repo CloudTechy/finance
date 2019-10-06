@@ -37,7 +37,7 @@ class MailResetPasswordNotification extends ResetPassword implements ShouldQueue
 	 * @return \Illuminate\Notifications\Messages\MailMessage
 	 */
 	public function toMail($notifiable) {
-		$link = url(config('frontend.url') . "reset_password?token=" . $this->token);
+		$link = url(config('frontend.url') . "/reset_password?token=" . $this->token);
 		return (new MailMessage)
 			->subject('Reset Password Notification')
 			->greeting('Hello! ' . $notifiable->username . ',')
