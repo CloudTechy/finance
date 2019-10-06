@@ -173,7 +173,8 @@ const app = new Vue({
                 })
         },
         getIp() {
-            this.$http.get("https://api.ipify.org?format=json")
+            var form = new Form()
+            form.get("https://api.ipify.org?format=json")
                 .then(response => {
                     localStorage.ip = JSON.stringify(response.data.ip)
                 })

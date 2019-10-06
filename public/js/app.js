@@ -81593,7 +81593,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       });
     },
     getIp: function getIp() {
-      this.$http.get("https://api.ipify.org?format=json").then(function (response) {
+      var form = new vform__WEBPACK_IMPORTED_MODULE_17__["Form"]();
+      form.get("https://api.ipify.org?format=json").then(function (response) {
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
