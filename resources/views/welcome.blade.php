@@ -20,6 +20,7 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
   <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+   <link rel="shortcut icon" href="{{asset('img/favicon.png')}}" type="image/x-icon">
 
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
