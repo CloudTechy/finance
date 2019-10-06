@@ -6421,12 +6421,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -54312,7 +54306,9 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _vm._m(1),
+            _c("li", { staticClass: "m-0  m-lg-2 p-lg-2  m-md-1 p-md-0" }, [
+              _vm._v('">Channel link')
+            ]),
             _vm._v(" "),
             _c(
               "li",
@@ -54343,7 +54339,7 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _vm._m(2),
+            _vm._m(1),
             _vm._v(" "),
             _c(
               "li",
@@ -54385,16 +54381,6 @@ var staticRenderFns = [
       },
       [_c("span", { staticClass: "navbar-toggler-icon " })]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("li", { staticClass: "m-0  m-lg-2 p-lg-2  m-md-1 p-md-0" }, [
-      _c("a", { attrs: { href: "https://t.me/bfinofficial" } }, [
-        _vm._v("Channel link")
-      ])
-    ])
   },
   function() {
     var _vm = this
@@ -55795,17 +55781,15 @@ var render = function() {
                                   "a",
                                   {
                                     attrs: {
-                                      href:
-                                        "mailto:support@Bfin%20Financial%20Services"
+                                      href: "mailto:info@bfinetworkshares.com"
                                     }
                                   },
-                                  [_vm._v("support@bfinfinancialservices.com")]
+                                  [_vm._v("info@bfinetworkshares.com")]
                                 ),
                                 _c("br"),
                                 _c("a", {
                                   attrs: {
-                                    href:
-                                      "mailto:info@Bfin%20Financial%20Services"
+                                    href: "mailto:info@bfinetworkshares.com"
                                   }
                                 })
                               ])
@@ -56067,22 +56051,6 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("ul", { staticClass: "form-list" }, [
-      _c("li", { staticClass: "row clearfix" }, [
-        _c("div", { staticClass: "col-12 p-1 input-box" }, [
-          _c("label", [_vm._v("Email Address")]),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              type: "text",
-              disabled: "",
-              placeholder: "Email Address",
-              value: ""
-            }
-          })
-        ])
-      ]),
-      _vm._v(" "),
       _c("li", [
         _c("div", { staticClass: "input-box" }, [
           _c("label", [_vm._v("Your Message")]),
