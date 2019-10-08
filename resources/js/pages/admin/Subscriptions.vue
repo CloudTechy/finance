@@ -176,7 +176,7 @@ export default {
                         this.getPackages()
                     })
                     .catch(error => {
-                        this.$root.alert('error', ' ', 'Subscription failed to activate' + error.response.message)
+                        this.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ?  error.response.message : ' ' )
                         this.getPackages()
                         console.log(error.response)
                     })

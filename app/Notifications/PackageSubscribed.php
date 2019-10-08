@@ -38,7 +38,6 @@ class PackageSubscribed extends Notification implements ShouldQueue {
 	 */
 	public function toMail($notifiable) {
 		$package = $this->package;
-		// $dashboardPath = $notifiable->isAdmin ? '/admin/dashboard' : '/user/dashboard/';
 		$dashboardPath = $notifiable->isAdmin == true  ? config('frontend.url').'/admin/dashboard' : config('frontend.url').'/user/dashboard/';
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')

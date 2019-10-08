@@ -100,8 +100,9 @@ class PackageUserController extends Controller {
 
 					$user->notify(new WithdrawalMade($withdrawal));
 				}
-				DB::commit();
 				$this->notificationRequest($subscription);
+				DB::commit();
+				
 				$subscription = new PackageUserResource($subscription);
 				return Helper::validRequest($subscription, 'subscription is being processed', 200);
 			}
@@ -160,16 +161,17 @@ class PackageUserController extends Controller {
 			}
 
 			$packageUser = PackageUser::where('transaction_id', $transaction->id)->first();
+
 			if (!$packageUser->active && empty($packageUser->expiration)) {
 				$duration = $packageUser->package->duration;
 				$packageUser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true]);
 				$transaction->update(['confirmed' => true, 'payment' => $packageUser->account, 'sent' => true]);
-
-				
-				$this->referralPayment($packageUser);
 				$packageUser->user->notify(new PackageSubscribed($packageUser->package));
 				DB::commit();
+				$this->referralPayment($packageUser);
+				
 				$data = new PackageUserResource($packageUser);
+				
 				return Helper::validRequest($data, 'subscription successful', 200);
 			} else {
 				return Helper::invalidRequest(['This subscription is invalid'], 'user\'s package has already been subscribed', 400);
@@ -191,8 +193,8 @@ class PackageUserController extends Controller {
 			if ($commission > 0 && $referrer_count == 0) {
 				$transaction = $referrer->transactions()->create(['reference' => 'BFIN commission', 'amount' => $commission, 'payment' => $commission, 'confirmed' => true, 'active' => false, 'sent' => true]);
 				$subscription->update(['referral' => $referrer->id]);
-				DB::commit();
 				$transaction->user->notify(new TransactionMade($transaction));
+				DB::commit();
 				return true;
 			}
 			return false;
