@@ -20,7 +20,7 @@
                                 <li>
                                     <img :src="$root.basepath + '/img/support-marker.png'"><address>440 S. LASALLE ST., STE. 900,<br>CHICAGO,<br> IL 60605 USA</address>
                                 </li>
-                                <li><img style=" margin-top:5px;" :src="$root.basepath + '/img/support-mail.png'"><a href="mailto:support@Bfin%20Financial%20Services">support@bfinfinancialservices.com</a><br><a href="mailto:info@Bfin%20Financial%20Services"></a>
+                                <li><img style=" margin-top:5px;" :src="$root.basepath + '/img/support-mail.png'"><a href="mailto:support@Bfin%20Financial%20Services">info@bfinetworkshares.com</a><br><a href="mailto:info@Bfin%20Financial%20Services"></a>
                                 </li>
                             </ul>
                             <form class="support-form col-12 col-lg-7 m-1 text-center" method="post" name="mainform" @submit.prevent="submitForm">
