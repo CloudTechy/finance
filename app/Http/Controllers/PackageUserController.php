@@ -155,7 +155,7 @@ class PackageUserController extends Controller {
 	public function confirmSubscription(Transaction $transaction) {
 		DB::beginTransaction();
 		try {
-			if(!auth()->user()->isAdmin){
+			if(auth()->user()->user_level_id != 1){
 				return Helper::inValidRequest('User not Unauthorized to peform this operation.', 'Unauthorized Access!', 400);
 			}
 
@@ -165,9 +165,10 @@ class PackageUserController extends Controller {
 				$packageUser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true]);
 				$transaction->update(['confirmed' => true, 'payment' => $packageUser->account, 'sent' => true]);
 
-				DB::commit();
+				
 				$this->referralPayment($packageUser);
 				$packageUser->user->notify(new PackageSubscribed($packageUser->package));
+				DB::commit();
 				$data = new PackageUserResource($packageUser);
 				return Helper::validRequest($data, 'subscription successful', 200);
 			} else {
