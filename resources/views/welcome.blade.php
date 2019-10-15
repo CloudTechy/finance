@@ -49,6 +49,7 @@ s0.parentNode.insertBefore(s1,s0);
   <script src="{{ asset('js/clipboard.min.js') }}" defer></script>
 
   <script src="{{ asset('js/app.js') }}" defer></script>
+  <script src="{{ asset('js/objectdata.js') }}" defer></script>
   <script>
     if('serviceWorker' in navigator) {
       navigator.serviceWorker

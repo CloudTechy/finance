@@ -18,7 +18,7 @@
                             <div class="card-body">
                                 <div class="error-msg p-2 m-1" v-if="has_error && !success">
                                     <p class="m-1" v-if="error == 'login_error'">Validation Errors.</p>
-                                    <p class="m-1" v-else>Error, unable to connect with these credentials.</p>
+                                    <p class="m-1 p-2" v-else>Error, unable to connect with these credentials.</p>
                                 </div>
                                 <div class="error-msg p-2 m-1" v-if="success && !this.$auth.user().isEmailVerified"><div class="text-center ml-2"><div class="danger-group p-0 p-md-2  m-1"><h4>Please Verify your Email</h4> <p class="w-note m-1">Thank you for your interest in joining our program, you are now close to becoming an official member of Bfin Network Shares</p> <span>Please login into  to finish up your registration</span></div> <div class="text-center"><button class="btn btn-default">Resend Email</button></div></div></div>
 

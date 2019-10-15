@@ -18,6 +18,7 @@ class PackageUserResource extends JsonResource {
 		$user = User::find($this->user_id);
 		$package = Package::find($this->package_id);
 		return [
+			'id' => $this->id,
 			'package' => '$' . $package->name . ' Plan',
 			'username' => $user->username,
 			'portfolio' => $package->portfolio->name,

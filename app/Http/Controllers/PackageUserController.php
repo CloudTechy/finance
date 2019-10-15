@@ -91,7 +91,18 @@ class PackageUserController extends Controller {
 
 				$payment = $package->deposit - $user->balance;
 
-				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $package->deposit, 'payment' => $user->balance]);
+				if ($request->hasFile('pop')) {
+
+		            if ($request->file('pop')->isValid()) {
+
+		                $file = $request->file('pop');
+
+		                $file->move('img/uploads', $file->getClientOriginalName());
+
+		                $pop = $file->getClientOriginalName();
+		            }
+		        }
+				$transaction = $user->transactions()->create(['reference' => 'SELF', 'amount' => $package->deposit, 'payment' => $user->balance, 'pop' => $pop]);
 
 				$subscription = PackageUser::create(['transaction_id' => $transaction->id, 'user_id' => $user->id, 'package_id' => $package->id, 'account' => $package->deposit, 'active' => false]);
 
@@ -190,7 +201,7 @@ class PackageUserController extends Controller {
 			$referrer = User::where('username', $user->referral)->first();
 			$referrer_count = PackageUser::where('user_id', $user->id)->where('referral', $referrer->id)->count();
 			$commission = $subscription->package->referral_commission / 100 * $subscription->package->deposit;
-			if ($commission > 0 && $referrer_count == 0) {
+			if ($commission > 0 && $referrer_count == 0 && $user->user_level_id != 1) {
 				$transaction = $referrer->transactions()->create(['reference' => 'BFIN commission', 'amount' => $commission, 'payment' => $commission, 'confirmed' => true, 'active' => false, 'sent' => true]);
 				$subscription->update(['referral' => $referrer->id]);
 				$transaction->user->notify(new TransactionMade($transaction));
@@ -214,7 +225,5 @@ class PackageUserController extends Controller {
 		} catch (Exception $bug) {
 			return false;
 		}
-		
-
 	}
 }

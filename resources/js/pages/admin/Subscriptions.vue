@@ -79,7 +79,18 @@
                                                 </thead>
                                                 <tbody id="body">
                                                     <tr v-if="usersPackages && packag.portfolio == portfolio.name && !packag.expired" v-for="packag in $root.myFilter(usersPackages, search)">
-                                                        <td>{{packag.username}}</td>
+                                                        <td>
+                                                            <p>
+                                                                <button style="text-decoration: none" class="btn text-white btn-link" type="button" data-toggle="collapse" :data-target="'#'+'s' + packag.id" aria-expanded="false" :aria-controls="'s' + packag.id">
+                                                                    {{packag.username}}
+                                                                </button>
+                                                            </p>
+                                                            <div v-if="packag.transaction.pop" style="position: absolute; left: 0" class="collapse mt-2" :id="'s' + packag.id">
+                                                                <div style="width: 55%; " class="mt-2 text-success p-2 card card-body">
+                                                                    <img class="card-img"  :src="$root.basepath + '/img/uploads/'+packag.transaction.pop">
+                                                                </div>
+                                                            </div>
+                                                        </td>
                                                         <td>{{packag.package}}</td>
                                                         <td>{{$root.numeral(packag.interest)}}</td>
                                                         <td>
@@ -128,7 +139,7 @@ export default {
         if (localStorage.usersPackages) {
             this.usersPackages = JSON.parse(localStorage.usersPackages)
         }
-        if(this.$route.query.username){
+        if (this.$route.query.username) {
             this.search = this.$route.query.username
         }
         setInterval(this.getPackages, 61000)
@@ -140,8 +151,8 @@ export default {
             return this.$auth.user()
         },
     },
-    beforeCreate: function () {
-    if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
+    beforeCreate: function() {
+        if (this.$auth.user().isAdmin == false) { this.$auth.logout() }
     },
     methods: {
         getPortfolios() {
@@ -176,25 +187,23 @@ export default {
                         this.getPackages()
                     })
                     .catch(error => {
-                        this.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ?  error.response.message : ' ' )
+                        this.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ? error.response.message : ' ')
                         this.getPackages()
                         console.log(error.response)
                     })
-            }else {
+            } else {
                 this.$root.alert('info', ' ', 'Please note that packages can only be activated')
                 this.getPackages()
             }
 
-            
+
 
         }
     }
 }
 
 </script>
-<style >
-
-
+<style>
 .example .btn-toggle {
     top: 50%;
     transform: translateY(-50%);

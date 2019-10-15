@@ -1,4 +1,4 @@
-const version = "v1::0" //Change if you want to regenerate cache
+const version = "v1:0:2" //Change if you want to regenerate cache
 const staticCacheName = `${version}static-resources`;
 
 self.addEventListener('install', event => {
@@ -7,15 +7,12 @@ self.addEventListener('install', event => {
         .open('my-site-name')
         .then(cache =>
             cache.addAll([
-                'favicon.png',
-                '/css/app.css',
                 '/css/animate.css',
                 '/css/main.css',
                 '/js/jquery.js',
                 '/js/fancybox.js',
                 '/js/owl.carousel.min.js',
                 '/js/clipboard.min.js',
-                '/js/app.js',
                 '/css/app.css',
                 '/img/logo.png',
                 '/img/logo-hover.png',
@@ -35,11 +32,10 @@ self.addEventListener('install', event => {
                 '/img/support-mail.png',
                 '/img/bitcoin.png',
                 '/img/footer-logo.png',
-                '/js/app.js',
-                'http://localhost:8000/',
                 'https://fonts.googleapis.com/css?family=Nunito',
                 'https://fonts.googleapis.com/css?family=Raleway:300,400,600',
                 'https://fonts.gstatic.com/s/nunito/v10/XRXV3I6Li01BKofINeaB.woff2'
+               
             ])
         )
     )

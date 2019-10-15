@@ -46,10 +46,6 @@ const sweetOptions = {
 
 Vue.use(VueSweetalert2, sweetOptions)
 
-import VueCookies from 'vue-cookies'
-Vue.use(VueCookies)
-VueCookies.config('7d')
-
 import { Form, HasError, AlertError } from 'vform'
 window.Form = Form;
 Vue.component(HasError.name, HasError)

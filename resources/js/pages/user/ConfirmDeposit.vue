@@ -10,10 +10,10 @@
         </div>
         <div class="acc-body deposit-confirm">
             <div class="error-msg  m-2" v-if="!user.admin_wallet && !user.admin_pm">
-                <p  class="p-2 m-2">Unable to process a wallet address at this time, Please contact your administrator or try again later.</p>
+                <p class="p-2 m-2">Unable to process a wallet address at this time, Please contact your administrator or try again later.</p>
             </div>
             Please send your payments to this account: <b>{{user.admin_wallet}}</b></br>
-            <p class="p-2 m-2" v-if = "user.admin_pm"> Use Perfect Money: <b>{{user.admin_pm}}</b></p><br><br>
+            <p class="p-2 m-2" v-if="user.admin_pm"> Use Perfect Money: <b>{{user.admin_pm}}</b></p><br><br>
             <table class="stat">
                 <thead>
                     <tr>
@@ -53,14 +53,13 @@
                 </thead>
             </table>
             <br><br>
-            <form @submit.prevent="verifyWallet" method="post">
+            <form @submit.prevent="processDeposit" method="post">
                 <!-- <div class="error-msg " v-for = "error in errors" v-if="errors">
                     <p class="p-2 m-2">{{error}}</p>
 
                 </div> -->
-                <div class="error-msg p-3 m-2"v-if="error">
+                <div class="error-msg p-3 m-2" v-if="error">
                     <p class="p-2 m-2">{{error}}</p>
-
                 </div>
                 <table class="stat">
                     <thead>
@@ -68,8 +67,8 @@
                             <td colspan="2"><b>Required Information:</b></td>
                         </tr>
                         <tr>
-                            <td>Wallet address</td>
-                            <td><input :required="!user.admin_pm" type="text" v-model="wallet" class="inpts"></td>
+                            <td>Upload POP/Screenshot: </td>
+                            <td><input :required="true" ref="fileInput" type="file" class="inpts"></td>
                         </tr>
                     </thead>
                 </table>
@@ -84,7 +83,7 @@
 export default {
     data() {
         return {
-            wallet: '',
+
             errors: '',
             form: new Form({
                 package_id: this.plan.id,
@@ -122,9 +121,18 @@ export default {
     },
     methods: {
         processDeposit() {
-            this.form.post("/auth/packageusers")
+            var data = new FormData()
+            var file = this.$refs.fileInput.files[0]
+            this.form.pop = file
+            // 
+            this.form.submit('post', "/auth/packageusers", {
+                    transformRequest: [function(data, headers) {
+                        return objectToFormData(data)
+                    }]
+
+                })
                 .then(response => {
-                     window.scrollTo(0, 250)
+                    window.scrollTo(0, 250)
                     this.$emit('success', 'The deposit has been saved. It will become active when the administrator checks statistics.')
                 })
                 .catch(error => {
@@ -133,19 +141,6 @@ export default {
                     console.log(error.response)
                     this.processing(false)
                 })
-        },
-        verifyWallet() {
-            var status = false
-            this.processing(true)
-            if (this.wallet == this.user.admin_wallet && !this.user.admin_pm ) {
-                this.error = "Bitcoin wallet address is not unique"
-                this.processing(false)
-                return false
-            }
-            else {
-                this.processDeposit()
-            }
-            return status
         },
         processing(status) {
             if (status) {
