@@ -1,0 +1,4 @@
+[2019-10-16 07:41:19] local.ERROR: Maximum execution time of 60 seconds exceeded {"userId":2,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 60 seconds exceeded at C:\\Users\\kazzykelson\\Desktop\\laravel\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Matching\\HostValidator.php:8)
+[stacktrace]
+#0 {main}
+"} 

@@ -7,10 +7,10 @@
                 <router-link class="btn btn-default" to="/login">Sign In</router-link>
             </div>
         </div>
-        <section class="main-container">
+        <section class="main-container"  :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
             <div class="main">
                 <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
+                    <div class="wrapper">
                         <div class="register-wrapper">
                             <div v-if="!success" class="register-form p-0 m-0">
                                 <form autocomplete="off" @submit.prevent="register" v-if="!success" method="post">

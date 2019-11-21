@@ -7,10 +7,10 @@
                 <router-link class="btn btn-default" to="/register">Sign Up</router-link>
             </div>
         </div>
-        <section class="main-container">
+        <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
             <div class="main">
                 <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
+                    <div class="wrapper" >
                         <div class="login-wrapper">
                             <div class="login-heading mb-0 text-center">
                                 <h2>Enter Email address to get your password</h2>

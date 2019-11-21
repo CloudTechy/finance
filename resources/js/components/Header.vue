@@ -4,7 +4,7 @@
             <div class="container">
                 <div class="row">
                     <div class="logo p-2 p-lg-1 mb-lg-0 mb-2">
-                        <a href="https://bfinfinancialservices.com/?a=home"><img class="main-logo" :src="$root.basepath + '/img/logo.png'"><img class="hover-logo" :src="$root.basepath + '/img/logo-hover.png'"></a>
+                        <router-link style="background: none !important" to="/home"><img class="main-logo" :src="$root.basepath + '/img/logo.png'"><img class="hover-logo" :src="$root.basepath + '/img/logo-hover.png'"></router-link>
                     </div>
                     <div class=" p-2 pb-0 pt-0 pt-lg-0 m-auto ">
                         <div class="btc-price">

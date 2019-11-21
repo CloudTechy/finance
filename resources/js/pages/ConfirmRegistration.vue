@@ -6,10 +6,10 @@
             </div>
         </div>
         <!--start main container-->
-        <section class="main-container">
+        <section class="main-container"  :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
             <div class="main">
                 <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
+                    <div class="wrapper">
                         <div v-if="success" class="text-center">
                             <div class="success-group">
                                 <h4  class="p-2 m-2">Registration Completed</h4>

@@ -7,10 +7,10 @@
             </div>
         </div>
         <!--start main container-->
-        <section class="main-container">
+        <section class="main-container"  :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
             <div class="main">
                 <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
+                    <div class="wrapper">
                         <div class="row  support-wrapper clearfix">
                             <div class="clear:both"></div>
                             <ul class="col-lg-4 col-12  support-contacts">

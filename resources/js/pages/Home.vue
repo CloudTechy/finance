@@ -6,15 +6,16 @@
                 <p>Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
             </div>
         </div> -->
-        <section class="main-container">
+        <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'"
+>
             <div class="main">
                 <div class="container">
-                    <div class="wrapper" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
+                    <div class="wrapper" >
                         <div class="row company">
                             <div class=" col p-3 partners-container">
                                 <h2 class="company-title">Our Company</h2>
                                 <p class="m-0">Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p> <br><br>
-                                <p class="m-0">BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains.<br><br> For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors.<router-link to="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
+                                <p class="m-0">BFIN Financial Services started in 2016 as a Financial Advisory Firm and recently in 2017 delved into automobiles, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors.<router-link to="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
                                 </p>
                                 <div class="services mt-3">
                                     <ul class="row">
@@ -40,7 +41,7 @@
                                 </div>
                                 <div class=" m-0 p-0 mt-4 pt-4  partners-container">
                                     <h2 class="company-title">Our Investment Plans</h2>
-                                    <p class="col p-0 mb-4 inv-intro text-left">Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. </p><br>
+                                    <p class="col p-0 mb-4 inv-intro text-center">Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. </p><br>
                                     <div class="row p-2">
                                         <div class="col-lg-3 col-sm-6 col-12">
                                             <p class="inv-intro p-0  mb-3 text-left  col">
@@ -98,7 +99,7 @@
                                 
                                 <div class="ml-0 m-0 p-0 mt-5 pt-5 get-started">
                                     <h1 class="company-title">How To Get Started</h1>
-                                    <p class="p-2">To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal.</p>
+                                    <p class="col p-0 mb-4 inv-intro text-center">To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. </p><br>
                                     <ul>
                                         <li>
                                             <h3><span>Step 1: </span>Account Registration</h3>
@@ -124,7 +125,7 @@
                                 </div>
                                 <div class="page-heading m-0 p-0 mt-4 pt-4  partners-container ">
                                     <h2 class="company-title">Our Data Center Locations</h2>
-                                    <p>Our powerful datacenters are the backbone of our profitable mining system of Bitcoins. Our business typically relies heavily upon these data centers, making it a focal point and critical asset for everyday mining operations.</p>
+                                    <p class="col p-0 mb-4 inv-intro text-center">Our powerful datacenters are the backbone of our profitable mining system of Bitcoins. Our business typically relies heavily upon these data centers, making it a focal point and critical asset for everyday mining operations.</p><br>
                                 </div>
                                 <div class="data-map"><img :src="$root.basepath + '/img/map.png'" class="img-responsive">
                                     <div class="info one" style="top: 50px; left: 400px;"><span class="map-marker"></span>

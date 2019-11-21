@@ -6422,6 +6422,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -53852,24 +53853,30 @@ var render = function() {
       _c("div", { staticClass: "header-container p-2 m-0" }, [
         _c("div", { staticClass: "container" }, [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "logo p-2 p-lg-1 mb-lg-0 mb-2" }, [
-              _c(
-                "a",
-                {
-                  attrs: { href: "https://bfinfinancialservices.com/?a=home" }
-                },
-                [
-                  _c("img", {
-                    staticClass: "main-logo",
-                    attrs: { src: _vm.$root.basepath + "/img/logo.png" }
-                  }),
-                  _c("img", {
-                    staticClass: "hover-logo",
-                    attrs: { src: _vm.$root.basepath + "/img/logo-hover.png" }
-                  })
-                ]
-              )
-            ]),
+            _c(
+              "div",
+              { staticClass: "logo p-2 p-lg-1 mb-lg-0 mb-2" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticStyle: { background: "none !important" },
+                    attrs: { to: "/home" }
+                  },
+                  [
+                    _c("img", {
+                      staticClass: "main-logo",
+                      attrs: { src: _vm.$root.basepath + "/img/logo.png" }
+                    }),
+                    _c("img", {
+                      staticClass: "hover-logo",
+                      attrs: { src: _vm.$root.basepath + "/img/logo-hover.png" }
+                    })
+                  ]
+                )
+              ],
+              1
+            ),
             _vm._v(" "),
             _c("div", { staticClass: " p-2 pb-0 pt-0 pt-lg-0 m-auto " }, [
               _c("div", { staticClass: "btc-price" }, [
@@ -54310,19 +54317,19 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "row company" }, [
                 _vm._m(1),
                 _vm._v(" "),
@@ -54417,11 +54424,11 @@ var render = function() {
                   ]
                 )
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -54457,17 +54464,17 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", {}, [
           _vm._v(
-            "BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading."
+            "BFIN Financial Services started in 2016 as a Financial Advisory Firm and recently in 2017 delved into automobiles, oil and gas, gold and Automated Trading."
           ),
           _c("br"),
           _c("br"),
           _vm._v(
-            " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+            " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
           ),
           _c("br"),
           _c("br"),
           _vm._v(
-            "The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors. Experts of Bfin Financial Services Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
+            "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bfin Financial Services Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
           ),
           _c("br"),
           _c("br"),
@@ -54534,19 +54541,19 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "text-center" }, [
                 _vm._m(1),
                 _vm._v(" "),
@@ -54566,11 +54573,11 @@ var render = function() {
                   1
                 )
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -54629,19 +54636,19 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _vm.success
                 ? _c("div", { staticClass: "text-center" }, [
                     _vm._m(1),
@@ -54689,11 +54696,11 @@ var render = function() {
                     ])
                   ])
                 : _vm._e()
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -54772,19 +54779,19 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _vm._m(1),
               _vm._v(" "),
               _c("div", { staticClass: "data-map" }, [
@@ -54856,11 +54863,11 @@ var render = function() {
                   ])
                 ])
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -55011,19 +55018,19 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "login-wrapper" }, [
                 _vm._m(0),
                 _vm._v(" "),
@@ -55120,11 +55127,11 @@ var render = function() {
                   )
                 ])
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -55176,19 +55183,19 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "row company" }, [
                 _c("div", { staticClass: " col p-3 partners-container" }, [
                   _c("h2", { staticClass: "company-title" }, [
@@ -55209,17 +55216,17 @@ var render = function() {
                     { staticClass: "m-0" },
                     [
                       _vm._v(
-                        "BFIN Financial Services started in 2016 as a Financial Advisory Firm and in 2017 delved into Automated Trading. We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains."
+                        "BFIN Financial Services started in 2016 as a Financial Advisory Firm and recently in 2017 delved into automobiles, oil and gas, gold and Automated Trading."
                       ),
                       _c("br"),
                       _c("br"),
                       _vm._v(
-                        " For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+                        " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
                       ),
                       _c("br"),
                       _c("br"),
                       _vm._v(
-                        "The main objective of our offering is attracting investments for our company, continuation of Bitcoin mining along with profitable trading and sharing the returns with our investors."
+                        "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors."
                       ),
                       _c(
                         "router-link",
@@ -55316,7 +55323,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "p",
-                        { staticClass: "col p-0 mb-4 inv-intro text-left" },
+                        { staticClass: "col p-0 mb-4 inv-intro text-center" },
                         [
                           _vm._v(
                             "Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
@@ -55425,11 +55432,16 @@ var render = function() {
                         _vm._v("How To Get Started")
                       ]),
                       _vm._v(" "),
-                      _c("p", { staticClass: "p-2" }, [
-                        _vm._v(
-                          "To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
-                        )
-                      ]),
+                      _c(
+                        "p",
+                        { staticClass: "col p-0 mb-4 inv-intro text-center" },
+                        [
+                          _vm._v(
+                            "To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. "
+                          )
+                        ]
+                      ),
+                      _c("br"),
                       _vm._v(" "),
                       _c("ul", [
                         _c("li", [
@@ -55721,11 +55733,11 @@ var render = function() {
                   )
                 ])
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -55739,7 +55751,7 @@ var staticRenderFns = [
       ]),
       _c("br"),
       _vm._v(
-        "\n                                            Deposit: $20 - $150.\n                                            Up to 5% R.O.I in 72 Hours minimum.\n                                            Eligibility: A New User Can Only Use This Plan Twice.\n                                            No Referral Commission.\n                                            "
+        "\n                                                Deposit: $20 - $150.\n                                                Up to 5% R.O.I in 72 Hours minimum.\n                                                Eligibility: A New User Can Only Use This Plan Twice.\n                                                No Referral Commission.\n                                                "
       )
     ])
   },
@@ -55753,7 +55765,7 @@ var staticRenderFns = [
       ]),
       _c("br"),
       _vm._v(
-        "\n                                            Deposit: $200 - $2,000.\n                                            Up to 20% R.O.I.\n                                            30 Days minimum turnover.\n                                            Eligibility: Open.\n                                            5% One time Referral Commission.\n                                           "
+        "\n                                                Deposit: $200 - $2,000.\n                                                Up to 20% R.O.I.\n                                                30 Days minimum turnover.\n                                                Eligibility: Open.\n                                                5% One time Referral Commission.\n                                               "
       )
     ])
   },
@@ -55767,7 +55779,7 @@ var staticRenderFns = [
       ]),
       _c("br"),
       _vm._v(
-        "\n                                            Deposit: $5,000 - $30,000.\n                                            Up to 40% R.O.I.\n                                            30 Days turnover.\n                                            Eligibility: Open.\n                                            10% Referral Commission to the 5th chain.\n                                           "
+        "\n                                                Deposit: $5,000 - $30,000.\n                                                Up to 40% R.O.I.\n                                                30 Days turnover.\n                                                Eligibility: Open.\n                                                10% Referral Commission to the 5th chain.\n                                               "
       )
     ])
   },
@@ -55781,7 +55793,7 @@ var staticRenderFns = [
       ]),
       _c("br"),
       _vm._v(
-        "\n                                            Deposit: $60,000 - $200,000.\n                                            Upto 60%.\n                                            14 days turnover.\n                                            Eligibility: Open.\n                                            10% Referral Commission to the 10th chain.\n                                            "
+        "\n                                                Deposit: $60,000 - $200,000.\n                                                Upto 60%.\n                                                14 days turnover.\n                                                Eligibility: Open.\n                                                10% Referral Commission to the 10th chain.\n                                                "
       )
     ])
   },
@@ -55829,11 +55841,12 @@ var staticRenderFns = [
           _vm._v("Our Data Center Locations")
         ]),
         _vm._v(" "),
-        _c("p", [
+        _c("p", { staticClass: "col p-0 mb-4 inv-intro text-center" }, [
           _vm._v(
             "Our powerful datacenters are the backbone of our profitable mining system of Bitcoins. Our business typically relies heavily upon these data centers, making it a focal point and critical asset for everyday mining operations."
           )
-        ])
+        ]),
+        _c("br")
       ]
     )
   },
@@ -56008,19 +56021,19 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "login-wrapper" }, [
                 _vm._m(0),
                 _vm._v(" "),
@@ -56165,11 +56178,11 @@ var render = function() {
                   )
                 ])
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -56268,19 +56281,19 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "register-wrapper" }, [
                 !_vm.success
                   ? _c("div", { staticClass: "register-form p-0 m-0" }, [
@@ -57198,11 +57211,11 @@ var render = function() {
                     ])
                   : _vm._e()
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -57399,19 +57412,19 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "login-wrapper" }, [
                 _vm._m(0),
                 _vm._v(" "),
@@ -57598,11 +57611,11 @@ var render = function() {
                   )
                 ])
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -57666,19 +57679,19 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "row  support-wrapper clearfix" }, [
                 _c("div", { staticClass: "clear:both" }),
                 _vm._v(" "),
@@ -57826,11 +57839,11 @@ var render = function() {
                   ]
                 )
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -60854,23 +60867,17 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [_vm._m(1)]
-          )
-        ])
-      ])
-    ])
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [_vm._m(1)]
+    )
   ])
 }
 var staticRenderFns = [
@@ -60894,838 +60901,876 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row company" }, [
-      _c(
-        "div",
-        {
-          staticClass: "wrapper",
-          staticStyle: { background: "url(images/faq-wrap.png) no-repeat 0 0" }
-        },
-        [
-          _c(
-            "div",
-            {
-              staticClass: "faq-container panel-group",
-              attrs: { id: "accordion" }
-            },
-            [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "column" }, [
-                  _c("div", { staticClass: "faq-section" }, [
-                    _c("h3", [_vm._v("General Questions")]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "faq" }, [
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que",
-                            attrs: {
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion",
-                              "aria-expanded": "false",
-                              href: "#collapse1"
-                            }
-                          },
-                          [_vm._v("What is Bfin Financial Services Limited? ")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse in",
-                            attrs: { id: "collapse1" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Bfin Financial Services is an expert trading company."
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse2",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "Is Bfin Financial Services Limited available to public? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse2" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Bfin Financial Services Limited is open for public who are 18 and fulfill the legal age to take part in our program. "
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse3",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "How can I check the authenticity of Bfin Financial Services Limited? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse3" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Bfin Financial Services is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/"
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse4",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "How Does Bfin Financial Services Limited make profit? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse4" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Bfin Financial Services For the past two years, our unique alogrithm remains relevant, this the major secret why we win. "
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse5",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "What are the risks of loss of funds for investors?"
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse5" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Bfin Financial Services Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, Bfin Financial Services Limited's investors can expect to receive money back except the profits they received earlier."
-                              )
-                            ])
-                          ]
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "faq-section" }, [
-                    _c("h3", [_vm._v("Account questions")]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "faq" }, [
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse6",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "How can I start investing with Bfin Financial Services Limited ? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse6" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                'In order to begin, you should register on our website by filling the registration form. Just click on "Register". After that, you can start investing with us. '
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse7",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "I am having trouble during registering, what should I do? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse7" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Please check the information you have entered. You may contact our support team at "
-                              ),
+    return _c("div", { staticClass: "main" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "wrapper" }, [
+          _c("div", { staticClass: "row company" }, [
+            _c(
+              "div",
+              {
+                staticClass: "wrapper",
+                staticStyle: {
+                  background: "url(images/faq-wrap.png) no-repeat 0 0"
+                }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass: "faq-container panel-group",
+                    attrs: { id: "accordion" }
+                  },
+                  [
+                    _c("div", { staticClass: "row" }, [
+                      _c("div", { staticClass: "column" }, [
+                        _c("div", { staticClass: "faq-section" }, [
+                          _c("h3", [_vm._v("General Questions")]),
+                          _vm._v(" "),
+                          _c("ul", { staticClass: "faq" }, [
+                            _c("li", { staticClass: "panel" }, [
                               _c(
                                 "a",
                                 {
+                                  staticClass: "que",
                                   attrs: {
-                                    href:
-                                      "mailto:support@Bfin%20Financial%20Services"
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion",
+                                    "aria-expanded": "false",
+                                    href: "#collapse1"
                                   }
                                 },
-                                [_vm._v("support@bfinfinancialservices.com ")]
+                                [
+                                  _vm._v(
+                                    "What is Bfin Financial Services Limited? "
+                                  )
+                                ]
                               ),
-                              _vm._v(
-                                " if you need our assistance. We will be glad to help you. "
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse in",
+                                  attrs: { id: "collapse1" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Bfin Financial Services is an expert trading company."
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse2",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Is Bfin Financial Services Limited available to public? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse2" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Bfin Financial Services Limited is open for public who are 18 and fulfill the legal age to take part in our program. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse3",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "How can I check the authenticity of Bfin Financial Services Limited? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse3" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Bfin Financial Services is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/"
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse4",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "How Does Bfin Financial Services Limited make profit? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse4" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Bfin Financial Services For the past two years, our unique alogrithm remains relevant, this the major secret why we win. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse5",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "What are the risks of loss of funds for investors?"
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse5" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Bfin Financial Services Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, Bfin Financial Services Limited's investors can expect to receive money back except the profits they received earlier."
+                                    )
+                                  ])
+                                ]
                               )
                             ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse8",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "I wish to invest with Bfin Financial Services Limited but I don't have any e-currency account. What should I do? "
-                            )
-                          ]
-                        ),
+                          ])
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse8" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "You can open a free Bitcoin wallet here : www.blockchain.info or coinpayments.net or you can fund your bitcoin wallet through different exchanges you can lookup on internet which is suitable for your country."
+                        _c("div", { staticClass: "faq-section" }, [
+                          _c("h3", [_vm._v("Account questions")]),
+                          _vm._v(" "),
+                          _c("ul", { staticClass: "faq" }, [
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse6",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "How can I start investing with Bfin Financial Services Limited ? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse6" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      'In order to begin, you should register on our website by filling the registration form. Just click on "Register". After that, you can start investing with us. '
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse7",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "I am having trouble during registering, what should I do? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse7" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Please check the information you have entered. You may contact our support team at "
+                                    ),
+                                    _c(
+                                      "a",
+                                      {
+                                        attrs: {
+                                          href:
+                                            "mailto:support@Bfin%20Financial%20Services"
+                                        }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "support@bfinfinancialservices.com "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(
+                                      " if you need our assistance. We will be glad to help you. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse8",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "I wish to invest with Bfin Financial Services Limited but I don't have any e-currency account. What should I do? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse8" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "You can open a free Bitcoin wallet here : www.blockchain.info or coinpayments.net or you can fund your bitcoin wallet through different exchanges you can lookup on internet which is suitable for your country."
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse9",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Can I have more than one account at Bfin Financial Services ? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse9" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "No, each member can have only one account in Bfin Financial Services Ltd. Any attempt of fraud will result in permanent blocking of the account & the funds deposited in the account will be frozen. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse10",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "How to make changes in payment data? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse10" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Please contact us at support@Bfin Financial Services and we will update your account within 24 hours. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse11",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "What should I do if I forget account password? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse11" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Click on forgot password link, enter your username or e-mail and follow instruction. You'll receive your account reset information by email. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse13",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "How long will it take to my deposit active in my account? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse13" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Your deposit will automatically be active after 3 confirmation on your transaction in bitcoin network. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse14",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [_vm._v("Can I make multiple deposits? ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse14" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Yes you can make multiple deposits at any given time. There is no limit to the amount and the number of transactions you make within our program. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse15",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [_vm._v("Can we withdraw our initial deposit")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse15" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "yes you can withdraw your initial deposit."
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse16",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Is daily profit available all week long?"
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse16" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "No, daily profit is available 7 days a week but withdrawal is strictly after plan end."
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse17",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [_vm._v("Do you offer compounding? ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse17" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v("Ye, we do offer compounding.")
+                                  ])
+                                ]
                               )
                             ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse9",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "Can I have more than one account at Bfin Financial Services ? "
-                            )
-                          ]
-                        ),
+                          ])
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse9" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "No, each member can have only one account in Bfin Financial Services Ltd. Any attempt of fraud will result in permanent blocking of the account & the funds deposited in the account will be frozen. "
+                        _c("div", { staticClass: "faq-section" }, [
+                          _c("h3", [_vm._v("Withdrawal questions")]),
+                          _vm._v(" "),
+                          _c("ul", { staticClass: "faq" }, [
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion",
+                                    href: "#collapse18"
+                                  }
+                                },
+                                [_vm._v("How can I withdraw funds? ")]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse18" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Just login to your Bfin Financial Services Limited account and proceed with your withdrawal at the Withdraw section. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse19",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Is withdrawal of funds available all week?"
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse19" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Yes withdrawal of funds is available 7 days a week."
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse20",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "How long does it take for a withdrawal request to get processed? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse20" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "All withdrawal requests are processed within 24 hours for crypto and 48 hours maximum for other modes of deposit."
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse21",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "What is the minimum withdrawal amount? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse21" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "The minimum withdrawal amount is 1 USD."
+                                    )
+                                  ])
+                                ]
                               )
                             ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse10",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [_vm._v("How to make changes in payment data? ")]
-                        ),
+                          ])
+                        ]),
                         _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse10" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Please contact us at support@Bfin Financial Services and we will update your account within 24 hours. "
+                        _c("div", { staticClass: "faq-section" }, [
+                          _c("h3", [_vm._v("Referral questions")]),
+                          _vm._v(" "),
+                          _c("ul", { staticClass: "faq" }, [
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion",
+                                    href: "#collapse22"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Do you have a referral program in Bfin Financial Services Limited? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse22" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "Yes we have a 5 level referral program in Bfin Financial Services Limited. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse23",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "What are the referral commissions in Bfin Financial Services Limited? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse23" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "For direct referrals you will get upto 10% interest on the amount deposited by the referee. It all depends on your plan. SEE: https://www.bfinfinancialservices.com/index.php?a=page&id=investors."
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse24",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "Do I need to have active investment in order to participate in Bfin Financial Services Limited's referral program ? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse24" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "You do not need to have an active investment in order to participate in the referral program. Anyone registered our site can start benefiting immediately from participating in our referral program by referring others. Referral commissions are paid to referring party when referred party makes an investment deposit. "
+                                    )
+                                  ])
+                                ]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("li", { staticClass: "panel" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "que collapsed",
+                                  attrs: {
+                                    href: "#collapse25",
+                                    "data-toggle": "collapse",
+                                    "data-parent": "#accordion"
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "How do I know that someone has become my referral? "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "ans panel-body collapse",
+                                  attrs: { id: "collapse25" }
+                                },
+                                [
+                                  _c("p", [
+                                    _vm._v(
+                                      "You will receive email notification. You can check number of your referrals & your referral earnings on the 'Referral' section of your account. "
+                                    )
+                                  ])
+                                ]
                               )
                             ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse11",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "What should I do if I forget account password? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse11" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Click on forgot password link, enter your username or e-mail and follow instruction. You'll receive your account reset information by email. "
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse13",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "How long will it take to my deposit active in my account? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse13" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Your deposit will automatically be active after 3 confirmation on your transaction in bitcoin network. "
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse14",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [_vm._v("Can I make multiple deposits? ")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse14" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Yes you can make multiple deposits at any given time. There is no limit to the amount and the number of transactions you make within our program. "
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse15",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [_vm._v("Can we withdraw our initial deposit")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse15" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "yes you can withdraw your initial deposit."
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse16",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [_vm._v("Is daily profit available all week long?")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse16" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "No, daily profit is available 7 days a week but withdrawal is strictly after plan end."
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse17",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [_vm._v("Do you offer compounding? ")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse17" }
-                          },
-                          [_c("p", [_vm._v("Ye, we do offer compounding.")])]
-                        )
+                          ])
+                        ])
                       ])
                     ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "faq-section" }, [
-                    _c("h3", [_vm._v("Withdrawal questions")]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "faq" }, [
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion",
-                              href: "#collapse18"
-                            }
-                          },
-                          [_vm._v("How can I withdraw funds? ")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse18" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Just login to your Bfin Financial Services Limited account and proceed with your withdrawal at the Withdraw section. "
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse19",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [_vm._v("Is withdrawal of funds available all week?")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse19" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Yes withdrawal of funds is available 7 days a week."
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse20",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "How long does it take for a withdrawal request to get processed? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse20" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "All withdrawal requests are processed within 24 hours for crypto and 48 hours maximum for other modes of deposit."
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse21",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [_vm._v("What is the minimum withdrawal amount? ")]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse21" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v("The minimum withdrawal amount is 1 USD.")
-                            ])
-                          ]
-                        )
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "faq-section" }, [
-                    _c("h3", [_vm._v("Referral questions")]),
-                    _vm._v(" "),
-                    _c("ul", { staticClass: "faq" }, [
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion",
-                              href: "#collapse22"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "Do you have a referral program in Bfin Financial Services Limited? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse22" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "Yes we have a 5 level referral program in Bfin Financial Services Limited. "
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse23",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "What are the referral commissions in Bfin Financial Services Limited? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse23" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "For direct referrals you will get upto 10% interest on the amount deposited by the referee. It all depends on your plan. SEE: https://www.bfinfinancialservices.com/index.php?a=page&id=investors."
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse24",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "Do I need to have active investment in order to participate in Bfin Financial Services Limited's referral program ? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse24" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "You do not need to have an active investment in order to participate in the referral program. Anyone registered our site can start benefiting immediately from participating in our referral program by referring others. Referral commissions are paid to referring party when referred party makes an investment deposit. "
-                              )
-                            ])
-                          ]
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", { staticClass: "panel" }, [
-                        _c(
-                          "a",
-                          {
-                            staticClass: "que collapsed",
-                            attrs: {
-                              href: "#collapse25",
-                              "data-toggle": "collapse",
-                              "data-parent": "#accordion"
-                            }
-                          },
-                          [
-                            _vm._v(
-                              "How do I know that someone has become my referral? "
-                            )
-                          ]
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "div",
-                          {
-                            staticClass: "ans panel-body collapse",
-                            attrs: { id: "collapse25" }
-                          },
-                          [
-                            _c("p", [
-                              _vm._v(
-                                "You will receive email notification. You can check number of your referrals & your referral earnings on the 'Referral' section of your account. "
-                              )
-                            ])
-                          ]
-                        )
-                      ])
-                    ])
-                  ])
-                ])
-              ])
-            ]
-          )
-        ]
-      )
+                  ]
+                )
+              ]
+            )
+          ])
+        ])
+      ])
     ])
   }
 ]
@@ -61753,19 +61798,19 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "p-1 get-started" }, [
                 _c("ul", [
                   _c("li", [
@@ -61807,11 +61852,11 @@ var render = function() {
                   _vm._m(5)
                 ])
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -61924,19 +61969,19 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _vm._m(1),
               _vm._v(" "),
               _c("p", { staticClass: "col mb-2 inv-intro text-center" }, [
@@ -61997,11 +62042,11 @@ var render = function() {
                   ])
                 ])
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -62202,19 +62247,19 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "news-container" }, [
                 _c("ul", { staticClass: "row" }, [
                   _c("ul", { staticClass: "row" }, [
@@ -62231,11 +62276,11 @@ var render = function() {
                   _vm._m(1)
                 ])
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -62288,19 +62333,19 @@ var render = function() {
   return _c("div", [
     _vm._m(0),
     _vm._v(" "),
-    _c("section", { staticClass: "main-container" }, [
-      _c("div", { staticClass: "main" }, [
-        _c("div", { staticClass: "container" }, [
-          _c(
-            "div",
-            {
-              staticClass: "wrapper",
-              style:
-                "background:url(" +
-                _vm.$root.basepath +
-                "/img/home.png) no-repeat 0 0;"
-            },
-            [
+    _c(
+      "section",
+      {
+        staticClass: "main-container",
+        style:
+          "background:url(" +
+          _vm.$root.basepath +
+          "/img/home.png) no-repeat 0 0;"
+      },
+      [
+        _c("div", { staticClass: "main" }, [
+          _c("div", { staticClass: "container" }, [
+            _c("div", { staticClass: "wrapper" }, [
               _c("div", { staticClass: "row company" }, [
                 _c("div", { staticClass: "p-2 partners-container" }, [
                   _c("h2", { staticClass: "text-center" }, [
@@ -62330,11 +62375,11 @@ var render = function() {
                   _c("div", { staticClass: "std" })
                 ])
               ])
-            ]
-          )
+            ])
+          ])
         ])
-      ])
-    ])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
