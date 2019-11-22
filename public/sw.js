@@ -1,4 +1,4 @@
-const version = "v1:0:2" //Change if you want to regenerate cache
+const version = "v1:0:4" //Change if you want to regenerate cache
 const staticCacheName = `${version}static-resources`;
 
 self.addEventListener('install', event => {
@@ -46,7 +46,7 @@ self.addEventListener('fetch', event => {
         caches.match(event.request).then(response => {
             if (response) {
                 //we found an entry in the cache!
-                return response
+                //return response
             }
             return fetch(event.request)
         })

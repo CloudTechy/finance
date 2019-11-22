@@ -10,7 +10,7 @@
         <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
             <div class="main">
                 <div class="container">
-                    <div class="wrapper" >
+                    <div class="wrapper">
                         <div class="row company">
                             <div class="wrapper" style="background:url(images/faq-wrap.png) no-repeat 0 0;">
                                 <div class="faq-container panel-group" id="accordion">

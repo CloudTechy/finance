@@ -43,7 +43,7 @@ class WithdrawalMade extends Notification implements ShouldQueue {
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Account Debited')
 			->line('A withdrawal was made from your account')
-			->line('This is to notify you that the sum of $' . $withdrawal->amount . ' has been debited from your account')
+			->line('This is to notify you that the sum of $' . $withdrawal->amount . ' was debited from your account')
 			->action('Goto Dashboard', url($dashboardPath))
 			->line('Thank you for investing with us')
 			->bcc('conyekelu@yahoo.com','BFIN notification');

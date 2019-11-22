@@ -65,12 +65,12 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 				$transaction->active = false;
 				$transaction->reference = 'BFIN';
 				if ($transaction->save()) {
-					$maturePackage->subscription->update(['active' => false]);
+					$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->duration), 'active' => true]);
 					$transaction->user->notify(new TransactionMade($transaction));
 					$transaction = Transaction::where('id', $maturePackage->subscription->transaction_id)->first();
-					if (!empty($transaction)) {
-						$transaction->update(['active' => false]);
-					}
+					// if (!empty($transaction)) {
+					// 	$transaction->update(['active' => false]);
+					// }
 
 				}
 

@@ -39,10 +39,10 @@
                                             <input type="radio" @click="updateSelection(packag)" v-model="form.amount" :value="packag.deposit">
                                             <span :class="{selection : select == packag.name}"></span>
                                             <div class="plan-in">
-                                                <h3>${{numeral(packag.deposit)}}</h3>
+                                                <h3>${{$root.normalNumeral(packag.deposit)}}</h3>
                                                 <p class="font-weight-bold">Deposit Plan</p>
                                                 <span class="range font-weight-bold">{{packag.duration + ' days duration'}}</span>
-                                                <p class="font-weight-bold">${{numeral(packag.interest_rate)}} R.O.I</p>
+                                                <p class="font-weight-bold">${{$root.normalNumeral(packag.interest_rate)}} R.O.I</p>
                                                 <span class="range  text-capitalize">{{packag.portfolio + ' Plan'}}</span>
                                             </div>
                                         </div>
@@ -143,7 +143,14 @@ export default {
             return numeral(value).format('0,0')
         },
         processDeposit() {
-            this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)
+            if(this.user.packages.length > 0){
+                this.error = 'Oops!!! There is an active subscription on this account'
+                window.scrollTo(0, 200)
+            }
+            else{
+              this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+            }
+            
         },
         subscribe() {
             this.processing(true)

@@ -7620,22 +7620,19 @@ __webpack_require__.r(__webpack_exports__);
     subscribe: function subscribe(packag) {
       var _this3 = this;
 
-      if (packag.unsubscribed) {
-        this.form.get("/auth/subscribe/" + packag.transaction.id).then(function (response) {
-          _this3.$root.alert('success', ' ', 'Subscription is activated');
+      this.form.get("/auth/subscribe/" + packag.transaction.id).then(function (response) {
+        console.log(response.data);
 
-          _this3.getPackages();
-        })["catch"](function (error) {
-          _this3.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ? error.response.message : ' ');
+        _this3.$root.alert('success', ' ', response.data.message);
 
-          _this3.getPackages();
+        _this3.getPackages();
+      })["catch"](function (error) {
+        _this3.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ? error.response.message : ' ');
 
-          console.log(error.response);
-        });
-      } else {
-        this.$root.alert('info', ' ', 'Please note that packages can only be activated');
-        this.getPackages();
-      }
+        _this3.getPackages();
+
+        console.log(error.response);
+      });
     }
   }
 });
@@ -8966,7 +8963,12 @@ __webpack_require__.r(__webpack_exports__);
       return numeral(value).format('0,0');
     }),
     processDeposit: function processDeposit() {
-      this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage);
+      if (this.user.packages.length > 0) {
+        this.error = 'Oops!!! There is an active subscription on this account';
+        window.scrollTo(0, 200);
+      } else {
+        this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage);
+      }
     },
     subscribe: function subscribe() {
       var _this5 = this;
@@ -52909,7 +52911,7 @@ var render = function() {
                       _c(
                         "td",
                         {
-                          staticClass: "p-1",
+                          staticClass: "p-2",
                           staticStyle: {
                             "text-align": "right",
                             color: "#f8b882"
@@ -52990,7 +52992,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col" }, [
-          _c("td", { staticClass: "p-1", staticStyle: { color: "#fff" } }, [
+          _c("td", { staticClass: "p-2", staticStyle: { color: "#fff" } }, [
             _vm._v("Registration Date :")
           ])
         ]),
@@ -53218,7 +53220,7 @@ var render = function() {
                       _c(
                         "td",
                         {
-                          staticClass: "p-1",
+                          staticClass: "p-2",
                           staticStyle: {
                             "text-align": "right",
                             color: "#f8b882"
@@ -53299,7 +53301,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "col" }, [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col" }, [
-          _c("td", { staticClass: "p-1", staticStyle: { color: "#fff" } }, [
+          _c("td", { staticClass: "p-2", staticStyle: { color: "#fff" } }, [
             _vm._v("Registration Date :")
           ])
         ]),
@@ -54442,7 +54444,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume- Bitcoins."
+            "Bfin Financial Services assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume - Bitcoins."
           )
         ])
       ])
@@ -54464,7 +54466,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", {}, [
           _vm._v(
-            "BFIN Financial Services started in 2016 as a Financial Advisory Firm and recently in 2017 delved into automobiles, oil and gas, gold and Automated Trading."
+            "BFIN Financial Services started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
           ),
           _c("br"),
           _c("br"),
@@ -55204,7 +55206,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "m-0" }, [
                     _vm._v(
-                      "Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume- Bitcoins."
+                      "Bfin Financial Services assures you of making the maximum profit.Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume - Bitcoins."
                     )
                   ]),
                   _vm._v(" "),
@@ -55216,7 +55218,7 @@ var render = function() {
                     { staticClass: "m-0" },
                     [
                       _vm._v(
-                        "BFIN Financial Services started in 2016 as a Financial Advisory Firm and recently in 2017 delved into automobiles, oil and gas, gold and Automated Trading."
+                        "BFIN Financial Services started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
                       ),
                       _c("br"),
                       _c("br"),
@@ -56044,7 +56046,7 @@ var render = function() {
                           ? _c("p", { staticClass: "m-1" }, [
                               _vm._v("Validation Errors.")
                             ])
-                          : _c("p", { staticClass: "m-1 p-2" }, [
+                          : _c("p", { staticClass: "p-2 m-4" }, [
                               _vm._v(
                                 "Error, unable to connect with these credentials."
                               )
@@ -59111,11 +59113,12 @@ var render = function() {
                                                         _vm._v(" "),
                                                         _c("td", [
                                                           _vm._v(
-                                                            _vm._s(
-                                                              _vm.$root.numeral(
-                                                                packag.interest
+                                                            "$" +
+                                                              _vm._s(
+                                                                _vm.$root.normalNumeral(
+                                                                  packag.interest
+                                                                )
                                                               )
-                                                            )
                                                           )
                                                         ]),
                                                         _vm._v(" "),
@@ -63325,7 +63328,9 @@ var render = function() {
                                           _vm._v(
                                             "$" +
                                               _vm._s(
-                                                _vm.numeral(packag.deposit)
+                                                _vm.$root.normalNumeral(
+                                                  packag.deposit
+                                                )
                                               )
                                           )
                                         ]),
@@ -63359,7 +63364,7 @@ var render = function() {
                                             _vm._v(
                                               "$" +
                                                 _vm._s(
-                                                  _vm.numeral(
+                                                  _vm.$root.normalNumeral(
                                                     packag.interest_rate
                                                   )
                                                 ) +

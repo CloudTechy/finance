@@ -63,12 +63,16 @@ class PackageUserController extends Controller {
 		{
 			$user = User::find($validated['user_id']);
 			$package = Package::find($validated['package_id']);
+			if(PackageUser::where('user_id', $user->id)->where('active', true)->count() > 0){
+				return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! There is an active subscription on this account', 400);
+			}
 			if ($package->portfolio->name == 'bronze') {
-				$tries = PackageUser::where('package_id', $package->id)->where('user_id', $user->id)->count();
+				$tries = PackageUser::where('package_id', $package->id)->where('user_id', $user->id)->where('active', true)->count();
 				if ($tries > 1) {
 					return Helper::invalidRequest(['This subscription is invalid'], 'you are no more eligible for this plan, you have exceeded the number of subscriptions for this plan', 400);
 				}
 			}
+
 
 			if ($user->balance >= $package->deposit) {
 
@@ -164,6 +168,7 @@ class PackageUserController extends Controller {
 	public function destroy(PackageUser $packageUser) {
 		//
 	}
+	
 	public function confirmSubscription(Transaction $transaction) {
 		DB::beginTransaction();
 		try {
@@ -171,7 +176,14 @@ class PackageUserController extends Controller {
 				return Helper::inValidRequest('User not Unauthorized to peform this operation.', 'Unauthorized Access!', 400);
 			}
 
+
 			$packageUser = PackageUser::where('transaction_id', $transaction->id)->first();
+
+			if($packageUser->active == true){
+				$packageUser->update(['expiration' => null , 'active' => false]);
+				DB::commit();
+				return Helper::validRequest(['success' => true], 'subscription deactivated successfully', 200);
+			}
 
 			if (!$packageUser->active && empty($packageUser->expiration)) {
 				$duration = $packageUser->package->duration;
@@ -183,7 +195,7 @@ class PackageUserController extends Controller {
 				
 				$data = new PackageUserResource($packageUser);
 				
-				return Helper::validRequest($data, 'subscription successful', 200);
+				return Helper::validRequest($data, 'subscription activated successfully', 200);
 			} else {
 				return Helper::invalidRequest(['This subscription is invalid'], 'user\'s package has already been subscribed', 400);
 			}

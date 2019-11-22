@@ -9,7 +9,7 @@
                         <div class="col">
                             <div class="row">
                                 <div class="col">
-                                    <td  class="p-1" style="color: #fff;">Registration Date :</td>
+                                    <td  class="p-2" style="color: #fff;">Registration Date :</td>
                                 </div>
                                 <div class="col justify-content-end">
                                     <td class="p-1"  style="color: #fff;">Your IP Address :</td>
@@ -19,7 +19,7 @@
                         <div class="col">
                             <div class="row">
                                 <div class="col">
-                                   <td class="p-1" style="text-align: right;color: #f8b882;">{{time}}</td>
+                                   <td class="p-2" style="text-align: right;color: #f8b882;">{{time}}</td>
                                 </div>
                                 <div class="col">
                                       <td class="p-1" style="text-align: right;color: #f8b882;">{{getIp}}</td>

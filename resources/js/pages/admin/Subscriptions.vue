@@ -87,12 +87,12 @@
                                                             </p>
                                                             <div v-if="packag.transaction.pop" style="position: absolute; left: 0" class="collapse mt-2" :id="'s' + packag.id">
                                                                 <div style="width: 55%; " class="mt-2 text-success p-2 card card-body">
-                                                                    <img class="card-img"  :src="$root.basepath + '/img/uploads/'+packag.transaction.pop">
+                                                                    <img class="card-img" :src="$root.basepath + '/img/uploads/'+packag.transaction.pop">
                                                                 </div>
                                                             </div>
                                                         </td>
                                                         <td>{{packag.package}}</td>
-                                                        <td>{{$root.numeral(packag.interest)}}</td>
+                                                        <td>${{$root.normalNumeral(packag.interest)}}</td>
                                                         <td>
                                                             <button @click.prevent="subscribe(packag)" type="button" :class="{btn:true, 'btn-sm':true, 'btn-toggle' : true, active: !packag.unsubscribed}" data-toggle="button" :aria-pressed="!packag.unsubscribed" autocomplete="off">
                                                                 <div class="handle"></div>
@@ -180,24 +180,17 @@ export default {
             return moment(from).to(moment(to))
         },
         subscribe(packag) {
-            if (packag.unsubscribed) {
-                this.form.get("/auth/subscribe/" + packag.transaction.id)
-                    .then(response => {
-                        this.$root.alert('success', ' ', 'Subscription is activated')
-                        this.getPackages()
-                    })
-                    .catch(error => {
-                        this.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ? error.response.message : ' ')
-                        this.getPackages()
-                        console.log(error.response)
-                    })
-            } else {
-                this.$root.alert('info', ' ', 'Please note that packages can only be activated')
-                this.getPackages()
-            }
-
-
-
+            this.form.get("/auth/subscribe/" + packag.transaction.id)
+                .then(response => {
+                    console.log(response.data)
+                    this.$root.alert('success', ' ', response.data.message)
+                    this.getPackages()
+                })
+                .catch(error => {
+                    this.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ? error.response.message : ' ')
+                    this.getPackages()
+                    console.log(error.response)
+                })
         }
     }
 }

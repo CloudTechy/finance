@@ -10,7 +10,7 @@
         <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
             <div class="main">
                 <div class="container">
-                    <div class="wrapper" >
+                    <div class="wrapper">
                         <div class="login-wrapper">
                             <div class="login-heading mb-0 text-center">
                                 <h2>Enter Email address to get your password</h2>
@@ -67,7 +67,7 @@ export default {
                 this.response = result.data
                 this.success = true
                 this.has_error = false
-                 // console.log(result.data)
+                // console.log(result.data)
             }, error => {
                 this.processing(false)
                 this.has_error = true
