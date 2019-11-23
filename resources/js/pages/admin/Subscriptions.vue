@@ -182,7 +182,6 @@ export default {
         subscribe(packag) {
             this.form.get("/auth/subscribe/" + packag.transaction.id)
                 .then(response => {
-                    console.log(response.data)
                     this.$root.alert('success', ' ', response.data.message)
                     this.getPackages()
                 })

@@ -174,7 +174,7 @@ export default {
             if (!withdrawal.approved) {
                 this.form.get("/auth/confirm_withdrawal/" + withdrawal.id)
                     .then(response => {
-                        this.$root.alert('success', ' ', 'Withdrawal approved')
+                        this.$root.alert('success', ' ', 'Withdrawal approved successfully')
                         this.getWithdrawals()
                     })
                     .catch(error => {
@@ -183,8 +183,9 @@ export default {
                         console.log(error.response)
                     })
             }else {
-                this.$root.alert('info', ' ', 'Please note that withdrawal can only be approved')
                 this.getWithdrawals()
+                this.$root.alert('info', ' ', 'Please note that withdrawal can only be approved')
+                
             }
 
             

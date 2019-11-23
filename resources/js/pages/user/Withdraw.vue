@@ -133,6 +133,7 @@ export default {
             this.form.post("/auth/withdrawals")
                 .then(response => {
                     window.scrollTo(0, 200)
+                    this.amount = ''
                     this.processing(false)
                     this.error = ''
                     this.message = response.data.message

@@ -181,6 +181,7 @@ class PackageUserController extends Controller {
 
 			if($packageUser->active == true){
 				$packageUser->update(['expiration' => null , 'active' => false]);
+				$transaction->update(['confirmed' => false, 'payment' => $packageUser->account, 'sent' => false]);
 				DB::commit();
 				return Helper::validRequest(['success' => true], 'subscription deactivated successfully', 200);
 			}

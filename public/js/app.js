@@ -7621,8 +7621,6 @@ __webpack_require__.r(__webpack_exports__);
       var _this3 = this;
 
       this.form.get("/auth/subscribe/" + packag.transaction.id).then(function (response) {
-        console.log(response.data);
-
         _this3.$root.alert('success', ' ', response.data.message);
 
         _this3.getPackages();
@@ -8178,7 +8176,7 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!withdrawal.approved) {
         this.form.get("/auth/confirm_withdrawal/" + withdrawal.id).then(function (response) {
-          _this3.$root.alert('success', ' ', 'Withdrawal approved');
+          _this3.$root.alert('success', ' ', 'Withdrawal approved successfully');
 
           _this3.getWithdrawals();
         })["catch"](function (error) {
@@ -8189,8 +8187,8 @@ __webpack_require__.r(__webpack_exports__);
           console.log(error.response);
         });
       } else {
-        this.$root.alert('info', ' ', 'Please note that withdrawal can only be approved');
         this.getWithdrawals();
+        this.$root.alert('info', ' ', 'Please note that withdrawal can only be approved');
       }
     }
   }
@@ -9409,6 +9407,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.amount = this.amount;
       this.form.post("/auth/withdrawals").then(function (response) {
         window.scrollTo(0, 200);
+        _this3.amount = '';
 
         _this3.processing(false);
 

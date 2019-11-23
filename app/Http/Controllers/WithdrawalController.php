@@ -141,13 +141,13 @@ class WithdrawalController extends Controller {
 		}
 	}
 
-	public function confirmWithdrawal(Withdrawal $withdrawal) {
+	public function confirmWithdrawal(Withdrawal $withdrawal) { 
 		DB::beginTransaction();
 		try {
-			if(!auth()->user()->isAdmin){
+			if(auth()->user()->userLevel->name != 'administrator'){
 				return Helper::inValidRequest('User not Unauthorized to peform this operation.', 'Unauthorized Access!', 400);
 			}
-			if (auth()->user()->balance >= $withdrawal->amount) {
+			if ($withdrawal->user->processedWithdrawals->sum('amount')  >= $withdrawal->amount) {
 				$data = $withdrawal->update(['confirmed' => true, 'processed' => true]);
 				DB::commit();
 				$withdrawal->user->notify(new WithdrawalMade($withdrawal));
