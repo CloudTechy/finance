@@ -189,13 +189,15 @@ export default {
                                 this.getWithdrawals()
                             })
                             .catch(error => {
+                                var status = withdrawal.approved ? this.$refs.withdrawal[index].classList.add('active') : this.$refs.withdrawal[index].classList.remove('active')
                                 this.$root.alert('error', ' ', 'Withdrawal could not be approved, try again')
                                 this.getWithdrawals()
                                 console.log(error.response)
                             })
                     }
                     else {
-                        this.$refs.withdrawal[index].classList.remove('active')
+                        var status = withdrawal.approved ? this.$refs.withdrawal[index].classList.add('active') : this.$refs.withdrawal[index].classList.remove('active')
+                        // this.$refs.withdrawal[index].classList.remove('active')
                         this.$root.alert('info', ' ', 'Withdrawal dismissed successfully')   
                     }
                     

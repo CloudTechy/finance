@@ -182,13 +182,13 @@ export default {
         },
         subscribe(packag,index) {
             this.$swal({
-                    title:  `Do you want to ${ packag.active ? 'deactivate' : 'activate' } ${packag.username}'s ${packag.package} subscription?`,
+                    title:  `Do you want to ${ packag.unsubscribed ? 'activate' : 'deactivate' } ${packag.username}'s ${packag.package} subscription?`,
                     text: "You can revert this changes in future",
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#38c172',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: `Yes,  ${ packag.active ? 'deactivate' : 'activate' } subscription`
+                    confirmButtonText: `Yes,  ${ packag.unsubscribed ? 'activate' : 'deactivate' } subscription`
                 })
                 .then((result) => {
                     if(result.value == true){
@@ -198,15 +198,16 @@ export default {
                                 this.getPackages()
                             })
                             .catch(error => {
-                                this.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ? error.response.message : ' ')
+                                var status = packag.unsubscribed ?this.$refs[index][0].classList.remove('active') : this.$refs[index][0].classList.add('active')
+                                this.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.data.message != undefined ? error.response.data.message : ' ')
                                 this.getPackages()
                                 console.log(error.response)
                             })
                     }
                     else {
-                        var status = packag.active ? this.$refs[index][0].classList.add('active') : this.$refs[index][0].classList.remove('active')
+                        var status = packag.unsubscribed ?this.$refs[index][0].classList.remove('active') : this.$refs[index][0].classList.add('active')
                         
-                        this.$root.alert('info', ' ', `Subscription  ${ packag.active ? 'deactivation' : 'activation' } cancelled`)   
+                        this.$root.alert('info', ' ', `Subscription  ${ packag.unsubscribed ? 'deactivation' : 'activation' } cancelled`)   
                     }
                     
                 })

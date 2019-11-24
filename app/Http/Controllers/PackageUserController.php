@@ -186,6 +186,10 @@ class PackageUserController extends Controller {
 				return Helper::validRequest(['success' => true], 'subscription deactivated successfully', 200);
 			}
 
+			if(PackageUser::where('user_id', $packageUser->user->id)->where('active', true)->count() > 0){
+				return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! Account has an active subscription.', 400);
+			}
+
 			if (!$packageUser->active && empty($packageUser->expiration)) {
 				$duration = $packageUser->package->duration;
 				$packageUser->update(['expiration' => Carbon::now()->addDays($duration), 'active' => true]);
