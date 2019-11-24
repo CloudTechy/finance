@@ -60,22 +60,22 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Username</th>
-                                                        <th>Reference</th>
                                                         <th>Payment</th>
                                                         <th>Remitted</th>
                                                         <th>Date</th>
+                                                        <th>Reference</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr  v-if="user" v-for="withdrawal in myFilter($root.myFilter(withdrawals,search),from,to)">
+                                                    <tr  v-if="user" v-for="withdrawal,index in myFilter($root.myFilter(withdrawals,search),from,to)">
                                                         <td>{{withdrawal.username}}</td>
-                                                        <td>{{withdrawal.reference}}</td>
                                                         <td>${{$root.normalNumeral(withdrawal.amount)}}</td>
                                                         <td>
-                                                            <button @click.prevent="approve(withdrawal)" type="button" :class="{btn:true, 'btn-sm':true, 'btn-toggle' : true, active: withdrawal.approved}" data-toggle="button" :aria-pressed="withdrawal.approved" autocomplete="off">
+                                                            <button ref = "withdrawal" @click.prevent="approve(withdrawal,index)" type="button" :class="{btn:true, 'btn-sm':true, 'btn-toggle' : true, active: withdrawal.approved}" data-toggle="button" :aria-pressed="withdrawal.approved" autocomplete="off">
                                                                 <div class="handle"></div>
                                                             </button></td>
                                                         <td>{{createDate(withdrawal.created_at)}}</td>
+                                                        <td>{{withdrawal.reference}}</td>
                                                     </tr>
                                                     <tr v-if="myFilter($root.myFilter(withdrawals,search),from,to).slice(0,20).length == 0">
                                                         <th colspan="5" class="p-4" align="center" style="text-align: center;">No withdrawals found.</th>
@@ -170,20 +170,37 @@ export default {
             }
             return data;
         },
-        approve(withdrawal) {
+        approve(withdrawal,index) {
             if (!withdrawal.approved) {
-                this.form.get("/auth/confirm_withdrawal/" + withdrawal.id)
-                    .then(response => {
-                        this.$root.alert('success', ' ', 'Withdrawal approved successfully')
-                        this.getWithdrawals()
-                    })
-                    .catch(error => {
-                        this.$root.alert('error', ' ', 'Withdrawal could not be approved, try again')
-                        this.getWithdrawals()
-                        console.log(error.response)
-                    })
+                this.$swal({
+                    title: `Do you want to approve ${withdrawal.username} request of $${withdrawal.amount}?`,
+                    text: "You won't be able to revert this!",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#38c172',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Yes, approve withdrawal'
+                })
+                .then((result) => {
+                    if(result.value == true){
+                        this.form.get("/auth/confirm_withdrawal/" + withdrawal.id)
+                            .then(response => {
+                                this.$root.alert('success', ' ', 'Withdrawal approved successfully')
+                                this.getWithdrawals()
+                            })
+                            .catch(error => {
+                                this.$root.alert('error', ' ', 'Withdrawal could not be approved, try again')
+                                this.getWithdrawals()
+                                console.log(error.response)
+                            })
+                    }
+                    else {
+                        this.$refs.withdrawal[index].classList.remove('active')
+                        this.$root.alert('info', ' ', 'Withdrawal dismissed successfully')   
+                    }
+                    
+                })
             }else {
-                this.getWithdrawals()
                 this.$root.alert('info', ' ', 'Please note that withdrawal can only be approved')
                 
             }

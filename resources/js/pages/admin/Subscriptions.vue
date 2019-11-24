@@ -72,13 +72,13 @@
                                                     <tr>
                                                         <th>Username</th>
                                                         <th>Package</th>
-                                                        <th>Interest</th>
                                                         <th>Status</th>
+                                                        <th>Interest</th>
                                                         <th>Due date</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody id="body">
-                                                    <tr v-if="usersPackages && packag.portfolio == portfolio.name && !packag.expired" v-for="packag in $root.myFilter(usersPackages, search)">
+                                                    <tr v-if="usersPackages && packag.portfolio == portfolio.name && !packag.expired" v-for="packag,index in $root.myFilter(usersPackages, search)">
                                                         <td>
                                                             <p>
                                                                 <button style="text-decoration: none" class="btn text-white btn-link" type="button" data-toggle="collapse" :data-target="'#'+'s' + packag.id" aria-expanded="false" :aria-controls="'s' + packag.id">
@@ -92,11 +92,12 @@
                                                             </div>
                                                         </td>
                                                         <td>{{packag.package}}</td>
-                                                        <td>${{$root.normalNumeral(packag.interest)}}</td>
                                                         <td>
-                                                            <button @click.prevent="subscribe(packag)" type="button" :class="{btn:true, 'btn-sm':true, 'btn-toggle' : true, active: !packag.unsubscribed}" data-toggle="button" :aria-pressed="!packag.unsubscribed" autocomplete="off">
+                                                            <button :ref = "packag.id" @click.prevent="subscribe(packag,packag.id)" type="button" :class="{btn:true, 'btn-sm':true, 'btn-toggle' : true, active: !packag.unsubscribed}" data-toggle="button" :aria-pressed="!packag.unsubscribed" autocomplete="off">
                                                                 <div class="handle"></div>
-                                                            </button></td>
+                                                            </button>
+                                                        </td>
+                                                        <td>${{$root.normalNumeral(packag.interest)}}</td>
                                                         <td class="text-success">{{getDate(packag.created_at,packag.expiration)}}</td>
                                                     </tr>
                                                 </tbody>
@@ -179,17 +180,38 @@ export default {
         getDate(from, to) {
             return moment(from).to(moment(to))
         },
-        subscribe(packag) {
-            this.form.get("/auth/subscribe/" + packag.transaction.id)
-                .then(response => {
-                    this.$root.alert('success', ' ', response.data.message)
-                    this.getPackages()
+        subscribe(packag,index) {
+            this.$swal({
+                    title:  `Do you want to ${ packag.active ? 'deactivate' : 'activate' } ${packag.username}'s ${packag.package} subscription?`,
+                    text: "You can revert this changes in future",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#38c172',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: `Yes,  ${ packag.active ? 'deactivate' : 'activate' } subscription`
                 })
-                .catch(error => {
-                    this.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ? error.response.message : ' ')
-                    this.getPackages()
-                    console.log(error.response)
+                .then((result) => {
+                    if(result.value == true){
+                        this.form.get("/auth/subscribe/" + packag.transaction.id)
+                            .then(response => {
+                                this.$root.alert('success', ' ', response.data.message)
+                                this.getPackages()
+                            })
+                            .catch(error => {
+                                this.$root.alert('error', ' ', 'Subscription failed to activate ' + error.response.message != undefined ? error.response.message : ' ')
+                                this.getPackages()
+                                console.log(error.response)
+                            })
+                    }
+                    else {
+                        var status = packag.active ? this.$refs[index][0].classList.add('active') : this.$refs[index][0].classList.remove('active')
+                        
+                        this.$root.alert('info', ' ', `Subscription  ${ packag.active ? 'deactivation' : 'activation' } cancelled`)   
+                    }
+                    
                 })
+
+            
         }
     }
 }

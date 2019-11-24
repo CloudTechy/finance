@@ -31,8 +31,8 @@
                 <div class="column col-xl-6 col-lg-12 col-md-12 col-12 omega">
                     <h3 class="user-hello" style="visibility:hidden;">Affiliate Link</h3>
                     <div class="top-buttons clearfix">
-                        <router-link class="m-xl-1 mr-lg-0 m-1 mr-0 btn btn-default" to="/admin/dashboard/subscriptions">Subscribe</router-link>
-                        <router-link class="m-xl-1 m-1 btn btn-default" to="/admin/dashboard/withdrawals">Confirm Withdrawal</router-link>
+                        <router-link class="m-xl-1 mr-lg-0 m-1 mr-0 btn btn-default" to="/admin/dashboard/subscriptions">Subscriptions</router-link>
+                        <router-link class="m-xl-1 m-1 btn btn-default" to="/admin/dashboard/withdrawals">Withdrawals</router-link>
                     </div>
                 </div>
             </div>
