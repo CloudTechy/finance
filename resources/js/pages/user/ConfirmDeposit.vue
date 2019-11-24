@@ -73,7 +73,7 @@
                     </thead>
                 </table>
                 <br>
-                <button ref="process" :disabled="!user.admin_wallet && !user.admin_pm" type="submit" :class="{btn:true, disabled: !user.admin_wallet , 'btn-inverse' : true}">Process</button>&nbsp;
+                <button ref="process" :disabled="!user.admin_wallet && !user.admin_pm" type="submit" :class="{btn:true, disabled: !user.admin_wallet , 'btn-inverse' : true}">Upload</button>&nbsp;
                 <button type="submit" @click.prevent="$router.push({ name: 'dashboard'})" required class="btn btn-inverse">Cancel</button>
             </form>
         </div>
@@ -121,10 +121,10 @@ export default {
     },
     methods: {
         processDeposit() {
+            this.processing(true)
             var data = new FormData()
             var file = this.$refs.fileInput.files[0]
             this.form.pop = file
-            // 
             this.form.submit('post', "/auth/packageusers", {
                     transformRequest: [function(data, headers) {
                         return objectToFormData(data)
@@ -134,6 +134,7 @@ export default {
                 .then(response => {
                     window.scrollTo(0, 250)
                     this.$emit('success', 'The deposit has been saved. It will become active when the administrator checks statistics.')
+                    this.processing(false)
                 })
                 .catch(error => {
                     this.errors = error.response.data.error
