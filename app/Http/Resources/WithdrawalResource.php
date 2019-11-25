@@ -23,6 +23,7 @@ class WithdrawalResource extends JsonResource {
 			'processed' => $this->processed,
 			'confirmed' => $this->confirmed,
 			'approved' => $this->confirmed == true && $this->processed == true ? true  : false,
+			'pop' => $this->pop,
 			'reference' => $this->reference,
 			'currency_code' => $this->currency_code,
 			'date' => Carbon::createFromTimeStamp(strtotime($this->created_at))->diffForHumans(),

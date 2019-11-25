@@ -59,26 +59,41 @@
                                             <table class="stat">
                                                 <thead>
                                                     <tr>
-                                                        <th>Username</th>
-                                                        <th>Payment</th>
-                                                        <th>Remitted</th>
-                                                        <th>Date</th>
-                                                        <th>Reference</th>
+                                                        <th class="text-center">Username</th>
+                                                        <th class="text-center">Payment</th>
+                                                        <th class="text-center">Remitted</th>
+                                                        <th class="text-center">Date</th>
+                                                        <th class="text-center"> POP </th>
+                                                        <th class="text-center">Reference</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr  v-if="user" v-for="withdrawal,index in myFilter($root.myFilter(withdrawals,search),from,to)">
-                                                        <td>{{withdrawal.username}}</td>
-                                                        <td>${{$root.normalNumeral(withdrawal.amount)}}</td>
-                                                        <td>
+                                                        <td class="text-center">{{withdrawal.username}}</td>
+                                                        <td class="text-center">${{$root.normalNumeral(withdrawal.amount)}}</td>
+                                                        <td class="text-center">
                                                             <button ref = "withdrawal" @click.prevent="approve(withdrawal,index)" type="button" :class="{btn:true, 'btn-sm':true, 'btn-toggle' : true, active: withdrawal.approved}" data-toggle="button" :aria-pressed="withdrawal.approved" autocomplete="off">
                                                                 <div class="handle"></div>
                                                             </button></td>
-                                                        <td>{{createDate(withdrawal.created_at)}}</td>
-                                                        <td>{{withdrawal.reference}}</td>
+                                                        <td class="text-center">{{createDate(withdrawal.created_at)}}</td>
+                                                        <td class="text-center">
+                                                            <span class="text-success" v-if = "withdrawal.pop">
+                                                                <button style="text-decoration: none"  @click = "loadUploadPop(withdrawal)"  class="text-center btn btn-link m-1"  type="button"  data-toggle="modal" data-target="#uploadPopModal" >
+                                                                    <i class="text-success fas fa-check-circle"></i> 
+                                                                </button>
+                                                            </span>
+                                                            <span  v-else>
+                                                                <button style="text-decoration: none"  @click = "loadUploadPop(withdrawal)" ref = "popModal" class="text-center btn btn-link m-1"  type="button"  data-toggle="modal" data-target="#uploadPopModal" >
+                                                                     <i class=" text-danger fas fa-upload"></i>
+                                                                </button>
+                                                            </span>
+                                                        </td>
+                                                        <td class="text-center">{{withdrawal.reference}}</td>
+                                                       
+                                                        
                                                     </tr>
                                                     <tr v-if="myFilter($root.myFilter(withdrawals,search),from,to).slice(0,20).length == 0">
-                                                        <th colspan="5" class="p-4" align="center" style="text-align: center;">No withdrawals found.</th>
+                                                        <th colspan="6" class="p-4" align="center" style="text-align: center;">No withdrawals found.</th>
                                                     </tr>
                                                     <tr v-if="withdrawals" class="mt-4 p-2 m-2">
                                                         <td class="font-weight-bold">Total:</td>
@@ -91,7 +106,9 @@
                                 </div>
                             </div>
                         </div>
-                        <!--end account wrapper-->
+                        <div v-if = "$root.uploadItem" class="modal fade" id="uploadPopModal">
+                            <pop-component @popUploaded = "refreshWithdrawal" @PopModalClosed = "refreshWithdrawal"></pop-component>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -107,7 +124,8 @@ export default {
             to: '',
             search: '',
             withdrawals: '',
-            form: new Form({})
+            form: new Form({}),
+            withdrawal: null,
         }
     },
     mounted() {
@@ -117,7 +135,7 @@ export default {
         if(this.$route.query.username){
             this.search = this.$route.query.username
         }
-        setInterval(this.getWithdrawals, 55000)
+        setInterval(this.getWithdrawals, 45000)
         this.getWithdrawals()
     },
     computed: {
@@ -160,7 +178,6 @@ export default {
                         if (created_at != null && fromDate <= created_at && toDate >= created_at) {
                             boolean = true
                         }
-
                     })
                     return boolean
 
@@ -207,10 +224,15 @@ export default {
                 
             }
 
-            
-
+        },
+        loadUploadPop(item) {
+            this.$root.uploadItem = {title : `Upload $${item.amount}  POP for ${item.username }`, url : 'auth/pop', id : item.id}
+        },
+        refreshWithdrawal(){
+            this.getWithdrawals()
+            this.$root.uploadItem = null
         }
+        
     }
 }
-
 </script>

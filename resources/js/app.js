@@ -78,6 +78,8 @@ const app = new Vue({
         rate: '',
         user: '',
         ip: '',
+        uploadItem: null,
+        viewItem: null,
     },
     el: '#app',
     router,

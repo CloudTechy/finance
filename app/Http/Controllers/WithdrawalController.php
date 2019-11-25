@@ -176,4 +176,33 @@ class WithdrawalController extends Controller {
 		}
 
 	}
+	public function popUpload(Request $request)
+	{
+		$validated = $request->validate([
+			'pop' => 'mimes:jpeg,png,bmp,tiff |max:4096',
+		]);
+		try {
+			if ($request->hasFile('pop')) {
+	            if ($request->file('pop')->isValid()) {
+
+	                $file = $request->file('pop');
+
+	                $file->move('img/uploads', $file->getClientOriginalName());
+
+	                $pop = $file->getClientOriginalName();
+	            }
+
+	            Withdrawal::find($request->id)->update(['pop' => $pop]);
+	            return Helper::validRequest(["success" =>$request->all()], 'file uploaded successfully', 200);
+        	}
+	        else{
+	        	return Helper::invalidRequest('no pop file', 'POP file not found', 400);
+	        }
+		
+		} catch (Exception $bug) {
+			return $this->exception($bug, 'unknown error', 500);
+		}
+
+		
+	}
 }

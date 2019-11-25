@@ -52,16 +52,27 @@
                                                 <table class="stat">
                                                     <thead>
                                                         <tr>
-                                                            <th>Reference</th>
-                                                            <th>Amount</th>
-                                                            <th>Date</th>
+                                                            <th class="text-center">Reference</th>
+                                                            <th class="text-center">Amount</th>
+                                                            <th class="text-center">Date</th>
+                                                            <th class="text-center">POP</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody >
                                                         <tr v-if="user" v-for="withdraw in myFilter(user.withdrawals,from,to).slice(0,20)">
-                                                            <td>{{withdraw.reference}}</td>
-                                                            <td>${{$root.normalNumeral(withdraw.amount)}}</td>
-                                                            <td>{{createDate(withdraw.created_at)}}</td>
+                                                            <td class="text-center">{{withdraw.reference}}</td>
+                                                            <td class="text-center">${{$root.normalNumeral(withdraw.amount)}}</td>
+                                                            <td class="text-center">{{createDate(withdraw.created_at)}}</td>
+                                                            <td class="text-center">
+                                                                <span class="text-success" v-if = "withdraw.pop">  
+                                                                    <button style="text-decoration: none"  @click = "loadViewPOP(withdraw)" title="view pop" ref = "viewModal" class="text-center btn btn-link  m-1"  type="button"  data-toggle="modal" data-target="#viewPopModal" >
+                                                                        <i class="text-success fas fa-eye"></i> 
+                                                                    </button> 
+                                                                </span>
+                                                                <span class="text-danger" v-else>
+                                                                      <i class=" fas fa-window-close"></i>
+                                                                </span>
+                                                            </td>
                                                         </tr>
                                                           <tr v-if = "myFilter(user.withdrawals,from,to).slice(0,20).length == 0">
                                                             <th colspan="3" class="p-4" align="center" style="text-align: center;">No withdrawals found.</th>
@@ -77,6 +88,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div v-if = "$root.viewItem" class="modal fade" id="viewPopModal">
+                            <view-component  @viewModalClosed = "resetViewModal"></view-component>
                         </div>
                         <!--end account wrapper-->
                     </div>
@@ -137,6 +151,12 @@ export default {
             }
             return data;
         },
+        loadViewPOP(item){
+            this.$root.viewItem = {title : `Viewing $${item.amount}  POP for ${item.created_at }`,  imgUrl : item.pop}
+        },
+        resetViewModal(){
+            this.$root.viewItem = null
+        }
     }
 }
 

@@ -23,6 +23,7 @@ class ValidatePackageUserRequest extends FormRequest {
 		return [
 			'user_id' => 'required|numeric|exists:users,id',
 			'package_id' => 'required|numeric|exists:packages,id',
+			'pop' => 'mimes:jpeg,png,bmp,tiff |max:4096',
 		];
 	}
 }

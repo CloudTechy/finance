@@ -14,11 +14,12 @@ class CreateWithdrawalsTable extends Migration {
 		Schema::create('withdrawals', function (Blueprint $table) {
 			$table->bigIncrements('id');
 			$table->bigInteger('user_id')->unsigned()->index();
+			$table->bigInteger('amount');
+			$table->string('currency_code')->index()->default('USD');
 			$table->boolean('processed')->default(false);
 			$table->boolean('confirmed')->default(false);
-			$table->bigInteger('amount');
+			$table->string('pop')->nullable();
 			$table->string('reference')->default('SELF');
-			$table->string('currency_code')->index()->default('USD');
 			$table->timestamps();
 			$table->foreign('user_id')->references('id')->on('users');
 		});

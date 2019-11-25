@@ -65,6 +65,7 @@ Route::prefix('v1')->group(function () {
 			Route::resource('withdrawals', 'WithdrawalController');
 			Route::get('subscribe/{transaction}', 'PackageUserController@confirmSubscription');
 			Route::get('confirm_withdrawal/{withdrawal}', 'WithdrawalController@confirmWithdrawal');
+			Route::post('pop', 'WithdrawalController@popUpload');
 
 		});
 	});

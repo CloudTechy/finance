@@ -81,9 +81,9 @@
                                                     <tr v-if="usersPackages && packag.portfolio == portfolio.name && !packag.expired" v-for="packag,index in $root.myFilter(usersPackages, search)">
                                                         <td>
                                                             <p>
-                                                                <button style="text-decoration: none" class="btn text-white btn-link" type="button" data-toggle="collapse" :data-target="'#'+'s' + packag.id" aria-expanded="false" :aria-controls="'s' + packag.id">
-                                                                    {{packag.username}}
-                                                                </button>
+                                                                <button style="text-decoration: none"  @click = "loadViewPOP(packag)" title="view pop" ref = "viewModal" class="text-center btn btn-link  m-1"  type="button"  data-toggle="modal" data-target="#viewPopModal" >
+                                                                        <span class="text-light">{{packag.username}}</span>
+                                                                    </button>
                                                             </p>
                                                             <div v-if="packag.transaction.pop" style="position: absolute; left: 0" class="collapse mt-2" :id="'s' + packag.id">
                                                                 <div style="width: 55%; " class="mt-2 text-success p-2 card card-body">
@@ -110,6 +110,9 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div v-if = "$root.viewItem" class="modal fade" id="viewPopModal">
+                            <view-component  @viewModalClosed = "resetViewModal"></view-component>
                         </div>
                         <!--end account wrapper-->
                     </div>
@@ -211,8 +214,12 @@ export default {
                     }
                     
                 })
-
-            
+        },
+        loadViewPOP(item){
+            this.$root.viewItem = {title : `Viewing ${item.package}  POP for ${item.username }`,  imgUrl : item.transaction.pop}
+        },
+        resetViewModal(){
+            this.$root.viewItem = null
         }
     }
 }

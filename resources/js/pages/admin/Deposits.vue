@@ -59,27 +59,30 @@
                                             <table class="stat">
                                                 <thead>
                                                     <tr>
-                                                        <th>Username</th>
-                                                        <th>Reference</th>
-                                                        <th>Amount</th>
-                                                        <th>Payment</th>
-                                                        <th>Date</th>
+                                                        <th class="text-center">Username</th>
+                                                        <th class="text-center">Reference</th>
+                                                        <th class="text-center">Amount</th>
+                                                        <th class="text-center">Payment</th>
+                                                        <th class="text-center">Date</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     <tr v-if="user" v-for="transaction in myFilter($root.myFilter(transactions,search),from,to)">
-                                                        <td>{{transaction.username}}</td>
-                                                        <td>{{transaction.reference}}</td>
-                                                        <td>${{$root.normalNumeral(transaction.amount)}}</td>
-                                                        <td>${{$root.normalNumeral(transaction.payment)}}</td>
-                                                        <td>{{createDate(transaction.created_at)}}</td>
+                                                        <td class="text-center">{{transaction.username}}</td>
+                                                        <td class="text-center">{{transaction.reference}}</td>
+                                                        <td class="text-center">${{$root.normalNumeral(transaction.amount)}}</td>
+                                                        <td class="text-center">${{$root.normalNumeral(transaction.payment)}}</td>
+                                                        <td class="text-center">{{createDate(transaction.created_at)}}</td>
                                                     </tr>
                                                     <tr v-if="myFilter($root.myFilter(transactions,search),from,to).slice(0,20).length == 0">
                                                         <th colspan="5" class="p-4" align="center" style="text-align: center;">No transactions found.</th>
                                                     </tr>
                                                     <tr v-if="transactions" class="mt-4 p-2 m-2">
-                                                        <td class="font-weight-bold">Total:</td>
-                                                        <td class="font-weight-bold text-success" colspan="5" align="right"><b>{{$root.numeral(myFilter($root.myFilter(transactions,search),from,to).sum('amount'))}}</b></td>
+                                                        <td colspan="1"  class="text-center font-weight-bold">Total:</td>
+                                                        <td  class="text-center font-weight-bold text-success" colspan="4" align="right">
+                                                            <b>{{$root.numeral(myFilter($root.myFilter(transactions,search),from,to).sum('amount'))}}
+                                                            </b>
+                                                        </td>
                                                     </tr>
                                                 </tbody>
                                             </table>

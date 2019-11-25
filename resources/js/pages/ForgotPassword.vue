@@ -13,7 +13,7 @@
                     <div class="wrapper">
                         <div class="login-wrapper">
                             <div class="login-heading mb-0 text-center">
-                                <h2>Enter Email address to get your password</h2>
+                                <h2>Enter Email address to reset your password</h2>
                                 <p>Then submit your email address, if your account is found in our system you will receive confirmation link sent to your email address. click on the link to reset your password successfully.</p>
                             </div>
                             <div class="card-body">
