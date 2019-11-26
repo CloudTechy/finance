@@ -68,7 +68,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr  v-if="user" v-for="withdrawal,index in myFilter($root.myFilter(withdrawals,search),from,to)">
+                                                    <tr  v-if="user" v-for="withdrawal,index in myFilter($root.myFilter(withdrawalsx,search),from,to)">
                                                         <td class="text-center">{{withdrawal.username}}</td>
                                                         <td class="text-center">${{$root.normalNumeral(withdrawal.amount)}}</td>
                                                         <td class="text-center">
@@ -95,7 +95,7 @@
                                                        
                                                         
                                                     </tr>
-                                                    <tr v-if="myFilter($root.myFilter(withdrawals,search),from,to).slice(0,20).length == 0">
+                                                    <tr v-if="myFilter($root.myFilter(withdrawalsx,search),from,to).slice(0,20).length == 0">
                                                         <th colspan="6" class="p-4" align="center" style="text-align: center;">No withdrawals found.</th>
                                                     </tr>
                                                     <tr v-if="withdrawals" class="mt-4 p-2 m-2">
@@ -148,6 +148,9 @@ export default {
         user() {
             return this.$auth.user()
         },
+        withdrawalsx(){
+            return this.withdrawals
+        }
     },
     beforeCreate: function () {
     if (this.$auth.user().isAdmin == false) {this.$auth.logout()}

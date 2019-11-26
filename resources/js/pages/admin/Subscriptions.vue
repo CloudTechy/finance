@@ -78,7 +78,7 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody id="body">
-                                                    <tr v-if="usersPackages && packag.portfolio == portfolio.name && !packag.expired" v-for="packag,index in $root.myFilter(usersPackages, search)">
+                                                    <tr v-if="usersPackages && packag.portfolio == portfolio.name && !packag.expired" v-for="packag,index in $root.myFilter(usersPackagesx, search)">
                                                         <td>
                                                             <p>
                                                                 <button style="text-decoration: none"  @click = "loadViewPOP(packag)" title="view pop" class="text-center btn btn-link  m-1"  type="button"  data-toggle="modal" data-target="#viewPopModal" >
@@ -154,6 +154,9 @@ export default {
         user() {
             return this.$auth.user()
         },
+        usersPackagesx(){
+            return this.usersPackages
+        }
     },
     beforeCreate: function() {
         if (this.$auth.user().isAdmin == false) { this.$auth.logout() }
@@ -199,6 +202,7 @@ export default {
                             .then(response => {
                                 this.$root.alert('success', ' ', response.data.message)
                                 this.getPackages()
+                                var status = packag.unsubscribed ?this.$refs[index][0].classList.remove('active') : this.$refs[index][0].classList.add('active')
                             })
                             .catch(error => {
                                 var status = packag.unsubscribed ?this.$refs[index][0].classList.remove('active') : this.$refs[index][0].classList.add('active')
