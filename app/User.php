@@ -15,7 +15,7 @@ use \DB;
 
 class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	use Notifiable;
-	protected $fillable = ['first_name', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
+	protected $fillable = ['first_name', 'secret_question', 'created_at', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 	protected $hidden = ['password', 'remember_token'];
 	protected $casts = ['email_verified_at' => 'datetime'];
 	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'totalEarned', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages');
@@ -65,7 +65,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 				$transaction->active = false;
 				$transaction->reference = 'BFIN';
 				if ($transaction->save()) {
-					$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->duration), 'active' => true]);
+					$maturePackage->subscription->update(['expiration' => Carbon::now()->addDays($maturePackage->duration), 'active' => true, 'created_at' => Carbon::now()]);
 					$transaction->user->notify(new TransactionMade($transaction));
 					$transaction = Transaction::where('id', $maturePackage->subscription->transaction_id)->first();
 					// if (!empty($transaction)) {
@@ -74,7 +74,6 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 
 				}
 
-				$transaction->user->notify(new TransactionMade($transaction));
 			}
 
 			DB::commit();

@@ -138,7 +138,7 @@ export default {
                 })
         },
         getDate(from,to) {
-            return moment(from).to(moment(to))
+            return moment().to(moment(to))
         }
     }
 }

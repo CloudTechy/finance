@@ -115,7 +115,7 @@ class PackageUserController extends Controller {
 
 					$user->notify(new WithdrawalMade($withdrawal));
 				}
-				$this->notificationRequest($subscription);
+				$this->adminsNotificationRequest($subscription);
 				DB::commit();
 				
 				$subscription = new PackageUserResource($subscription);
@@ -232,7 +232,7 @@ class PackageUserController extends Controller {
 		}
 
 	}
-	public function notificationRequest(PackageUser $subscription) {
+	public function adminsNotificationRequest(PackageUser $subscription) {
 		
 		try {
 			$admins = User::where('user_level_id',1)->get();
