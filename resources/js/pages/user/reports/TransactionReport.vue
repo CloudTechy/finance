@@ -45,7 +45,7 @@
                                             </ul>
                                         </form>
                                         <div class="stat-table p-0 m-0 table-responsive">
-                                            <h4 class="text-center">List of your Transactions</h4>
+                                            <h4 class="text-center">List of your Payments</h4>
                                              
                                                 <p class="small p-2">Maximum of 20 entries</p>
                                                 <p class="small p-2">Total of {{myFilter(user.transactions,from,to).slice(0,20).length
@@ -53,16 +53,20 @@
                                                 <table class="stat">
                                                     <thead>
                                                         <tr>
-                                                            <th>Reference</th>
-                                                            <th>Amount</th>
-                                                            <th>Date</th>
+                                                            <th class="text-center">Reference</th>
+                                                            <th class="text-center">Amount</th>
+                                                            <th class="text-center">Date</th>
+                                                            <th class="text-center">Approved</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody >
                                                         <tr v-if="user" v-for="transaction in myFilter(user.transactions,from,to).slice(0,20)">
-                                                            <td>{{transaction.reference}}</td>
-                                                            <td>${{$root.normalNumeral(transaction.amount)}}</td>
-                                                            <td>{{createDate(transaction.created_at)}}</td>
+                                                            <td  class="text-center">{{transaction.reference}}</td>
+                                                            <td  class="text-center">${{$root.normalNumeral(transaction.amount)}}</td>
+                                                            <td  class="text-center">{{createDate(transaction.created_at)}}</td>
+                                                            <td  class="text-center"> 
+                                                                <i class="text-success fas fa-check-circle"></i> 
+                                                            </td>
                                                         </tr>
                                                           <tr v-if = "myFilter(user.transactions,from,to).slice(0,20).length == 0">
                                                              <th colspan="3" class="p-4" align="center" style="text-align: center;">No transactions found.</th>

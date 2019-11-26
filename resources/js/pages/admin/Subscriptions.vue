@@ -81,7 +81,7 @@
                                                     <tr v-if="usersPackages && packag.portfolio == portfolio.name && !packag.expired" v-for="packag,index in $root.myFilter(usersPackages, search)">
                                                         <td>
                                                             <p>
-                                                                <button style="text-decoration: none"  @click = "loadViewPOP(packag)" title="view pop" ref = "viewModal" class="text-center btn btn-link  m-1"  type="button"  data-toggle="modal" data-target="#viewPopModal" >
+                                                                <button style="text-decoration: none"  @click = "loadViewPOP(packag)" title="view pop" class="text-center btn btn-link  m-1"  type="button"  data-toggle="modal" data-target="#viewPopModal" >
                                                                         <span class="text-light">{{packag.username}}</span>
                                                                     </button>
                                                             </p>
@@ -181,7 +181,7 @@ export default {
                 })
         },
         getDate(from, to) {
-            return moment(from).to(moment(to))
+            return moment().to(moment(to))
         },
         subscribe(packag,index) {
             this.$swal({
@@ -210,7 +210,7 @@ export default {
                     else {
                         var status = packag.unsubscribed ?this.$refs[index][0].classList.remove('active') : this.$refs[index][0].classList.add('active')
                         
-                        this.$root.alert('info', ' ', `Subscription  ${ packag.unsubscribed ? 'deactivation' : 'activation' } cancelled`)   
+                        this.$root.alert('info', ' ', `Subscription  ${ packag.unsubscribed ? ' activation' : ' deactivation' } cancelled`)   
                     }
                     
                 })

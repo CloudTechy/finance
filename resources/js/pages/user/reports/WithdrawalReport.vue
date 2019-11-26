@@ -65,7 +65,7 @@
                                                             <td class="text-center">{{createDate(withdraw.created_at)}}</td>
                                                             <td class="text-center">
                                                                 <span class="text-success" v-if = "withdraw.pop">  
-                                                                    <button style="text-decoration: none"  @click = "loadViewPOP(withdraw)" title="view pop" ref = "viewModal" class="text-center btn btn-link  m-1"  type="button"  data-toggle="modal" data-target="#viewPopModal" >
+                                                                    <button style="text-decoration: none"  @click = "loadViewPOP(withdraw)" title="view pop"  class="text-center btn btn-link  m-1"  type="button"  data-toggle="modal" data-target="#viewPopModal" >
                                                                         <i class="text-success fas fa-eye"></i> 
                                                                     </button> 
                                                                 </span>
@@ -79,7 +79,7 @@
                                                         </tr>
                                                         <tr class="mt-4 p-2 m-2">
                                                             <td class="font-weight-bold">Total:</td>
-                                                            <td class="font-weight-bold text-success" colspan="2" align="right"><b>{{$root.numeral(myFilter(user.withdrawals,from,to).sum('amount'))}}</b></td>
+                                                            <td class="font-weight-bold text-success" colspan="3" align="right"><b>{{$root.numeral(myFilter(user.withdrawals,from,to).sum('amount'))}}</b></td>
                                                         </tr> 
                                                     </tbody>
                                                 </table>

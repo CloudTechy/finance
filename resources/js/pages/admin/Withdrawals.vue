@@ -78,8 +78,11 @@
                                                         <td class="text-center">{{createDate(withdrawal.created_at)}}</td>
                                                         <td class="text-center">
                                                             <span class="text-success" v-if = "withdrawal.pop">
-                                                                <button style="text-decoration: none"  @click = "loadUploadPop(withdrawal)"  class="text-center btn btn-link m-1"  type="button"  data-toggle="modal" data-target="#uploadPopModal" >
-                                                                    <i class="text-success fas fa-check-circle"></i> 
+                                                                <button style="text-decoration: none"  @click = "loadViewPOP(withdrawal)" title="view pop" class="text-center btn btn-link  m-1"  type="button"  data-toggle="modal" data-target="#viewPopModal" >
+                                                                    <i class="text-success fas fa-eye"></i> 
+                                                                </button>
+                                                                <button title="replace POP" style="text-decoration: none"  @click = "loadUploadPop(withdrawal)"  class="text-center btn btn-link m-1"  type="button"  data-toggle="modal" data-target="#uploadPopModal" >
+                                                                    <i class="text-white fas fa-upload "></i> 
                                                                 </button>
                                                             </span>
                                                             <span  v-else>
@@ -108,6 +111,9 @@
                         </div>
                         <div v-if = "$root.uploadItem" class="modal fade" id="uploadPopModal">
                             <pop-component @popUploaded = "refreshWithdrawal" @PopModalClosed = "refreshWithdrawal"></pop-component>
+                        </div>
+                        <div v-if = "$root.viewItem" class="modal fade" id="viewPopModal">
+                            <view-component  @viewModalClosed = "resetViewModal"></view-component>
                         </div>
                     </div>
                 </div>
@@ -231,6 +237,12 @@ export default {
         refreshWithdrawal(){
             this.getWithdrawals()
             this.$root.uploadItem = null
+        },
+        loadViewPOP(item){
+            this.$root.viewItem = {title : `Viewing $${item.amount}  POP for ${item.created_at }`,  imgUrl : item.pop}
+        },
+        resetViewModal(){
+            this.$root.viewItem = null
         }
         
     }

@@ -7793,7 +7793,7 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     getDate: function getDate(from, to) {
-      return moment__WEBPACK_IMPORTED_MODULE_0___default()(from).to(moment__WEBPACK_IMPORTED_MODULE_0___default()(to));
+      return moment__WEBPACK_IMPORTED_MODULE_0___default()().to(moment__WEBPACK_IMPORTED_MODULE_0___default()(to));
     },
     subscribe: function subscribe(packag, index) {
       var _this3 = this;
@@ -7824,7 +7824,7 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           var status = packag.unsubscribed ? _this3.$refs[index][0].classList.remove('active') : _this3.$refs[index][0].classList.add('active');
 
-          _this3.$root.alert('info', ' ', "Subscription  ".concat(packag.unsubscribed ? 'deactivation' : 'activation', " cancelled"));
+          _this3.$root.alert('info', ' ', "Subscription  ".concat(packag.unsubscribed ? ' activation' : ' deactivation', " cancelled"));
         }
       });
     },
@@ -8314,6 +8314,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -8441,6 +8447,15 @@ __webpack_require__.r(__webpack_exports__);
     refreshWithdrawal: function refreshWithdrawal() {
       this.getWithdrawals();
       this.$root.uploadItem = null;
+    },
+    loadViewPOP: function loadViewPOP(item) {
+      this.$root.viewItem = {
+        title: "Viewing $".concat(item.amount, "  POP for ").concat(item.created_at),
+        imgUrl: item.pop
+      };
+    },
+    resetViewModal: function resetViewModal() {
+      this.$root.viewItem = null;
     }
   }
 });
@@ -9980,6 +9995,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
 //
 //
 //
@@ -59611,9 +59630,6 @@ var render = function() {
                                                             _c(
                                                               "button",
                                                               {
-                                                                ref:
-                                                                  "viewModal",
-                                                                refInFor: true,
                                                                 staticClass:
                                                                   "text-center btn btn-link  m-1",
                                                                 staticStyle: {
@@ -61363,12 +61379,51 @@ var render = function() {
                                                                 "button",
                                                                 {
                                                                   staticClass:
+                                                                    "text-center btn btn-link  m-1",
+                                                                  staticStyle: {
+                                                                    "text-decoration":
+                                                                      "none"
+                                                                  },
+                                                                  attrs: {
+                                                                    title:
+                                                                      "view pop",
+                                                                    type:
+                                                                      "button",
+                                                                    "data-toggle":
+                                                                      "modal",
+                                                                    "data-target":
+                                                                      "#viewPopModal"
+                                                                  },
+                                                                  on: {
+                                                                    click: function(
+                                                                      $event
+                                                                    ) {
+                                                                      return _vm.loadViewPOP(
+                                                                        withdrawal
+                                                                      )
+                                                                    }
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c("i", {
+                                                                    staticClass:
+                                                                      "text-success fas fa-eye"
+                                                                  })
+                                                                ]
+                                                              ),
+                                                              _vm._v(" "),
+                                                              _c(
+                                                                "button",
+                                                                {
+                                                                  staticClass:
                                                                     "text-center btn btn-link m-1",
                                                                   staticStyle: {
                                                                     "text-decoration":
                                                                       "none"
                                                                   },
                                                                   attrs: {
+                                                                    title:
+                                                                      "replace POP",
                                                                     type:
                                                                       "button",
                                                                     "data-toggle":
@@ -61389,7 +61444,7 @@ var render = function() {
                                                                 [
                                                                   _c("i", {
                                                                     staticClass:
-                                                                      "text-success fas fa-check-circle"
+                                                                      "text-white fas fa-upload "
                                                                   })
                                                                 ]
                                                               )
@@ -61562,6 +61617,22 @@ var render = function() {
                             popUploaded: _vm.refreshWithdrawal,
                             PopModalClosed: _vm.refreshWithdrawal
                           }
+                        })
+                      ],
+                      1
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.$root.viewItem
+                  ? _c(
+                      "div",
+                      {
+                        staticClass: "modal fade",
+                        attrs: { id: "viewPopModal" }
+                      },
+                      [
+                        _c("view-component", {
+                          on: { viewModalClosed: _vm.resetViewModal }
                         })
                       ],
                       1
@@ -66298,7 +66369,7 @@ var render = function() {
                               },
                               [
                                 _c("h4", { staticClass: "text-center" }, [
-                                  _vm._v("List of your Transactions")
+                                  _vm._v("List of your Payments")
                                 ]),
                                 _vm._v(" "),
                                 _c("p", { staticClass: "small p-2" }, [
@@ -66338,34 +66409,54 @@ var render = function() {
                                         function(transaction) {
                                           return _vm.user
                                             ? _c("tr", [
-                                                _c("td", [
-                                                  _vm._v(
-                                                    _vm._s(
-                                                      transaction.reference
-                                                    )
-                                                  )
-                                                ]),
-                                                _vm._v(" "),
-                                                _c("td", [
-                                                  _vm._v(
-                                                    "$" +
+                                                _c(
+                                                  "td",
+                                                  {
+                                                    staticClass: "text-center"
+                                                  },
+                                                  [
+                                                    _vm._v(
                                                       _vm._s(
-                                                        _vm.$root.normalNumeral(
-                                                          transaction.amount
+                                                        transaction.reference
+                                                      )
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "td",
+                                                  {
+                                                    staticClass: "text-center"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      "$" +
+                                                        _vm._s(
+                                                          _vm.$root.normalNumeral(
+                                                            transaction.amount
+                                                          )
+                                                        )
+                                                    )
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _c(
+                                                  "td",
+                                                  {
+                                                    staticClass: "text-center"
+                                                  },
+                                                  [
+                                                    _vm._v(
+                                                      _vm._s(
+                                                        _vm.createDate(
+                                                          transaction.created_at
                                                         )
                                                       )
-                                                  )
-                                                ]),
-                                                _vm._v(" "),
-                                                _c("td", [
-                                                  _vm._v(
-                                                    _vm._s(
-                                                      _vm.createDate(
-                                                        transaction.created_at
-                                                      )
                                                     )
-                                                  )
-                                                ])
+                                                  ]
+                                                ),
+                                                _vm._v(" "),
+                                                _vm._m(3, true)
                                               ])
                                             : _vm._e()
                                         }
@@ -66487,12 +66578,22 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("Reference")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Reference")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Amount")]),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Amount")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Date")])
+        _c("th", { staticClass: "text-center" }, [_vm._v("Date")]),
+        _vm._v(" "),
+        _c("th", { staticClass: "text-center" }, [_vm._v("Approved")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", { staticClass: "text-center" }, [
+      _c("i", { staticClass: "text-success fas fa-check-circle" })
     ])
   }
 ]
@@ -66802,9 +66903,6 @@ var render = function() {
                                                             _c(
                                                               "button",
                                                               {
-                                                                ref:
-                                                                  "viewModal",
-                                                                refInFor: true,
                                                                 staticClass:
                                                                   "text-center btn btn-link  m-1",
                                                                 staticStyle: {
@@ -66901,7 +66999,7 @@ var render = function() {
                                               staticClass:
                                                 "font-weight-bold text-success",
                                               attrs: {
-                                                colspan: "2",
+                                                colspan: "3",
                                                 align: "right"
                                               }
                                             },
