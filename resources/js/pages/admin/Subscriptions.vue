@@ -98,7 +98,7 @@
                                                             </button>
                                                         </td>
                                                         <td>${{$root.normalNumeral(packag.interest)}}</td>
-                                                        <td class="text-success">{{getDate(packag.created_at,packag.expiration)}}</td>
+                                                        <td class="text-success">{{getDate(packag.expiration)}}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>
@@ -183,7 +183,7 @@ export default {
                     console.log(error.response)
                 })
         },
-        getDate(from, to) {
+        getDate(to) {
             
             return moment().to(moment(to))
         },
