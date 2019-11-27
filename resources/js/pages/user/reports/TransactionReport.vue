@@ -73,7 +73,7 @@
                                                         </tr>
                                                         <tr  class="mt-4 p-2 m-2">
                                                             <td class="font-weight-bold">Total:</td>
-                                                            <td class="font-weight-bold text-success" colspan="2" align="right"><b>{{$root.numeral(myFilter(user.transactions,from,to).sum('amount'))}}</b></td>
+                                                            <td class="font-weight-bold text-success" colspan="3" align="right"><b>{{$root.numeral(myFilter(user.transactions,from,to).sum('amount'))}}</b></td>
                                                         </tr> 
                                                     </tbody>
                                                 </table>

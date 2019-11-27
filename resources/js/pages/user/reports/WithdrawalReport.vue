@@ -152,7 +152,7 @@ export default {
             return data;
         },
         loadViewPOP(item){
-            this.$root.viewItem = {title : `Viewing $${item.amount}  POP for ${item.created_at }`,  imgUrl : item.pop}
+            this.$root.viewItem = {title : `Viewing $${item.amount}  POP for ${this.createDate(item.created_at) }`,  imgUrl : item.pop}
         },
         resetViewModal(){
             this.$root.viewItem = null

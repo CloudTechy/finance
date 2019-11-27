@@ -178,12 +178,16 @@
                                             </div>
                                             <div class="text-center col-12 justify-content-center mb-3 mb-l-0">
                                                 <button ref="process" @click.prevent="userLevel(user)" class="btn btn-default">{{userLevelTitle}}</button>
+                                                <button @click.prevent="sendEmail(user)" class="btn btn-default" data-toggle="modal" data-target="#sendEmailModal" >{{'Send Email'}}</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!--  content ends here -->
                             </div>
+                        </div>
+                        <div v-if = "$root.mailUser" class="modal fade" id="sendEmailModal">
+                            <email-component  @emailModalClosed = "resetEmailModal"></email-component>
                         </div>
                         <!--end account wrapper-->
                     </div>
@@ -317,6 +321,12 @@ export default {
                         console.log(error.response)
                     })
             }
+        },
+        sendEmail($user){
+            this.$root.mailUser = $user;
+        },
+        resetEmailModal(){
+            this.$root.mailUser = null
         }
     },
 

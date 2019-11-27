@@ -242,7 +242,7 @@ export default {
             this.$root.uploadItem = null
         },
         loadViewPOP(item){
-            this.$root.viewItem = {title : `Viewing $${item.amount}  POP for ${item.created_at }`,  imgUrl : item.pop}
+            this.$root.viewItem = {title : `Viewing $${item.amount}  POP for ${item.username }`,  imgUrl : item.pop}
         },
         resetViewModal(){
             this.$root.viewItem = null

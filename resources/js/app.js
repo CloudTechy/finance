@@ -80,6 +80,7 @@ const app = new Vue({
         ip: '',
         uploadItem: null,
         viewItem: null,
+        mailUser : null,
     },
     el: '#app',
     router,

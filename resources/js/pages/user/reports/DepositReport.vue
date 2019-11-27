@@ -55,18 +55,18 @@
                                         <table class="stat mb-2">
                                             <thead>
                                                 <tr>
-                                                    <th>Deposit</th>
-                                                    <th>Interest</th>
-                                                    <th>Active</th>
-                                                    <th>Timeout</th>
+                                                    <th class="text-center">Deposit</th>
+                                                    <th class="text-center">Interest</th>
+                                                    <th class="text-center">Active</th>
+                                                    <th class="text-center">Timeout</th>
                                                 </tr>
                                             </thead>
                                             <tbody id="body">
                                                 <tr v-if="userPackages && packag.portfolio == portfolio.name" v-for="packag in userPackages">
-                                                    <td>${{$root.numeral(packag.account)}}</td>
-                                                    <td>{{$root.numeral(packag.interest)}}</td>
-                                                    <td>{{packag.date}}</td>
-                                                    <td class="text-success">{{getDate(packag.expiration)}}</td>
+                                                    <td class="text-center">${{$root.numeral(packag.account)}}</td>
+                                                    <td class="text-center">${{$root.normalNumeral(packag.interest)}}</td>
+                                                    <td class="text-center">{{packag.date}}</td>
+                                                    <td class="text-success text-center">{{getDate(packag.expiration)}}</td>
                                                 </tr>
                                             </tbody>
                                         </table>

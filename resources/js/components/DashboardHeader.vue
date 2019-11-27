@@ -52,7 +52,7 @@ export default {
             return this.$auth.user().ip != undefined ? this.$auth.user().ip : this.$root.ip
         },
         time() {
-            return moment().format("MMM Do YYYY")
+            return moment(this.$auth.user().created_at).format("MMM Do YYYY")
         }
     },
     mounted() {},
