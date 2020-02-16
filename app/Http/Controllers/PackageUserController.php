@@ -243,4 +243,5 @@ class PackageUserController extends Controller {
 			return false;
 		}
 	}
+	
 }

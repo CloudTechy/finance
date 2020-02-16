@@ -7,10 +7,9 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class CustomEmailNotification extends Notification implements ShouldQueue
-{
+class CustomEmailNotification extends Notification {
     use Queueable;
-    protected $mail
+    protected $mail;
 
     /**
      * Create a new notification instance.
@@ -19,7 +18,8 @@ class CustomEmailNotification extends Notification implements ShouldQueue
      */
     public function __construct($mail)
     {
-        //
+        $this->mail = $mail;
+
     }
 
     /**
@@ -45,7 +45,7 @@ class CustomEmailNotification extends Notification implements ShouldQueue
             ->greeting('Dear ' . $notifiable->username . ',')
             ->subject($this->mail['subject'])
             ->line($this->mail['message'])
-            ->line('Thank you for reaching to us');
+            ->line('Thank you for investing with us');
     }
 
     /**

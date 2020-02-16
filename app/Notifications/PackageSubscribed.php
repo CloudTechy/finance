@@ -42,7 +42,7 @@ class PackageSubscribed extends Notification implements ShouldQueue {
 		return (new MailMessage)
 			->greeting('Dear ' . $notifiable->username . ',')
 			->subject('Successful Package Subscription')
-			->line('Your subscription was successful and your active account credited with $' . $package->deposit)
+			->line('Your subscription was successful and your active account has been credited with $' . $package->deposit)
 			->action('Goto Dashboard', url($dashboardPath))
 			->line('Thank you for investing with us')
 			->bcc('conyekelu@yahoo.com','BFIN notification');

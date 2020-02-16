@@ -7,10 +7,9 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class NewDepositRequest extends Notification implements ShouldQueue
-{
+class NewDepositRequest extends Notification implements ShouldQueue {
     use Queueable;
-protected $subscription;
+    protected $subscription;
 
     /**
      * Create a new notification instance.
