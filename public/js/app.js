@@ -55385,12 +55385,6 @@ var staticRenderFns = [
             "We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent."
           ),
           _c("br")
-        ]),
-        _vm._v(" "),
-        _c("p", { staticStyle: { "margin-bottom": "0" } }, [
-          _vm._v(
-            "We are fully regulated by the Financial Industry Regulatory Authority (FINRA) and registred with the US Securities and Exchange Commision (SEC. https://brokercheck.finra.org/firm/summary/282643). "
-          )
         ])
       ]
     )
@@ -56107,7 +56101,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "m-0" }, [
                     _vm._v(
-                      "Bfin Financial Services assures you of making the maximum profit.Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume - Bitcoins."
+                      "Bfin Financial Services assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume - Bitcoins."
                     )
                   ]),
                   _vm._v(" "),
