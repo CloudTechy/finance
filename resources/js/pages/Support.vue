@@ -17,7 +17,7 @@
                                 <li style="padding-left:0;">
                                     <h2 class="get-in">Get In Touch</h2>
                                 </li>
-                                <li><img style=" margin-top:5px;" :src="$root.basepath + '/img/support-mail.png'"><a href="mailto:support@Bfin%20Financial%20Services">info@bfinetworkshares.com</a><br><a href="mailto:info@Bfin%20Financial%20Services"></a>
+                                <li><img style=" margin-top:5px;" :src="$root.basepath + '/img/support-mail.png'"><a href="info@biofeedincinvestment.com">info@biofeedincinvestment.com</a><br><a href="info@biofeedincinvestment.com"></a>
                                 </li>
                             </ul>
                             <form class="support-form col-12 col-lg-7 m-1 text-center" method="post" name="mainform" @submit.prevent="submitForm">

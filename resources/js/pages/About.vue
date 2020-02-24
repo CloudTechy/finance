@@ -3,7 +3,7 @@
         <div class="row page-title m-3 p-2">
             <div class="col-12 col-lg-8 container">
                 <h1>About Us</h1>
-                <p>Bfin Financial Services assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume - Bitcoins.</p>
+                <p> Biofeed Investment assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume - Bitcoins.</p>
             </div>
         </div>
         <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'">
@@ -13,8 +13,8 @@
                         <div class="row company">
                             <div class="col-md-7 col-11 m-1 p-2 company-profile">
                                 <h2 class="company-title">Our Company</h2>
-                                <p class="sub-title ">Read on to know more about Bfin Financial Services Limited.</p>
-                                <p class="">BFIN Financial Services started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bfin Financial Services Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. <br><br>We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent.<br>
+                                <p class="sub-title ">Read on to know more about  Biofeed Investment Limited.</p>
+                                <p class=""> Biofeed Investment started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the  Biofeed Investment team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of  Biofeed Investment Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. <br><br>We have put great efforts to provide our clients with a user-friendly profit making investment platform. Also, the developers are real technical mavericks, whose vision to create a unique investment system has become successful. Also, you can be sure of security since we ensure that no one will access your data without consent.<br>
                                 </p>
                             </div>
                             <div class="services">
@@ -23,7 +23,7 @@
                                         <div class="inner-s">
                                             <img class="centered-img" :src="$root.basepath + '/img/key-1.png'">
                                             <h4>High growth &amp; substantial returns</h4>
-                                            <p>Bfin Financial Services Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
+                                            <p> Biofeed Investment Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
                                         </div>
                                     </li>
                                     <li class="col col-md-6 text-center">
@@ -44,7 +44,7 @@
                                         <div class="inner-s">
                                             <img class="centered-img" :src="$root.basepath + '/img/key-4.png'">
                                             <h4>Registered Company</h4>
-                                            <p>Bfin Financial Services is fully registered in United States.</p>
+                                            <p> Biofeed Investment is fully registered in United States.</p>
                                         </div>
                                     </li>
                                 </ul>

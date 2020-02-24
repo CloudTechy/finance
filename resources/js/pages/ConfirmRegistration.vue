@@ -13,7 +13,7 @@
                         <div v-if="success" class="text-center">
                             <div class="success-group">
                                 <h4  class="p-2 m-2">Registration Completed</h4>
-                                <p class="w-note p-2 m-2">Thank you for joining our program, you are now official member of Bfin Network Shares</p>
+                                <p class="w-note p-2 m-2">Thank you for joining our program, you are now official member of  Biofeed Investment Network Shares</p>
                                 <span class="p-2">Please login into your account to continue and keep safe your login credentials!</span>
                             </div>
                             <div class="text-center">

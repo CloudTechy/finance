@@ -56,7 +56,7 @@
                                 <div class="column col dcs">
                                     <img class="centered-img":src="$root.basepath + '/img/dcs-1.png'">
                                     <h4>Highly available network</h4>
-                                    <p>Bfin Financial Services Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on.</p>
+                                    <p> Biofeed Investment Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on.</p>
                                 </div>
                                 <div class="column col dcs">
                                     <img class="centered-img":src="$root.basepath + '/img/dcs-2.png'">

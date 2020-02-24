@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="copyrights text-center">
-            <p style="text-transform: uppercase;">© {{fullYear}} Bfin Financial Services Limited. All Rights Reserved.</p>
+            <p style="text-transform: uppercase;">© {{fullYear}}  Biofeed Investment Limited. All Rights Reserved.</p>
         </div>
     </footer>
 </template>

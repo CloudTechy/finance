@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>Bfin Financial Services</title>
+    <title> Biofeed Investment ltd</title>
 
-    <meta name="description" content="Bfinetwork shares is a community of dedicated investors that wants to make a steady extra income. we deal extensively on Bitcoin">
-    <meta name="keywords" content="Bfinetwork, Shares, Finance, Bitcoin, Investment">
-    <meta name="author" content="Bfinetwork ICT Team">
+    <meta name="description" content=" Biofeed Investment is a community of dedicated investors that wants to make a steady extra income. we deal extensively on Bitcoin">
+    <meta name="keywords" content=" Biofeed Investment, Shares, Finance, Bitcoin, Investment">
+    <meta name="author" content=" Biofeed Investment ICT Team">
   <!-- CSRF Token -->
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <!-- Fonts -->

@@ -16,7 +16,7 @@
             </ul>
             <h4 data-toggle="collapse" class="" data-target="#collapsibleNavbar2">Your Account</h4>
             <ul id="collapsibleNavbar2" class="last p-1 collapse show">
-                <!-- <li class="p-0 mt-1 mb-1"><router-link class = "mb-2 mt-2" to="https://bfinfinancialservices.com/?a=referallinks"><img :src="$root.basepath + '/img/ac-8.png'">Banners</router-link></li> -->
+                <!-- <li class="p-0 mt-1 mb-1"><router-link class = "mb-2 mt-2" to="https:// Biofeed Investmentfinancialservices.com/?a=referallinks"><img :src="$root.basepath + '/img/ac-8.png'">Banners</router-link></li> -->
                 <li class="p-0 mt-1 mb-1"><router-link class = "mb-2 mt-2" to="/user/dashboard/settings"><img :src="$root.basepath + '/img/ac-9.png'">Settings</router-link></li>
                 <li class="p-0 mt-1 mb-1"><router-link class = "mb-2 mt-2" to="/user/dashboard/security"><img :src="$root.basepath + '/img/ac-10.png'">Security</router-link></li>
             </ul>

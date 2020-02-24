@@ -15,7 +15,7 @@
                     <router-link to="/getstarted">getstarted</router-link>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
-                    <a href="https://t.me/Bfininvestmentservices">Channel link</a>
+                    <a href="https://t.me/ Biofeed Investment">Channel link</a>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
                     <router-link to="/investmentPlans">Investment plans</router-link>
@@ -27,7 +27,7 @@
                     <router-link to="/faq">Faq</router-link>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
-                    <a href="https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/BFIN_FINANCIAL_SERVICES">Company Certificate</a>
+                    <a href="https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/ Biofeed Investment">Company Certificate</a>
                 </li>
                 <li class="m-0  m-lg-2 p-lg-2  m-md-1 p-md-0">
                     <router-link to="/news">News</router-link>

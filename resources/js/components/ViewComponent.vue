@@ -13,7 +13,7 @@
                 <div class="card bg-dark text-white">
                   <img :src="$root.basepath + '/img/uploads/'+viewItem.imgUrl" class="card-img" alt="">
                   <div class="card-img-overlay">
-                    <h5 class="card-title">BFIN</h5>
+                    <h5 class="card-title"> Biofeed Investment</h5>
                   </div>
                 </div>
                 <div class="modal-footer">

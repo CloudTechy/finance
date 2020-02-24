@@ -3,7 +3,7 @@
         <!-- <div class="row page-title m-3 p-2">
             <div class="col-12 col-lg-8 container">
                 <h1></h1>
-                <p>Bfin Financial Services assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
+                <p> Biofeed Investment assures you of making the maximum profit. Our company is a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume- Bitcoins.</p>
             </div>
         </div> -->
         <section class="main-container" :style="'background:url('+ $root.basepath +'/img/home.png) no-repeat 0 0;'"
@@ -14,15 +14,15 @@
                         <div class="row company">
                             <div class=" col p-3 partners-container">
                                 <h2 class="company-title">Our Company</h2>
-                                <p class="m-0">Bfin Financial Services assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume - Bitcoins.</p> <br><br>
-                                <p class="m-0">BFIN Financial Services started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors.<router-link to="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
+                                <p class="m-0"> Biofeed Investment assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining &amp; trading of the most popular cryptocurrency by volume - Bitcoins.</p> <br><br>
+                                <p class="m-0"> Biofeed Investment started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading.<br><br> We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the  Biofeed Investment team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. <br><br>The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors.<router-link to="/about" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
                                 </p>
                                 <div class="services mt-3">
                                     <ul class="row">
                                         <li class="col text-center">
                                             <div class="inner-s"><img :src="$root.basepath + '/img/key-1.png'" class="centered-img">
                                                 <h4>High growth &amp; substantial returns</h4>
-                                                <p>Bfin Financial Services Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
+                                                <p> Biofeed Investment Limited is guided by an excellent team to ensure lofty yields &amp; steady profits in the long run.</p>
                                             </div>
                                         </li>
                                         <li class="col text-center">
@@ -34,14 +34,14 @@
                                         <li class="col text-center">
                                             <div class="inner-s"><img :src="$root.basepath + '/img/key-4.png'" class="centered-img">
                                                 <h4>Registered Company</h4>
-                                                <p>Bfin Financial Services is fully registered in United States.</p>
+                                                <p> Biofeed Investment is fully registered in United States.</p>
                                             </div>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class=" m-0 p-0 mt-4 pt-4  partners-container">
                                     <h2 class="company-title">Our Investment Plans</h2>
-                                    <p class="col p-0 mb-4 inv-intro text-center">Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. </p><br>
+                                    <p class="col p-0 mb-4 inv-intro text-center"> Biofeed Investment offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. </p><br>
                                     <div class="row p-2">
                                         <div class="col-lg-3 col-sm-6 col-12">
                                             <p class="inv-intro p-0  mb-3 text-left  col">
@@ -99,7 +99,7 @@
                                 
                                 <div class="ml-0 m-0 p-0 mt-5 pt-5 get-started">
                                     <h1 class="company-title">How To Get Started</h1>
-                                    <p class="col p-0 mb-4 inv-intro text-center">To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. </p><br>
+                                    <p class="col p-0 mb-4 inv-intro text-center">To start your investment journey in  Biofeed Investment Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. </p><br>
                                     <ul>
                                         <li>
                                             <h3><span>Step 1: </span>Account Registration</h3>
@@ -107,7 +107,7 @@
                                         </li>
                                         <li>
                                             <h3><span>Step 2: </span>Creating Deposit</h3>
-                                            <p>In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bfin Financial Services Limited just click on ‘Make a deposit‘ link. </p>
+                                            <p>In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  Biofeed Investment Limited just click on ‘Make a deposit‘ link. </p>
                                         </li>
                                         <li>
                                             <h3><span>Step 3: </span>Wait for the deposit transfer</h3>
@@ -118,9 +118,9 @@
                                 </div>
                                 <div class="m-1 mt-4 pt-5 m-0 p-0 partners-container">
                                     <h1 class="company-title">Our Affiliate Program</h1>
-                                    <p>If you want passive earning of substantial sums refer quickly to all about Bfin Financial Services Limited &amp; gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you.<router-link to="/partners" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
+                                    <p>If you want passive earning of substantial sums refer quickly to all about  Biofeed Investment Limited &amp; gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you.<router-link to="/partners" class="btn btn-link" style="display: inline; line-height: 20px; font-size: 13px; color: rgb(183, 183, 183); font-family: Montserrat; text-transform: uppercase;">Read More</router-link>
                                     </p>
-                                    <h5 class="slogan text-center">Enjoy exceptional upto 14% five levels deep affiliate system structure in Bfin Financial Services Limited.</h5>
+                                    <h5 class="slogan text-center">Enjoy exceptional upto 14% five levels deep affiliate system structure in  Biofeed Investment Limited.</h5>
                                     <div class="partners-img clearfix"><img :src="$root.basepath + '/img/percentages.png'"> <img :src="$root.basepath + '/img/partners.png'"></div>
                                 </div>
                                 <div class="page-heading m-0 p-0 mt-4 pt-4  partners-container ">
@@ -158,7 +158,7 @@
                                     <div class="row">
                                         <div class="column col dcs"><img :src="$root.basepath + '/img/dcs-1.png'" class="centered-img">
                                             <h4>Highly available network</h4>
-                                            <p>Bfin Financial Services Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on.</p>
+                                            <p> Biofeed Investment Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on.</p>
                                         </div>
                                         <div class="column col dcs"><img :src="$root.basepath + '/img/dcs-2.png'" class="centered-img">
                                             <h4>Redundant electrical systems</h4>
@@ -177,7 +177,7 @@
                                             <li style="padding-left:0;">
                                                 <h2 class="get-in">Get In Touch</h2>
                                             </li>
-                                            <li><img style=" margin-top:5px;" :src="$root.basepath + '/img/support-mail.png'"><a href="mailto:info@bfinetworkshares.com">info@bfinetworkshares.com</a><br><a href="mailto:info@bfinetworkshares.com"></a>
+                                            <li><img style=" margin-top:5px;" :src="$root.basepath + '/img/support-mail.png'"><a href="mailto:info@biofeedincinvestment.com">info@biofeedincinvestment.com/</a><br><a href="mailto:info@biofeedincinvestment.com"></a>
                                             </li>
                                         </ul>
                                         <form class="support-form col-12 col-lg-7 m-1 text-center" method="post" name="mainform" @submit.prevent="submitForm">

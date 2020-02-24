@@ -54383,7 +54383,7 @@ var render = function() {
           _vm._v(
             "© " +
               _vm._s(_vm.fullYear) +
-              " Bfin Financial Services Limited. All Rights Reserved."
+              "  Biofeed Investment Limited. All Rights Reserved."
           )
         ])
       ])
@@ -54885,7 +54885,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "m-0  m-lg-2 p-lg-2  m-md-1 p-md-0" }, [
-      _c("a", { attrs: { href: "https://t.me/Bfininvestmentservices" } }, [
+      _c("a", { attrs: { href: "https://t.me/ Biofeed Investment" } }, [
         _vm._v("Channel link")
       ])
     ])
@@ -54900,7 +54900,7 @@ var staticRenderFns = [
         {
           attrs: {
             href:
-              "https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/BFIN_FINANCIAL_SERVICES"
+              "https://tawk.link/5be61a8a70ff5a5a3a717ba7/vc/5c0a5e54af5de8c7a62ef1f4/v/f6499c5fa1bda2dc59c0aaf0ca87fa79564509c1/ Biofeed Investment"
           }
         },
         [_vm._v("Company Certificate")]
@@ -55192,7 +55192,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-img-overlay" }, [
-      _c("h5", { staticClass: "card-title" }, [_vm._v("BFIN")])
+      _c("h5", { staticClass: "card-title" }, [_vm._v(" Biofeed Investment")])
     ])
   }
 ]
@@ -55497,7 +55497,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "w-note m-2 p-3" }, [
         _vm._v(
-          "Thank you for your interest in joining our program, you are now close to becoming an official member of Bfin Network Shares"
+          "Thank you for your interest in joining our program, you are now close to becoming an official member of  Biofeed Investment Network Shares"
         )
       ]),
       _vm._v(" "),
@@ -55620,7 +55620,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", { staticClass: "w-note p-2 m-2" }, [
         _vm._v(
-          "Thank you for joining our program, you are now official member of Bfin Network Shares"
+          "Thank you for joining our program, you are now official member of  Biofeed Investment Network Shares"
         )
       ]),
       _vm._v(" "),
@@ -56565,15 +56565,16 @@ var render = function() {
                                   "a",
                                   {
                                     attrs: {
-                                      href: "mailto:info@bfinetworkshares.com"
+                                      href:
+                                        "mailto:info@biofeedincinvestment.com"
                                     }
                                   },
-                                  [_vm._v("info@bfinetworkshares.com")]
+                                  [_vm._v("info@biofeedincinvestment.com/")]
                                 ),
                                 _c("br"),
                                 _c("a", {
                                   attrs: {
-                                    href: "mailto:info@bfinetworkshares.com"
+                                    href: "mailto:info@biofeedincinvestment.com"
                                   }
                                 })
                               ])
@@ -58235,7 +58236,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "accept-terms text-center" }, [
       _c("label", { staticClass: "small" }, [
         _vm._v(
-          "Completing your registration you agree with Terms of Bfin Financial Services Limited"
+          "Completing your registration you agree with Terms of  Biofeed Investment Limited"
         )
       ])
     ])
@@ -58581,16 +58582,12 @@ var render = function() {
                     }),
                     _c(
                       "a",
-                      {
-                        attrs: {
-                          href: "mailto:support@Bfin%20Financial%20Services"
-                        }
-                      },
-                      [_vm._v("info@bfinetworkshares.com")]
+                      { attrs: { href: "info@biofeedincinvestment.com" } },
+                      [_vm._v("info@biofeedincinvestment.com")]
                     ),
                     _c("br"),
                     _c("a", {
-                      attrs: { href: "mailto:info@Bfin%20Financial%20Services" }
+                      attrs: { href: "info@biofeedincinvestment.com" }
                     })
                   ])
                 ]),
@@ -62041,7 +62038,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Please go through the Frequently asked questions. Following are the answers to most common questions that may arise in any investor’s mind to know Bfin Financial Services Limited better. "
+            "Please go through the Frequently asked questions. Following are the answers to most common questions that may arise in any investor’s mind to know Biofeed Investment Limited better. "
           )
         ])
       ])
@@ -62089,11 +62086,7 @@ var staticRenderFns = [
                                     href: "#collapse1"
                                   }
                                 },
-                                [
-                                  _vm._v(
-                                    "What is Bfin Financial Services Limited? "
-                                  )
-                                ]
+                                [_vm._v("What is Biofeed Investment Limited? ")]
                               ),
                               _vm._v(" "),
                               _c(
@@ -62105,7 +62098,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bfin Financial Services is an expert trading company."
+                                      "Biofeed Investment is an expert trading company."
                                     )
                                   ])
                                 ]
@@ -62125,7 +62118,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "Is Bfin Financial Services Limited available to public? "
+                                    "Is Biofeed Investment Limited available to public? "
                                   )
                                 ]
                               ),
@@ -62139,7 +62132,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bfin Financial Services Limited is open for public who are 18 and fulfill the legal age to take part in our program. "
+                                      "Biofeed Investment Limited is open for public who are 18 and fulfill the legal age to take part in our program. "
                                     )
                                   ])
                                 ]
@@ -62159,7 +62152,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "How can I check the authenticity of Bfin Financial Services Limited? "
+                                    "How can I check the authenticity of Biofeed Investment Limited? "
                                   )
                                 ]
                               ),
@@ -62173,7 +62166,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bfin Financial Services is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/"
+                                      "Biofeed Investment is fully regulated by the Financial Industry Regulatory Authority. You can visit to vetrify https://brokercheck.finra.org/firm/summary/282643/"
                                     )
                                   ])
                                 ]
@@ -62193,7 +62186,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "How Does Bfin Financial Services Limited make profit? "
+                                    "How Does Biofeed Investment Limited make profit? "
                                   )
                                 ]
                               ),
@@ -62207,7 +62200,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bfin Financial Services For the past two years, our unique alogrithm remains relevant, this the major secret why we win. "
+                                      "Biofeed Investment For the past two years, our unique alogrithm remains relevant, this the major secret why we win. "
                                     )
                                   ])
                                 ]
@@ -62241,7 +62234,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Bfin Financial Services Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, Bfin Financial Services Limited's investors can expect to receive money back except the profits they received earlier."
+                                      "Biofeed Investment Limited is a platform which is risk-free. However, to avoid unforeseen loss, the company continuously fills in its contingency fund. In the case of force majeure situations, Biofeed Investment Limited's investors can expect to receive money back except the profits they received earlier."
                                     )
                                   ])
                                 ]
@@ -62267,7 +62260,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "How can I start investing with Bfin Financial Services Limited ? "
+                                    "How can I start investing with Biofeed Investment Limited ? "
                                   )
                                 ]
                               ),
@@ -62322,14 +62315,10 @@ var staticRenderFns = [
                                       {
                                         attrs: {
                                           href:
-                                            "mailto:support@Bfin%20Financial%20Services"
+                                            "mailto:info@biofeedincinvestment.com"
                                         }
                                       },
-                                      [
-                                        _vm._v(
-                                          "support@bfinfinancialservices.com "
-                                        )
-                                      ]
+                                      [_vm._v("info@biofeedincinvestment.com ")]
                                     ),
                                     _vm._v(
                                       " if you need our assistance. We will be glad to help you. "
@@ -62352,7 +62341,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "I wish to invest with Bfin Financial Services Limited but I don't have any e-currency account. What should I do? "
+                                    "I wish to invest with Biofeed Investment Limited but I don't have any e-currency account. What should I do? "
                                   )
                                 ]
                               ),
@@ -62386,7 +62375,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "Can I have more than one account at Bfin Financial Services ? "
+                                    "Can I have more than one account at Biofeed Investment ? "
                                   )
                                 ]
                               ),
@@ -62400,7 +62389,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "No, each member can have only one account in Bfin Financial Services Ltd. Any attempt of fraud will result in permanent blocking of the account & the funds deposited in the account will be frozen. "
+                                      "No, each member can have only one account in Biofeed Investment Ltd. Any attempt of fraud will result in permanent blocking of the account & the funds deposited in the account will be frozen. "
                                     )
                                   ])
                                 ]
@@ -62434,7 +62423,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Please contact us at support@Bfin Financial Services and we will update your account within 24 hours. "
+                                      "Please contact us at info@biofeedincinvestment.com and we will update your account within 24 hours. "
                                     )
                                   ])
                                 ]
@@ -62660,7 +62649,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Just login to your Bfin Financial Services Limited account and proceed with your withdrawal at the Withdraw section. "
+                                      "Just login to your Biofeed Investment Limited account and proceed with your withdrawal at the Withdraw section. "
                                     )
                                   ])
                                 ]
@@ -62788,7 +62777,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "Do you have a referral program in Bfin Financial Services Limited? "
+                                    "Do you have a referral program in Biofeed Investment Limited? "
                                   )
                                 ]
                               ),
@@ -62802,7 +62791,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "Yes we have a 5 level referral program in Bfin Financial Services Limited. "
+                                      "Yes we have a 5 level referral program in Biofeed Investment Limited. "
                                     )
                                   ])
                                 ]
@@ -62822,7 +62811,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "What are the referral commissions in Bfin Financial Services Limited? "
+                                    "What are the referral commissions in Biofeed Investment Limited? "
                                   )
                                 ]
                               ),
@@ -62836,7 +62825,7 @@ var staticRenderFns = [
                                 [
                                   _c("p", [
                                     _vm._v(
-                                      "For direct referrals you will get upto 10% interest on the amount deposited by the referee. It all depends on your plan. SEE: https://www.bfinfinancialservices.com/index.php?a=page&id=investors."
+                                      "For direct referrals you will get upto 10% interest on the amount deposited by the referee. It all depends on your plan. SEE: https://www.biofeedincinvestment.com/partners."
                                     )
                                   ])
                                 ]
@@ -62856,7 +62845,7 @@ var staticRenderFns = [
                                 },
                                 [
                                   _vm._v(
-                                    "Do I need to have active investment in order to participate in Bfin Financial Services Limited's referral program ? "
+                                    "Do I need to have active investment in order to participate in Biofeed Investment Limited's referral program ? "
                                   )
                                 ]
                               ),
@@ -63136,7 +63125,7 @@ var render = function() {
               _vm._v(" "),
               _c("p", { staticClass: "col mb-2 inv-intro text-center" }, [
                 _vm._v(
-                  "Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
+                  " Biofeed Investment offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
                 )
               ]),
               _c("br"),
@@ -63210,7 +63199,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Bfin Financial Services Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time & effort to present the best possible investment plans for you."
+            " Biofeed Investment Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time & effort to present the best possible investment plans for you."
           )
         ])
       ])
@@ -63444,7 +63433,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "In the news section of Bfin Financial Services Limited we will report you all important information about the development of the project, the expansion of Bitcoin-farms, as well as various promotions, bonuses, incentives for investors and technical improvements to the site."
+            "In the news section of  Biofeed Investment Limited we will report you all important information about the development of the project, the expansion of Bitcoin-farms, as well as various promotions, bonuses, incentives for investors and technical improvements to the site."
           )
         ])
       ])
@@ -63504,7 +63493,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("h5", { staticClass: "slogan text-center" }, [
                     _vm._v(
-                      "Enjoy exceptional upto 14% five levels deep affiliate system structure in Bfin Financial Services Limited."
+                      "Enjoy exceptional upto 14% five levels deep affiliate system structure in  Biofeed Investment Limited."
                     )
                   ]),
                   _vm._v(" "),
@@ -63543,7 +63532,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "If you want passive earning of substantial sums refer quickly to all about Bfin Financial Services Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
+            "If you want passive earning of substantial sums refer quickly to all about  Biofeed Investment Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
           )
         ])
       ])
@@ -63555,7 +63544,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("p", { staticClass: "p-2 text-justify" }, [
       _vm._v(
-        "If you want to earn more money or do not have enough to invest in Bfin Financial Services Limited, use your referral link for the invitation and the registration of new members."
+        "If you want to earn more money or do not have enough to invest in  Biofeed Investment Limited, use your referral link for the invitation and the registration of new members."
       ),
       _c("br"),
       _c("br"),
@@ -63563,7 +63552,7 @@ var staticRenderFns = [
       _c("br"),
       _c("br"),
       _vm._v(
-        "   You can attract any number of new investors, the more you active referrals, the more earnings you have! When you refer your family, friends and other community members to Bfin Financial Services Limited, you are entitled to up to 14% on every deposit made by your downline. "
+        "   You can attract any number of new investors, the more you active referrals, the more earnings you have! When you refer your family, friends and other community members to  Biofeed Investment Limited, you are entitled to up to 14% on every deposit made by your downline. "
       ),
       _c("br"),
       _c("br"),

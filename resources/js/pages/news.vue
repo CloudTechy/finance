@@ -3,7 +3,7 @@
         <div class="row page-title m-3 p-2">
             <div class="col-12 col-lg-8 container">
                 <h1>Latest News</h1>
-                <p>In the news section of Bfin Financial Services Limited we will report you all important information about the development of the project, the expansion of Bitcoin-farms, as well as various promotions, bonuses, incentives for investors and technical improvements to the site.</p>
+                <p>In the news section of  Biofeed Investment Limited we will report you all important information about the development of the project, the expansion of Bitcoin-farms, as well as various promotions, bonuses, incentives for investors and technical improvements to the site.</p>
             </div>
         </div>
         <!--start main container-->

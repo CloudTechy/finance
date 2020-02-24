@@ -3,7 +3,7 @@
         <div class="row page-title m-3 p-2">
             <div class="col-12 col-lg-8 container">
                 <h1>Investment Solutions</h1>
-                <p>Bfin Financial Services Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time &amp; effort to present the best possible investment plans for you.</p>
+                <p> Biofeed Investment Limited offers two attractive and profitable investment plans for our valuable investors. Our dedicated team has put in a lot of time &amp; effort to present the best possible investment plans for you.</p>
             </div>
         </div>
         <!--start main container-->
@@ -14,7 +14,7 @@
                         <div class="page-heading text-center">
                             <h2>Our Investment Plans</h2>
                         </div>
-                        <p class="col mb-2 inv-intro text-center">Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. </p><br>
+                        <p class="col mb-2 inv-intro text-center"> Biofeed Investment offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. </p><br>
                         <div class="row p-2">
                             <div class="col-lg-3 col-sm-6 col-12">
                                 <p class="inv-intro text-left  col">
