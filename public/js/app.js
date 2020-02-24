@@ -55249,7 +55249,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            "Bfin Financial Services Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
+                            " Biofeed Investment Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
                           )
                         ])
                       ])
@@ -55302,7 +55302,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            "Bfin Financial Services is fully registered in United States."
+                            " Biofeed Investment is fully registered in United States."
                           )
                         ])
                       ])
@@ -55345,7 +55345,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "Bfin Financial Services assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume - Bitcoins."
+            " Biofeed Investment assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume - Bitcoins."
           )
         ])
       ])
@@ -55362,22 +55362,22 @@ var staticRenderFns = [
         _c("h2", { staticClass: "company-title" }, [_vm._v("Our Company")]),
         _vm._v(" "),
         _c("p", { staticClass: "sub-title " }, [
-          _vm._v("Read on to know more about Bfin Financial Services Limited.")
+          _vm._v("Read on to know more about  Biofeed Investment Limited.")
         ]),
         _vm._v(" "),
         _c("p", {}, [
           _vm._v(
-            "BFIN Financial Services started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
+            " Biofeed Investment started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
           ),
           _c("br"),
           _c("br"),
           _vm._v(
-            " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+            " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the  Biofeed Investment team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
           ),
           _c("br"),
           _c("br"),
           _vm._v(
-            "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of Bfin Financial Services Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
+            "The main objective of our offering is attracting and expanding investments for our company, continuation of Bitcoin mining, gold mining and refining, oil and gas exploration, automobiles along with profitable trading and sharing the returns with our investors. Experts of  Biofeed Investment Limited firmly believe in the prospects of Bitcoin, the most traded cryptocurrency by volume. "
           ),
           _c("br"),
           _c("br"),
@@ -55724,7 +55724,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("p", [
                       _vm._v(
-                        "Bfin Financial Services Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on."
+                        " Biofeed Investment Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on."
                       )
                     ])
                   ]),
@@ -56101,7 +56101,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("p", { staticClass: "m-0" }, [
                     _vm._v(
-                      "Bfin Financial Services assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume - Bitcoins."
+                      " Biofeed Investment assures you of making the maximum profit. Our company is a big investor in real estate, oil and gas, gold mining, automobiles and a big supporter of digital currency and has invested in mining & trading of the most popular cryptocurrency by volume - Bitcoins."
                     )
                   ]),
                   _vm._v(" "),
@@ -56113,12 +56113,12 @@ var render = function() {
                     { staticClass: "m-0" },
                     [
                       _vm._v(
-                        "BFIN Financial Services started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
+                        " Biofeed Investment started in 2005 as a Financial Advisory Firm and recently in 2017 delved fully into automobiles, real estate, oil and gas, gold and Automated Trading."
                       ),
                       _c("br"),
                       _c("br"),
                       _vm._v(
-                        " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the Bfin Financial Services team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
+                        " We started creating our own trading strategies, accumulating and interpreting the knowledge gained during the period of analysis, perfecting and adjusting them to the current market trends. Over the past few years, we have been making huge financial gains in so many arears. For Bitcoin mining, the  Biofeed Investment team began construction and organization of mining farms with latest technology computers which enabled mining at great speeds. "
                       ),
                       _c("br"),
                       _c("br"),
@@ -56162,7 +56162,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("p", [
                             _vm._v(
-                              "Bfin Financial Services Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
+                              " Biofeed Investment Limited is guided by an excellent team to ensure lofty yields & steady profits in the long run."
                             )
                           ])
                         ])
@@ -56202,7 +56202,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("p", [
                             _vm._v(
-                              "Bfin Financial Services is fully registered in United States."
+                              " Biofeed Investment is fully registered in United States."
                             )
                           ])
                         ])
@@ -56223,7 +56223,7 @@ var render = function() {
                         { staticClass: "col p-0 mb-4 inv-intro text-center" },
                         [
                           _vm._v(
-                            "Bfin Financial Services offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
+                            " Biofeed Investment offers daily, weekly and monthly varieties of profit plans for our valuable investors. The investment plans have been prepared with great care and structured into amazing portfolios. "
                           )
                         ]
                       ),
@@ -56334,7 +56334,7 @@ var render = function() {
                         { staticClass: "col p-0 mb-4 inv-intro text-center" },
                         [
                           _vm._v(
-                            "To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. "
+                            "To start your investment journey in  Biofeed Investment Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal. "
                           )
                         ]
                       ),
@@ -56418,7 +56418,7 @@ var render = function() {
                         "p",
                         [
                           _vm._v(
-                            "If you want passive earning of substantial sums refer quickly to all about Bfin Financial Services Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
+                            "If you want passive earning of substantial sums refer quickly to all about  Biofeed Investment Limited & gain extraordinary 14% five level affiliate program. This multi-tier affiliate program will ensure multiple sources of income for you."
                           ),
                           _c(
                             "router-link",
@@ -56442,7 +56442,7 @@ var render = function() {
                       _vm._v(" "),
                       _c("h5", { staticClass: "slogan text-center" }, [
                         _vm._v(
-                          "Enjoy exceptional upto 14% five levels deep affiliate system structure in Bfin Financial Services Limited."
+                          "Enjoy exceptional upto 14% five levels deep affiliate system structure in  Biofeed Investment Limited."
                         )
                       ]),
                       _vm._v(" "),
@@ -56497,7 +56497,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("p", [
                           _vm._v(
-                            "Bfin Financial Services Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on."
+                            " Biofeed Investment Limited ‘s datacenters have a high connectivity network which enables smooth hash power for efficient mining of Bitcoins. No downtime due to highly available network, supports uninterrupted mining to go on."
                           )
                         ])
                       ]),
@@ -56702,7 +56702,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bfin Financial Services Limited just click on ‘Make a deposit‘ link. "
+          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  Biofeed Investment Limited just click on ‘Make a deposit‘ link. "
         )
       ])
     ])
@@ -57079,7 +57079,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", { staticClass: "w-note m-1" }, [
           _vm._v(
-            "Thank you for your interest in joining our program, you are now close to becoming an official member of Bfin Network Shares"
+            "Thank you for your interest in joining our program, you are now close to becoming an official member of  Biofeed Investment Network Shares"
           )
         ]),
         _vm._v(" "),
@@ -63009,7 +63009,7 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("p", [
           _vm._v(
-            "To start your investment journey in Bfin Financial Services Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
+            "To start your investment journey in  Biofeed Investment Limited you need to follow few simple steps. Starting from account registration to profit withdrawal, every step is comprehensible in our user friendly investment portal."
           )
         ])
       ])
@@ -63033,7 +63033,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in Bfin Financial Services Limited just click on ‘Make a deposit‘ link. "
+          "In order to make a deposit you need to use Bitcoin, the most popular digital currency. You can use bitcoin to make a deposit from any of your bitcoin wallet. After logging in to your account in  Biofeed Investment Limited just click on ‘Make a deposit‘ link. "
         )
       ])
     ])
@@ -63064,7 +63064,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "You can choose any of the 16 investment plans carefully grouped into 4 portfolios of Bfin Financial Services Limited to make your investment. The gold plan is 2% daily for life time. The platinum plan is 5% daily for life time. "
+          "You can choose any of the 16 investment plans carefully grouped into 4 portfolios of  Biofeed Investment Limited to make your investment. The gold plan is 2% daily for life time. The platinum plan is 5% daily for life time. "
         )
       ])
     ])
@@ -63078,7 +63078,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("p", [
         _vm._v(
-          "All the investment plans in Bfin Financial Services Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw & enjoy your ROI! "
+          "All the investment plans in  Biofeed Investment Limited comes with bit by bit accruals each day your account reads. Once profit is deposited in your account wallet, you may be able to withdraw it. The minimum withdrawal amount is 1 USD. Feel free at any time to withdraw & enjoy your ROI! "
         )
       ])
     ])
