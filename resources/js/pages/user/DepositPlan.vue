@@ -144,8 +144,9 @@ export default {
         },
         processDeposit() {
             if(this.user.packages.length > 0){
-                this.error = 'Oops!!! There is an active subscription on this account'
-                window.scrollTo(0, 200)
+                this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+                // this.error = 'Oops!!! There is an active subscription on this account'
+                // window.scrollTo(0, 200)
             }
             else{
               this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  

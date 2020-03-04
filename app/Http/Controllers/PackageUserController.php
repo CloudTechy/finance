@@ -63,9 +63,9 @@ class PackageUserController extends Controller {
 		{
 			$user = User::find($validated['user_id']);
 			$package = Package::find($validated['package_id']);
-			if(PackageUser::where('user_id', $user->id)->where('active', true)->count() > 0){
-				return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! There is an active subscription on this account', 400);
-			}
+			// if(PackageUser::where('user_id', $user->id)->where('active', true)->count() > 0){
+			// 	return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! There is an active subscription on this account', 400);
+			// }
 			if ($package->portfolio->name == 'bronze') {
 				$tries = PackageUser::where('package_id', $package->id)->where('user_id', $user->id)->where('active', true)->count();
 				if ($tries > 1) {
@@ -186,9 +186,9 @@ class PackageUserController extends Controller {
 				return Helper::validRequest(['success' => true], 'subscription deactivated successfully', 200);
 			}
 
-			if(PackageUser::where('user_id', $packageUser->user->id)->where('active', true)->count() > 0){
-				return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! Account has an active subscription.', 400);
-			}
+			// if(PackageUser::where('user_id', $packageUser->user->id)->where('active', true)->count() > 0){
+			// 	return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! Account has an active subscription.', 400);
+			// }
 
 			if (!$packageUser->active && empty($packageUser->expiration)) {
 				$duration = $packageUser->package->duration;
