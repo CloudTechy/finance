@@ -64404,7 +64404,7 @@ var render = function() {
                                   ]),
                                   _c("br"),
                                   _vm._v(" "),
-                                  !this.$auth.user().canWithdraw
+                                  this.$auth.user().canWithdraw == false
                                     ? _c(
                                         "span",
                                         {

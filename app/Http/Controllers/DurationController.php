@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helper;
 use App\Http\Resources\DurationResource;
-use App\Duration;
+use App\duration;
 use Illuminate\Http\Request;
 use \DB;
 use \Exception;
@@ -19,7 +19,7 @@ class DurationController extends Controller {
 		try {
 			$page = request()->query('page', 1);
 			$pageSize = request()->query('pageSize', 10000000);
-			$data = Duration::filter(request()->all())
+			$data = duration::filter(request()->all())
 				->paginate($pageSize);
 			$total = $data->total();
 			$data = DurationResource::collection($data);
@@ -52,7 +52,7 @@ class DurationController extends Controller {
 		DB::beginTransaction();
 		try
 		{
-			$data = Duration::create($validated);
+			$data = duration::create($validated);
 			DB::commit();
 			return Helper::validRequest($data, 'data was sent successfully', 200);
 		} catch (Exception $bug) {
@@ -67,7 +67,7 @@ class DurationController extends Controller {
 	 * @param  \App\Duration  $duration
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Duration $duration) {
+	public function show(duration $duration) {
 		try {
 			$data = new DurationResource($duration);
 			return Helper::validRequest($data, 'specified data was fetched successfully', 200);
@@ -82,7 +82,7 @@ class DurationController extends Controller {
 	 * @param  \App\Duration  $duration
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit(Duration $duration) {
+	public function edit(duration $duration) {
 		//
 	}
 
@@ -93,7 +93,7 @@ class DurationController extends Controller {
 	 * @param  \App\Duration  $duration
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, Duration $duration) {
+	public function update(Request $request, duration $duration) {
 		DB::beginTransaction();
 		$validated = $request->validate([
 			'duration' => 'numeric',
@@ -114,7 +114,7 @@ class DurationController extends Controller {
 	 * @param  \App\Duration  $duration
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy(Duration $duration) {
+	public function destroy(duration $duration) {
 		DB::beginTransaction();
 		try {
 			$data = $duration->delete();

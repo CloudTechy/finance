@@ -35,7 +35,7 @@
                                                 <img :src="$root.basepath + '/img/box-1.png'">
                                                 <h4>Account Balance</h4>
                                                 <span>{{$root.numeral(user.balance)}}</span><br>
-                                                <span style="font-size: 70%" v-if = "!this.$auth.user().canWithdraw"  :class="{badge:true, 'badge-danger' :  !this.$auth.user().CanWithdraw, small : true,'badge-success' : this.$auth.user().CanWithdraw, ' m-1' : true, 'p-1':true, }"> {{ this.$auth.user().CanWithdraw ? 'Active' : 'On-Hold'}}</span>
+                                                <span style="font-size: 70%" v-if = "this.$auth.user().canWithdraw == false"  :class="{badge:true, 'badge-danger' :  !this.$auth.user().CanWithdraw, small : true,'badge-success' : this.$auth.user().CanWithdraw, ' m-1' : true, 'p-1':true, }"> {{ this.$auth.user().CanWithdraw ? 'Active' : 'On-Hold'}}</span>
                                             </div>
                                             <div class="s-box col-sm-4 col-12 p-2"> 
                                                 <img :src="$root.basepath + '/img/box-2.png'">
