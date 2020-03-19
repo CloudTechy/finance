@@ -128,7 +128,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	}
 	public function withdrawDuration() {
 
-		return $this->hasMany(Withdraw_Duration::class);
+		return $this->hasMany(withdraw_duration::class);
 	}
 
 	public function userLevel() {

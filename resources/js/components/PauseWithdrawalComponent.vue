@@ -43,7 +43,7 @@ export default {
             err: '',
             msg: '',
             error: '',
-            days: [],
+            days: '',
         }
     },
     beforeDestroy() {
@@ -79,7 +79,7 @@ export default {
                     this.days = response.data.data.item
                 })
                 .catch(error => {
-                    console.log(error)
+                    console.log(error.response)
                     this.days = []
                 })
         }

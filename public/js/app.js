@@ -6103,7 +6103,7 @@ __webpack_require__.r(__webpack_exports__);
       err: '',
       msg: '',
       error: '',
-      days: []
+      days: ''
     };
   },
   beforeDestroy: function beforeDestroy() {
@@ -6142,7 +6142,7 @@ __webpack_require__.r(__webpack_exports__);
       this.form.get("/auth/durations").then(function (response) {
         _this2.days = response.data.data.item;
       })["catch"](function (error) {
-        console.log(error);
+        console.log(error.response);
         _this2.days = [];
       });
     }
