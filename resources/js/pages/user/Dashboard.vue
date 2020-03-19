@@ -14,6 +14,11 @@
                             </nav>
                             <DashboardSidebar></DashboardSidebar>
                             <div class="columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc">
+                                <div v-if = "user.withdraw_request" style="width : 98% !important" class="success-group p-2 m-2">
+                                    <h4>Important Notice</h4>
+                                    <p class="w-note ml-5 m-3">You have indicated interest to put your withdrawal on hold for a specific period of time. </p> <span>Please <button class="text-center btn btn-link text-light p-0 font-weight-bold font-italic  m-1" type="button" data-toggle="modal" data-target="#pausewithdrawal">click here
+                                        </button> to complete this process.</span>
+                                </div>
                                 <!-- content goes here -->
                                 <div class="acc-block overview">
                                     <div class="acc-heading clearfix">
@@ -29,9 +34,10 @@
                                             <div class="s-box col-sm-4 col-12 p-2">
                                                 <img :src="$root.basepath + '/img/box-1.png'">
                                                 <h4>Account Balance</h4>
-                                                <span>{{$root.numeral(user.balance)}}</span>
+                                                <span>{{$root.numeral(user.balance)}}</span><br>
+                                                <span style="font-size: 70%" v-if = "!this.$auth.user().canWithdraw"  :class="{badge:true, 'badge-danger' :  !this.$auth.user().CanWithdraw, small : true,'badge-success' : this.$auth.user().CanWithdraw, ' m-1' : true, 'p-1':true, }"> {{ this.$auth.user().CanWithdraw ? 'Active' : 'On-Hold'}}</span>
                                             </div>
-                                            <div class="s-box col-sm-4 col-12 p-2">
+                                            <div class="s-box col-sm-4 col-12 p-2"> 
                                                 <img :src="$root.basepath + '/img/box-2.png'">
                                                 <h4>Active Deposit</h4>
                                                 <span>{{$root.numeral(user.totalActiveTransaction)}}</span>
@@ -99,6 +105,9 @@
                                 <!--  content ends here -->
                             </div>
                         </div>
+                        <div v-if="user.withdraw_request" ref="pausewithdrawal" class="modal fade" id="pausewithdrawal">
+                            <pause-withdrawal-component></pause-withdrawal-component>
+                        </div>
                         <!--end account wrapper-->
                     </div>
                 </div>
@@ -107,13 +116,12 @@
     </div>
 </template>
 <script>
-
 export default {
     data() {
         return {}
     },
     mounted() {
-        window.scrollTo(200,200);
+        window.scrollTo(200, 200);
     },
     computed: {
         user() {
@@ -124,7 +132,7 @@ export default {
         }
     },
     methods: {
-        
+
     }
 }
 

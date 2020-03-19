@@ -55,6 +55,15 @@
                                                     <option class="p-2" v-for="user in users" :value="user.username"></option>
                                                 </datalist>
                                             </div>
+                                            <div v-if = "search && selectedUser"  v-for="user in selectedUser" class="s-box  col-12 p-2">
+                                                <table>
+                                                    <tr>
+                                                        <td>Withdrawal Status </td>
+                                                        <td> <span :class="{badge:true, 'badge-danger' :  !user.CanWithdraw, 'badge-success' : user.CanWithdraw, ' ml-3' : true, 'p-2':true, 'font-weight-bold' : true}"> {{ user.CanWithdraw ? 'Active' : 'On-Hold'}}</span></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+
                                         </div>
                                         <div v-if="search && selectedUser" v-for="user in selectedUser" class="stat-box row">
                                             <div class="s-box col-12 p-2">
@@ -121,44 +130,41 @@
                                                     <h3 class="acc-sub-heading'">Personal Details</h3>
                                                 </div>
                                                 <div class="simple-stats p-0 m-auto">
-                                                    
                                                     <ul class="clearfix">
-                                                        <li  class="m-0 p-2">
+                                                        <li class="m-0 p-2">
                                                             <p>First Name: <span>{{user.first_name}}</span></p>
                                                         </li>
-                                                        <li  class="m-0 p-2">
+                                                        <li class="m-0 p-2">
                                                             <p>Last Name: <span>{{user.last_name}}</span></p>
                                                         </li>
-                                                        <li  class="m-0 p-2">
+                                                        <li class="m-0 p-2">
                                                             <p>Joined: <span>{{user.date}}</span></p>
                                                         </li>
-                                                        <li  v-if="user.number" class="m-0 p-2">
+                                                        <li v-if="user.number" class="m-0 p-2">
                                                             <p>Phone: <span><input type="text" readonly="" class="form-control" :value="user.number"></span></p>
                                                         </li>
                                                         <li v-if="user.email" class="m-0 p-2">
-                                                            <p>Email <span ><input type="text" readonly="" class="form-control" :value="user.email"></span></p>
+                                                            <p>Email <span><input type="text" readonly="" class="form-control" :value="user.email"></span></p>
                                                         </li>
                                                         <li v-if="user.user_level" class="m-0 p-2">
-                                                            
-                                                            <p>User Level: <span ><input type="text" readonly="" class="form-control" :value="user.user_level"></span></p>
+                                                            <p>User Level: <span><input type="text" readonly="" class="form-control" :value="user.user_level"></span></p>
                                                         </li>
-                                                        <li  v-if="user.wallet" class="m-0 p-2">
-                                                           
+                                                        <li v-if="user.wallet" class="m-0 p-2">
                                                             <p>Wallet: <span><input type="text" readonly="" class="form-control" :value="user.wallet"></span></p>
                                                         </li>
                                                         <li v-if="user.pm" class="m-0 p-2">
-                                                            <p>PM: <span ><input type="text" class="form-control" :value="user.pm"></span></p>
+                                                            <p>PM: <span><input type="text" class="form-control" :value="user.pm"></span></p>
                                                         </li>
                                                         <li v-if="user.admin_wallet" class="m-0 p-2">
-                                                            <p>Admin Wallet: <span ><input type="text" readonly="" class="form-control" :value="user.admin_wallet"></span></p>
+                                                            <p>Admin Wallet: <span><input type="text" readonly="" class="form-control" :value="user.admin_wallet"></span></p>
                                                         </li>
                                                         <li v-if="user.admin_pm" class="m-0 p-2">
-                                                            <p>Admin PM: <span ><input type="text" class="form-control" :value="user.admin_pm"></span></p>
+                                                            <p>Admin PM: <span><input type="text" class="form-control" :value="user.admin_pm"></span></p>
                                                         </li>
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="s-box col-12 p-2">
+                                            <div class=" s-box col-12 p-2">
                                                 <div class="row">
                                                     <div class="s-box col p-2">
                                                         <ul class="clearfix">
@@ -176,9 +182,14 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="text-center col-12 justify-content-center mb-3 mb-l-0">
-                                                <button ref="process" @click.prevent="userLevel(user)" class="btn btn-default">{{userLevelTitle}}</button>
-                                                <button @click.prevent="sendEmail(user)" class="btn btn-default" data-toggle="modal" data-target="#sendEmailModal" >{{'Send Email'}}</button>
+                                            <div class="stat-box mt-3 s-box col-12 p-2">
+                                                <div class="row mt-3">
+                                                    <div class="text-center col-12 justify-content-center mb-3 mb-l-0">
+                                                        <button ref="process" @click.prevent="userLevel(user)" class="btn btn-default">{{userLevelTitle}}</button>
+                                                        <button @click.prevent="sendEmail(user)" class="btn btn-default" data-toggle="modal" data-target="#sendEmailModal">{{'Send Email'}}</button>
+                                                        <button ref = 'pause' @click.prevent="pause(user)" class="btn btn-default">{{'Toggle Pause Withdrawal'}}</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -186,8 +197,8 @@
                                 <!--  content ends here -->
                             </div>
                         </div>
-                        <div v-if = "$root.mailUser" class="modal fade" id="sendEmailModal">
-                            <email-component  @emailModalClosed = "resetEmailModal"></email-component>
+                        <div v-if="$root.mailUser" class="modal fade" id="sendEmailModal">
+                            <email-component @emailModalClosed="resetEmailModal"></email-component>
                         </div>
                         <!--end account wrapper-->
                     </div>
@@ -251,8 +262,8 @@ export default {
         },
     },
 
-    beforeCreate: function () {
-    if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
+    beforeCreate: function() {
+        if (this.$auth.user().isAdmin == false) { this.$auth.logout() }
     },
     created() {
         if (localStorage.users) {
@@ -322,12 +333,70 @@ export default {
                     })
             }
         },
-        sendEmail($user){
+        sendEmail($user) {
             this.$root.mailUser = $user;
         },
-        resetEmailModal(){
+        resetEmailModal() {
             this.$root.mailUser = null
-        }
+        },
+        pause(user){
+            
+                this.$swal({
+                    title:  `Do you want to ${ user.withdraw_request ? 'stop the pausing withdrawal process' : 'start the pausing withdrawal process'  } for  ${user.username}?`,
+                    text: "You can revert this changes in future",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#38c172',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: `Yes,  ${ user.withdraw_request ?  'stop'  : 'start'} pausing withdrawal Process`
+                })
+                .then((result) => {
+                    if(result.value == true){
+                        this.processing(true)
+                        if(user.withdraw_request){
+                            this.form.get("/auth/cancelWithdrawalRequest/" + user.id)
+                            .then(response => {
+                                this.getUsers()
+                                this.$root.alert('success', ' ', response.data.message)
+                                this.processing(false)
+                            })
+                            .catch(error => {
+                                this.$root.alert('error', ' ', 'pausing withdrawal process failed ' + error.response.data.message != undefined ? error.response.data.message : ' ')
+                                this.processing(false)
+                                console.log(error.response)
+                            })
+                        }
+                        else {
+                           this.form.get("/auth/confirmWithdrawalRequest/" + user.id)
+                            .then(response => {
+                                this.getUsers()
+                                this.$root.alert('success', ' ', response.data.message)
+                                this.processing(false)
+                            })
+                            .catch(error => {
+                                this.$root.alert('error', ' ', 'pausing withdrawal process failed ' + error.response.data.message != undefined ? error.response.data.message : ' ')
+                                this.processing(false)
+                                console.log(error.response)
+                            }) 
+                        }
+                        
+                    }
+                    else {
+                        
+                        this.$root.alert('info', ' ', `Pausing withdrawal Process  ${ user.withdraw_request ? ' started' : ' cancelled' } `)   
+                    }
+                    
+                })
+        },
+         processing(status) {
+            if (status) {
+                this.$refs.pause[0].innerText = "Processing..."
+                this.$refs.pause[0].disabled = true
+            } else {
+                this.$refs.pause[0].innerText = "Toggle Pause Withdrawal"
+                this.$refs.pause[0].disabled = false
+            }
+        },
     },
 
 

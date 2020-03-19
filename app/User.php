@@ -15,22 +15,25 @@ use \DB;
 
 class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	use Notifiable;
-	protected $fillable = ['first_name', 'secret_question', 'created_at', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
+	protected $fillable = ['first_name', 'withdraw_request', 'secret_question', 'created_at', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 	protected $hidden = ['password', 'remember_token'];
 	protected $casts = ['email_verified_at' => 'datetime'];
-	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'totalEarned', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages');
-
+	protected $appends = array('processedWithdrawals', 'confirmedWithdrawals', 'nullWithdrawals', 'names', 'balance', 'confirmedTransactions', 'nullTransactions', 'sentTransactions', 'totalEarned', 'activeTransactions', 'activePackages', 'maturePackages', 'processMaturePackages', 'canWithdraw');
+	public function getCanWithdrawAttribute() {
+		$w = $this->withdrawDuration->first();
+		if( !empty($w) && Carbon::now() < $w->expiration){
+			 return false;
+		}
+		else{
+			return true;
+		}
+		
+	}
 	public function getActiveTransactionsAttribute() {
 		return $this->transactions->where('sent', true)->where('confirmed', true)->where('active', true)->sum('amount');
 	}
 	public function getTotalEarnedAttribute() {
 		return $this->confirmedTransactions->where('reference', 'BFIN')->sum('amount') + $this->confirmedTransactions->where('reference', 'BFIN commission')->sum('amount');
-		// + $this->confirmedTransactions->where('reference', 'BFIN commission')->sum('amount')
-		// return $this->confirmedTransactions->where(function ($query) {
-		// 	$query->where('reference', '=', 'BFIN' ->orWhere('reference', 'BFIN commission'));
-		// })->sum('amount');
-		return 500;
-
 	}
 	public function getActivePackagesAttribute() {
 		$activePackages = [];
@@ -123,6 +126,11 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 		return $this->belongsToMany(Package::class)->withPivot('id', 'transaction_id', 'referral', 'account', 'expiration', 'active')->as('subscription')->withTimestamps();
 
 	}
+	public function withdrawDuration() {
+
+		return $this->hasMany(Withdraw_Duration::class);
+	}
+
 	public function userLevel() {
 
 		return $this->belongsTo(UserLevel::class);
@@ -145,7 +153,7 @@ class User extends Authenticatable implements JWTSubject, MustVerifyEmail {
 	public function scopeFilter($query, $filter) {
 
 		try {
-			$fields = ['first_name', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
+			$fields = ['first_name', 'withdraw_request', 'secret_question', 'secret_answer', 'ip', 'admin_wallet', 'admin_pm', 'last_name', 'username', 'pm', 'wallet', 'referral', 'referral_count', 'number', 'account', 'email', 'password', 'user_level_id'];
 
 			return $query->where(
 				function ($query) use ($filter, $fields) {

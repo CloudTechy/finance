@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use \DB;
 use App\User;
 use \Exception;
+use Carbon\Carbon;
 
 class WithdrawalController extends Controller {
 	/**
@@ -55,16 +56,24 @@ class WithdrawalController extends Controller {
 		DB::beginTransaction();
 		try
 		{
-			if (auth()->user()->balance >= $validated['amount']) {
-				$validated['processed'] = true;
-				$data = Withdrawal::create($validated);
-				DB::commit();
-				$this->notificationRequest($data);
-				$data = new WithdrawalResource($data);
-				return Helper::validRequest($data, 'Withdrawal request has been sent for processing, You will be contacted shortly', 200);
-			} else {
-				return Helper::invalidRequest('Insufficient funds', 'Your account is low for this transaction', 400);
+			if(auth()->user()->canWithdraw){
+				if (auth()->user()->balance >= $validated['amount']) {
+					$validated['processed'] = true;
+					$data = Withdrawal::create($validated);
+					DB::commit();
+					$this->notificationRequest($data);
+					$data = new WithdrawalResource($data);
+					return Helper::validRequest($data, 'Withdrawal request has been sent for processing, You will be contacted shortly', 200);
+				} else {
+					return Helper::invalidRequest('Insufficient funds', 'Your account is low for this transaction', 400);
+				}
 			}
+			else {
+				$withdrawEx = Carbon::createFromTimeStamp(strtotime(auth()->user()->withdrawDuration->first()->expiration))->diffForHumans() ;
+				return Helper::invalidRequest('Account Withdrawal on hold', 'You cannot withdraw at this time, you can be able to withdraw ' . $withdrawEx, 400);
+			}
+			
+			
 		} catch (Exception $bug) {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
@@ -196,7 +205,7 @@ class WithdrawalController extends Controller {
 	            return Helper::validRequest(["success" =>$request->all()], 'file uploaded successfully', 200);
         	}
 	        else{
-	        	return Helper::invalidRequest('no pop file', 'POP file not found', 400);
+	        	return Helper::invalidRequest('No pop file', 'POP file not found', 400);
 	        }
 		
 		} catch (Exception $bug) {
@@ -204,5 +213,20 @@ class WithdrawalController extends Controller {
 		}
 
 		
+	}
+
+	public function confirmWithdrawalRequest(User $user)
+	{
+		if($user->update(['withdraw_request' => true])) {
+			return Helper::validRequest(["success" => true], 'Action completed successfully', 200);
+		}
+		return Helper::invalidRequest('Error', 'There is an error completing this action', 400);
+	}
+	public function cancelWithdrawalRequest(User $user)
+	{
+		if($user->update(['withdraw_request' => false])) {
+			return Helper::validRequest(["success" => true], 'Action completed successfully', 200);
+		}
+		return Helper::invalidRequest('Error', 'There is an error completing this action', 400);
 	}
 }

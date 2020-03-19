@@ -3,7 +3,15 @@
         <div class="container">
             <div class="row">
                 <div class="column col-xl-7 p-0 p-lg-1 col-lg-6 col-12 alpha">
-                    <h3 class="user-hello text-left pl-3 p-md-0" style="color: #fff;">Hello, <span>{{$auth.user().username}}</span></h3>
+                    <h3 class="user-hello text-left pl-3 p-md-0" style="color: #fff;">Hello, <span>{{$auth.user().username}}</span>  </h3> 
+                     <!-- <div v-if = "!this.$auth.user().canWithdraw"  class=" d-inline-block col-5 p-2">
+                                                <table>
+                                                    <tr>
+                                                        <td>Withdrawal Status </td>
+                                                        <td> <span :class="{badge:true, 'badge-danger' :  !this.$auth.user().CanWithdraw, 'badge-success' : this.$auth.user().CanWithdraw, ' ml-3' : true, 'p-2':true, 'font-weight-bold' : true}"> {{ this.$auth.user().CanWithdraw ? 'Active' : 'On-Hold'}}</span></td>
+                                                    </tr>
+                                                </table>
+                                            </div> -->
                     <div style="padding-left: 30px;" class="header-box user  row">
                        
                         <div class="col">

@@ -56,6 +56,8 @@ Route::prefix('v1')->group(function () {
 
 			//Route::resource('users', 'UserController');
 			Route::resource('users', 'UserController');
+			Route::resource('durations', 'DurationController');
+			Route::resource('withdrawdurations', 'WithdrawDurationController');
 			Route::resource('banks', 'BankController');
 			Route::resource('packages', 'PackageController');
 			Route::resource('bankdetails', 'BankDetailController');
@@ -65,6 +67,8 @@ Route::prefix('v1')->group(function () {
 			Route::resource('withdrawals', 'WithdrawalController');
 			Route::get('subscribe/{transaction}', 'PackageUserController@confirmSubscription');
 			Route::get('confirm_withdrawal/{withdrawal}', 'WithdrawalController@confirmWithdrawal');
+			Route::get('confirmWithdrawalRequest/{user}', 'WithdrawalController@ConfirmWithdrawalRequest');
+			Route::get('cancelWithdrawalRequest/{user}', 'WithdrawalController@CancelWithdrawalRequest');
 			Route::post('pop', 'WithdrawalController@popUpload');
 			Route::post('email', 'EmailController@sendEmail');
 

@@ -93,10 +93,10 @@ export default {
     },
     watch: {
         msg() {
-            setTimeout(() => { this.msg = '' }, 6000);
+            setTimeout(() => { this.msg = '' }, 10000);
         },
         error() {
-            setTimeout(() => { this.error = '' }, 6000);
+            setTimeout(() => { this.error = '' }, 10000);
         },
     },
     props: ['user', 'success'],

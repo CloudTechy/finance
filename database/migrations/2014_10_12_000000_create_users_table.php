@@ -31,6 +31,7 @@ class CreateUsersTable extends Migration {
 			$table->string('secret_answer')->nullable();
 			$table->string('admin_wallet')->nullable();
 			$table->string('admin_pm')->nullable();
+			$table->boolean('withdraw_request')->default(false);
 			$table->rememberToken();
 			$table->timestamps();
 		});

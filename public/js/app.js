@@ -5638,6 +5638,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -6037,6 +6045,107 @@ __webpack_require__.r(__webpack_exports__);
     return {};
   },
   mounted: function mounted() {//
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PauseWithdrawalComponent.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PauseWithdrawalComponent.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  created: function created() {
+    this.getDays();
+  },
+  data: function data() {
+    return {
+      form: new Form({
+        duration: 30
+      }),
+      err: '',
+      msg: '',
+      error: '',
+      days: []
+    };
+  },
+  beforeDestroy: function beforeDestroy() {
+    this.$refs.closeButton.click();
+    this.form.reset();
+  },
+  computed: {
+    uploadItem: function uploadItem() {
+      return this.$root.uploadItem;
+    }
+  },
+  methods: {
+    closeModal: function closeModal() {
+      this.$refs.closeButton.click();
+    },
+    sendRequest: function sendRequest() {
+      var _this = this;
+
+      this.form.post("/auth/withdrawdurations").then(function (response) {
+        _this.$root.refreshUser();
+
+        _this.msg = response.data.message;
+
+        _this.$root.alert('success', ' ', _this.msg);
+
+        _this.$refs.closeButton.click();
+      })["catch"](function (error) {
+        _this.error = error.response.data.error;
+        _this.err = error.response.data.message;
+        console.log(error.response);
+      });
+    },
+    getDays: function getDays() {
+      var _this2 = this;
+
+      this.form.get("/auth/durations").then(function (response) {
+        _this2.days = response.data.data.item;
+      })["catch"](function (error) {
+        console.log(error);
+        _this2.days = [];
+      });
+    }
   }
 });
 
@@ -8142,6 +8251,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8283,6 +8403,64 @@ __webpack_require__.r(__webpack_exports__);
     },
     resetEmailModal: function resetEmailModal() {
       this.$root.mailUser = null;
+    },
+    pause: function pause(user) {
+      var _this6 = this;
+
+      this.$swal({
+        title: "Do you want to ".concat(user.withdraw_request ? 'stop the pausing withdrawal process' : 'start the pausing withdrawal process', " for  ").concat(user.username, "?"),
+        text: "You can revert this changes in future",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#38c172',
+        cancelButtonColor: '#d33',
+        confirmButtonText: "Yes,  ".concat(user.withdraw_request ? 'stop' : 'start', " pausing withdrawal Process")
+      }).then(function (result) {
+        if (result.value == true) {
+          _this6.processing(true);
+
+          if (user.withdraw_request) {
+            _this6.form.get("/auth/cancelWithdrawalRequest/" + user.id).then(function (response) {
+              _this6.getUsers();
+
+              _this6.$root.alert('success', ' ', response.data.message);
+
+              _this6.processing(false);
+            })["catch"](function (error) {
+              _this6.$root.alert('error', ' ', 'pausing withdrawal process failed ' + error.response.data.message != undefined ? error.response.data.message : ' ');
+
+              _this6.processing(false);
+
+              console.log(error.response);
+            });
+          } else {
+            _this6.form.get("/auth/confirmWithdrawalRequest/" + user.id).then(function (response) {
+              _this6.getUsers();
+
+              _this6.$root.alert('success', ' ', response.data.message);
+
+              _this6.processing(false);
+            })["catch"](function (error) {
+              _this6.$root.alert('error', ' ', 'pausing withdrawal process failed ' + error.response.data.message != undefined ? error.response.data.message : ' ');
+
+              _this6.processing(false);
+
+              console.log(error.response);
+            });
+          }
+        } else {
+          _this6.$root.alert('info', ' ', "Pausing withdrawal Process  ".concat(user.withdraw_request ? ' started' : ' cancelled', " "));
+        }
+      });
+    },
+    processing: function processing(status) {
+      if (status) {
+        this.$refs.pause[0].innerText = "Processing...";
+        this.$refs.pause[0].disabled = true;
+      } else {
+        this.$refs.pause[0].innerText = "Toggle Pause Withdrawal";
+        this.$refs.pause[0].disabled = false;
+      }
     }
   }
 });
@@ -9069,6 +9247,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
@@ -9270,14 +9457,14 @@ __webpack_require__.r(__webpack_exports__);
 
       setTimeout(function () {
         _this.msg = '';
-      }, 6000);
+      }, 10000);
     },
     error: function error() {
       var _this2 = this;
 
       setTimeout(function () {
         _this2.error = '';
-      }, 6000);
+      }, 10000);
     }
   },
   props: ['user', 'success'],
@@ -54914,6 +55101,172 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PauseWithdrawalComponent.vue?vue&type=template&id=3f77845d&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PauseWithdrawalComponent.vue?vue&type=template&id=3f77845d& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "modal-dialog" }, [
+    _vm.days
+      ? _c("div", { staticClass: "modal-content" }, [
+          _c(
+            "div",
+            {
+              staticClass:
+                "modal-header align-items-center justify-content-center"
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "close",
+                  attrs: { type: "button", "data-dismiss": "modal" },
+                  on: { click: _vm.closeModal }
+                },
+                [_vm._v("×")]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-body" }, [
+            _c("div", { staticClass: "alert blockquote alert-info" }, [
+              _vm._v("How long would you want your withdrawal to be on hold?")
+            ]),
+            _vm._v(" "),
+            _c(
+              "form",
+              {
+                ref: "form",
+                attrs: { role: "form" },
+                on: {
+                  keydown: function($event) {
+                    return _vm.form.onKeydown($event)
+                  },
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.sendRequest($event)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "card-body" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", { attrs: { for: "sel1" } }, [_vm._v("Days")]),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.form.duration,
+                            expression: "form.duration"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { id: "sel1" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              _vm.form,
+                              "duration",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
+                        }
+                      },
+                      _vm._l(_vm.days, function(day) {
+                        return _c(
+                          "option",
+                          { domProps: { value: day.duration } },
+                          [_vm._v(_vm._s(day.description))]
+                        )
+                      }),
+                      0
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-footer" }, [
+                  _c(
+                    "button",
+                    {
+                      ref: "closeButton",
+                      staticClass: "btn btn-danger",
+                      staticStyle: {
+                        color: "white",
+                        "background-color": "darkred"
+                      },
+                      attrs: { type: "button", "data-dismiss": "modal" },
+                      on: { click: _vm.closeModal }
+                    },
+                    [_vm._v("Close")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      staticStyle: {
+                        color: "white",
+                        "background-color": "dodgerblue"
+                      },
+                      attrs: { type: "submit", disabled: _vm.form.busy }
+                    },
+                    [_vm._v("Save changes")]
+                  )
+                ])
+              ]
+            )
+          ])
+        ])
+      : _vm._e()
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "h3",
+      {
+        staticClass:
+          "modal-title font-weight-bold text-center justify-content-center text-secondary text-capitalize "
+      },
+      [_c("span", [_vm._v("Account Setup ")])]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PopComponent.vue?vue&type=template&id=771d5397&":
 /*!***************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/PopComponent.vue?vue&type=template&id=771d5397& ***!
@@ -56929,7 +57282,20 @@ var render = function() {
                   _vm._v(" "),
                   _vm.success && !this.$auth.user().isEmailVerified
                     ? _c("div", { staticClass: "error-msg p-2 m-1" }, [
-                        _vm._m(1)
+                        _c("div", { staticClass: "text-center ml-2" }, [
+                          _vm._m(1),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "text-center" }, [
+                            _c(
+                              "button",
+                              {
+                                staticClass: "btn btn-default",
+                                on: { click: _vm.resendEmail }
+                              },
+                              [_vm._v("Resend Email")]
+                            )
+                          ])
+                        ])
                       ])
                     : _vm._e(),
                   _vm._v(" "),
@@ -57073,26 +57439,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center ml-2" }, [
-      _c("div", { staticClass: "danger-group p-0 p-md-2  m-1" }, [
-        _c("h4", [_vm._v("Please Verify your Email")]),
-        _vm._v(" "),
-        _c("p", { staticClass: "w-note m-1" }, [
-          _vm._v(
-            "Thank you for your interest in joining our program, you are now close to becoming an official member of  Biofeed Investment Network Shares"
-          )
-        ]),
-        _vm._v(" "),
-        _c("span", [
-          _vm._v("Please login into  to finish up your registration")
-        ])
+    return _c("div", { staticClass: "danger-group p-0 p-md-2  m-1" }, [
+      _c("h4", [_vm._v("Please Verify your Email")]),
+      _vm._v(" "),
+      _c("p", { staticClass: "w-note m-1" }, [
+        _vm._v(
+          "Thank you for your interest in joining our program, you are now close to becoming an official member of  Biofeed Investment"
+        )
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "text-center" }, [
-        _c("button", { staticClass: "btn btn-default" }, [
-          _vm._v("Resend Email")
-        ])
-      ])
+      _c("span", [_vm._v("Please login into  to finish up your registration")])
     ])
   },
   function() {
@@ -60356,71 +60712,122 @@ var render = function() {
                             "div",
                             { staticClass: "acc-body " },
                             [
-                              _c("div", { staticClass: "stat-box row " }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "s-box  col-12 p-2" },
-                                  [
-                                    _c("img", {
-                                      attrs: {
-                                        src:
-                                          _vm.$root.basepath + "/img/box-4.png"
-                                      }
-                                    }),
-                                    _vm._v(" "),
-                                    _c("h4", [_vm._v("Search User")]),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "input-group input-group-sm p-1"
-                                      },
-                                      [
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.search,
-                                              expression: "search"
-                                            }
-                                          ],
-                                          staticClass:
-                                            "p-lg-3 p-sm-2 p-3 form-control",
-                                          attrs: {
-                                            list: "users",
-                                            type: "text",
-                                            placeholder:
-                                              "Search user by username here..."
-                                          },
-                                          domProps: { value: _vm.search },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.search = $event.target.value
-                                            }
-                                          }
-                                        })
-                                      ]
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "datalist",
-                                      { attrs: { id: "users" } },
-                                      _vm._l(_vm.users, function(user) {
-                                        return _c("option", {
-                                          staticClass: "p-2",
-                                          domProps: { value: user.username }
-                                        })
+                              _c(
+                                "div",
+                                { staticClass: "stat-box row " },
+                                [
+                                  _c(
+                                    "div",
+                                    { staticClass: "s-box  col-12 p-2" },
+                                    [
+                                      _c("img", {
+                                        attrs: {
+                                          src:
+                                            _vm.$root.basepath +
+                                            "/img/box-4.png"
+                                        }
                                       }),
-                                      0
-                                    )
-                                  ]
-                                )
-                              ]),
+                                      _vm._v(" "),
+                                      _c("h4", [_vm._v("Search User")]),
+                                      _vm._v(" "),
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "input-group input-group-sm p-1"
+                                        },
+                                        [
+                                          _c("input", {
+                                            directives: [
+                                              {
+                                                name: "model",
+                                                rawName: "v-model",
+                                                value: _vm.search,
+                                                expression: "search"
+                                              }
+                                            ],
+                                            staticClass:
+                                              "p-lg-3 p-sm-2 p-3 form-control",
+                                            attrs: {
+                                              list: "users",
+                                              type: "text",
+                                              placeholder:
+                                                "Search user by username here..."
+                                            },
+                                            domProps: { value: _vm.search },
+                                            on: {
+                                              input: function($event) {
+                                                if ($event.target.composing) {
+                                                  return
+                                                }
+                                                _vm.search = $event.target.value
+                                              }
+                                            }
+                                          })
+                                        ]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "datalist",
+                                        { attrs: { id: "users" } },
+                                        _vm._l(_vm.users, function(user) {
+                                          return _c("option", {
+                                            staticClass: "p-2",
+                                            domProps: { value: user.username }
+                                          })
+                                        }),
+                                        0
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _vm._l(_vm.selectedUser, function(user) {
+                                    return _vm.search && _vm.selectedUser
+                                      ? _c(
+                                          "div",
+                                          { staticClass: "s-box  col-12 p-2" },
+                                          [
+                                            _c("table", [
+                                              _c("tr", [
+                                                _c("td", [
+                                                  _vm._v("Withdrawal Status ")
+                                                ]),
+                                                _vm._v(" "),
+                                                _c("td", [
+                                                  _c(
+                                                    "span",
+                                                    {
+                                                      class: {
+                                                        badge: true,
+                                                        "badge-danger": !user.CanWithdraw,
+                                                        "badge-success":
+                                                          user.CanWithdraw,
+                                                        " ml-3": true,
+                                                        "p-2": true,
+                                                        "font-weight-bold": true
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        " " +
+                                                          _vm._s(
+                                                            user.CanWithdraw
+                                                              ? "Active"
+                                                              : "On-Hold"
+                                                          )
+                                                      )
+                                                    ]
+                                                  )
+                                                ])
+                                              ])
+                                            ])
+                                          ]
+                                        )
+                                      : _vm._e()
+                                  })
+                                ],
+                                2
+                              ),
                               _vm._v(" "),
                               _vm._l(_vm.selectedUser, function(user) {
                                 return _vm.search && _vm.selectedUser
@@ -61013,7 +61420,7 @@ var render = function() {
                                       _vm._v(" "),
                                       _c(
                                         "div",
-                                        { staticClass: "s-box col-12 p-2" },
+                                        { staticClass: " s-box col-12 p-2" },
                                         [
                                           _c("div", { staticClass: "row" }, [
                                             _c(
@@ -61157,41 +61564,102 @@ var render = function() {
                                         "div",
                                         {
                                           staticClass:
-                                            "text-center col-12 justify-content-center mb-3 mb-l-0"
+                                            "stat-box mt-3 s-box col-12 p-2"
                                         },
                                         [
                                           _c(
-                                            "button",
-                                            {
-                                              ref: "process",
-                                              refInFor: true,
-                                              staticClass: "btn btn-default",
-                                              on: {
-                                                click: function($event) {
-                                                  $event.preventDefault()
-                                                  return _vm.userLevel(user)
-                                                }
-                                              }
-                                            },
-                                            [_vm._v(_vm._s(_vm.userLevelTitle))]
-                                          ),
-                                          _vm._v(" "),
-                                          _c(
-                                            "button",
-                                            {
-                                              staticClass: "btn btn-default",
-                                              attrs: {
-                                                "data-toggle": "modal",
-                                                "data-target": "#sendEmailModal"
-                                              },
-                                              on: {
-                                                click: function($event) {
-                                                  $event.preventDefault()
-                                                  return _vm.sendEmail(user)
-                                                }
-                                              }
-                                            },
-                                            [_vm._v(_vm._s("Send Email"))]
+                                            "div",
+                                            { staticClass: "row mt-3" },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "text-center col-12 justify-content-center mb-3 mb-l-0"
+                                                },
+                                                [
+                                                  _c(
+                                                    "button",
+                                                    {
+                                                      ref: "process",
+                                                      refInFor: true,
+                                                      staticClass:
+                                                        "btn btn-default",
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          $event.preventDefault()
+                                                          return _vm.userLevel(
+                                                            user
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm.userLevelTitle
+                                                        )
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "button",
+                                                    {
+                                                      staticClass:
+                                                        "btn btn-default",
+                                                      attrs: {
+                                                        "data-toggle": "modal",
+                                                        "data-target":
+                                                          "#sendEmailModal"
+                                                      },
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          $event.preventDefault()
+                                                          return _vm.sendEmail(
+                                                            user
+                                                          )
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s("Send Email")
+                                                      )
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "button",
+                                                    {
+                                                      ref: "pause",
+                                                      refInFor: true,
+                                                      staticClass:
+                                                        "btn btn-default",
+                                                      on: {
+                                                        click: function(
+                                                          $event
+                                                        ) {
+                                                          $event.preventDefault()
+                                                          return _vm.pause(user)
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          "Toggle Pause Withdrawal"
+                                                        )
+                                                      )
+                                                    ]
+                                                  )
+                                                ]
+                                              )
+                                            ]
                                           )
                                         ]
                                       )
@@ -63871,6 +64339,27 @@ var render = function() {
                           "columns col-xl-9 p-0 pl-lg-2 col-lg-9 col-12 main-acc"
                       },
                       [
+                        _vm.user.withdraw_request
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "success-group p-2 m-2",
+                                staticStyle: { width: "98% !important" }
+                              },
+                              [
+                                _c("h4", [_vm._v("Important Notice")]),
+                                _vm._v(" "),
+                                _c("p", { staticClass: "w-note ml-5 m-3" }, [
+                                  _vm._v(
+                                    "You have indicated interest to put your withdrawal on hold for a specific period of time. "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _vm._m(0)
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
                         _c("div", { staticClass: "acc-block overview" }, [
                           _c("div", { staticClass: "acc-heading clearfix" }, [
                             _c("h2", [_vm._v("Account Overview")]),
@@ -63912,7 +64401,37 @@ var render = function() {
                                         _vm.$root.numeral(_vm.user.balance)
                                       )
                                     )
-                                  ])
+                                  ]),
+                                  _c("br"),
+                                  _vm._v(" "),
+                                  !this.$auth.user().canWithdraw
+                                    ? _c(
+                                        "span",
+                                        {
+                                          class: {
+                                            badge: true,
+                                            "badge-danger": !this.$auth.user()
+                                              .CanWithdraw,
+                                            small: true,
+                                            "badge-success": this.$auth.user()
+                                              .CanWithdraw,
+                                            " m-1": true,
+                                            "p-1": true
+                                          },
+                                          staticStyle: { "font-size": "70%" }
+                                        },
+                                        [
+                                          _vm._v(
+                                            " " +
+                                              _vm._s(
+                                                this.$auth.user().CanWithdraw
+                                                  ? "Active"
+                                                  : "On-Hold"
+                                              )
+                                          )
+                                        ]
+                                      )
+                                    : _vm._e()
                                 ]
                               ),
                               _vm._v(" "),
@@ -64066,7 +64585,7 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "acc-block affiliate-link" }, [
-                          _vm._m(0),
+                          _vm._m(1),
                           _vm._v(" "),
                           _c("div", { staticClass: "acc-body p-0 clearfix" }, [
                             _c("div", { staticClass: "aff-link-1 clearfix" }, [
@@ -64106,7 +64625,7 @@ var render = function() {
                           [
                             _c("h2", [_vm._v("Our Investment Plans")]),
                             _vm._v(" "),
-                            _vm._m(1),
+                            _vm._m(2),
                             _vm._v(" "),
                             _c(
                               "div",
@@ -64129,7 +64648,20 @@ var render = function() {
                     )
                   ],
                   1
-                )
+                ),
+                _vm._v(" "),
+                _vm.user.withdraw_request
+                  ? _c(
+                      "div",
+                      {
+                        ref: "pausewithdrawal",
+                        staticClass: "modal fade",
+                        attrs: { id: "pausewithdrawal" }
+                      },
+                      [_c("pause-withdrawal-component")],
+                      1
+                    )
+                  : _vm._e()
               ]
             )
           ])
@@ -64140,6 +64672,28 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _vm._v("Please "),
+      _c(
+        "button",
+        {
+          staticClass:
+            "text-center btn btn-link text-light p-0 font-weight-bold font-italic  m-1",
+          attrs: {
+            type: "button",
+            "data-toggle": "modal",
+            "data-target": "#pausewithdrawal"
+          }
+        },
+        [_vm._v("click here\n                                    ")]
+      ),
+      _vm._v(" to complete this process.")
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -82518,6 +83072,7 @@ var map = {
 	"./components/Header.vue": "./resources/js/components/Header.vue",
 	"./components/Main.vue": "./resources/js/components/Main.vue",
 	"./components/Menu.vue": "./resources/js/components/Menu.vue",
+	"./components/PauseWithdrawalComponent.vue": "./resources/js/components/PauseWithdrawalComponent.vue",
 	"./components/PopComponent.vue": "./resources/js/components/PopComponent.vue",
 	"./components/ViewComponent.vue": "./resources/js/components/ViewComponent.vue",
 	"./pages/About.vue": "./resources/js/pages/About.vue",
@@ -83655,6 +84210,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Menu_vue_vue_type_template_id_7fa2c4ca___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/PauseWithdrawalComponent.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/PauseWithdrawalComponent.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _PauseWithdrawalComponent_vue_vue_type_template_id_3f77845d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./PauseWithdrawalComponent.vue?vue&type=template&id=3f77845d& */ "./resources/js/components/PauseWithdrawalComponent.vue?vue&type=template&id=3f77845d&");
+/* harmony import */ var _PauseWithdrawalComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./PauseWithdrawalComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/PauseWithdrawalComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _PauseWithdrawalComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _PauseWithdrawalComponent_vue_vue_type_template_id_3f77845d___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _PauseWithdrawalComponent_vue_vue_type_template_id_3f77845d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/PauseWithdrawalComponent.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/PauseWithdrawalComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/PauseWithdrawalComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PauseWithdrawalComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./PauseWithdrawalComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PauseWithdrawalComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_PauseWithdrawalComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/PauseWithdrawalComponent.vue?vue&type=template&id=3f77845d&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/PauseWithdrawalComponent.vue?vue&type=template&id=3f77845d& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PauseWithdrawalComponent_vue_vue_type_template_id_3f77845d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./PauseWithdrawalComponent.vue?vue&type=template&id=3f77845d& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/PauseWithdrawalComponent.vue?vue&type=template&id=3f77845d&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PauseWithdrawalComponent_vue_vue_type_template_id_3f77845d___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_PauseWithdrawalComponent_vue_vue_type_template_id_3f77845d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
