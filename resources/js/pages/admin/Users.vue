@@ -222,7 +222,7 @@ export default {
             users: [],
             activeUsers: 0,
             admins: 0,
-            selectedUser: '',
+            selectedUser: [],
             search: '',
             userLevelTitle: this.selectedUser && this.selectedUser.isAdmin == true ? 'Make User' : 'Make Admin'
         }
@@ -259,7 +259,7 @@ export default {
     computed: {
         user() {
             return this.$auth.user()
-        },
+        }
     },
 
     beforeCreate: function() {
@@ -270,7 +270,7 @@ export default {
             this.users = JSON.parse(localStorage.users)
         }
         // if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
-        this.getUsers()
+       setInterval(this.getUsers, 20000) 
     },
     methods: {
         getUsers() {
@@ -340,7 +340,7 @@ export default {
             this.$root.mailUser = null
         },
         pause(user){
-            
+            var user =  this.selectedUser[0]
                 this.$swal({
                     title:  `Do you want to ${ user.withdraw_request ? 'stop the pausing withdrawal process' : 'start the pausing withdrawal process'  } for  ${user.username}?`,
                     text: "You can revert this changes in future",
@@ -385,6 +385,7 @@ export default {
                         
                         this.$root.alert('info', ' ', `Pausing withdrawal Process  ${ user.withdraw_request ? ' started' : ' cancelled' } `)   
                     }
+                    this.getUsers()
                     
                 })
         },

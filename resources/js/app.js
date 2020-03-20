@@ -185,7 +185,7 @@ const app = new Vue({
             this.$auth.fetch({
                 params: {},
                 success: (response) => { this.user = this.$auth.user() },
-                error: (error) => {console.log(error.response)},
+                error: (error) => {console.log(error.response.data)},
             })
         },
     },

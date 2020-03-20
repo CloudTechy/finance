@@ -69,6 +69,7 @@ class WithdrawDurationController extends Controller {
             }
             else {
                 $data = auth()->user()->withdrawDuration()->create($validated);
+                auth()->user()->update(['withdraw_request' => false]);
                 DB::commit();
                 return Helper::validRequest($data, 'data was sent successfully', 200);
             }

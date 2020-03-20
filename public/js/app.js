@@ -8276,7 +8276,7 @@ __webpack_require__.r(__webpack_exports__);
       users: [],
       activeUsers: 0,
       admins: 0,
-      selectedUser: '',
+      selectedUser: [],
       search: '',
       userLevelTitle: this.selectedUser && this.selectedUser.isAdmin == true ? 'Make User' : 'Make Admin'
     };
@@ -8325,7 +8325,7 @@ __webpack_require__.r(__webpack_exports__);
     } // if (this.$auth.user().isAdmin == false) {this.$auth.logout()}
 
 
-    this.getUsers();
+    setInterval(this.getUsers, 20000);
   },
   methods: {
     getUsers: function getUsers() {
@@ -8407,6 +8407,7 @@ __webpack_require__.r(__webpack_exports__);
     pause: function pause(user) {
       var _this6 = this;
 
+      var user = this.selectedUser[0];
       this.$swal({
         title: "Do you want to ".concat(user.withdraw_request ? 'stop the pausing withdrawal process' : 'start the pausing withdrawal process', " for  ").concat(user.username, "?"),
         text: "You can revert this changes in future",
@@ -8451,6 +8452,8 @@ __webpack_require__.r(__webpack_exports__);
         } else {
           _this6.$root.alert('info', ' ', "Pausing withdrawal Process  ".concat(user.withdraw_request ? ' started' : ' cancelled', " "));
         }
+
+        _this6.getUsers();
       });
     },
     processing: function processing(status) {
@@ -83447,7 +83450,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
           _this2.user = _this2.$auth.user();
         },
         error: function error(_error) {
-          console.log(_error.response);
+          console.log(_error.response.data);
         }
       });
     }
