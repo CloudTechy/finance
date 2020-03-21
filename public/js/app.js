@@ -6962,7 +6962,7 @@ __webpack_require__.r(__webpack_exports__);
         email: this.email,
         password: this.password
       });
-      form.post("auth/email/resend/").then(function (response) {
+      form.get("auth/email/resend/").then(function (response) {
         _this2.$root.alert('success', ' ', 'Email has been sent');
       })["catch"](function (error) {
         _this2.$root.alert('error', ' ', 'Email was not sent, try again');

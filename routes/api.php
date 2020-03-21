@@ -22,7 +22,7 @@ Route::prefix('v1')->group(function () {
 
 	Route::prefix('auth')->group(function () {
 		Route::post('email/verify/{id}', 'Auth\VerificationController@verify')->name('verification.verify');
-		Route::post('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
+		Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 		Route::post('email/verify', 'Auth\VerificationController@show')->name('verification.notice');
 
 		// Below mention routes are public, user can access those without any restriction.

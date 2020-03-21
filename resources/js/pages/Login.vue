@@ -126,7 +126,7 @@ export default {
         },
         resendEmail() {
             var form = new Form({ email: this.email, password: this.password })
-            form.post("auth/email/resend/")
+            form.get("auth/email/resend/")
                 .then(response => {
                     this.$root.alert('success', ' ', 'Email has been sent')
                 })
