@@ -34,6 +34,7 @@ export default {
         }
     },
     mounted() {
+        this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } }) 
         if (this.$auth.check()) {
             this.$auth.logout()
         }

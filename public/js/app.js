@@ -6364,6 +6364,13 @@ __webpack_require__.r(__webpack_exports__);
     return {};
   },
   mounted: function mounted() {
+    this.$router.push({
+      name: 'login',
+      params: {
+        successRegistrationRedirect: true
+      }
+    });
+
     if (this.$auth.check()) {
       this.$auth.logout();
     }
