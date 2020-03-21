@@ -44,7 +44,7 @@ class VerificationController extends Controller {
 		// do not forget that you must send Authorization header to get the user from the request
 		if ($request->route('id') == $request->user()->getKey() &&
 			$request->user()->markEmailAsVerified()) {
-			$request->user()->notify(new UserRegistered());
+			// $request->user()->notify(new UserRegistered());
 			//event(new Verified($request->user()));
 		}
 		return response()->json('Email verified!');
@@ -72,9 +72,9 @@ class VerificationController extends Controller {
 	 */
 	public function __construct() {
 		$this->middleware('auth');
-		$this->middleware('signed');
-		$this->middleware('throttle:6,1')->only( 'resend');
-		// $this->middleware('signed')->only('verify');
-		// $this->middleware('throttle:6,1')->only('verify', 'resend');
+		// $this->middleware('signed');
+		// $this->middleware('throttle:6,1')->only( 'resend');
+		$this->middleware('signed')->only('verify');
+		$this->middleware('throttle:6,1')->only('verify', 'resend');
 	}
 }

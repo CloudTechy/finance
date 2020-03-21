@@ -12,6 +12,7 @@ use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
+use App\Notifications\UserRegistered;
 use \DB;
 use \Exception;
 
@@ -30,7 +31,8 @@ class AuthController extends Controller {
 		{
 			$validated['password'] = bcrypt($validated['password']);
 			$data = User::create($validated);
-			$data->sendEmailVerificationNotification();
+			$data->markEmailAsVerified();
+			$data->notify(new UserRegistered());
 			DB::commit();
 			return response()->json(['status' => 'success'], 200);
 		} catch (Exception $bug) {

@@ -109,7 +109,7 @@ export default {
                     this.processing(false)
                     app.has_error = true
                     app.error = res.response.data.error
-                    console.log(res.response)
+                    console.log(res)
                 },
                 rememberMe: true,
                 fetchUser: true

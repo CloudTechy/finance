@@ -6940,7 +6940,7 @@ __webpack_require__.r(__webpack_exports__);
           this.processing(false);
           app.has_error = true;
           app.error = res.response.data.error;
-          console.log(res.response);
+          console.log(res);
         },
         rememberMe: true,
         fetchUser: true
@@ -83494,7 +83494,7 @@ var config = {
   registerData: {
     url: 'auth/register',
     method: 'POST',
-    redirect: '/checkEmail'
+    redirect: '/login'
   },
   loginData: {
     url: 'auth/login',
