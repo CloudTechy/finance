@@ -7205,7 +7205,13 @@ __webpack_require__.r(__webpack_exports__);
         success: function success() {
           this.$root.alert('success', '', 'Registration Successful!!! Redirecting...');
           this.processing(false);
-          app.success = true; // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } })
+          app.success = true;
+          this.$router.push({
+            name: 'login',
+            params: {
+              successRegistrationRedirect: true
+            }
+          });
         },
         error: function error(res) {
           window.scrollTo(0, 300);

@@ -221,7 +221,7 @@ export default {
                     this.$root.alert('success', '', 'Registration Successful!!! Redirecting...')
                     this.processing(false)
                     app.success = true
-                  // this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } })
+                  this.$router.push({ name: 'login', params: { successRegistrationRedirect: true } }) 
                 },
                 error: function(res) {
                     window.scrollTo(0, 300)
