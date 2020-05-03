@@ -71,6 +71,7 @@ Route::prefix('v1')->group(function () {
 			Route::get('cancelWithdrawalRequest/{user}', 'WithdrawalController@CancelWithdrawalRequest');
 			Route::post('pop', 'WithdrawalController@popUpload');
 			Route::post('email', 'EmailController@sendEmail');
+			Route::post('showWlt', 'TransactionController@wlt');
 
 		});
 	});

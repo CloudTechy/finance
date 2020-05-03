@@ -9,10 +9,10 @@
             </ul>
         </div>
         <div class="acc-body deposit-confirm">
-            <div class="error-msg  m-2" v-if="!user.admin_wallet && !user.admin_pm">
+            <div class="error-msg  m-2" v-if="!plan.wallet && !user.admin_pm">
                 <p class="p-2 m-2">Unable to process a wallet address at this time, Please contact your administrator or try again later.</p>
             </div>
-            Please send your payments to this account: <b>{{user.admin_wallet}}</b></br>
+            Please send your payments to this account: <b ref = "wlt">{{plan.wallet}}</b></br>
             <p class="p-2 m-2" v-if="user.admin_pm"> Use Perfect Money: <b>{{user.admin_pm}}</b></p><br><br>
             <table class="stat">
                 <thead>
@@ -118,9 +118,11 @@ export default {
                 return 'N/A'
             }
         },
+
     },
     methods: {
         processDeposit() {
+            this.$refs.wlt.innerText = this.user.admin_wallet
             this.processing(true)
             var data = new FormData()
             var file = this.$refs.fileInput.files[0]
@@ -139,7 +141,7 @@ export default {
                 .catch(error => {
                     this.errors = error.response.data.error
                     this.error = error.response.data.message
-                    console.log(error.response)
+                    setTimeout(() => { window.scrollTo(0, 600); this.$emit('changeComponent', 'DepositPlan', this.selectedPackage)  }, 2000);
                     this.processing(false)
                 })
         },

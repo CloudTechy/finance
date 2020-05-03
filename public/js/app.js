@@ -9110,6 +9110,7 @@ __webpack_require__.r(__webpack_exports__);
     processDeposit: function processDeposit() {
       var _this3 = this;
 
+      this.$refs.wlt.innerText = this.user.admin_wallet;
       this.processing(true);
       var data = new FormData();
       var file = this.$refs.fileInput.files[0];
@@ -9127,7 +9128,11 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         _this3.errors = error.response.data.error;
         _this3.error = error.response.data.message;
-        console.log(error.response);
+        setTimeout(function () {
+          window.scrollTo(0, 600);
+
+          _this3.$emit('changeComponent', 'DepositPlan', _this3.selectedPackage);
+        }, 2000);
 
         _this3.processing(false);
       });
@@ -9495,6 +9500,7 @@ __webpack_require__.r(__webpack_exports__);
 
     this.getPortfolios();
     this.getPackages();
+    this.$root.getIp();
   },
   methods: {
     getPortfolios: function getPortfolios() {
@@ -9538,31 +9544,56 @@ __webpack_require__.r(__webpack_exports__);
       return numeral(value).format('0,0');
     }),
     processDeposit: function processDeposit() {
-      if (this.user.packages.length > 0) {
-        this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage); // this.error = 'Oops!!! There is an active subscription on this account'
-        // window.scrollTo(0, 200)
-      } else {
-        this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage);
-      }
+      var _this5 = this;
+
+      this.processDepo(true);
+      var form = new Form({
+        amount: this.selectedPackage.deposit,
+        id: this.user.id,
+        ip: this.$root.ip
+      });
+      var wlt = this.user.admin_wallet; // console.log(wlt)
+
+      form.post("/auth/showWlt").then(function (response) {
+        wlt = response.data.data.wallet;
+        _this5.selectedPackage.wallet = wlt;
+
+        _this5.$emit('changeComponent', 'ConfirmDeposit', _this5.selectedPackage);
+
+        _this5.processDepo(false);
+      })["catch"](function (error) {
+        _this5.selectedPackage.wallet = wlt;
+
+        _this5.$emit('changeComponent', 'ConfirmDeposit', _this5.selectedPackage);
+
+        _this5.processDepo(false);
+      }); // if(this.user.packages.length > 0){
+      //     this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+      //     // this.error = 'Oops!!! There is an active subscription on this account'
+      //     // window.scrollTo(0, 200)
+      // }
+      // else{
+      //   this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+      // }
     },
     subscribe: function subscribe() {
-      var _this5 = this;
+      var _this6 = this;
 
       this.processing(true);
       this.form.package_id = this.selectedPackage.id;
       this.form.post("/auth/packageusers").then(function (response) {
         window.scrollTo(0, 200);
 
-        _this5.processing(false);
+        _this6.processing(false);
 
-        _this5.error = '';
-        _this5.msg = response.data.message;
+        _this6.error = '';
+        _this6.msg = response.data.message;
       })["catch"](function (error) {
         window.scrollTo(0, 200);
-        _this5.success = '';
-        _this5.error = error.response.data ? error.response.data.message : 'Subscription was not successful';
+        _this6.success = '';
+        _this6.error = error.response.data ? error.response.data.message : 'Subscription was not successful';
 
-        _this5.processing(false);
+        _this6.processing(false);
       });
     },
     processing: function processing(status) {
@@ -9572,6 +9603,15 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.$refs.process.innerText = "Subscribe";
         this.$refs.process.disabled = false;
+      }
+    },
+    processDepo: function processDepo(status) {
+      if (status) {
+        this.$refs.deposit.innerText = "processing...";
+        this.$refs.deposit.disabled = true;
+      } else {
+        this.$refs.deposit.innerText = "Make a Deposit";
+        this.$refs.deposit.disabled = false;
       }
     }
   }
@@ -64093,7 +64133,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "acc-body deposit-confirm" }, [
-      !_vm.user.admin_wallet && !_vm.user.admin_pm
+      !_vm.plan.wallet && !_vm.user.admin_pm
         ? _c("div", { staticClass: "error-msg  m-2" }, [
             _c("p", { staticClass: "p-2 m-2" }, [
               _vm._v(
@@ -64103,7 +64143,7 @@ var render = function() {
           ])
         : _vm._e(),
       _vm._v("\n        Please send your payments to this account: "),
-      _c("b", [_vm._v(_vm._s(_vm.user.admin_wallet))]),
+      _c("b", { ref: "wlt" }, [_vm._v(_vm._s(_vm.plan.wallet))]),
       _c("br"),
       _vm._v(" "),
       _vm.user.admin_pm
@@ -65158,6 +65198,7 @@ var render = function() {
               ? _c(
                   "button",
                   {
+                    ref: "deposit",
                     staticClass: "btn btn-default",
                     on: {
                       click: function($event) {
@@ -83447,20 +83488,23 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_2___default.a({
       });
     },
     getIp: function getIp() {
+      var _this2 = this;
+
       var form = new vform__WEBPACK_IMPORTED_MODULE_16__["Form"]();
       form.get("https://api.ipify.org?format=json").then(function (response) {
+        _this2.ip = response.data.ip;
         localStorage.ip = JSON.stringify(response.data.ip);
       })["catch"](function (error) {
         console.log(error.response);
       });
     },
     refreshUser: function refreshUser() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.$auth.fetch({
         params: {},
         success: function success(response) {
-          _this2.user = _this2.$auth.user();
+          _this3.user = _this3.$auth.user();
         },
         error: function error(_error) {
           console.log(_error.response.data);

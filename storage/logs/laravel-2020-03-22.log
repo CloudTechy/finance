@@ -1,0 +1,16 @@
+[2020-03-22 18:41:01] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 60 seconds exceeded at C:\\Users\\kazzykelson\\Desktop\\laravel\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Concerns\\HidesAttributes.php:5)
+[stacktrace]
+#0 {main}
+"} 
+[2020-03-22 18:42:20] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 60 seconds exceeded at C:\\Users\\kazzykelson\\Desktop\\laravel\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php:14)
+[stacktrace]
+#0 {main}
+"} 
+[2020-03-22 18:49:23] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 60 seconds exceeded at C:\\Users\\kazzykelson\\Desktop\\laravel\\finance\\vendor\\lcobucci\\jwt\\src\\Claim\\Factory.php:20)
+[stacktrace]
+#0 {main}
+"} 
+[2020-03-22 21:41:32] local.ERROR: Maximum execution time of 60 seconds exceeded {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Maximum execution time of 60 seconds exceeded at C:\\Users\\kazzykelson\\Desktop\\laravel\\finance\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ResponseFactory.php:14)
+[stacktrace]
+#0 {main}
+"} 

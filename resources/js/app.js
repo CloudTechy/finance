@@ -175,6 +175,7 @@ const app = new Vue({
             var form = new Form()
             form.get("https://api.ipify.org?format=json")
                 .then(response => {
+                    this.ip = response.data.ip
                     localStorage.ip = JSON.stringify(response.data.ip)
                 })
                 .catch(error => {

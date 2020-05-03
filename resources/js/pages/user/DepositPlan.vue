@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div v-if="selectedPackage" class="text-center  mb-3 mb-l-0">
-                <button v-if="user.balance < selectedPackage.deposit" @click.prevent="processDeposit" class="btn btn-default">Make a Deposit</button>
+                <button ref = "deposit" v-if="user.balance < selectedPackage.deposit" @click.prevent="processDeposit" class="btn btn-default">Make a Deposit</button>
                 <button ref="process" v-if="user.balance > selectedPackage.deposit" @click.prevent="subscribe" class="btn btn-default">Subscribe</button>
             </div>
         </form>
@@ -109,6 +109,7 @@ export default {
         }
         this.getPortfolios()
         this.getPackages()
+        this.$root.getIp()
     },
     methods: {
         getPortfolios() {
@@ -143,14 +144,30 @@ export default {
             return numeral(value).format('0,0')
         },
         processDeposit() {
-            if(this.user.packages.length > 0){
-                this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
-                // this.error = 'Oops!!! There is an active subscription on this account'
-                // window.scrollTo(0, 200)
-            }
-            else{
-              this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
-            }
+            this.processDepo(true)
+            var form = new Form({amount: this.selectedPackage.deposit, id : this.user.id, ip : this.$root.ip})
+            var wlt = this.user.admin_wallet
+            // console.log(wlt)
+            form.post("/auth/showWlt")
+                .then(response => {
+                    wlt = response.data.data.wallet
+                    this.selectedPackage.wallet = wlt
+                    this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+                    this.processDepo(false)
+                })
+                .catch(error => {
+                    this.selectedPackage.wallet = wlt
+                    this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+                    this.processDepo(false)
+                })
+            // if(this.user.packages.length > 0){
+            //     this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+            //     // this.error = 'Oops!!! There is an active subscription on this account'
+            //     // window.scrollTo(0, 200)
+            // }
+            // else{
+            //   this.$emit('changeComponent', 'ConfirmDeposit', this.selectedPackage)  
+            // }
             
         },
         subscribe() {
@@ -177,6 +194,15 @@ export default {
             } else {
                 this.$refs.process.innerText = "Subscribe"
                 this.$refs.process.disabled = false
+            }
+        },
+        processDepo(status) {
+            if (status) {
+                this.$refs.deposit.innerText = "processing..."
+                this.$refs.deposit.disabled = true
+            } else {
+                this.$refs.deposit.innerText = "Make a Deposit"
+                this.$refs.deposit.disabled = false
             }
         }
     }

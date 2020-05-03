@@ -1,0 +1,4 @@
+[2020-05-02 10:07:11] local.ERROR: Cannot use isset() on the result of an expression (you can use "null !== expression" instead) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Cannot use isset() on the result of an expression (you can use \"null !== expression\" instead) at C:\\Users\\kazzykelson\\Desktop\\laravel\\finance\\app\\Helper.php:106)
+[stacktrace]
+#0 {main}
+"} 

