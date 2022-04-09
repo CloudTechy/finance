@@ -28,7 +28,7 @@
         "@websanova/vue-auth": "^2.21.14-beta",
         "acorn": "^6.3.0",
         "es6-promise": "^4.2.8",
-        "moment": "^2.24.0",
+        "moment": "^2.29.2",
         "numeral": "^2.0.6",
         "v-clipboard": "^2.2.2",
         "vform": "^1.0.0",
